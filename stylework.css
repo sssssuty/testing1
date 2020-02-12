@@ -356,8 +356,9 @@
         grid-template-rows: auto 27vw 6vw;
         margin: 0;
         padding:0;
-        margin-bottom: 15vw;
+        margin-bottom: 10vw;
         margin-left: 2vw;
+        /*margin-top: 10vw;*/
         /*opacity: 0;*/
         display: none;
     }
@@ -365,7 +366,9 @@
     .end{
         font-size: 1.8vw;
         line-height: 2.2vw;
-        text-align: center;
+        display: none;
+        margin-left: 2vw;
+        /*text-align: center;*/
     }
 
     .inputbar{
@@ -384,12 +387,29 @@
         background-color: black;
     }
 
-    #fnamecopy{
+    #fnamecopy1{
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 3vw;
+        line-height: 3.5vw;
+        margin-left: 2vw;
+        display: none;
+        /*margin-bottom: 10vw;*/
+    }
+
+    #fnamecopy2{
+        margin: 0;
+        padding: 0;
+        border:0;
         font-size: 2vw;
         line-height: 2.3vw;
-        /*width:5vw;*/
-        /*height:20vw;*/
+        margin-left: 2vw;
+        margin-bottom: 15vw;
+        display: none;
+        /*width:10vw;*/
     }
+
 
 /*    input[type=text] {
         background-color: blue;

@@ -32,6 +32,6 @@ $( document ).ready(function() {
         // console.log(num);
         num++;
 
-    }, 3000);
+    }, 1500);
 
 });
