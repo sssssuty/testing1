@@ -152,6 +152,8 @@ function myFunction() {
         $("#proxi").css({"display": "grid"});
         $("#nad").css({"display": "grid"});
         $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
         // $("#displacement").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
     }
