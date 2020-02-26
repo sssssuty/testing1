@@ -37,7 +37,7 @@ function myFunction() {
 
         $("#displacement").css({"display": "grid"});
         $("#guggenheim").css({"display": "grid"});
-        // $("#rubin").css({"display": "grid"});
+        $("#rubin").css({"display": "grid"});
         $("#lacma").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
