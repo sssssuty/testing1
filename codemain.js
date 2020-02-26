@@ -29,8 +29,8 @@ function myFunction() {
 
     if (filter =="MOMA"){
         console.log(filter);
-        document.getElementById("companyname").innerHTML = "MoMA creative team";
-        // $("#fnamecopy1").css({"display": "block"});
+        document.getElementById("companyname").innerHTML = "MoMA";
+        $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".inputbar").css({"display": "none"});
         $(".end").css({"display": "block"});
