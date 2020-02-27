@@ -22,7 +22,7 @@ function myFunction() {
         $("#guggenheim").css({"display": "grid"});
         $("#rubin").css({"display": "grid"});
         $("#lacma").css({"display": "grid"});
-        $("#jinhe").css({"display": "grid"});
+        // $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
     }
@@ -51,12 +51,13 @@ function myFunction() {
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
 
-        $("#lacma").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#experienceyelp").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#experienceyelp").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
         // $("#randomcontrol").css({"display": "grid"});
     }
 
@@ -67,11 +68,12 @@ function myFunction() {
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
 
-        $("#lacma").css({"display": "grid"});
-        $("#experienceyelp").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#experienceyelp").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
         // $("#randomcontrol").css({"display": "grid"});
     }
 
@@ -82,11 +84,12 @@ function myFunction() {
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
 
-        $("#lacma").css({"display": "grid"});
-        $("#experienceyelp").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#experienceyelp").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
         // $("#randomcontrol").css({"display": "grid"});
     }
 
@@ -121,21 +124,21 @@ function myFunction() {
         // $("#randomcontrol").css({"display": "grid"});
     }
 
-    if (filter =="CHANEL"){
-        console.log(filter);
-        document.getElementById("companyname").innerHTML = "Chanel";
-        $(".inputbar").css({"display": "none"});
-        // $("#fnamecopy1").css({"display": "block"});
-        // $("#fnamecopy2").css({"display": "block"});
-        $(".end").css({"display": "block"});
+    // if (filter =="CHANEL"){
+    //     console.log(filter);
+    //     document.getElementById("companyname").innerHTML = "Chanel";
+    //     $(".inputbar").css({"display": "none"});
+    //     // $("#fnamecopy1").css({"display": "block"});
+    //     // $("#fnamecopy2").css({"display": "block"});
+    //     $(".end").css({"display": "block"});
 
-        $("#mswho").css({"display": "grid"});
-        $("#Amantes").css({"display": "grid"});
-        $("#guggenheim").css({"display": "grid"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        // $("#randomcontrol").css({"display": "grid"});
-    }
+    //     $("#mswho").css({"display": "grid"});
+    //     $("#Amantes").css({"display": "grid"});
+    //     $("#guggenheim").css({"display": "grid"});
+    //     $("#lacma").css({"display": "grid"});
+    //     $("#proxi").css({"display": "grid"});
+    //     // $("#randomcontrol").css({"display": "grid"});
+    // }
 
     if (filter =="PROPHET"){
         console.log(filter);
@@ -144,17 +147,19 @@ function myFunction() {
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
 
-        $("#mswho").css({"display": "grid"});
-        $("#Amantes").css({"display": "grid"});
-        $("#guggenheim").css({"display": "grid"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
-        $("#displacement").css({"display": "grid"});
+        // $("#mswho").css({"display": "grid"});
+        // $("#Amantes").css({"display": "grid"});
+        // $("#guggenheim").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
+        // $("#displacement").css({"display": "grid"});
+        // $("#fatmonksmalltemple").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
     }
 
@@ -165,18 +170,20 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
 
-        $("#mswho").css({"display": "grid"});
-        $("#Amantes").css({"display": "grid"});
-        $("#guggenheim").css({"display": "grid"});
-        $("#rubin").css({"display": "grid"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
-        $("#displacement").css({"display": "grid"});
+        // $("#mswho").css({"display": "grid"});
+        // $("#Amantes").css({"display": "grid"});
+        // $("#guggenheim").css({"display": "grid"});
+        // $("#rubin").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
+        // $("#displacement").css({"display": "grid"});
+        // $("#fatmonksmalltemple").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
     }
 
@@ -187,18 +194,20 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
 
-        $("#mswho").css({"display": "grid"});
-        $("#Amantes").css({"display": "grid"});
-        $("#guggenheim").css({"display": "grid"});
-        $("#rubin").css({"display": "grid"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
-        $("#displacement").css({"display": "grid"});
+        // $("#mswho").css({"display": "grid"});
+        // $("#Amantes").css({"display": "grid"});
+        // $("#guggenheim").css({"display": "grid"});
+        // $("#rubin").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
+        // $("#displacement").css({"display": "grid"});
+        // $("#fatmonksmalltemple").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
     }
 
@@ -209,18 +218,19 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
 
-        $("#mswho").css({"display": "grid"});
-        $("#Amantes").css({"display": "grid"});
-        $("#guggenheim").css({"display": "grid"});
-        $("#rubin").css({"display": "grid"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
-        $("#displacement").css({"display": "grid"});
+        // $("#mswho").css({"display": "grid"});
+        // $("#Amantes").css({"display": "grid"});
+        // $("#guggenheim").css({"display": "grid"});
+        // $("#rubin").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
+        // $("#displacement").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
     }
 
@@ -230,13 +240,14 @@ function myFunction() {
         $(".inputbar").css({"display": "none"});
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
         $(".end").css({"display": "block"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
     }
 
     if (filter =="RODRIGO"){
@@ -246,12 +257,13 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
+        $(".uiux").css({"display": "grid"});
     }
 
     if (filter =="WORK&CO"){
@@ -261,11 +273,12 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
-        $("#lacma").css({"display": "grid"});
-        $("#proxi").css({"display": "grid"});
-        $("#nad").css({"display": "grid"});
-        $("#theheaven").css({"display": "grid"});
-        $("#wulala").css({"display": "grid"});
-        $("#letterc").css({"display": "grid"});
+        $(".uiux").css({"display": "grid"});
+        // $("#lacma").css({"display": "grid"});
+        // $("#proxi").css({"display": "grid"});
+        // $("#nad").css({"display": "grid"});
+        // $("#theheaven").css({"display": "grid"});
+        // $("#wulala").css({"display": "grid"});
+        // $("#letterc").css({"display": "grid"});
     }
 }
