@@ -184,17 +184,17 @@
     .iframe1{
         margin: 0;
         padding: 0;
-        margin-left: -3.8vw;
-        width: 96vw;
-        height: 84vw;
+        /*margin-left: -3.8vw;*/
+        width: 60vw;
+        height: 45vw;
         border:0;
     }
 
     .iframe3{
         margin: 0;
         padding: 0;
-        /*margin-left: -3.8vw;*/
-        width: 96vw;
+        margin-left: 8vw;
+        width: 80vw;
         height: 70vw;
         border:0;
     }
@@ -356,7 +356,7 @@
         padding: 0;
         /*margin-bottom: 2vw;*/
         margin-top: 4vw;
-        margin-left: 3vw;
+        margin-left: 10vw;
         /*width: 35vw;*/
 
         grid-row-start: 1;
@@ -373,7 +373,7 @@
         margin-bottom: 2vw;
         /*margin-top: 2vw;*/
         /*margin-left: 10vw;*/
-        /*width: 35vw;*/
+        width: 45vw;
     }
 
     .solution{
@@ -383,11 +383,22 @@
         padding: 0;
         margin-bottom: 2vw;
         /*margin-top: 2vw;*/
-        margin-left: 3vw;
-        /*width: 35vw;*/
+        margin-left: 10vw;
+        width: 45vw;
     }
 
-    .caption{
+    .caption1{
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+        margin: 0;
+        padding: 0;
+        border:0;
+        /*width:35vw;*/
+        margin-left: 7vw;
+        display: block;
+    }
+
+    .caption2{
         font-size: 1.8vw;
         line-height: 2.2vw;
         margin: 0;
@@ -398,6 +409,10 @@
         display: block;
     }
 
+    .space{
+        margin-left: 4.5vw;
+    }
+
     .guggenheimvideosection1{
         margin:0;
         padding: 0;
@@ -406,7 +421,8 @@
         grid-template-columns: 44vw 44vw;
         grid-template-rows: 45vw 45vw 45vw;
         padding-top: 2vw;
-        /*padding-left: -4vw;*/
+        /*width:20vw;*/
+        padding-left: 4vw;
     }
     .guggenheimvideosection2{
         margin:0;
@@ -416,7 +432,7 @@
         grid-template-columns: 44vw 44vw;
         grid-template-rows: 45vw;
         padding-top: 2vw;
-        padding-left: 2.6vw;
+        padding-left: 8vw;
     }
 
     .proxigif{
@@ -434,6 +450,37 @@
         width:78.4vw;
         height:48vw;
         margin-left: 8vw;
+    }
+
+    .wulalaimg{
+        margin:0;
+        border:0;
+        padding: 0;
+        width:80vw;
+        height:auto;
+        margin-left: 8vw;
+        margin-bottom: 2vw;
+    }
+
+    .desirevideosection1{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 44vw 44vw;
+        grid-template-rows: 55vw 55vw 55vw;
+        padding-top: 3vw;
+        /*width:20vw;*/
+        padding-left: 8vw;
+    }
+
+    .iframe4{
+        margin: 0;
+        padding: 0;
+        /*margin-left: -3.8vw;*/
+        width: 35vw;
+        height: 48vw;
+        border:0;
     }
     
 }

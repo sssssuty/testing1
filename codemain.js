@@ -139,7 +139,7 @@ function myFunction() {
 
     if (filter =="PROPHET"){
         console.log(filter);
-        document.getElementById("companyname").innerHTML = "Chanel";
+        document.getElementById("companyname").innerHTML = "Prophet";
         $(".inputbar").css({"display": "none"});
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
@@ -154,7 +154,118 @@ function myFunction() {
         $("#theheaven").css({"display": "grid"});
         $("#wulala").css({"display": "grid"});
         $("#letterc").css({"display": "grid"});
-        // $("#displacement").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
         // $("#jinhe").css({"display": "grid"});
+    }
+
+    if (filter =="SUPERUNION"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Superunion";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+
+        $("#mswho").css({"display": "grid"});
+        $("#Amantes").css({"display": "grid"});
+        $("#guggenheim").css({"display": "grid"});
+        $("#rubin").css({"display": "grid"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
+        // $("#jinhe").css({"display": "grid"});
+    }
+
+    if (filter =="STERLING"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Sterling";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+
+        $("#mswho").css({"display": "grid"});
+        $("#Amantes").css({"display": "grid"});
+        $("#guggenheim").css({"display": "grid"});
+        $("#rubin").css({"display": "grid"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
+        // $("#jinhe").css({"display": "grid"});
+    }
+
+    if (filter =="MBOOTH"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "M Booth";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+
+        $("#mswho").css({"display": "grid"});
+        $("#Amantes").css({"display": "grid"});
+        $("#guggenheim").css({"display": "grid"});
+        $("#rubin").css({"display": "grid"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
+        // $("#jinhe").css({"display": "grid"});
+    }
+
+    if (filter =="METHOD"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Method";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
+    }
+
+    if (filter =="RODRIGO"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Rodrigo";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
+    }
+
+    if (filter =="WORK&CO"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Work&Co";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $("#lacma").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $("#nad").css({"display": "grid"});
+        $("#theheaven").css({"display": "grid"});
+        $("#wulala").css({"display": "grid"});
+        $("#letterc").css({"display": "grid"});
     }
 }
