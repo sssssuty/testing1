@@ -257,12 +257,6 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
         $(".uiux").css({"display": "grid"});
     }
 
@@ -274,11 +268,5 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
     }
 }
