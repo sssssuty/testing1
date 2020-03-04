@@ -215,7 +215,7 @@ function myFunction() {
 
     if (filter =="BREEL"){
         console.log(filter);
-        document.getElementById("companyname").innerHTML = "B Reel";
+        document.getElementById("companyname").innerHTML = "B-Reel";
         $(".inputbar").css({"display": "none"});
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
