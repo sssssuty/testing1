@@ -409,6 +409,17 @@
         display: block;
     }
 
+    .caption3{
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+        margin: 0;
+        padding: 0;
+        border:0;
+        /*width:35vw;*/
+        margin-left: 8vw;
+        display: block;
+    }
+
     .space{
         margin-left: 4.5vw;
     }
@@ -481,6 +492,16 @@
         width: 35vw;
         height: 48vw;
         border:0;
+    }
+
+    .iframe5{
+        margin: 0;
+        padding: 0;
+        margin-left: 8vw;
+        width: 80vw;
+        height: 40vw;
+        border:0;
+        margin-bottom: 3vw;
     }
 
     .janesmithvideosection1{
