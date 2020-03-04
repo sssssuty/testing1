@@ -310,5 +310,18 @@ function myFunction() {
         $(".uiux").css({"display": "grid"});
     }
 
+    if (filter =="DOLBY"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Dolby";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+        $(".theheaven").css({"display": "grid"});
+
+        
+    }
+
 
 }
