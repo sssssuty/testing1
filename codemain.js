@@ -25,6 +25,7 @@ function myFunction() {
         $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
+        $("#janesmith").css({"display": "grid"});
     }
 
     if (filter =="MOMA"){
@@ -42,6 +43,8 @@ function myFunction() {
         $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
+        $("#janesmith").css({"display": "grid"});
+        
     }
 
     if (filter =="GOOGLE"){
