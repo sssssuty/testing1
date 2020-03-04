@@ -148,19 +148,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".design").css({"display": "grid"});
-
-        // $("#mswho").css({"display": "grid"});
-        // $("#Amantes").css({"display": "grid"});
-        // $("#guggenheim").css({"display": "grid"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#displacement").css({"display": "grid"});
-        // $("#fatmonksmalltemple").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
     }
 
     if (filter =="SUPERUNION"){
@@ -171,20 +158,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".design").css({"display": "grid"});
-
-        // $("#mswho").css({"display": "grid"});
-        // $("#Amantes").css({"display": "grid"});
-        // $("#guggenheim").css({"display": "grid"});
-        // $("#rubin").css({"display": "grid"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#displacement").css({"display": "grid"});
-        // $("#fatmonksmalltemple").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
     }
 
     if (filter =="STERLING"){
@@ -195,20 +168,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".design").css({"display": "grid"});
-
-        // $("#mswho").css({"display": "grid"});
-        // $("#Amantes").css({"display": "grid"});
-        // $("#guggenheim").css({"display": "grid"});
-        // $("#rubin").css({"display": "grid"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#displacement").css({"display": "grid"});
-        // $("#fatmonksmalltemple").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
     }
 
     if (filter =="MBOOTH"){
@@ -219,19 +178,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".design").css({"display": "grid"});
-
-        // $("#mswho").css({"display": "grid"});
-        // $("#Amantes").css({"display": "grid"});
-        // $("#guggenheim").css({"display": "grid"});
-        // $("#rubin").css({"display": "grid"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#displacement").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
     }
 
     if (filter =="METHOD"){
@@ -242,12 +188,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
         $(".end").css({"display": "block"});
-        // $("#lacma").css({"display": "grid"});
-        // $("#proxi").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#theheaven").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
     }
 
     if (filter =="RODRIGO"){
@@ -269,4 +209,106 @@ function myFunction() {
         $(".end").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
     }
+
+    if (filter =="BREEL"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "B Reel";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="VIRTUE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Virtue";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="CODECADEMY"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Codecademy";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+
+    if (filter =="CAPACITY"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Capacity";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+
+    if (filter =="SQUARESPACE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Squarespace";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+
+    if (filter =="FAHRENHEIT212"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Fahrenheit212";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="THEORCHARD"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "The Orchard";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+
+    if (filter =="ARULIDEN"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Aruliden";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="BLUESTATE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Blue State";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="AKQA"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "AKQA";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+
+
 }
