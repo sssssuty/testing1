@@ -22,7 +22,7 @@ function myFunction() {
         $("#guggenheim").css({"display": "grid"});
         $("#rubin").css({"display": "grid"});
         $("#lacma").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
+        $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
     }
@@ -39,7 +39,7 @@ function myFunction() {
         $("#guggenheim").css({"display": "grid"});
         $("#rubin").css({"display": "grid"});
         $("#lacma").css({"display": "grid"});
-        // $("#jinhe").css({"display": "grid"});
+        $("#jinhe").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
     }

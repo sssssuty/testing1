@@ -482,5 +482,29 @@
         height: 48vw;
         border:0;
     }
+
+    .janesmithvideosection1{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 44vw 44vw;
+        grid-template-rows: 45vw;
+        padding-top: 2vw;
+        /*width:20vw;*/
+        padding-left: 4vw;
+    }
+
+    .janesmithvideosection2{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 44vw 1vw;
+        grid-template-rows: 45vw;
+        padding-top: 2vw;
+        /*width:20vw;*/
+        padding-left: 25vw;
+    }
     
 }
