@@ -321,9 +321,54 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
-        $(".theheaven").css({"display": "grid"});
+        $(".theheaven").css({"display": "grid"});      
+    }
 
-        
+    if (filter =="SIDLEE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Sid Lee";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+
+    if (filter =="SIEGEL+GALE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Siegel+Gale";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="NYTIMES"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "New York Times";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
+    }
+    if (filter =="SIEGEL+GALE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Siegel+Gale";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="RGA"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "R/GA";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
     }
 
 
