@@ -54,14 +54,12 @@ function myFunction() {
         // $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
+        $("#theheaven").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
         $(".uiux").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
 
-        // $("#lacma").css({"display": "grid"});
-        // $("#nad").css({"display": "grid"});
-        // $("#experienceyelp").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#randomcontrol").css({"display": "grid"});
+
     }
 
     if (filter =="DROPBOX"){
