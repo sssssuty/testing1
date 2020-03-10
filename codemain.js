@@ -49,17 +49,44 @@ function myFunction() {
 
     if (filter =="GOOGLE"){
         console.log(filter);
-        document.getElementById("companyname").innerHTML = "Google creative team";
+        document.getElementById("companyname").innerHTML = "Google Creative Lab";
         $(".inputbar").css({"display": "none"});
-        // $("#fnamecopy1").css({"display": "block"});
-        // $("#fnamecopy2").css({"display": "block"});
+        $("#fnamecopy1").css({"display": "block"});
+        $("#fnamecopy2").css({"display": "block"});
+        // $("#fnamecopy2").setAttribute("href", "files/TingyuSu_Resume.pdf");
         $(".end").css({"display": "block"});
         $("#theheaven").css({"display": "grid"});
         $("#proxi").css({"display": "grid"});
         $(".uiux").css({"display": "grid"});
         $("#displacement").css({"display": "grid"});
+    }
 
+    if (filter =="CREATIVELAB5"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Google Creative Lab";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        $("#fnamecopy2").css({"display": "block"});
+        // $("#fnamecopy2").setAttribute("href", "files/TingyuSu_Resume.pdf");
+        $(".end").css({"display": "block"});
+        $("#theheaven").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $(".uiux").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
+    }
 
+    if (filter =="CREATIVELAB"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Google Creative Lab";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        $("#fnamecopy2").css({"display": "block"});
+        // $("#fnamecopy2").setAttribute("href", "files/TingyuSu_Resume.pdf");
+        $(".end").css({"display": "block"});
+        $("#theheaven").css({"display": "grid"});
+        $("#proxi").css({"display": "grid"});
+        $(".uiux").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
     }
 
     if (filter =="DROPBOX"){
@@ -70,12 +97,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
-
-        // $("#lacma").css({"display": "grid"});
-        // $("#experienceyelp").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#randomcontrol").css({"display": "grid"});
     }
 
     if (filter =="ADOBE"){
@@ -86,12 +107,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
-
-        // $("#lacma").css({"display": "grid"});
-        // $("#experienceyelp").css({"display": "grid"});
-        // $("#wulala").css({"display": "grid"});
-        // $("#letterc").css({"display": "grid"});
-        // $("#randomcontrol").css({"display": "grid"});
     }
 
     if (filter =="FACEBOOK"){
