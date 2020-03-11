@@ -401,14 +401,6 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".end").css({"display": "block"});
-        $(".design").css({"display": "grid"});
-    }
-    if (filter =="ONEPLUS"){
-        console.log(filter);
-        document.getElementById("companyname").innerHTML = "OnePlus";
-        $(".inputbar").css({"display": "none"});
-        $("#fnamecopy1").css({"display": "block"});
-        // $("#fnamecopy2").css({"display": "block"});
         $("#displacement").css({"display": "grid"});
         $("#guggenheim").css({"display": "grid"});
         $("#rubin").css({"display": "grid"});
@@ -417,6 +409,14 @@ function myFunction() {
         $("#proxi").css({"display": "grid"});
         $("#mswho").css({"display": "grid"});
         $("#janesmith").css({"display": "grid"});
+    }
+    if (filter =="ONEPLUS"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "OnePlus";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".uiux").css({"display": "grid"});
     }
 
 
