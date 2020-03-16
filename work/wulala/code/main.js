@@ -20,7 +20,7 @@ function preload(){
 
 function setup(){
 
-    createCanvas(windowWidth,580);
+    createCanvas(windowWidth,windowHeight);
 
     var button = select("#submit");
     button.mousePressed(weatherAsk);
