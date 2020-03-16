@@ -152,6 +152,67 @@
         height: 35vw;
     }
 
+    img{
+        margin: 0;
+        padding: 0;
+        width:96vw;
+        height:auto;
+        margin-left: -1vw;
+    }
+
+    .figmaproto{
+        margin: 0;
+        padding: 0;
+        width:96vw;
+        height:170vw;
+        margin-left: -1vw;
+    }
+
+    .proxiiframe{
+        margin: 0;
+        padding: 0;
+        width:96vw;
+        height:70vw;
+        margin-left: -1vw;
+    }
+    .proxigif{
+        margin: 0;
+        padding: 0;
+        width:86vw;
+        height:auto;
+        margin-left: 6vw;
+    }
+    .iframe3{
+        margin: 0;
+        padding: 0;
+        width:96vw;
+        height:60vw;
+        margin-left: -1vw;
+    }
+    .iframe5{
+        margin: 0;
+        padding: 0;
+        width:96vw;
+        height:48vw;
+        margin-left: -1vw;
+    }
+    .iframe2{
+        margin: 0;
+        padding: 0;
+        width:94vw;
+        height:100vw;
+    }
+    .caption1{
+
+    }
+    .caption2{
+        font-size: 4vw;
+        line-height: 4.5vw;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
+    }
 }
 
 

@@ -108,7 +108,7 @@
         font-size: 8vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 2vw;
+        margin-top: 1vw;
     }
 
     .content{
@@ -116,7 +116,7 @@
         line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 2vw;
+        margin-bottom: 4vw;
     }
 
     .viewmore{
@@ -125,8 +125,8 @@
         margin: 0;
         padding: 0;
         /*margin-left: 65vw;*/
-        float:right;
-        margin-bottom: 8vw;
+        /*float:right;*/
+        margin-bottom: 30vw;
     }
 
     iframe{
@@ -140,8 +140,8 @@
 
     .end{
         margin-top: 30vw;
-        font-size: 1.8vw;
-        line-height: 3vw;
+        font-size: 3vw;
+        line-height: 3.5vw;
         text-align: center;
     }
 
@@ -155,7 +155,7 @@
         height:15vw;
         box-sizing: border-box;
         border: 0px solid #555;
-        border-bottom: 2vw solid #fff;
+        border-bottom: 1vw solid #fff;
         outline: none;
         background-color: black;
     }
@@ -182,6 +182,27 @@
         border: 1px solid #555;
         outline: none;
     }*/
+    #fnamecopy1{
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 8vw;
+        line-height: 9vw;
+        /*margin-left: 2vw;*/
+        display: none;
+    }
+
+    #fnamecopy2{
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 2vw;
+        line-height: 2.3vw;
+        margin-left: 2vw;
+        margin-bottom: 15vw;
+        display: none;
+    }
+
 
 }
 
