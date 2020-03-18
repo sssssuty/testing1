@@ -418,6 +418,118 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
     }
+    if (filter =="INTERBRAND"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Interbrand";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="WOFFOLINS"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Woff Olins";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="DAYONE"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Day One";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="BARREL"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Barrel";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="THECHARLES"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "The Charles";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="RAPT"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Rapt Studio";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="ARTSY"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Artsy";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="SPARK"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Spark";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="GSG"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "GSG";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="SHARED"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Shared Studio";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="LAMINGTON"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Lamington";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="VIVALDI"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Vivaldi";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="LIPPINCOTT"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Lippincott";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="FLUENT"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Fluent";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
 
 
 }
