@@ -434,6 +434,14 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
     }
+    if (filter =="WK"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Wieden+Kennedy";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
     if (filter =="DAYONE"){
         console.log(filter);
         document.getElementById("companyname").innerHTML = "Day One";
@@ -525,6 +533,14 @@ function myFunction() {
     if (filter =="FLUENT"){
         console.log(filter);
         document.getElementById("companyname").innerHTML = "Fluent";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        $(".design").css({"display": "grid"});
+    }
+    if (filter =="FANTASY"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "Fantasy";
         $(".inputbar").css({"display": "none"});
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
