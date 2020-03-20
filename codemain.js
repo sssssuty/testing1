@@ -417,6 +417,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".uiux").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="INTERBRAND"){
         console.log(filter);
@@ -425,6 +426,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="WOFFOLINS"){
         console.log(filter);
@@ -433,6 +435,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="WK"){
         console.log(filter);
@@ -441,6 +444,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="DAYONE"){
         console.log(filter);
@@ -457,6 +461,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="THECHARLES"){
         console.log(filter);
@@ -465,6 +470,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="RAPT"){
         console.log(filter);
@@ -473,6 +479,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="ARTSY"){
         console.log(filter);
@@ -498,14 +505,6 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
     }
-    if (filter =="SHARED"){
-        console.log(filter);
-        document.getElementById("companyname").innerHTML = "Shared Studio";
-        $(".inputbar").css({"display": "none"});
-        $("#fnamecopy1").css({"display": "block"});
-        // $("#fnamecopy2").css({"display": "block"});
-        $(".design").css({"display": "grid"});
-    }
     if (filter =="LAMINGTON"){
         console.log(filter);
         document.getElementById("companyname").innerHTML = "Lamington";
@@ -513,6 +512,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="VIVALDI"){
         console.log(filter);
@@ -521,6 +521,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="LIPPINCOTT"){
         console.log(filter);
@@ -529,6 +530,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="FLUENT"){
         console.log(filter);
@@ -537,6 +539,7 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
     }
     if (filter =="FANTASY"){
         console.log(filter);
@@ -545,6 +548,22 @@ function myFunction() {
         $("#fnamecopy1").css({"display": "block"});
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
+        $(".end").css({"display": "block"});
+    }
+    if (filter =="WWD"){
+        console.log(filter);
+        document.getElementById("companyname").innerHTML = "WWD";
+        $(".inputbar").css({"display": "none"});
+        $("#fnamecopy1").css({"display": "block"});
+        $(".end").css({"display": "block"});
+        // $("#fnamecopy2").css({"display": "block"});
+        // $(".design").css({"display": "grid"});
+        $("#janesmith").css({"display": "grid"});
+        $("#mswho").css({"display": "grid"});
+        $("#Amantes").css({"display": "grid"});
+        $("#displacement").css({"display": "grid"});
+        $("#guggenheim1").css({"display": "grid"});
+        $("#rubin1").css({"display": "grid"});
     }
 
 
