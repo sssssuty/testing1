@@ -202,6 +202,16 @@
         margin-bottom: 15vw;
         display: none;
     }
+    #fnamecopy3{
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 2vw;
+        line-height: 2.3vw;
+        margin-left: 2vw;
+        margin-bottom: 15vw;
+        display: none;
+    }
 
 
 }
@@ -416,7 +426,7 @@
         line-height: 3.5vw;
         margin-left: 2vw;
         display: none;
-        /*margin-bottom: 10vw;*/
+        margin-bottom: 5vw;
     }
 
     #fnamecopy2{
@@ -426,10 +436,24 @@
         font-size: 2vw;
         line-height: 2.3vw;
         margin-left: 2vw;
-        margin-bottom: 15vw;
+        /*margin-bottom: 20vw;*/
+        /*height: 15vw;*/
         display: none;
         /*width:10vw;*/
     }
+
+    #fnamecopy3{
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 2vw;
+        line-height: 4vw;
+        margin-left: 2vw;
+        /*margin-bottom: 1vw;*/
+        display: none;
+        /*width:10vw;*/
+    }
+
 
 
 /*    input[type=text] {
