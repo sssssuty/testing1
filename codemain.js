@@ -445,6 +445,7 @@ function myFunction() {
         // $("#fnamecopy2").css({"display": "block"});
         $(".design").css({"display": "grid"});
         $(".end").css({"display": "block"});
+        // $("#letterc").css({"display": "block"});
     }
     if (filter =="DAYONE"){
         console.log(filter);
