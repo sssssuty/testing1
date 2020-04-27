@@ -1,22 +1,27 @@
+/*@font-face{
+    font-family: "Founders Grotesk";
+    src:url("Founders Grotesk Regular.woff");
+}
+*/
 @font-face{
-    font-family: "Suisse BP Int'l";
-    src:url("Suisse BP Int'l Regular.woff");
+    font-family: "Founders Grotesk";
+    src:url("FoundersGrotesk-Regular.woff");
 }
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
     }
 
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
     }
 
     .top{
@@ -27,7 +32,7 @@
         height: 14vw;
         width:100vw;
         z-index: 10;
-        color: #FFF;
+        color:000FF;
     }
 
     .mynameen{
@@ -35,7 +40,7 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
-        color: #FFF;
+        color: #000;
     }
 
     .menu{
@@ -45,21 +50,21 @@
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
-        color: #FFF;
+        color: #000;
     }
 
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 84vw;
+        margin-left: 82vw;
         margin-top: 6vw;
-        color: #FFF;
+        color: #000;
     }
 
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 64vw;
+        margin-left: 52vw;
         margin-top: 6vw;
     }
 
@@ -155,9 +160,9 @@
     img{
         margin: 0;
         padding: 0;
-        width:96vw;
+        width:94vw;
         height:auto;
-        margin-left: -1vw;
+        margin-bottom: -3vw;
     }
 
     .figmaproto{
@@ -222,17 +227,17 @@
     body{
         border:0;
         margin:2vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
         /*overflow: hidden;*/
     }
 
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
     }
 
     img{
@@ -309,12 +314,12 @@
     }
 
     #menuarchive{
-        font-family: "Suisse BP Int'l", sans-serif;
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #FFF;
+        color: #000;
         font-size: 2vw;
         position: absolute;
-        margin-left: 89.7vw;
+        margin-left: 87vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -323,7 +328,7 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 80vw;
+        margin-left: 70vw;
         margin-top: 4.3vw;
 
     }
@@ -446,6 +451,18 @@
         /*margin-top: 2vw;*/
         margin-left: 10vw;
         width: 45vw;
+    }
+
+    .caption{
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+        margin: 0;
+        padding: 0;
+        border:0;
+        /*width:35vw;*/
+        margin-left: 2vw;
+        margin-top: 5vw;
+        display: block;
     }
 
     .caption1{
@@ -587,6 +604,15 @@
         padding-top: 2vw;
         /*width:20vw;*/
         padding-left: 25vw;
+    }
+
+    img{
+        margin: 0;
+        padding: 0;
+        width:92vw;
+        height:auto;
+        margin-left: 2vw;
+        margin-bottom: -2vw;
     }
     
 }

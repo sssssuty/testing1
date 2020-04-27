@@ -3,20 +3,25 @@
     src:url("Suisse BP Int'l Regular.woff");
 }
 
+@font-face{
+    font-family: "Founders Grotesk";
+    src:url("FoundersGrotesk-Regular.woff");
+}
+
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #f3f3f3;
     }
 
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
     }
 
     .top{
@@ -27,7 +32,7 @@
         height: 14vw;
         width:100vw;
         z-index: 10;
-        color: #FFF;
+        color: #000;
     }
 
     .mynameen{
@@ -35,7 +40,7 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
-        color: #FFF;
+        color: #000;
     }
 
     .menu{
@@ -45,26 +50,26 @@
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
-        color: #FFF;
+        color: #000;
     }
 
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 84vw;
+        margin-left: 82vw;
         margin-top: 6vw;
-        color: #FFF;
+        color: #000;
     }
 
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 64vw;
+        margin-left: 52vw;
         margin-top: 6vw;
     }
 
     .project{
-        display: none;
+        /*display: none;*/
     }
 
     .projectimage{
@@ -106,9 +111,20 @@
 
     .projecttitle{
         font-size: 8vw;
+        line-height: 7vw;
         margin: 0;
         padding: 0;
         margin-top: 1vw;
+        color: black;
+    }
+
+    .projecttitle{
+        font-size: 8vw;
+        line-height: 7vw;
+        margin: 0;
+        padding: 0;
+        margin-top: 1vw;
+        color: black;
     }
 
     .content{
@@ -117,6 +133,7 @@
         margin: 0;
         padding: 0;
         margin-bottom: 4vw;
+        color: black;
     }
 
     .viewmore{
@@ -126,7 +143,7 @@
         padding: 0;
         /*margin-left: 65vw;*/
         /*float:right;*/
-        margin-bottom: 30vw;
+        margin-bottom: 20vw;
     }
 
     iframe{
@@ -142,11 +159,11 @@
         margin-top: 30vw;
         font-size: 3vw;
         line-height: 3.5vw;
-        text-align: center;
+        /*text-align: center;*/
     }
 
     .inputbar{
-        padding-top: 15vw;
+        /*padding-top: 15vw;*/
     }
 
     #fname{
@@ -158,6 +175,7 @@
         border-bottom: 1vw solid #fff;
         outline: none;
         background-color: black;
+        font-family: "Founders Grotesk";
     }
 
     /*input[type=text] {
@@ -182,16 +200,17 @@
         border: 1px solid #555;
         outline: none;
     }*/
-    #fnamecopy1{
+    #fnamecopy4{
+        position: absolute;
         margin: 0;
         padding: 0;
         border:0;
-        font-size: 8vw;
-        line-height: 9vw;
-        /*margin-left: 2vw;*/
-        display: none;
+        font-size: 4vw;
+        line-height: 4.5vw;
+        margin-top: 15vw;
+        /*display: none;*/
     }
-
+/*
     #fnamecopy2{
         margin: 0;
         padding: 0;
@@ -211,8 +230,32 @@
         margin-left: 2vw;
         margin-bottom: 15vw;
         display: none;
+    }*/
+
+    button{
+        border: none;
+        padding: none;
+        margin: none;
+        background-color: #f3f3f3;
+        border: none;
+        color: black;
+        padding-left: 0vw;
+        padding-right: 10vw;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 5vw;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        margin-top: 2vw;
+        text-decoration-color: #fff;
+        font-family: "Founders Grotesk";
     }
 
+    #buttonAll{
+        text-decoration: underline;
+        text-decoration-style: wavy;
+    }
 
 }
 
@@ -222,16 +265,16 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #f3f3f3;
     }
 
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #fff;
+        color: #000;
     }
 
     .top{
@@ -264,12 +307,12 @@
     }
 
     #menuarchive{
-        font-family: "Suisse BP Int'l", sans-serif;
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #FFF;
+        color: #000;
         font-size: 2vw;
         position: absolute;
-        margin-left: 89.7vw;
+        margin-left: 87vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -278,49 +321,22 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 80vw;
+        margin-left: 70vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
     }
 
     #placeholder1{
-        height:6vw;
-        width: auto;
-    }
-
-    .projectimage{
-        width: 59vw;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        /*display: block;*/
-        /*margin-bottom: 10vw;*/
-        /*display:inline;*/
-        grid-row-start: 1;
-        grid-row-end: 4;
-        grid-column-start: 1;
-        grid-column-end: 1;
-    }
-
-    #placeholder1{
         margin:0;
-        margin-left: 2vw;
-
-        /*padding-top:3vw;*/
-        /*padding-bottom:2vw;*/
-        /*height:10vw;*/
-
         width: 50vw;
-        /*background-color:blue;*/
-        font-size: 1.8vw;
-        line-height: 2.2vw;
+        height: 6vw;
     }
 
     .filter{
         display: inline;
     }
-
+/*
     .iconimage{
         width: 2vw;
         height: auto;
@@ -329,15 +345,22 @@
         margin-right: 2vw;
         margin-top: 0.5vw;
     }
+*/
+    .projectimage{
+        width: 43vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        margin-top: 5vw;
+    }
 
     .projecttitle{
         font-size: 3vw;
         margin: 0;
         padding: 0;
         border: 0;
-        /*width: 20vw;*/
-        /*margin-bottom: 1vw;*/
-        margin-left: 4vw;
+        margin-top: 1vw;
+        color: black;
     }
 
     .content{
@@ -346,10 +369,8 @@
         margin: 0;
         padding: 0;
         border: 0;
-        /*margin-bottom: 1vw;*/
-        margin-left: 4vw;
-        /*background-color: blue;*/
-        /*width: 20vw;*/
+        /*margin-left: 4vw;*/
+        color: black;
     }
 
     .viewmore{
@@ -357,65 +378,68 @@
         line-height: 2.3vw;
         margin: 0;
         padding: 0;
-        /*margin-left: 75vw;*/
-        /*width: 20vw;*/
-        /*display:inline;*/
-        grid-row-start: 3;
-        grid-row-end: 3;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        margin-left: 23vw;
-        /*text-indent: 15vw;*/
+        margin-left: 34.5vw;
+        color: black;
     }
 
     iframe{
         margin: 0;
         padding: 0;
-        width: 59vw;
-        height:54vw;
-        margin-top: -9.8vw;
-        margin-bottom: -9.8vw;
-        grid-row-start: 1;
-        grid-row-end: 4;
-        grid-column-start: 1;
-        grid-column-end: 1;
+        width: 43vw;
+        height: 36vw;
+        margin-top: -0.5vw;
+        margin-bottom: -6vw;
     }
 
     .project{
-        /*display: grid;*/
-        grid-template-columns: 60vw 32vw;
-        grid-template-rows: auto 27vw 6vw;
         margin: 0;
         padding:0;
-        margin-bottom: 10vw;
+        /*margin-bottom: 10vw;*/
         margin-left: 2vw;
-        /*margin-top: 10vw;*/
-        /*opacity: 0;*/
-        display: none;
+        margin-right: 1vw;
+        display: inline;
+        width: 45vw;
+        height: 45vw;
+        float: left;
+    }
+
+    .projects:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    * {
+        box-sizing: border-box;
     }
 
     .end{
         font-size: 1.8vw;
         line-height: 2.2vw;
-        display: none;
+        /*display: none;*/
         margin-left: 2vw;
-        /*text-align: center;*/
+        margin-top: 10vw;
     }
 
     .inputbar{
-        padding-top: 5vw;
         padding-left: 2vw;
+        display: inline;
+        margin-left: 18.6vw;
+        /*height: 5vw;*/
     }
     
     #fname{
         font-size: 2vw;
-        line-height: 2.3vw;
+        /*line-height: 2.6vw;*/
         height:3vw;
         box-sizing: border-box;
         border: 0px solid #555;
-        border-bottom: 0.3vw solid #fff;
+        border-bottom: 0.3vw solid #000;
         outline: none;
-        background-color: black;
+        background-color: #f3f3f3;
+        width: 23vw;
+        font-family: "Founders Grotesk";
+        padding-top: 0.5vw;
     }
 
     #fnamecopy1{
@@ -427,6 +451,7 @@
         margin-left: 2vw;
         display: none;
         margin-bottom: 5vw;
+        color:black;
     }
 
     #fnamecopy2{
@@ -439,6 +464,7 @@
         /*margin-bottom: 20vw;*/
         /*height: 15vw;*/
         display: none;
+        color:black;
         /*width:10vw;*/
     }
 
@@ -451,10 +477,49 @@
         margin-left: 2vw;
         /*margin-bottom: 1vw;*/
         display: none;
+        color:black;
         /*width:10vw;*/
     }
+    button{
+        border: none;
+        padding: none;
+        margin: none;
+        background-color: #f3f3f3;
+        border: none;
+        color: black;
+        padding-left: 2vw;
+        padding-right: 2.4vw;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2vw;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        margin-top: 2vw;
+        text-decoration-color: #fff;
+        font-family: "Founders Grotesk";
 
+    }
 
+    #buttonAll{
+        text-decoration: underline;
+        text-decoration-style: wavy;
+    }
+
+    #fnamecopy4{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        border:0;
+        font-size: 2vw;
+        margin-top: 6vw;
+        margin-bottom: 4vw;
+        margin-left: 2vw;
+        color:black;
+    }
+    #titleletterc{
+        padding-top: 1vw;
+    }
 
 /*    input[type=text] {
         background-color: blue;

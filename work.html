@@ -18,407 +18,165 @@
     <meta charset="utf-8">
 </head>
 
-<body style="color: white;">
+<body style="background-color: #f3f3f3;">
     
     <div class="top">
-        <div class="mynameen" href="index.html"><a href="index.html" style="color: white;text-decoration: none;">Tingyu&nbsp;Su</a></div>
-        <a href="Info.html" class="menu" id="menuinfo" style="text-decoration: none;">Info</a>
+        <div class="mynameen" href="index.html"><a href="index.html" style="color: black;text-decoration: none;">Tingyu&nbsp;Su</a></div>
+        <a href="experience.html" class="menu" id="menuinfo" style="text-decoration: underline;text-decoration-color: transparent;">Experience</a>
         <a href="work.html" class="menu" id="menuarchive" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">Work</a>
+  text-decoration-style: wavy; text-decoration-color: #666;">Project</a>
     </div>
 
-    <div class="inputbar">
-        <input type="text" id="fname" name="firstname" placeholder="Enter code here" onkeyup="myFunction()" style="color: white;">
+    <div id="fnamecopy4" style="color: black;">Below are some self-initiated projects.<br>Please email me if you would like to see more.</div>
+
+    <div id="placeholder1"></div>
+    <div id="placeholder1"></div>
+
+    <button type="button" id="buttonAll" onclick="myFunctionAll()">All(12)</button>
+    <button type="button" id="buttonBrand" onclick="myFunctionBrand()">Brand<!-- (3) --></button>
+    <button type="button" id="buttonMotion" onclick="myFunctionMotion()">Motion<!-- (4) --></button>
+    <button type="button" id="buttonPrint" onclick="myFunctionPrint()">Print<!-- (2) --></button>
+    <button type="button" id="buttonPrint" onclick="myFunctionProduct()">Web&Mobile<!-- (5) --></button>
+
+
+    <div class="inputbar" style="opacity:0;">
+        <input type="text" id="fname" name="firstname" placeholder="🗝 passcode" onkeyup="myFunction()" style="color: black;">
     </div>
 
-    <div id="placeholder1">
+
+<!--     <div id="fnamecopy1"><a> Hi <a id="companyname"></a>,<br>Thank you in advance for your potential interest!<br><br></div>
+
+    <a href="files/TingyuSu_Resume.pdf" id="fnamecopy2" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #666;">Resume</a> -->
+
+    <div class="projects brand print">
+        <div class="project" id="displacement">
+            <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
+            <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
+            <div class="content" id="contentdisplacement">*Branding *Print *Spatial</div>
+                <div class="viewmore" id="viewmoredisplacement"><a target="_blank" href="projectdisplacement.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project product" id="lacma">
+            <img class="projectimage" src="work/lacma/lacma.png" id="lacmaimg1">
+            <div class="projecttitle" id="titlelacma">LACMA</div>
+            <div class="content" id="contentlacma">*Digital Product</div>
+            <div class="viewmore" id="viewmorelacma"><a target="_blank" href="projectlacma.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project brand motion" id="proxi">
+            <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="projecttitle" id="titleproxi">proxi</div>
+            <div class="content" id="contentproxi">*Branding *Motion Graphics</div>
+            <div class="viewmore" id="viewmoreproxi"><a target="_blank" href="projectproxi.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project motion" id="theheaven">
+            <iframe src="https://player.vimeo.com/video/389400733" id="theheavenvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="projecttitle" id="titletheheaven">The Heaven</div>
+            <div class="content" id="contenttheheaven">*Motion Graphics *VJ</div>
+            <div class="viewmore" id="viewmoretheheaven"><a target="_blank" href="projecttheheaven.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project print" id="mswho">
+            <img class="projectimage" src="work/mswho/mswho.png" id="mswhoimg1">
+            <div class="projecttitle" id="titlemswho">Ms.Who</div>
+            <div class="content" id="contentmswho">*Print *Art Direction</div>
+            <div class="viewmore" id="viewmoremswho"><a target="_blank" href="projectmswho.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project print" id="Amantes">
+            <img class="projectimage" src="work/amantes/amantes.png" id="Amantesimg1">
+            <div class="projecttitle" id="titleAmantes">AMANTES IN CIVITATEM</div>
+            <div class="content" id="contentAmantes">*Prints *Art Direction *Calligraphy</div>
+            <div class="viewmore" id="viewmoreAmantes"><a target="_blank" href="projectamantes.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project brand" id="jinhe">
+            <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
+            <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
+            <div class="content" id="contentjinhe">*Branding *Motion Graphics</div>
+            <div class="viewmore" id="viewmorejinhe"><a target="_blank" href="projectjinhe.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project product" id="nad">
+            <img class="projectimage" src="work/nad/nad.png" id="nadimg1">
+            <div class="projecttitle" id="titlenad">NAD</div>
+            <div class="content" id="contentnad">*Digital Product</div>
+            <div class="viewmore" id="viewmorenad"><a target="_blank" href="projectnad.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+    <!--     <div class="project" id="privacy">
+            <img class="projectimage" src="work/privacy/privacy.png" id="privacyimg1">
+            <div class="projecttitle" id="titleprivacy">Privacy</div>
+            <div class="content" id="contentprivacy">*PrintsSex, female body, nudity...are considered as sensitive topics for centuries.</div>
+            <div class="viewmore" id="viewmoreprivacy"><a target="_blank" href="projectprivacy.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project" id="originals">
+            <img class="projectimage" src="work/originals/originals.png" id="originalsimg1">
+            <div class="projecttitle" id="titleoriginals">The Originals</div>
+            <div class="content" id="contentoriginals">*PrintsA bilingual book series designed based on Wikipedia page "yellow" "red" and "blue". The idea behind the work is to have fun learning about the history and science of the colors.</div>
+            <div class="viewmore" id="viewmoreoriginals"><a target="_blank" href="projectoriginals.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div> -->
+
+        <div class="project product" id="wulala">
+            <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
+            <div class="projecttitle" id="titlewulala">Wulala</div>
+            <div class="content" id="contentwulala">*Digital Product *Programming</div>
+            <div class="viewmore" id="viewmorewulala"><a target="_blank" href="projectwulala.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
+        <div class="project product" id="experienceyelp">
+            <img class="projectimage" src="work/experienceyelp/experienceyelp.png" id="experienceyelpimg1">
+            <div class="projecttitle" id="titleexperienceyelp">Yelp Experience</div>
+            <div class="content" id="contentexperienceyelp">*Digital Product</div>
+            <div class="viewmore" id="viewmoreexperienceyelp"><a target="_blank" href="projectexperienceyelp.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
+
         
-    </div>
 
-    <div id="fnamecopy1"><a> Hi <a id="companyname"></a>,<br>Thank you in advance for your potential interest!<br><br></div>
+<!--         <div class="project" id="fatmonksmalltemple">
+            <img class="projectimage" src="work/fatmonksmalltemple/fatmonksmalltemple.png" id="fatmonksmalltempleimg1">
+            <div class="projecttitle" id="titlefatmonksmalltemple">Fat Monk Small Temple</div>
+            <div class="content" id="contentfatmonksmalltemple">*Prints *Typeface</div>
+            <div class="viewmore" id="viewmorefatmonksmalltemple"><a target="_blank" href="projectfatmonk.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div> -->
 
-    <a href="files/TingyuSu_Resume.pdf" id="fnamecopy2" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #222;">Resume</a>
+        <div class="project motion" id="desire">
+            <img class="projectimage" src="work/desire/desire.png" id="desireimg1">
+            <div class="projecttitle" id="titledesire">Desire & Bless</div>
+            <div class="content" id="contentdesire">*Motion Graphics</div>
+            <div class="viewmore" id="viewmoredesire"><a target="_blank" href="projectdesire.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
 
-    <div class="design"><a id="fnamecopy3" class="design">Previous Experience:<br></a>
-        <!-- <a href="projectrubin.html" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #222;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Graphic Design Intern<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at the Rubin Museum of Art<br></a> -->
-        <!-- <a>&nbsp;&nbsp;*Prints *Social Media *Digital Collaterals<br></a> -->
-        <!-- <a href="projectjanesmith.html" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #222;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Creative Intern<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at the Jane Smith Agency<br></a> -->
-        <!-- <a>&nbsp;&nbsp;*Branding *Motion Graphics *Art Direction *Social Media *Digital Collaterals<br></a> -->
-        <!-- <a href="projectguggenheim.html" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #222;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Graphic Design Intern<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at the Solomon R. Guggenheim Museum<br><br><br></a> -->
-        <!-- <a>&nbsp;&nbsp;*Motion Graphics *Social Media<br><br><br></a> -->
+        <div class="project motion product brand" id="letterc">
+            <iframe src="https://player.vimeo.com/video/389401421" id="lettercvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="projecttitle" id="titleletterc"><br>LetterC</div>
+            <div class="content" id="contentletterc">*Brand *Motion Graphics *Digital Product</div>
+            <div class="viewmore" id="viewmoreletterc"><a target="_blank" href="projectletterc.html" style="text-decoration-line: underline;
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+        </div>
 
-    <div class="design project" id="rubin">
-        <img class="projectimage" src="work/rubin/rubin.png" id="rubinimg1">
-        <div class="projecttitle" id="titlerubin">Rubin Museum of Art</div>
-        <div class="content" id="contentrubin"><br>*Prints<br>*Art Direction<br><br>I started interning at the Rubin Museum of Art as a Graphic Design intern in Jan 2020. I am helping mostly in prints.</div>
-        <div class="viewmore" id="viewmorerubin"><a href="projectrubin.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="design project" id="janesmith">
-        <img class="projectimage" src="work/janesmith/janesmith.png" id="janesmithimg1">
-        <div class="projecttitle" id="titlejanesmith">Jane Smith Agency</div>
-        <div class="content" id="contentjanesmith"><br>*Branding<br>*Motion Graphics<br>*Art Direction<br>*Social Media<br><br>Interning at the Jane Smith, I worked on branding, art direction and social media projects for fashion and beauty brands.</div>
-            <div class="viewmore" id="viewmorejanesmith"><a href="projectjanesmith.html"  style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="design project" id="guggenheim">
-        <img class="projectimage" src="work/guggenheim/guggenheim.png" id="guggenheimimg1">
-        <div class="projecttitle" id="titleguggenheim">Solomon R. Guggenheim Museum</div>
-        <div class="content" id="contentguggenheim"><br>*Motion Graphics<br>*Prints<br><br>I constructed printed and motion graphics projects, from sketches to iterations, and to the final execution, while interning at the Guggenheim Museum.</div>
-        <div class="viewmore" id="viewmoreguggenheim"><a href="projectguggenheim.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="design project" id="es84">
-        <img class="projectimage" src="work/es84/es8401.png" id="es84img1">
-        <div class="projecttitle" id="titlees84">ES-84 at Man-84</div>
-        <div class="content" id="contentes84"><br>*Art Direction<br>*Branding<br><br>I helped with concept development, photography, and preparation of prompts and sets during the early phase of the product development of the perfume line ES-84.</div>
-        <div class="viewmore" id="viewmorees84"><a href="projectes84.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-        <a id="fnamecopy3" class="design">Selected Student Projects:<br></a>
-    </div>
-
-    <div class="project" id="displacement">
-        <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
-        <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
-        <div class="content" id="contentdisplacement"><br>*Branding<br>*Prints<br>*Spatial<br><br>Inspired by Ai Weiwei’s artworks and his life experimence, an exhibition for Ai with a theme of Displacement was designed.</div>
-            <div class="viewmore" id="viewmoredisplacement"><a href="projectdisplacement.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="jinhe">
-        <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
-        <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
-        <div class="content" id="contentjinhe"><br>*Branding<br>*Motion Graphics<br><br>A potential brand identity for my own gallery in the future.</div>
-        <div class="viewmore" id="viewmorejinhe"><a href="projectjinhe.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="lacma">
-        <img class="projectimage" src="work/lacma/lacma.jpg" id="lacmaimg1">
-        <div class="projecttitle" id="titlelacma">LACMA</div>
-        <div class="content" id="contentlacma"><br>*Digital Product<br><br>Redesigning the mobile APP for Los Angeles County Museum of Art with the established identity.</div>
-        <div class="viewmore" id="viewmorelacma"><a href="projectlacma.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="guggenheim">
-        <img class="projectimage" src="work/guggenheim/guggenheim.png" id="guggenheimimg1">
-        <div class="projecttitle" id="titleguggenheim">Solomon R. Guggenheim Museum</div>
-        <div class="content" id="contentguggenheim"><br>*Motion Graphics<br>*Prints<br><br>I constructed printed and motion graphics projects, from sketches to iterations, and to the final execution, while interning at the Guggenheim.</div>
-        <div class="viewmore" id="viewmoreguggenheim"><a href="projectguggenheim.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="rubin">
-        <img class="projectimage" src="work/rubin/rubin.png" id="rubinimg1">
-        <div class="projecttitle" id="titlerubin">Rubin</div>
-        <div class="content" id="contentrubin"><br>*Prints<br>*Art Direction<br><br>I started interning at the Rubin Museum of Art as a Graphic Design intern in Jan 2020. I am helping mostly in prints.</div>
-        <div class="viewmore" id="viewmorerubin"><a href="projectrubin.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="nad">
-        <img class="projectimage" src="work/nad/nad.png" id="nadimg1">
-        <div class="projecttitle" id="titlenad">NAD</div>
-        <div class="content" id="contentnad"><br>*Digital Product<br><br>A website to help the hard of hearing and the deaf community to do research on education.</div>
-        <div class="viewmore" id="viewmorenad"><a href="projectnad.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="proxi">
-        <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="projecttitle" id="titleproxi">proxi</div>
-        <div class="content" id="contentproxi"><br>*Branding<br>*Motion Graphics<br><br>To make the film industry less distant, TV channel proxi is build to help teenagers and young adults, who want to pursue film or film-related path as a career, to learn more about the film industry.</div>
-        <div class="viewmore" id="viewmoreproxi"><a href="projectproxi.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-<!--     <div class="project" id="privacy">
-        <img class="projectimage" src="work/privacy/privacy.png" id="privacyimg1">
-        <div class="projecttitle" id="titleprivacy">Privacy</div>
-        <div class="content" id="contentprivacy"><br>*Prints<br><br>Sex, female body, nudity...are considered as sensitive topics for centuries.</div>
-        <div class="viewmore" id="viewmoreprivacy"><a href="projectprivacy.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="originals">
-        <img class="projectimage" src="work/originals/originals.png" id="originalsimg1">
-        <div class="projecttitle" id="titleoriginals">The Originals</div>
-        <div class="content" id="contentoriginals"><br>*Prints<br><br>A bilingual book series designed based on Wikipedia page "yellow" "red" and "blue". The idea behind the work is to have fun learning about the history and science of the colors.</div>
-        <div class="viewmore" id="viewmoreoriginals"><a href="projectoriginals.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div> -->
-
-    <div class="project" id="wulala">
-        <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
-        <div class="projecttitle" id="titlewulala">Wulala</div>
-        <div class="content" id="contentwulala"><br>*Digital Product<br>*Programming<br><br>Wulala is a game-like learning webpage for kids. This project is aiming to help kids to learn about the world and cities while having a digital drawing board on hand to play with.</div>
-        <div class="viewmore" id="viewmorewulala"><a href="projectwulala.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="experienceyelp">
-        <img class="projectimage" src="work/experienceyelp/experienceyelp.png" id="experienceyelpimg1">
-        <div class="projecttitle" id="titleexperienceyelp">Yelp Experience</div>
-        <div class="content" id="contentexperienceyelp"><br>*Digital Product<br><br>Experience is the key to relationships. Yelp Experience focuses on the journey and time owned between people.</div>
-        <div class="viewmore" id="viewmoreexperienceyelp"><a href="projectexperienceyelp.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project" id="theheaven">
-        <iframe src="https://player.vimeo.com/video/389400733" id="theheavenvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <!-- <img class="projectimage" src="work/theheaven/theheaven.jpg" id="theheavenimg1"> -->
-        <div class="projecttitle" id="titletheheaven">The Heaven</div>
-        <div class="content" id="contenttheheaven"><br>*Motion Graphics<br>*VJ<br><br>In the ideal, bright, seemed-peaceful heaven, would there be any hidden issue? Such as unequal gender power and self-identification?</div>
-        <div class="viewmore" id="viewmoretheheaven"><a href="projecttheheaven.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="letterc">
-        <iframe src="https://player.vimeo.com/video/389401421" id="lettercvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="projecttitle" id="titleletterc">LetterC</div>
-        <div class="content" id="contentletterc"><br>*Motion Graphics<br>*Digital Product<br><br>LetterC Music Space is an app that users can collect purchased music across all other music app platforms, nationally and internationally.</div>
-        <div class="viewmore" id="viewmoreletterc"><a href="projectletterc.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="fatmonksmalltemple">
-        <img class="projectimage" src="work/fatmonksmalltemple/fatmonksmalltemple.png" id="fatmonksmalltempleimg1">
-        <div class="projecttitle" id="titlefatmonksmalltemple">Fat Monk Small Temple</div>
-        <div class="content" id="contentfatmonksmalltemple"><br>*Prints<br>*Typeface<br><br>Designed for the spotlight Mrs.Yicheng Li's SVA MFA Social Documentary Film Thesis 2018 — "Fat Monk, Small Temple."</div>
-        <div class="viewmore" id="viewmorefatmonksmalltemple"><a href="projectfatmonk.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="desire">
-        <img class="projectimage" src="work/desire/desire.png" id="desireimg1">
-        <div class="projecttitle" id="titledesire">Desire & Bless</div>
-        <div class="content" id="contentdesire"><br>*Motion Graphics<br><br>Looking closely into daily desires, five of them are selected - the desire of caffeine, calories, sleep, phone-ing, and shopping. These desires have negative influence on us, more or less. Changing the desires into bless, I hope all students would have a healthy lifestyle.</div>
-        <div class="viewmore" id="viewmoredesire"><a href="projectdesire.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-<!--     <div class="project" id="moving">
-        <img class="projectimage" src="work/moving/moving.png" id="movingimg1">
-        <div class="projecttitle" id="titlemoving">Moving Stuffs</div>
-        <div class="content" id="contentmoving"><br>*Motion Graphics<br><br>A fashion magazine aiming to convey the idea that everyone's style is special to international college students from Asia.</div>
-        <div class="viewmore" id="viewmoremoving"><a href="projectmoving.html">View More</a></div>
-    </div> -->
-<!--     <div class="project" id="janesmith">
-        <img class="projectimage" src="work/janesmith/janesmith.png" id="janesmithimg1">
-        <div class="projecttitle" id="titlejanesmith">Jane Smith</div>
-        <div class="content" id="contentjanesmith"><br>*Branding<br>*Motion Graphics<br>*Art Direction<br>*Social Media<br><br>Interning at the Jane Smith Agency, I worked on branding, art direction and social media projects for fashion and beauty brands.</div>
-            <div class="viewmore" id="viewmorejanesmith"><a href="projectjanesmith.html"  style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div> -->
-<!--     <div class="project" id="randomcontrol">
-        <img class="projectimage" src="work/randomcontrol/randomcontrol.png" id="randomcontrolimg1">
-        <div class="projecttitle" id="titlerandomcontrol">Random (Control, Control);</div>
-        <div class="content" id="contentrandomcontrol"><br>*Prints<br>*Motion Graphics<br>*Typeface<br>*Programming<br><br>A fashion magazine aiming to convey the idea that everyone's style is special to international college students from Asia.</div>
-            <div class="viewmore" id="viewmorerandomcontrol"><a href="projectrandomcontrol.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div> -->
-
-    <div class="project" id="mswho">
-        <img class="projectimage" src="work/mswho/mswho.png" id="mswhoimg1">
-        <div class="projecttitle" id="titlemswho">Ms.Who</div>
-        <div class="content" id="contentmswho"><br>*Prints<br>*Art Direction<br><br>Ms.Who conveys the idea "you are special," to educate viewers to explore and discover their own fashion styles, instead of following others.</div>
-        <div class="viewmore" id="viewmoremswho"><a href="projectmswho.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project" id="Amantes">
-        <img class="projectimage" src="work/amantes/amantes.png" id="Amantesimg1">
-        <div class="projecttitle" id="titleAmantes">AMANTES IN CIVITATEM</div>
-        <div class="content" id="contentAmantes"><br>*Prints<br>*Art Direction<br>*Calligraphy<br><br>Paired with Mariavittoria Salini, we built this fashion lookbook aiming to feature denim in NYC, capturing the nostalgic feeling between two separated lovers through handwritten typography.</div>
-        <div class="viewmore" id="viewmoreAmantes"><a href="projectamantes.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <!-- uiux -->
-    
-    <div class="project uiux" id="lacma">
-        <img class="projectimage" src="work/lacma/lacma.jpg" id="lacmaimg1">
-        <div class="projecttitle" id="titlelacma">LACMA</div>
-        <div class="content" id="contentlacma"><br>*Digital Product<br><br>Redesigning the mobile APP for Los Angeles County Museum of Art with the established identity.</div>
-        <div class="viewmore" id="viewmorelacma"><a href="projectlacma.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project uiux" id="nad">
-        <img class="projectimage" src="work/nad/nad.png" id="nadimg1">
-        <div class="projecttitle" id="titlenad">NAD</div>
-        <div class="content" id="contentnad"><br>*Digital Product<br><br>A website to help the hard of hearing and the deaf community to do research on education.</div>
-        <div class="viewmore" id="viewmorenad"><a href="projectnad.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project uiux" id="wulala">
-        <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
-        <div class="projecttitle" id="titlewulala">Wulala</div>
-        <div class="content" id="contentwulala"><br>*Digital Product<br>*Programming<br><br>Wulala is a game-like learning webpage for kids. This project is aiming to help kids to learn about the world and cities while having a digital drawing board on hand to play with.</div>
-        <div class="viewmore" id="viewmorewulala"><a href="projectwulala.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project uiux" id="experienceyelp">
-        <img class="projectimage" src="work/experienceyelp/experienceyelp.png" id="experienceyelpimg1">
-        <div class="projecttitle" id="titleexperienceyelp">Yelp Experience</div>
-        <div class="content" id="contentexperienceyelp"><br>*Digital Product<br><br>Experience is the key to relationships. Yelp Experience focuses on the journey and time owned between people.</div>
-        <div class="viewmore" id="viewmoreexperienceyelp"><a href="projectexperienceyelp.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project uiux" id="letterc">
-        <iframe src="https://player.vimeo.com/video/389401421" id="lettercvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="projecttitle" id="titleletterc">LetterC</div>
-        <div class="content" id="contentletterc"><br>*Motion Graphics<br>*Digital Product<br><br>LetterC Music Space is an app that users can collect purchased music across all other music app platforms, nationally and internationally.</div>
-        <div class="viewmore" id="viewmoreletterc"><a href="projectletterc.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project uiux" id="guggenheim">
-        <img class="projectimage" src="work/guggenheim/guggenheim.png" id="guggenheimimg1">
-        <div class="projecttitle" id="titleguggenheim">Solomon R. Guggenheim Museum</div>
-        <div class="content" id="contentguggenheim"><br>*Motion Graphics<br>*Prints<br><br>I constructed printed and motion graphics projects, from sketches to iterations, and to the final execution, while interning at the Guggenheim.</div>
-        <div class="viewmore" id="viewmoreguggenheim"><a href="projectguggenheim.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project uiux" id="rubin">
-        <img class="projectimage" src="work/rubin/rubin.png" id="rubinimg1">
-        <div class="projecttitle" id="titlerubin">Rubin</div>
-        <div class="content" id="contentrubin"><br>*Prints<br>*Art Direction<br><br>I started interning at the Rubin Museum of Art as a Graphic Design intern in Jan 2020. I am helping mostly in prints.</div>
-        <div class="viewmore" id="viewmorerubin"><a href="projectrubin.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project uiux" id="janesmith">
-        <img class="projectimage" src="work/janesmith/janesmith.png" id="janesmithimg1">
-        <div class="projecttitle" id="titlejanesmith">Jane Smith</div>
-        <div class="content" id="contentjanesmith"><br>*Branding<br>*Motion Graphics<br>*Art Direction<br>*Social Media<br><br>Interning at the Jane Smith Agency, I worked on branding, art direction and social media projects for fashion and beauty brands.</div>
-            <div class="viewmore" id="viewmorejanesmith"><a href="projectjanesmith.html"  style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
     </div>
 
 
-
-    <!-- design -->
-    <div class="project design" id="displacement">
-        <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
-        <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
-        <div class="content" id="contentdisplacement"><br>*Branding<br>*Prints<br>*Spatial<br><br>Inspired by Ai Weiwei’s artworks and his life experimence, an exhibition for Ai with a theme of Displacement was designed.</div>
-            <div class="viewmore" id="viewmoredisplacement"><a href="projectdisplacement.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="theheaven">
-        <iframe src="https://player.vimeo.com/video/389400733" id="theheavenvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <!-- <img class="projectimage" src="work/theheaven/theheaven.jpg" id="theheavenimg1"> -->
-        <div class="projecttitle" id="titletheheaven">The Heaven</div>
-        <div class="content" id="contenttheheaven"><br>*Motion Graphics<br>*VJ<br><br>In the ideal, bright, seemed-peaceful heaven, would there be any hidden issue? Such as unequal gender power and self-identification?</div>
-        <div class="viewmore" id="viewmoretheheaven"><a href="projecttheheaven.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="proxi">
-        <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div class="projecttitle" id="titleproxi">proxi</div>
-        <div class="content" id="contentproxi"><br>*Branding<br>*Motion Graphics<br><br>To make the film industry less distant, TV channel proxi is build to help teenagers and young adults, who want to pursue film or film-related path as a career, to learn more about the film industry.</div>
-        <div class="viewmore" id="viewmoreproxi"><a href="projectproxi.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="mswho">
-        <img class="projectimage" src="work/mswho/mswho.png" id="mswhoimg1">
-        <div class="projecttitle" id="titlemswho">Ms.Who</div>
-        <div class="content" id="contentmswho"><br>*Prints<br>*Art Direction<br><br>Ms.Who conveys the idea "you are special," to educate viewers to explore and discover their own fashion styles, instead of following others.</div>
-        <div class="viewmore" id="viewmoremswho"><a href="projectmswho.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project design" id="Amantes">
-        <img class="projectimage" src="work/amantes/amantes.png" id="Amantesimg1">
-        <div class="projecttitle" id="titleAmantes">AMANTES IN CIVITATEM</div>
-        <div class="content" id="contentAmantes"><br>*Prints<br>*Art Direction<br>*Calligraphy<br><br>Paired with Mariavittoria Salini, we built this fashion lookbook aiming to feature denim in NYC, capturing the nostalgic feeling between two separated lovers through handwritten typography.</div>
-        <div class="viewmore" id="viewmoreAmantes"><a href="projectamantes.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="jinhe">
-        <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
-        <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
-        <div class="content" id="contentjinhe"><br>*Branding<br>*Motion Graphics<br><br>A potential brand identity for my own gallery in the future.</div>
-        <div class="viewmore" id="viewmorejinhe"><a href="projectjinhe.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="lacma">
-        <img class="projectimage" src="work/lacma/lacma.jpg" id="lacmaimg1">
-        <div class="projecttitle" id="titlelacma">LACMA</div>
-        <div class="content" id="contentlacma"><br>*Digital Product<br><br>Redesigning the mobile APP for Los Angeles County Museum of Art with the established identity.</div>
-        <div class="viewmore" id="viewmorelacma"><a href="projectlacma.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project design" id="wulala">
-        <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
-        <div class="projecttitle" id="titlewulala">Wulala</div>
-        <div class="content" id="contentwulala"><br>*Digital Product<br>*Programming<br><br>Wulala is a game-like learning webpage for kids. This project is aiming to help kids to learn about the world and cities while having a digital drawing board on hand to play with.</div>
-        <div class="viewmore" id="viewmorewulala"><a href="projectwulala.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-<!--     <div class="project design" id="janesmith">
-        <img class="projectimage" src="work/janesmith/janesmith.png" id="janesmithimg1">
-        <div class="projecttitle" id="titlejanesmith">Jane Smith</div>
-        <div class="content" id="contentjanesmith"><br>*Branding<br>*Motion Graphics<br>*Art Direction<br>*Social Media<br><br>Interning at the Jane Smith Agency, I worked on branding, art direction and social media projects for fashion and beauty brands.</div>
-            <div class="viewmore" id="viewmorejanesmith"><a href="projectjanesmith.html"  style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    
-    <div class="project design" id="guggenheim">
-        <img class="projectimage" src="work/guggenheim/guggenheim.png" id="guggenheimimg1">
-        <div class="projecttitle" id="titleguggenheim">Solomon R. Guggenheim Museum</div>
-        <div class="content" id="contentguggenheim"><br>*Motion Graphics<br>*Prints<br><br>I constructed printed and motion graphics projects, from sketches to iterations, and to the final execution, while interning at the Guggenheim.</div>
-        <div class="viewmore" id="viewmoreguggenheim"><a href="projectguggenheim.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project design" id="rubin">
-        <img class="projectimage" src="work/rubin/rubin.png" id="rubinimg1">
-        <div class="projecttitle" id="titlerubin">Rubin</div>
-        <div class="content" id="contentrubin"><br>*Prints<br>*Art Direction<br><br>I started interning at the Rubin Museum of Art as a Graphic Design intern in Jan 2020. I am helping mostly in prints.</div>
-        <div class="viewmore" id="viewmorerubin"><a href="projectrubin.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div> -->
-<!--     <div class="project design" id="fatmonksmalltemple">
-        <img class="projectimage" src="work/fatmonksmalltemple/fatmonksmalltemple.png" id="fatmonksmalltempleimg1">
-        <div class="projecttitle" id="titlefatmonksmalltemple">Fat Monk Small Temple</div>
-        <div class="content" id="contentfatmonksmalltemple"><br>*Prints<br>*Typeface<br><br>Designed for the spotlight Mrs.Yicheng Li's SVA MFA Social Documentary Film Thesis 2018 — "Fat Monk, Small Temple."</div>
-        <div class="viewmore" id="viewmorefatmonksmalltemple"><a href="projectfatmonk.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div> -->
-    <div class="project uiux" id="guggenheim1">
-        <img class="projectimage" src="work/guggenheim/guggenheim.png" id="guggenheimimg1">
-        <div class="projecttitle" id="titleguggenheim">Solomon R. Guggenheim Museum</div>
-        <div class="content" id="contentguggenheim"><br>*Motion Graphics<br>*Prints<br><br>I constructed printed and motion graphics projects, from sketches to iterations, and to the final execution, while interning at the Guggenheim.</div>
-        <div class="viewmore" id="viewmoreguggenheim"><a href="projectguggenheim.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    <div class="project uiux" id="rubin1">
-        <img class="projectimage" src="work/rubin/rubin.png" id="rubinimg1">
-        <div class="projecttitle" id="titlerubin">Rubin</div>
-        <div class="content" id="contentrubin"><br>*Prints<br>*Art Direction<br><br>I started interning at the Rubin Museum of Art as a Graphic Design intern in Jan 2020. I am helping mostly in prints.</div>
-        <div class="viewmore" id="viewmorerubin"><a href="projectrubin.html" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-    <div class="project uiux" id="janesmith1">
-        <img class="projectimage" src="work/janesmith/janesmith.png" id="janesmithimg1">
-        <div class="projecttitle" id="titlejanesmith">Jane Smith</div>
-        <div class="content" id="contentjanesmith"><br>*Branding<br>*Motion Graphics<br>*Art Direction<br>*Social Media<br><br>Interning at the Jane Smith Agency, I worked on branding, art direction and social media projects for fashion and beauty brands.</div>
-            <div class="viewmore" id="viewmorejanesmith"><a href="projectjanesmith.html"  style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #222;">View More</a></div>
-    </div>
-
-    
-
-
-
-
-    <div class="end">Thank you for your time viewing my works : ) 
-    <br>If you would like to see more of my work in a particular direction, I would love to send more!
-    <br>Please contact by emailing to <a href="mailto:hello@sutingyu.com?Subject=Hello" target="_top" style="text-decoration: underline;text-decoration-color: white;">hello@sutingyu.com.</a> Looking forward to hear from you!
-    </div>
+        <div class="end" style="color: black;">Thank you for your time viewing my works : ) 
+            <br>Please email to <a href="mailto:hello@sutingyu.com?Subject=Hello" target="_top" style="text-decoration: underline;text-decoration-color: black;">hello@sutingyu.com</a> about resume, website passcode, and opportunities!
+        </div>
 
 </body>
+</html>

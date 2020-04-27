@@ -1,6 +1,8 @@
+
+
 @font-face{
-    font-family: "Suisse BP Int'l";
-    src:url("Suisse BP Int'l Regular.woff");
+    font-family: "Founders Grotesk";
+    src:url("FoundersGrotesk-Regular.woff");
 }
 
 
@@ -8,15 +10,15 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
     }
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
     }
     .top{
         position: fixed;
@@ -26,7 +28,7 @@
         height: 14vw;
         width:100vw;
         z-index: 10;
-        /*color: #FFF;*/
+        /*color: #000;*/
     }
 
     .mynameen{
@@ -47,7 +49,7 @@
     }
 
     .intro1{
-        color: #FFF;
+        /*color: #000;*/
         position: absolute;
         font-size: 6vw;
         line-height: 6.8vw;
@@ -58,7 +60,7 @@
     }
 
     .intro2{
-        color: #FFF;
+        /*color: #000;*/
         position: absolute;
         font-size: 6vw;
         line-height: 6.8vw;
@@ -69,7 +71,7 @@
     }
 
     .intro3{
-        color: #FFF;
+        /*color: #000;*/
         position: absolute;
         font-size: 6vw;
         line-height: 6.8vw;
@@ -89,20 +91,20 @@
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 64vw;
+        margin-left: 52vw;
         margin-top: 6vw;
     }
 
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 84vw;
+        margin-left: 82vw;
         margin-top: 6vw;
     }
 
     .moving1{
         font-size: 10vw;
-        line-height: 11vw;
+        line-height: 12vw;
         position: absolute;
         margin: 0;
         padding:0;
@@ -112,6 +114,13 @@
     #quote{
         font-size: 10vw;
         line-height: 11vw;
+    }
+
+    #txt{
+        position: absolute;
+        top: 180vw;
+        font-size: 6vw;
+        line-height: 6.8vw;
     }
 }
 
@@ -124,15 +133,15 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        background-color: #000000;
-        font-family: "Suisse BP Int'l";
+        /*background-color: #000000;*/
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
     }
     a{
-        font-family: "Suisse BP Int'l";
+        font-family: "Founders Grotesk";
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
     }
 
     .top{
@@ -183,18 +192,18 @@
     }
 
     .intro3{
-        font-size: 2vw;
-        line-height: 2.3vw;
-        width: auto;
+        font-size: 3vw;
+        line-height: 3.5vw;
+        /*width: 80vw;*/
         position: absolute;
         margin: 0;
         padding: 0;
-        margin-top: 5vw;
+        bottom: 3vw;
         margin-left: 2vw;
         /*background-color: red;*/
     }
 
-    .intro4{
+/*    .intro4{
         font-size: 2vw;
         line-height: 2.3vw;
         width: 30vw;
@@ -203,17 +212,16 @@
         padding: 0;
         margin-top: 5vw;
         margin-left: 36vw;
-        /*background-color: red;*/
-    }
+    }*/
 
     #menuarchive{
-        font-family: "Suisse BP Int'l", sans-serif;
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
-        margin-left: 89.7vw;
+        margin-left: 87vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -222,21 +230,32 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 80vw;
+        margin-left: 70vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
     }
 
     .move{
-        font-family: "Suisse BP Int'l", sans-serif;
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #FFF;
+        /*color: #000;*/
         font-size: 3.55vw;
         position: absolute;
         margin: 0;
         padding:0;
         margin-left: 5vw;
         margin-top: -46vw;
+    }
+
+    #txt{
+        position: absolute;
+        /*top: 40.6vw;*/
+        bottom: 3vw;
+        left: 78vw;
+        /*top: 180vw;*/
+        /*display: inline;*/
+        font-size: 3vw;
+        line-height: 3.5vw;
     }
 }
