@@ -279,9 +279,19 @@
         margin: 0;
         padding: 0;
         border:0;
-        width: 45vw;
-        height: 40vw;
+        width: 50vw;
+        height: 45vw;
         margin-left:-0.3vw; 
+    }
+
+    .iframe6{
+        /*display: inline-block;*/
+        margin: 0;
+        padding: 0;
+        border:0;
+        width: 43vw;
+        height: 43vw;
+        /*margin-left:-0.3vw; */
     }
 
     .top{
@@ -472,7 +482,7 @@
         padding: 0;
         border:0;
         /*width:35vw;*/
-        margin-left: 7vw;
+        margin-left: 2vw;
         display: block;
     }
 
@@ -507,11 +517,11 @@
         padding: 0;
         border:0;
         display: grid;
-        grid-template-columns: 44vw 44vw;
-        grid-template-rows: 45vw 45vw 45vw;
+        grid-template-columns: 47.8vw 46vw;
+        grid-template-rows: 50vw 50vw 50vw;
         padding-top: 2vw;
         /*width:20vw;*/
-        padding-left: 4vw;
+        padding-left: 2vw;
     }
     .guggenheimvideosection2{
         margin:0;
@@ -521,7 +531,7 @@
         grid-template-columns: 44vw 44vw;
         grid-template-rows: 45vw;
         padding-top: 2vw;
-        padding-left: 8vw;
+        padding-left: 2.3vw;
     }
 
     .proxigif{
@@ -591,7 +601,7 @@
         grid-template-rows: 45vw;
         padding-top: 2vw;
         /*width:20vw;*/
-        padding-left: 4vw;
+        /*padding-left: 4vw;*/
     }
 
     .janesmithvideosection2{

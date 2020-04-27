@@ -30,7 +30,7 @@ $( document ).ready(function() {
         // console.log(num);
         num++;
 
-    }, 1800);
+    }, 2000);
 
 });
 
