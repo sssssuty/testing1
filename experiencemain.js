@@ -7,6 +7,41 @@ function myFunction() {
         $(".viewmore").css({"visibility": "visible"});
         // console.log("hahah");
     }
+    if (filter =="BREEL"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="BARREL"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="SUPERUNION"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="FRANKLYN"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="VIVALDI"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="THESHED"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
+    if (filter =="ARTSY"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+        // console.log("hahah");
+    }
 }
 
 function myFunctionAll(){
