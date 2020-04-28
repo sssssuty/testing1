@@ -5,42 +5,62 @@ function myFunction() {
     if (filter =="ALLWORK"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
-    if (filter =="BREEL"){
-        $(".inputbar").css({"display": "none"});
-        $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
-    }
+    // if (filter =="BREEL"){
+    //     $(".inputbar").css({"display": "none"});
+    //     $(".viewmore").css({"visibility": "visible"});
+    // }
     if (filter =="BARREL"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
     if (filter =="SUPERUNION"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
     if (filter =="FRANKLYN"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
     if (filter =="VIVALDI"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
     if (filter =="THESHED"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
     }
-    if (filter =="ARTSY"){
+    // if (filter =="ARTSY"){
+    //     $(".inputbar").css({"display": "none"});
+    //     $(".viewmore").css({"visibility": "visible"});
+    // }
+    if (filter =="ROANDCO"){
         $(".inputbar").css({"display": "none"});
         $(".viewmore").css({"visibility": "visible"});
-        // console.log("hahah");
+    }
+    if (filter =="APPLE"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+    }
+    if (filter =="BBDO"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+    }
+    if (filter =="SOMEODDPILOT"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+    }
+    if (filter =="BYTE"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+    }
+    if (filter =="OGILVY"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
+    }
+    if (filter =="REDANTLER"){
+        $(".inputbar").css({"display": "none"});
+        $(".viewmore").css({"visibility": "visible"});
     }
 }
 
