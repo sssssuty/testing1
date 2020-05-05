@@ -14,103 +14,84 @@
     <title>Work</title>
     <link rel="stylesheet" type="text/css" href="stylework.css">
     <script src="jquery-3.3.1.js"></script>
-    <script src="codemain.js"></script>
+    <script src="workmain.js"></script>
     <meta charset="utf-8">
+    <link rel="icon" href="icon/myfavicon.png" type="image/gif" sizes="16x16">
+
 </head>
 
 <body style="background-color: #f3f3f3;">
     
     <div class="top">
-        <div class="mynameen" href="index.html"><a href="index.html" style="color: black;text-decoration: none;">Tingyu&nbsp;Su</a></div>
-        <a href="experience.html" class="menu" id="menuinfo" style="text-decoration: underline;text-decoration-color: transparent;">Experience</a>
-        <a href="work.html" class="menu" id="menuarchive" style="text-decoration-line: underline;
-  text-decoration-style: wavy; text-decoration-color: #666;">Project</a>
+        <div class="mynameen" href="index.html"><a href="index.html" style="color:black;text-decoration: none;">Tingyu&nbsp;Su</a></div>
+        <a href="about.html" class="menu" id="menuinfo" style="text-decoration: none;">About</a>
+        <a href="work.html" class="menu" id="menuarchive" style="text-decoration-line: none;">·Work·</a>
     </div>
 
-    <div id="fnamecopy4" style="color: black;">Below are some self-initiated projects.<br>Please email me if you would like to see more.</div>
-
-    <div id="placeholder1"></div>
     <div id="placeholder1"></div>
 
-    <button type="button" id="buttonAll" onclick="myFunctionAll()">All(12)</button>
-    <button type="button" id="buttonBrand" onclick="myFunctionBrand()">Brand<!-- (3) --></button>
-    <button type="button" id="buttonMotion" onclick="myFunctionMotion()">Motion<!-- (4) --></button>
-    <button type="button" id="buttonPrint" onclick="myFunctionPrint()">Print<!-- (2) --></button>
-    <button type="button" id="buttonPrint" onclick="myFunctionProduct()">Web&Mobile<!-- (5) --></button>
-
-
-    <div class="inputbar" style="opacity:0;">
-        <input type="text" id="fname" name="firstname" placeholder="🗝 passcode" onkeyup="myFunction()" style="color: black;">
-    </div>
-
-
-<!--     <div id="fnamecopy1"><a> Hi <a id="companyname"></a>,<br>Thank you in advance for your potential interest!<br><br></div>
-
-    <a href="files/TingyuSu_Resume.pdf" id="fnamecopy2" style="text-decoration-line: underline;text-decoration-style: wavy; text-decoration-color: #666;">Resume</a> -->
-
-    <div class="projects brand print">
         <div class="project" id="displacement">
-            <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
-            <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
-            <div class="content" id="contentdisplacement">*Branding *Print *Spatial</div>
-                <div class="viewmore" id="viewmoredisplacement"><a target="_blank" href="projectdisplacement.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectdisplacement.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
+                <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
+                <div class="content" id="contentdisplacement">*Branding *Print *Spatial</div>
+            </a>
         </div>
 
         <div class="project product" id="lacma">
-            <img class="projectimage" src="work/lacma/lacma.png" id="lacmaimg1">
-            <div class="projecttitle" id="titlelacma">LACMA</div>
-            <div class="content" id="contentlacma">*Digital Product</div>
-            <div class="viewmore" id="viewmorelacma"><a target="_blank" href="projectlacma.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectlacma.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/lacma/lacma.png" id="lacmaimg1">
+                <div class="projecttitle" id="titlelacma">LACMA</div>
+                <div class="content" id="contentlacma">*Digital Product</div>
+            </a>
         </div>
 
         <div class="project brand motion" id="proxi">
-            <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <div class="projecttitle" id="titleproxi">proxi</div>
-            <div class="content" id="contentproxi">*Branding *Motion Graphics</div>
-            <div class="viewmore" id="viewmoreproxi"><a target="_blank" href="projectproxi.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectproxi.html" style="text-decoration-line: none;">
+                <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div class="projecttitle" id="titleproxi">proxi</div>
+                <div class="content" id="contentproxi">*Branding *Motion Graphics</div>
+            </a>
         </div>
 
         <div class="project motion" id="theheaven">
-            <iframe src="https://player.vimeo.com/video/389400733" id="theheavenvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <div class="projecttitle" id="titletheheaven">The Heaven</div>
-            <div class="content" id="contenttheheaven">*Motion Graphics *VJ</div>
-            <div class="viewmore" id="viewmoretheheaven"><a target="_blank" href="projecttheheaven.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projecttheheaven.html" style="text-decoration-line: none;">
+                <iframe src="https://player.vimeo.com/video/389400733" id="theheavenvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div class="projecttitle" id="titletheheaven">The Heaven</div>
+                <div class="content" id="contenttheheaven">*Motion Graphics *VJ</div>
+            </a>
         </div>
 
         <div class="project print" id="mswho">
-            <img class="projectimage" src="work/mswho/mswho.png" id="mswhoimg1">
-            <div class="projecttitle" id="titlemswho">Ms.Who</div>
-            <div class="content" id="contentmswho">*Print *Art Direction</div>
-            <div class="viewmore" id="viewmoremswho"><a target="_blank" href="projectmswho.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectmswho.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/mswho/mswho.png" id="mswhoimg1">
+                <div class="projecttitle" id="titlemswho">Ms.Who</div>
+                <div class="content" id="contentmswho">*Print *Art Direction</div>
+            </a>
         </div>
 
         <div class="project print" id="Amantes">
-            <img class="projectimage" src="work/amantes/amantes.png" id="Amantesimg1">
-            <div class="projecttitle" id="titleAmantes">AMANTES IN CIVITATEM</div>
-            <div class="content" id="contentAmantes">*Prints *Art Direction *Calligraphy</div>
-            <div class="viewmore" id="viewmoreAmantes"><a target="_blank" href="projectamantes.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectamantes.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/amantes/amantes.png" id="Amantesimg1">
+                <div class="projecttitle" id="titleAmantes">AMANTES IN CIVITATEM</div>
+                <div class="content" id="contentAmantes">*Prints *Art Direction *Calligraphy</div>
+            </a>
         </div>
 
         <div class="project brand" id="jinhe">
-            <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
-            <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
-            <div class="content" id="contentjinhe">*Branding *Motion Graphics</div>
-            <div class="viewmore" id="viewmorejinhe"><a target="_blank" href="projectjinhe.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectjinhe.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
+                <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
+                <div class="content" id="contentjinhe">*Branding *Motion Graphics</div>
+            </a>
         </div>
 
         <div class="project product" id="nad">
-            <img class="projectimage" src="work/nad/nad.png" id="nadimg1">
-            <div class="projecttitle" id="titlenad">NAD</div>
-            <div class="content" id="contentnad">*Digital Product</div>
-            <div class="viewmore" id="viewmorenad"><a target="_blank" href="projectnad.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectnad.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/nad/nad.png" id="nadimg1">
+                <div class="projecttitle" id="titlenad">NAD</div>
+                <div class="content" id="contentnad">*Digital Product</div>
+            </a>
         </div>
 
     <!--     <div class="project" id="privacy">
@@ -118,7 +99,7 @@
             <div class="projecttitle" id="titleprivacy">Privacy</div>
             <div class="content" id="contentprivacy">*PrintsSex, female body, nudity...are considered as sensitive topics for centuries.</div>
             <div class="viewmore" id="viewmoreprivacy"><a target="_blank" href="projectprivacy.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a>
         </div>
 
         <div class="project" id="originals">
@@ -126,56 +107,46 @@
             <div class="projecttitle" id="titleoriginals">The Originals</div>
             <div class="content" id="contentoriginals">*PrintsA bilingual book series designed based on Wikipedia page "yellow" "red" and "blue". The idea behind the work is to have fun learning about the history and science of the colors.</div>
             <div class="viewmore" id="viewmoreoriginals"><a target="_blank" href="projectoriginals.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+      text-decoration-style: wavy; text-decoration-color: #666;">View More</a>
         </div> -->
 
         <div class="project product" id="wulala">
-            <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
-            <div class="projecttitle" id="titlewulala">Wulala</div>
-            <div class="content" id="contentwulala">*Digital Product *Programming</div>
-            <div class="viewmore" id="viewmorewulala"><a target="_blank" href="projectwulala.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectwulala.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
+                <div class="projecttitle" id="titlewulala">Wulala</div>
+                <div class="content" id="contentwulala">*Digital Product *Programming</div>
+            </a>
         </div>
 
         <div class="project product" id="experienceyelp">
-            <img class="projectimage" src="work/experienceyelp/experienceyelp.png" id="experienceyelpimg1">
-            <div class="projecttitle" id="titleexperienceyelp">Yelp Experience</div>
-            <div class="content" id="contentexperienceyelp">*Digital Product</div>
-            <div class="viewmore" id="viewmoreexperienceyelp"><a target="_blank" href="projectexperienceyelp.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectexperienceyelp.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/experienceyelp/experienceyelp.png" id="experienceyelpimg1">
+                <div class="projecttitle" id="titleexperienceyelp">Yelp Experience</div>
+                <div class="content" id="contentexperienceyelp">*Digital Product</div>
+            </a>
         </div>
 
-        
 
-<!--         <div class="project" id="fatmonksmalltemple">
-            <img class="projectimage" src="work/fatmonksmalltemple/fatmonksmalltemple.png" id="fatmonksmalltempleimg1">
-            <div class="projecttitle" id="titlefatmonksmalltemple">Fat Monk Small Temple</div>
-            <div class="content" id="contentfatmonksmalltemple">*Prints *Typeface</div>
-            <div class="viewmore" id="viewmorefatmonksmalltemple"><a target="_blank" href="projectfatmonk.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
-        </div> -->
 
         <div class="project motion" id="desire">
-            <img class="projectimage" src="work/desire/desire.png" id="desireimg1">
-            <div class="projecttitle" id="titledesire">Desire & Bless</div>
-            <div class="content" id="contentdesire">*Motion Graphics</div>
-            <div class="viewmore" id="viewmoredesire"><a target="_blank" href="projectdesire.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectdesire.html" style="text-decoration-line: none;">
+                <img class="projectimage" src="work/desire/desire.png" id="desireimg1">
+                <div class="projecttitle" id="titledesire">Desire & Bless</div>
+                <div class="content" id="contentdesire">*Motion Graphics</div>
+            </a>
         </div>
 
         <div class="project motion product brand" id="letterc">
-            <iframe src="https://player.vimeo.com/video/389401421" id="lettercvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <div class="projecttitle" id="titleletterc"><br>LetterC</div>
-            <div class="content" id="contentletterc">*Brand *Motion Graphics *Digital Product</div>
-            <div class="viewmore" id="viewmoreletterc"><a target="_blank" href="projectletterc.html" style="text-decoration-line: underline;
-      text-decoration-style: wavy; text-decoration-color: #666;">View More</a></div>
+            <a target="_blank" href="projectletterc.html" style="text-decoration-line: none;">
+                <iframe src="https://player.vimeo.com/video/389401421" id="lettercvideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div class="projecttitle" id="titleletterc"><br>LetterC</div>
+                <div class="content" id="contentletterc">*Brand *Motion Graphics *Digital Product</div>
+            </a>
         </div>
 
-    </div>
 
-
-        <div class="end" style="color: black;">Thank you for your time viewing my works : ) 
-            <br>Please email to <a href="mailto:hello@sutingyu.com?Subject=Hello" target="_top" style="text-decoration: underline;text-decoration-color: black;">hello@sutingyu.com</a> about resume, website passcode, and opportunities!
+        <div class="end" style="color:black;">Thank you for your time viewing my works : ) 
+            <br>Please email to <a href="mailto:hello@sutingyu.com?Subject=Hello" target="_top" style="text-decoration: underline;text-decoration-color:black;">hello@sutingyu.com</a> about resume, website passcode, and opportunities!
         </div>
 
 </body>

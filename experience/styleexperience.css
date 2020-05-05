@@ -15,13 +15,13 @@
         background-color: #f3f3f3;
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
+        color: #f3f3f3;
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
+        color: #f3f3f3;
     }
 
     .top{
@@ -32,7 +32,7 @@
         height: 14vw;
         width:100vw;
         z-index: 10;
-        color: #000;
+        color: #f3f3f3;
     }
 
     .mynameen{
@@ -40,7 +40,7 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
-        color: #000;
+        color: #f3f3f3;
     }
 
     .menu{
@@ -50,7 +50,7 @@
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
-        color: #000;
+        color: #f3f3f3;
     }
 
     #menuarchive{
@@ -58,7 +58,7 @@
         position: absolute;
         margin-left: 82vw;
         margin-top: 6vw;
-        color: #000;
+        color: #f3f3f3;
     }
 
     #menuinfo{
@@ -157,7 +157,7 @@
         height: 10vw;
         box-sizing: border-box;
         border: 0px solid #555;
-        border-bottom: 1vw solid #000;
+        border-bottom: 1vw solid #f3f3f3;
         outline: none;
         background-color: #f3f3f3;
         font-family: "Founders Grotesk";
@@ -255,13 +255,13 @@
         background-color: #f3f3f3;
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
+        color: #f3f3f3;
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
+        color: #f3f3f3;
     }
 
     .top{
@@ -296,7 +296,7 @@
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #000;
+        color: #f3f3f3;
         font-size: 2vw;
         position: absolute;
         margin-left: 87vw;
@@ -388,7 +388,7 @@
         height:3vw;
         box-sizing: border-box;
         border: 0px solid #555;
-        border-bottom: 0.3vw solid #000;
+        border-bottom: 0.3vw solid #f3f3f3;
         outline: none;
         background-color: #f3f3f3;
         width: 23vw;

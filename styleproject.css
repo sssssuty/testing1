@@ -12,16 +12,14 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        /*background-color: #000000;*/
+        /*background-color: #f3f3f3000;*/
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
     }
 
     .top{
@@ -40,7 +38,6 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
-        color: #000;
     }
 
     .menu{
@@ -50,7 +47,6 @@
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
-        color: #000;
     }
 
     #menuarchive{
@@ -58,7 +54,6 @@
         position: absolute;
         margin-left: 82vw;
         margin-top: 6vw;
-        color: #000;
     }
 
     #menuinfo{
@@ -227,17 +222,15 @@
     body{
         border:0;
         margin:2vw;
-        /*background-color: #000000;*/
+        /*background-color: #f3f3f3000;*/
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
         /*overflow: hidden;*/
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: #000;
     }
 
     img{
@@ -307,7 +300,7 @@
 
     .mynameen{
         font-style: 100;
-        font-size: 1.9vw;
+        font-size: 2vw;
         position: absolute;
         margin-left: 2vw;
         margin-right: 55vw;
@@ -326,10 +319,9 @@
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: #000;
         font-size: 2vw;
         position: absolute;
-        margin-left: 87vw;
+        margin-left: 88.5vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -338,7 +330,7 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 70vw;
+        margin-left: 75vw;
         margin-top: 4.3vw;
 
     }
