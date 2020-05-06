@@ -58,7 +58,7 @@
         line-height: 6.8vw;
         width: 90vw;
         margin-top:15vw;
-        margin-bottom: 10vw;
+        /*margin-bottom: 10vw;*/
     }
 
     .intro3{
@@ -180,8 +180,8 @@
         font-size: 3vw;
         margin: 0;
         padding: 0;
-        padding-top: 5vw;
-        padding-left: 2vw;
+        /*padding-top: 5vw;*/
+        /*padding-left: 2vw;*/
     }
 
     .intro3{

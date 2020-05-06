@@ -379,12 +379,18 @@
         margin-right: 1vw;
         display: inline;
         width: 45vw;
-        height: 45vw;
+        height: 40vw;
         float: left;
     }
 
     .project:hover{
-        opacity: 0.8;
+        /*opacity: 0.8;*/
+        /*border: 1vw solid black;*/
+        /*background-color: black;*/
+
+        border: 0.5vw solid transparent;
+        /*box-shadow: inset 0px 0px 0px 10px red;*/
+        box-sizing: border-box;
     }
 
 /*    .projects:after {
@@ -396,14 +402,6 @@
     * {
         box-sizing: border-box;
     }*/
-
-    .end{
-        font-size: 1.8vw;
-        line-height: 2.2vw;
-        /*display: none;*/
-        margin-left: 2vw;
-        margin-top: 10vw;
-    }
 
     .inputbar{
         padding-left: 2vw;
@@ -512,5 +510,13 @@
     input[type=text]:focus  {
         background-color: #8842d5;
     }*/
+
+    .end{
+        position: absolute;
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+        margin-left: 2vw;
+        top: 260vw;
+    }
 
 }
