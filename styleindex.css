@@ -131,10 +131,13 @@
         margin:2vw;
         font-family: "Founders Grotesk";
         font-style: 100;
+        /*cursor: url(cursor.png), auto;*/
+
     }
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
+        /*cursor: url(cursor.png), auto;*/
     }
 
     .top{
