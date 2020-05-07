@@ -302,7 +302,7 @@
         color: black;
         font-size: 2vw;
         position: absolute;
-        margin-left: 89.2vw;
+        margin-left: 88.2vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -328,7 +328,7 @@
     }
 
     .projectimage{
-        width: 92vw;
+        width: 43vw;
         height: auto;
         margin: 0;
         padding: 0;
@@ -354,11 +354,20 @@
         color: black;
     }
 
+/*    .viewmore{
+        font-size: 2vw;
+        line-height: 2.3vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 34.5vw;
+        color: black;
+    }*/
+
     .iframe1{
         margin: 0;
         padding: 0;
-        width: 92vw;
-        height: 52vw;
+        width: 43vw;
+        height: 25vw;
         margin-top: -0.5vw;
         /*margin-bottom: -6vw;*/
     }
@@ -366,8 +375,8 @@
     .iframe2{
         margin: 0;
         padding: 0;
-        width: 92vw;
-        height: 70vw;
+        width: 43vw;
+        height: 33vw;
         margin-top: -0.5vw;
         margin-bottom: -5vw;
     }
@@ -378,8 +387,8 @@
         /*margin-bottom: 10vw;*/
         margin-left: 2vw;
         margin-right: 3vw;
-        /*display: inline;*/
-        width: 92vw;
+        display: inline;
+        width: 43vw;
         /*height: 40vw;*/
         float: left;
     }
@@ -398,11 +407,24 @@
     .project1{
         margin: 0;
         padding:0;
+        /*margin-bottom: 10vw;*/
+        /*margin-left: 2vw;*/
+        /*margin-right: 3vw;*/
         display: inline;
         width: 40vw;
-        height: 5vw;
+        height: 10vw;
         float: left;
     }
+
+/*    .projects:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    * {
+        box-sizing: border-box;
+    }*/
 
     .inputbar{
         padding-left: 2vw;
@@ -517,7 +539,7 @@
         font-size: 1.8vw;
         line-height: 2.2vw;
         margin-left: 2vw;
-        top: 580vw;
+        top: 260vw;
     }
 
 }
