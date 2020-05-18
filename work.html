@@ -12,9 +12,9 @@
     </script>
 
     <title>Work</title>
-    <link rel="stylesheet" type="text/css" href="stylework.css">
+    <link rel="stylesheet" type="text/css" href="stylearchive.css">
     <script src="jquery-3.3.1.js"></script>
-    <script src="workmain.js"></script>
+    <script src="archivemain.js"></script>
     <meta charset="utf-8">
     <link rel="icon" href="icon/myfavicon.png" type="image/gif" sizes="16x16">
 
@@ -22,59 +22,164 @@
 
 <body style="background-color: #f3f3f3;">
     
-    <div class="top">
+    <div class="top" id="topmenu">
         <div class="mynameen" href="index.html"><a href="index.html" style="color:black;text-decoration: none;">Tingyu&nbsp;Su</a></div>
-        <a href="about.html" class="menu" id="menuinfo" style="text-decoration: none;">About</a>
-        <a href="work.html" class="menu" id="menuarchive" style="text-decoration-line: none;">·Work·</a>
+        <a href="about.html" id="menuinfo" style="text-decoration: none;">About</a>
+        <a href="work.html" id="menuarchive" style="text-decoration-line: none;">·Work·</a>
     </div>
 
-    <!-- <div class="project1"></div> -->
-
-    <a target="_blank" class="project" id="wulala" href="projectwulala.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;">
-        <div class="projecttitle" id="titlewulala">Wulala</div>
-        <div class="content" id="contentwulala">· Digital Product · Programming</div>
-        <img class="projectimage" src="work/wulala/wulala.png" id="wulalaimg1">
-    </a>
-
-    <!-- <div id="placeholder1"></div> -->
-
-    <a target="_blank" class="project" id="displacement" href="projectdisplacement.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;">
-        <div class="projecttitle" id="titledisplacement">DISPLACEMENT</div>
-        <div class="content" id="contentdisplacement">· Branding · Print · Spatial</div>
-        <img class="projectimage" src="work/displacement/displacement.png" id="displacementimg1">
-    </a>
-
-    <!-- <div class="project1"></div> -->
-
-    <a target="_blank" class="project" id="lacma" href="projectlacma.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;">
-        <div class="projecttitle" id="titlelacma">LACMA</div>
-        <div class="content" id="contentlacma">· Digital Product</div>
-        <img class="projectimage" src="work/lacma/lacma.png" id="lacmaimg1">
-    </a>
-
-    <!-- <div class="project1"></div> -->
-
-    <a target="_blank" class="project" id="proxi" href="projectproxi.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;">
-        <div class="projecttitle" id="titleproxi">proxi</div>
-        <div class="content" id="contentproxi">· Branding · Motion Graphics</div>
-        <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" class="iframe1" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </a>
-
-    <!-- <div class="project1"></div> -->
-
-    <a target="_blank" class="project" id="jinhe" href="projectjinhe.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;">
-        <div class="projecttitle" id="titlejinhe">Jin•He Gallery</div>
-        <div class="content" id="contentjinhe">· Branding · Motion Graphics</div>
-        <img class="projectimage" src="work/jinhe/jinhe.png" id="jinheimg1">
-    </a>
+    <div id="placeholder1"></div>
 
 
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectproxi.html')">
+        <a class="projecttitle">01. proxi</a>
+        <a class="projecttag">Branding · Motion Graphics<br></a>
+        <div class="projectPhotoBig1">
+            <iframe src="https://player.vimeo.com/video/369473892?title=0&byline=0&portrait=0" class="projectIframeBig" id="proxivideo1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <img class="projectImageBig2" src="work/proxi/proxi2.gif">
+            <img class="projectImageBig2" src="work/proxi/proxi4.gif">
+        </div>
+    </div>
+
+    <div target="_blank" class="project2" href="projectwulala.html" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectwulala.html')">
+        <a class="projecttitle">02. Wulala</a>
+        <a class="projecttag">Branding · Digital Product · Programming<br></a>
+        <div class="projectPhotoBig1">
+            <img class="projectImageBig" src="work/wulala/thumbnail1.png">
+            <img class="projectImageBig2" src="work/wulala/thumbnail2.png">
+            <img class="projectImageBig2" src="work/wulala/thumbnail3.png">
+        </div>
+    </div>
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectenkaiti.html')">
+        <a class="projecttitle">03. En KaiTi</a>
+        <a class="projecttag">Typeface Design<br></a>
+        <div class="projectPhotoBig2">
+            <img class="projectImageBig" src="work/enkaiti/enkaiti1.jpg">
+            <img class="projectImageBig2" src="work/enkaiti/enkaiti2.jpg">
+            <img class="projectImageBig2" src="work/enkaiti/enkaiti3.png">
+        </div>
+    </div>
+
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectyulin.html')">
+        <a class="projecttitle">04. yulin</a>
+        <a class="projecttag">Branding · Programming<br></a>
+        <div class="projectPhotoBig2">
+            <img class="projectImageBig" src="work/yulin/thumbnail1.png">
+            <img class="projectImageBig2" src="work/yulin/thumbnail2.png">
+            <img class="projectImageBig2" src="work/yulin/thumbnail3.png">
+        </div>
+    </div>
+
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectrandomcontrol.html')">
+        <a class="projecttitle">05. Random(control, control);</a>
+        <a class=projecttag>Book · 3D Animation · Typeface · Programming<br></a>
+        <div class="projectPhotoBig1">
+            <img class="projectImageBig" src="work/randomcontrol/randomcontrol1.gif">
+            <img class="projectImageBig2" src="work/randomcontrol/randomcontrol2.png">
+            <img class="projectImageBig2" src="work/randomcontrol/racoco.png">
+        </div>
+    </div>
+
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectguggenheim.html')">
+        <a class="projecttitle">06. Guggenheim</a>
+        <a class="projecttag">Campaign · Motion<br></a>
+        <div class="projectPhotoBig1">
+            <img class="projectImageBig" src="work/guggenheim/thumbnail1.png">
+            <img class="projectImageBig2" src="work/guggenheim/experienceguggenheim1.png">
+            <img class="projectImageBig2" src="work/guggenheim/experienceguggenheim3.png">
+        </div>
+    </div>
+
+
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projecttheheaven.html')">
+        <a class="projecttitle">07. The Heaven</a>
+        <a class="projecttag">3D Motion · VJ<br></a>
+        <div class="projectPhotoBig1">
+            <iframe src="https://player.vimeo.com/video/389400733" class="projectIframeBig2" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <img class="projectImageBig2" src="work/theheaven/theheaven3.png">
+            <img class="projectImageBig2" src="work/theheaven/theheaven5.png">
+        </div>
+    </div>
+
+    <div target="_blank" class="project2" style="text-decoration-line: none;cursor: url(cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('projectlacma.html')">
+        <a class="projecttitle">08. LACMA</a>
+        <a class=projecttag>Mobile<br></a>
+        <div class="projectPhotoBig1">
+            <img class="projectImageBig" src="work/lacma/lacma.png">
+            <img class="projectImageBig2" src="work/lacma/lacma6.jpg">
+            <img class="projectImageBig2" src="work/lacma/lacma21.png">
+        </div>
+    </div>
 
 
 
 
-    <div class="end" style="color:black;">Thank you for your time viewing my works : ) 
-        <br>Contact via <a href="mailto:hello@sutingyu.com?Subject=Hello" target="_top" style="text-decoration: underline;text-decoration-color:black;">hello@sutingyu.com</a> to view more or set up a chat!<br><br>
+    <!-- onclick="myFunctionEnlargeBig(this, '30vw')" -->
+
+
+
+
+
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo9')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('projectladetresse.html')">
+        <a class=projecttitle>09. La Detresse</a>
+        <a class=projecttag>Campaign · Motion<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo9" src="work/janesmith/ld1.jpg">
+            <img class="projectImageSmall" src="work/janesmith/ld2.jpg">
+            <img class="projectImageSmall" src="work/janesmith/ld3.jpg">
+        </div>
+    </div>
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo10')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('projectsubhub.html')">
+        <a class=projecttitle>10. Subhub</a>
+        <a class=projecttag>Branding · Mobile<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo10" src="work/proxi/proxi1.gif">
+            <img class="projectImageSmall" src="work/proxi/proxi2.gif">
+            <img class="projectImageSmall" src="work/proxi/proxi3.gif">
+            <img class="projectImageSmall" src="work/proxi/proxi4.gif">
+        </div>
+    </div>
+
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo11')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('projectdisplacement.html')">
+        <a class=projecttitle>11. DISPLACEMENT</a>
+        <a class=projecttag>Branding · Exhibition<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo11" src="work/displacement/displacement.png">
+            <img class="projectImageSmall" src="work/displacement/displacement15.png">
+            <img class="projectImageSmall" src="work/displacement/displacement14.png">
+            <img class="projectImageSmall" src="work/displacement/displacement11.png">
+            <img class="projectImageSmall" src="work/displacement/displacement19.png">
+        </div>
+    </div>
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo12')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('https://es-84.com/')">
+        <a class=projecttitle>12. Man 84</a>
+        <a class=projecttag>Campaign<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo12" src="work/es84/es8401.png">
+            <img class="projectImageSmall" src="work/es84/es8402.png">
+        </div>
+    </div>
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo13')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('projectmswho.html')">
+        <a class=projecttitle>13. Ws.Who</a>
+        <a class=projecttag>Fashion Magazine<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo13" src="work/mswho/mswho1.png">
+            <img class="projectImageSmall" src="work/mswho/mswho3.png">
+            <img class="projectImageSmall" src="work/mswho/mswho4.png">
+            <img class="projectImageSmall" src="work/mswho/mswho5.png">
+            <img class="projectImageSmall" src="work/mswho/mswho7.png">
+        </div>
+    </div>
+    <div class="project" onmouseover="myFunctionEnlargeSmall(this, '20vw', 'photo14')" onmouseout="myFunctionShrink(this, '5vw')" onclick="myFunctionEnlargeBig('projectamantes.html')">
+        <a class=projecttitle>14. Amantes in Civitatem</a>
+        <a class=projecttag>Fashion Magazine<br></a>
+        <div class="projectphoto">
+            <img class="projectImageSmall" id="photo14" src="work/amantes/amantes1.png">
+            <img class="projectImageSmall" src="work/amantes/amantes3.png">
+            <img class="projectImageSmall" src="work/amantes/amantes4.png">
+            <img class="projectImageSmall" src="work/amantes/amantes5.png">
+            <img class="projectImageSmall" src="work/amantes/amantes9.png">
+        </div>
     </div>
 
 </body>
