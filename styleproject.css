@@ -286,16 +286,19 @@
         height: 43vw;
         /*margin-left:-0.3vw; */
     }
-
     .top{
         position: fixed;
-        background-color: none;
+        background-color: #f3f3f3;
         margin: 0;
         margin-top: -4vw;
         padding: 0;
-        height: 8.5vw;
+        height: 6.5vw;
         width:100vw;
         z-index: 10;
+    }
+
+    #topmenu{
+        transition-duration: 0.3s;
     }
 
     .mynameen{
