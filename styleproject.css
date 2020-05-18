@@ -52,14 +52,14 @@
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 82vw;
+        margin-left: 84.5vw;
         margin-top: 6vw;
     }
 
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 52vw;
+        margin-left: 62vw;
         margin-top: 6vw;
     }
 
@@ -332,7 +332,16 @@
         position: absolute;
         margin-left: 75vw;
         margin-top: 4.3vw;
+    }
 
+    .mynameenhover:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    #menuarchive:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    #menuinfo:hover{
+        cursor: url(cursor-hover.png), auto;
     }
 
     .projecttitle{

@@ -87,14 +87,14 @@
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 52vw;
+        margin-left: 62vw;
         margin-top: 6vw;
     }
 
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 82vw;
+        margin-left: 84.5vw;
         margin-top: 6vw;
     }
 
@@ -170,6 +170,16 @@
         text-decoration-color: white;
     }
 
+    .mynameenhover:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    #menuarchive:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    #menuinfo:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+
     .intro1{
         font-size: 5vw;
         line-height: 5.5vw;
@@ -177,6 +187,7 @@
         padding-top: 5vw;
         margin-left: 2vw;
     }
+
 
     .intro2{
         width: 76vw;
