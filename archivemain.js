@@ -12,20 +12,21 @@ function myFunctionEnlargeBig(clr) {
 function myFunctionShrink(elmnt,clr) {
     // console.log("haha");
     elmnt.style.height = clr;
-    // document.getElementById('photo1').style.animationName = "animationTwo";
-    // document.getElementById('photo2').style.animationName = "animationTwo";
-    // document.getElementById('photo3').style.animationName = "animationTwo";
-    // document.getElementById('photo4').style.animationName = "animationTwo";
-    // document.getElementById('photo5').style.animationName = "animationTwo";
-    // document.getElementById('photo6').style.animationName = "animationTwo";
-    // document.getElementById('photo7').style.animationName = "animationTwo";
-    // document.getElementById('photo8').style.animationName = "animationTwo";
+    // document.getElementById('photo0').style.animationName = "animationTwo";
+    document.getElementById('photo1').style.animationName = "animationTwo";
+    document.getElementById('photo2').style.animationName = "animationTwo";
+    document.getElementById('photo3').style.animationName = "animationTwo";
+    document.getElementById('photo4').style.animationName = "animationTwo";
+    document.getElementById('photo5').style.animationName = "animationTwo";
+    document.getElementById('photo6').style.animationName = "animationTwo";
+    document.getElementById('photo7').style.animationName = "animationTwo";
+    document.getElementById('photo8').style.animationName = "animationTwo";
     document.getElementById('photo9').style.animationName = "animationTwo";
     document.getElementById('photo10').style.animationName = "animationTwo";
     document.getElementById('photo11').style.animationName = "animationTwo";
     document.getElementById('photo12').style.animationName = "animationTwo";
-    document.getElementById('photo13').style.animationName = "animationTwo";
-    document.getElementById('photo14').style.animationName = "animationTwo";
+    // document.getElementById('photo13').style.animationName = "animationTwo";
+    // document.getElementById('photo14').style.animationName = "animationTwo";
     // document.getElementById('photo15').style.animationName = "animationTwo";
     // document.getElementById('photo16').style.animationName = "animationTwo";
 }
