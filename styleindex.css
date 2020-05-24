@@ -170,7 +170,7 @@
         text-decoration-color: white;
     }
 
-    .mynameenhover:hover{
+    .mynameen:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuarchive:hover{
