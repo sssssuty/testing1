@@ -1,7 +1,7 @@
-@font-face{
+/*@font-face{
     font-family: "Suisse BP Int'l";
     src:url("Suisse BP Int'l Regular.woff");
-}
+}*/
 
 @font-face{
     font-family: "Founders Grotesk";
@@ -66,8 +66,11 @@
         margin-left: 62vw;
         margin-top: 6vw;
     }
-
+/*
     .mynameen:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    .mynameenhover:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuarchive:hover{
@@ -75,7 +78,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }
+    }*/
 
     #placeholder1{
         margin:0;
@@ -94,9 +97,9 @@
         float: left;
     }
 
-    .project:hover{
+/*    .project:hover{
         cursor: url(cursor-hover.png), auto;
-    }
+    }*/
 
     .project2{
         height: auto;
@@ -108,10 +111,10 @@
         float: left;
     }
 
-    .project2:hover{
+   /* .project2:hover{
         cursor: url(cursor-hover.png), auto;
     }
-
+*/
 
     .projectphoto{
         width: 180vw;
@@ -225,7 +228,7 @@
         margin-top: 4.3vw;
     }
 
-    .mynameenhover:hover{
+/*    .mynameenhover:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuarchive:hover{
@@ -233,7 +236,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }
+    }*/
 
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;

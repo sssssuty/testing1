@@ -170,7 +170,10 @@
         text-decoration-color: white;
     }
 
-    .mynameen:hover{
+/*    .mynameen:hover{
+        cursor: url(cursor-hover.png), auto;
+    }
+    .mynameenhover:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuarchive:hover{
@@ -178,7 +181,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }
+    }*/
 
     .intro1{
         font-size: 5vw;
