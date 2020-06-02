@@ -33,7 +33,7 @@
         color:000FF;
     }
 
-    .mynameen{
+    #mynameen{
         font-size: 4vw;
         position: absolute;
         margin-right: 40vw;
@@ -252,9 +252,18 @@
     .iframe3{
         margin: 0;
         padding: 0;
-        margin-left: 8vw;
-        width: 80vw;
-        height: 70vw;
+        margin-left: 2vw;
+        width: 92vw;
+        height: 58vw;
+        border:0;
+    }
+
+    .iframe31{
+        margin: 0;
+        padding: 0;
+        margin-left: 2vw;
+        width: 92vw;
+        height: 43vw;
         border:0;
     }
 
@@ -301,7 +310,7 @@
         transition-duration: 0.3s;
     }
 
-    .mynameen{
+    #mynameen{
         font-style: 100;
         font-size: 2vw;
         position: absolute;
@@ -337,7 +346,7 @@
         margin-top: 4.3vw;
     }
 
-/*    .mynameen:hover{
+    #mynameen:hover{
         cursor: url(cursor-hover.png), auto;
     }
     .mynameenhover:hover{
@@ -348,7 +357,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }*/
+    }
 
     .projecttitle{
         font-size: 3vw;
@@ -476,7 +485,7 @@
         margin: 0;
         padding: 0;
         border:0;
-        /*width:35vw;*/
+        width:58vw;
         margin-left: 2vw;
         margin-top: 5vw;
         display: block;
@@ -530,6 +539,7 @@
         /*width:20vw;*/
         padding-left: 2vw;
     }
+
     .guggenheimvideosection2{
         margin:0;
         padding: 0;
@@ -544,18 +554,22 @@
     .proxigif{
         margin: 0;
         padding: 0;
-        width:35vw;
+        width: 44.8vw;
         height:auto;
-        margin-left: 8vw;
+        margin-left: 2vw;
         margin-bottom: 2vw;
     }
 
     .proxiiframe{
         margin: 0;
         padding: 0;
-        width:78.4vw;
-        height:48vw;
-        margin-left: 8vw;
+        width:92vw;
+        height:55vw;
+        margin-left: 2vw;
+    }
+
+    #enkaitiTypable:hover{
+        cursor: auto;
     }
 
     .wulalaimg{

@@ -27,7 +27,7 @@
         z-index: 10;
     }
 
-    .mynameen{
+    #mynameen{
         font-size: 4vw;
         position: absolute;
         margin-right: 40vw;
@@ -151,7 +151,7 @@
         z-index: 10;
     }
 
-    .mynameen{
+    #mynameen{
         font-style: 100;
         font-size: 2vw;
         position: absolute;
@@ -170,7 +170,7 @@
         text-decoration-color: white;
     }
 
-/*    .mynameen:hover{
+    #mynameen:hover{
         cursor: url(cursor-hover.png), auto;
     }
     .mynameenhover:hover{
@@ -181,7 +181,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }*/
+    }
 
     .intro1{
         font-size: 5vw;

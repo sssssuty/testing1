@@ -34,7 +34,7 @@
         color: black;
     }
 
-    .mynameen{
+    #mynameen{
         font-size: 4vw;
         position: absolute;
         margin-right: 40vw;
@@ -219,7 +219,7 @@
         transition-duration: 0.3s;
     }
 
-    .mynameen{
+    #mynameen{
         font-style: 100;
         font-size: 2vw;
         position: absolute;
@@ -228,7 +228,7 @@
         margin-top: 4.3vw;
     }
 
-/*    .mynameenhover:hover{
+    #mynameen:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuarchive:hover{
@@ -236,7 +236,7 @@
     }
     #menuinfo:hover{
         cursor: url(cursor-hover.png), auto;
-    }*/
+    }
 
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
