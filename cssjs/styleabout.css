@@ -2,7 +2,7 @@
 
 @font-face{
     font-family: "Founders Grotesk";
-    src:url("FoundersGrotesk-Regular.woff");
+    src:url("../fonts/FoundersGrotesk-Regular.woff");
 }
 
 
@@ -118,6 +118,12 @@
         font-size: 6vw;
         line-height: 6.8vw;
     }
+
+    #placeholder1{
+        margin:0;
+        width: 50vw;
+        height: 10vw;
+    }
 }
 
 
@@ -219,8 +225,10 @@
     .intro5{
         font-size: 1.9vw;
         margin-left: 2vw;
-        position: absolute;
-        bottom: 2vw;
+        width: 62vw;
+        padding-top: 5.2vw;
+        /*position: absolute;*/
+        /*bottom: 2vw;*/
     }
 
 
@@ -239,7 +247,7 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 74.7vw;
+        margin-left: 88.7vw;
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -262,5 +270,11 @@
         left: 84.5vw;
         font-size: 1.9vw;
         /*line-height: 3.5vw;*/
+    }
+
+    #placeholder1{
+        margin:0;
+        width: 50vw;
+        height: 6vw;
     }
 }

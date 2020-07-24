@@ -5,7 +5,7 @@
 
 @font-face{
     font-family: "Founders Grotesk";
-    src:url("FoundersGrotesk-Regular.woff");
+    src:url("../fonts/FoundersGrotesk-Regular.woff");
 }
 
 /*mobile*/
@@ -204,7 +204,7 @@
         color: black;
     }
 
-    .top{
+/*    .top{
         position: fixed;
         background-color: #f3f3f3;
         margin: 0;
@@ -230,8 +230,8 @@
 
     #mynameen:hover{
         cursor: url(cursor-hover.png), auto;
-    }
-    #menuarchive:hover{
+    }*/
+/*    #menuarchive:hover{
         cursor: url(cursor-hover.png), auto;
     }
     #menuinfo:hover{
@@ -257,7 +257,7 @@
         margin-top: 4.3vw;
         text-decoration: underline;
         text-decoration-color: white;
-    }
+    }*/
 
     #placeholder1{
         margin:0;
@@ -265,14 +265,12 @@
         height: 6vw;
     }
     .end{
-        /*position: absolute;*/
         font-size: 1.8vw;
         line-height: 2.2vw;
         margin-left: 2vw;
-        /*padding-top: 10vw;*/
     }
 
-    .menu{
+/*    .menu{
         background-color: #f3f3f3;
         position: fixed;
         margin: 0;
@@ -281,7 +279,7 @@
         font-size: 2vw;
         padding-top: 1.8vw;
         top:-0.3vw;
-    }
+    }*/
 
     .project{
         height: 5vw;
@@ -343,7 +341,7 @@
     .projectPhotoBig1{
         display: grid;
         grid-template-columns: auto auto;
-        grid-template-rows: 17vw auto;
+        grid-template-rows: 18.25vw auto;
     }
 
     .projectPhotoBig2{
@@ -356,7 +354,7 @@
         width: 63vw;
         grid-row-start: 1;
         grid-row-end: 3;
-        padding-bottom: 3vw;
+        padding-bottom: 6vw;
     }
 
     .projectIframeBig{
@@ -376,8 +374,9 @@
     }
 
     .projectImageBig2{
-        width: 27vw;
+        width: 28vw;
         margin-left: 1.2vw;
+        /*padding-bottom: 1vw;*/
     }
 
     .projectImageSmall{
