@@ -12,13 +12,10 @@
     </script>
 
     <title>Tingyu Su</title>
-    <link rel="stylesheet" type="text/css" href="cssjs/stylearchive.css">
-    <script src="cssjs/jquery-3.3.1.js"></script>
-    <script src="cssjs/archivemain.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="cssjs/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="cssjs/indexstyle.css">
     <script src="cssjs/jquery-3.3.1.js"></script>
     <script src="cssjs/indexmain.js"></script>
+    <script src="cssjs/topmenuscroll.js"></script>
 
     <meta charset="utf-8">
     <link rel="icon" href="icon/myfavicon.png" type="image/gif" sizes="16x16">
@@ -27,24 +24,19 @@
 <body id="bbody" onload="startTime()" style="background-color: #f3f3f3; color:black;">
      
     
-    <div class="top">
+    <div class="top" id="topmenu">
         <a href="index.html" id="mynameen" style="text-decoration-line: none;color:black;">·Tingyu&nbsp;Su·</a>
         <a href="about.html" class="menu" id="menuinfo" style="text-decoration: underline;text-decoration-color: transparent;color:black;">About</a>
-<!--         <a href="work.html" class="menu" id="menuarchive" style="text-decoration: underline;text-decoration-color: transparent;color:black;">Work</a> -->
     </div>
 
     <div id="placeholder1"></div>
     <div id="placeholder1"></div>
 
-    <div>
-        <div class="intro1" id="quote">
-        A Designer + Creative Coder who<br><a id="moving1">believes in the power of design.</a>
-        </div>
-        <div class="intro5">
-            <a href="mailto:hello@sutingyu.com?Subject=Hello" style="text-decoration-color: transparent;color:black;"><br><br><br><br><br>hello@sutingyu.com
-            </a>
-        </div>
+    <div class="intro1">A Designer + Creative Coder who<br><a id="moving1">believes in the power of design.</a>
+    </div>
 
+    <div class="intro5">
+        <a href="mailto:hello@sutingyu.com?Subject=Hello" style="text-decoration-color: transparent;color:black;">hello@sutingyu.com</a>
     </div>
 
     <div id="txt"></div>
@@ -53,74 +45,60 @@
     <div id="placeholder1"></div>
     <div id="placeholder1"></div>
 
-    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Jin He
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Branding · UX Design</div>
+
+    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jsa/index.html')">
+        <img class="indexphoto" src="work/jsa/banner1.jpg">
+        <div class="indexcopy">Jane Smith Agency Website<br>Website Design</div>
     </div>
 
     <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
         <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">proxi
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Motion Graphics · UX Design</div>
+        <div class="indexcopy">Jin He<br>Branding · UX Design</div>
     </div>
 
-    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">SubHub
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        UX Design</div>
+<!--     <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/proxi/index.html')">
+        <img class="indexphoto" src="work/proxi/banner1.jpg">
+        <div class="indexcopy">proxi<br>Motion Graphics · UX Design</div>
     </div>
 
-    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Wulala
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        UX Design · Programming</div>
+    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/subhub/index.html')">
+        <img class="indexphoto" src="work/subhub/banner1.jpg">
+        <div class="indexcopy">SubHub<br>UX Design</div>
+    </div> -->
+
+    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/yulin/index.html')">
+        <img class="indexphoto" src="work/yulin/banner2.jpg">
+        <div class="indexcopy">Yulin<br>Branding · UX Design</div>
     </div>
 
-    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Yulin
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Branding · UX Design</div>
+    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/wulala/index.html')">
+        <img class="indexphoto" src="work/wulala/banner1.jpg">
+        <div class="indexcopy">Wulala<br>UX Design · Programming</div>
     </div>
 
-    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Random (Control, Control);</div>
+    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/pw/index.html')">
+        <img class="indexphoto" src="work/pw/banner1.jpg">
+        <div class="indexcopy">Parisa Wang<br>Branding · Digital Design</div>
     </div>
 
-    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Man-84
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Design · Photo Direction</div>
+    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/guggenheim/index.html')">
+        <img class="indexphoto" src="work/guggenheim/banner1.gif">
+        <div class="indexcopy">Guggenheim<br>Branding · Motion Graphics</div>
     </div>
 
-    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">Guggenheim
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Branding · Motion Graphics</div>
+    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/theheaven/index.html')">
+        <img class="indexphoto" src="work/theheaven/banner1.jpg">
+        <div class="indexcopy">The Heaven<br>3D animation · VJ</div>
     </div>
 
-    <div class="indexproject1" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">The Heaven
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        3D animation · VJ</div>
+    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('archive/index.html')">
+        <img class="indexphoto" src="archive/banner1.jpg">
+        <div class="indexcopy">Archive<br>2018-2019</div>
     </div>
 
-    <div class="indexproject2" style="text-decoration-line: none;cursor: url(cssjs/cursor-hover.png), auto;" onclick="myFunctionEnlargeBig('work/jinhe/index.html')">
-        <img class="indexphoto" src="work/jinhe/banner1.jpg">
-        <div class="indexcopy">La Detresse
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Branding· Event</div>
-    </div>
 
+    <!-- <div id="placeholder1"></div> -->
+    <!-- <div id="placeholder1"></div> -->
 
 </body>
 

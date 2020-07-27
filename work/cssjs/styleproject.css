@@ -233,68 +233,6 @@
         font-style: 100;
     }
 
-    img{
-        margin: 0;
-        padding: 0;
-        width:96vw;
-        height:auto;
-    }
-
-    .iframe1{
-        margin: 0;
-        padding: 0;
-        /*margin-left: -3.8vw;*/
-        width: 60vw;
-        height: 45vw;
-        border:0;
-    }
-
-    .iframe3{
-        margin: 0;
-        padding: 0;
-        margin-left: 2vw;
-        width: 92vw;
-        height: 58vw;
-        border:0;
-    }
-
-    .iframe31{
-        margin: 0;
-        padding: 0;
-        margin-left: 2vw;
-        width: 92vw;
-        height: 43vw;
-        border:0;
-    }
-
-    .figmaproto{
-        margin: 0;
-        padding: 0;
-        margin-left: 7vw;
-        width: 80vw;
-        height: 60vw;
-        border:0;
-    }
-
-    .iframe2{
-        /*display: inline-block;*/
-        margin: 0;
-        padding: 0;
-        border:0;
-        width: 50vw;
-        height: 45vw;
-        margin-left:-0.3vw; 
-    }
-
-    .iframe6{
-        /*display: inline-block;*/
-        margin: 0;
-        padding: 0;
-        border:0;
-        width: 43vw;
-        height: 43vw;
-        /*margin-left:-0.3vw; */
-    }
     .top{
         position: fixed;
         background-color: #f3f3f3;
@@ -311,13 +249,11 @@
     }
 
     #mynameen{
-        /*font-style: 100;*/
         font-size: 20vw;
         position: absolute;
-        margin-left: 2vw;
+        margin-left: 7vw;
         margin-right: 55vw;
         margin-top: 4.3vw;
-        /*padding-top: 4.3vw;*/
     }
 
     .menu{
@@ -343,21 +279,21 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 89vw;
+        margin-left: 84vw;
         margin-top: 4.3vw;
     }
 
     #mynameen:hover{
-        cursor: url(cursor-hover.png), auto;
+        cursor: url(../../cssjs/cursor-hover.png), auto;
     }
     .mynameenhover:hover{
-        cursor: url(cursor-hover.png), auto;
+        cursor: url(../../cssjs/cursor-hover.png), auto;
     }
     #menuarchive:hover{
-        cursor: url(cursor-hover.png), auto;
+        cursor: url(../../cssjs/cursor-hover.png), auto;
     }
     #menuinfo:hover{
-        cursor: url(cursor-hover.png), auto;
+        cursor: url(../../cssjs/cursor-hover.png), auto;
     }
 
     .projecttitle{
@@ -366,14 +302,14 @@
         padding: 0;
         margin-bottom: 2vw;
         padding-top: 5vw;
-        margin-left: 2vw;
+        margin-left: 7vw;
     }
 
     .info{
-        margin-left: 2vw;
+        margin-left: 7vw;
         margin-bottom: 5vw;
         display: grid;
-        grid-template-columns: 60vw auto;
+        grid-template-columns: 50vw auto;
         grid-template-rows: 3vw auto;
     }
 
@@ -399,8 +335,8 @@
         margin-bottom: 2vw;
         margin-right: 20vw;
         display: inline;
-        margin-left: 2vw;
-        width: 20vw;
+        margin-left: 3vw;
+        width: 30vw;
     }
 
     .time{
@@ -409,10 +345,10 @@
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
-        margin-left: 2.8vw;
-        margin-top: 3.6vw;
+        margin-left: 3vw;
+        margin-top: 3.55vw;
         display: inline;
-        width: 10vw;
+        width: 30vw;
     }
 
     .content{
@@ -424,26 +360,24 @@
 
     .problemsolution{
         display: grid;
-        grid-template-columns: 35vw 38vw;
-        grid-template-rows: 6.8vw auto;
-        margin-left: 12vw;
+        grid-template-columns: 46vw 40vw;
+        grid-template-rows: 6.4vw auto;
+        margin-left: 7vw;
     }
 
     .problemtitle{
-        font-size: 1.7vw;
-        line-height: 2vw;
+        font-size: 1.8vw;
+        /*line-height: 2vw;*/
         margin: 0;
         padding: 0;
         margin-top: 4vw;
     }
 
     .solutiontitle{
-        font-size: 1.7vw;
-        line-height: 2vw;
+        font-size: 1.8vw;
         margin: 0;
         padding: 0;
         margin-top: 4vw;
-        margin-left: 5vw;
         grid-row-start: 1;
         grid-row-end: 2;
         grid-column-start: 2;
@@ -451,62 +385,71 @@
     }
 
     .problem{
-        font-size: 1.4vw;
-        line-height: 1.7vw;
+        font-size: 1.8vw;
+        line-height: 2vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 2vw;
-        width: 34vw;
+        width: 36vw;
     }
 
     .solution{
-        font-size: 1.4vw;
-        line-height: 1.7vw;
+        font-size: 1.8vw;
+        line-height: 2vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 2vw;
-        margin-left: 5vw;
-        width: 34vw;
+        /*margin-left: 1.4vw;*/
+        width: 36vw;
     }
 
     .heroimage{
-        margin-top: -3.8vw;
+        margin-top: -2.8vw;
         margin-bottom: 0.1vw;
     }
 
     .subtitle1{
-        font-size: 1.7vw;
+        font-size: 1.8vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
         margin-top: 4vw;
-        text-align: center;
+        margin-left: 7vw;
+        width: 50vw;
     }
 
     .subtitlecontent1{
-        font-size: 1.4vw;
-        line-height: 1.7vw;
+        font-size: 1.5vw;
         margin: 0;
         padding: 0;
         text-align: center;
     }
 
+    ol{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        margin-left: 2.8vw;
+    }
+
     .subtitle2{
-        font-size: 1.7vw;
+        font-size: 1.8vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
         margin-top: 10vw;
-        margin-bottom: 1vw;
         text-align: center;
     }
-
+/*
     .subtitlecontent2{
-        font-size: 1.4vw;
-        line-height: 1.7vw;
+        font-size: 1.8vw;
         margin: 0;
         padding: 0;
         text-align: center;
+    }*/
+
+    .halfimg{
+        width: 35vw;
+        margin-left: 7vw;
+        margin-top: 1vw;
     }
 
     .visualdesignsmallimg{
@@ -515,171 +458,44 @@
         margin-bottom: 1.3vw;
     }
 
-    .caption{
-        font-size: 1.8vw;
-        line-height: 2.2vw;
-        margin: 0;
-        padding: 0;
-        border:0;
-        width:58vw;
-        margin-left: 2vw;
-        margin-top: 5vw;
-        display: block;
-    }
-
-    .caption1{
-        font-size: 1.8vw;
-        line-height: 2.2vw;
-        margin: 0;
-        padding: 0;
-        border:0;
-        /*width:35vw;*/
-        margin-left: 2vw;
-        display: block;
-    }
-
-    .caption2{
-        font-size: 1.8vw;
-        line-height: 2.2vw;
-        margin: 0;
-        padding: 0;
-        border:0;
-        /*width:35vw;*/
-        margin-left: 2vw;
-        display: block;
-    }
-
-    .caption3{
-        font-size: 1.8vw;
-        line-height: 2.2vw;
-        margin: 0;
-        padding: 0;
-        border:0;
-        /*width:35vw;*/
-        margin-left: 8vw;
-        display: block;
-    }
-
-    .space{
-        margin-left: 4.5vw;
-    }
-
-    .guggenheimvideosection1{
-        margin:0;
-        padding: 0;
-        border:0;
-        display: grid;
-        grid-template-columns: 47.8vw 46vw;
-        grid-template-rows: 50vw 50vw 50vw;
-        padding-top: 2vw;
-        /*width:20vw;*/
-        padding-left: 2vw;
-    }
-
-    .guggenheimvideosection2{
-        margin:0;
-        padding: 0;
-        border:0;
-        display: grid;
-        grid-template-columns: 44vw 44vw;
-        grid-template-rows: 45vw;
-        padding-top: 2vw;
-        padding-left: 2.3vw;
-    }
-
-    .proxigif{
-        margin: 0;
-        padding: 0;
-        width: 44.8vw;
-        height:auto;
-        margin-left: 2vw;
-        margin-bottom: 2vw;
-    }
-
-    .proxiiframe{
-        margin: 0;
-        padding: 0;
-        width:92vw;
-        height:55vw;
-        margin-left: 2vw;
-    }
-
-    #enkaitiTypable:hover{
-        cursor: auto;
-    }
-
-    .wulalaimg{
-        margin:0;
-        border:0;
-        padding: 0;
-        width:80vw;
-        height:auto;
-        margin-left: 8vw;
-        margin-bottom: 2vw;
-    }
-
-    .desirevideosection1{
-        margin:0;
-        padding: 0;
-        border:0;
-        display: grid;
-        grid-template-columns: 44vw 44vw;
-        grid-template-rows: 55vw 55vw 55vw;
-        padding-top: 3vw;
-        /*width:20vw;*/
-        padding-left: 8vw;
-    }
-
-    .iframe4{
-        margin: 0;
-        padding: 0;
-        /*margin-left: -3.8vw;*/
-        width: 35vw;
-        height: 48vw;
-        border:0;
-    }
-
-    .iframe5{
-        margin: 0;
-        padding: 0;
-        margin-left: 8vw;
-        width: 80vw;
-        height: 40vw;
-        border:0;
-        margin-bottom: 3vw;
-    }
-
-    .janesmithvideosection1{
-        margin:0;
-        padding: 0;
-        border:0;
-        display: grid;
-        grid-template-columns: 44vw 44vw;
-        grid-template-rows: 45vw;
-        padding-top: 2vw;
-        /*width:20vw;*/
-        /*padding-left: 4vw;*/
-    }
-
-    .janesmithvideosection2{
-        margin:0;
-        padding: 0;
-        border:0;
-        display: grid;
-        grid-template-columns: 44vw 1vw;
-        grid-template-rows: 45vw;
-        padding-top: 2vw;
-        /*width:20vw;*/
-        padding-left: 25vw;
-    }
-
     img{
         margin: 0;
         padding: 0;
-        width:92vw;
+        width:94vw;
         height:auto;
-        margin-left: 2vw;
-        margin-bottom: -2vw;
     }
-    
+
+    .figmaproto{
+        margin: 0;
+        padding: 0;
+        margin-left: 7vw;
+        margin-bottom: 5vw;
+        width: 80vw;
+        height: 60vw;
+        border:0;
+    }
+
+    .indexphoto{
+        width: 38vw;
+        border-radius: 0.5vw;
+    }
+
+    .indexcopy{
+        width: 38vw;
+        font-family: "Founders Grotesk", sans-serif;
+        font-size: 2vw;
+    }
+
+    .indexproject1{
+        display: inline-block;
+        margin-left: 7vw;
+        margin-right: 3vw;
+        margin-bottom: 5vw;
+    }
+
+    .indexproject2{
+        display: inline-block;
+        margin-left: 3vw;
+    }
+
 }
