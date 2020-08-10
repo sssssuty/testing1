@@ -72,7 +72,7 @@
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
-        padding-top: 15vw;
+        padding-top: 20vw;
     }
 
     .category{
@@ -222,10 +222,9 @@
     body{
         border:0;
         margin:2vw;
-        /*background-color: #f3f3f3000;*/
         font-family: "Founders Grotesk";
         font-style: 100;
-        /*overflow: hidden;*/
+        background-color: #f3f3f3;
     }
 
     a{
@@ -233,16 +232,37 @@
         font-style: 100;
     }
 
+    a:link, a:visited {
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    img{
+        width: 96vw;
+        margin: 0;
+    }
+
     .top{
         position: fixed;
-        background-color: #f3f3f3;
+        background-color: none;
         margin: 0;
         margin-top: -4vw;
         padding: 0;
         height: 6.5vw;
-        width:100vw;
+        width: 100vw;
         z-index: 10;
+/*        color: #000; 
+        color:blue;*/
+        /*mix-blend-mode: difference;*/
     }
+
+    .top:link {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
 
     #topmenu{
         transition-duration: 0.35s;
@@ -301,7 +321,8 @@
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
-        padding-top: 5vw;
+        /*padding-top: 5vw;*/
+        padding-top: 38vw;
         margin-left: 7vw;
     }
 
@@ -362,7 +383,7 @@
         display: grid;
         grid-template-columns: 46vw 40vw;
         grid-template-rows: 6.4vw auto;
-        margin-left: 7vw;
+        margin-left: 9vw;
     }
 
     .problemtitle{
@@ -402,8 +423,13 @@
     }
 
     .heroimage{
-        margin-top: -2.8vw;
-        margin-bottom: 0.1vw;
+        /*margin-top: -2.8vw;*/
+        /*padding-bottom: 5vw;*/
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+        top: 0; 
+        left: 0;
     }
 
     .subtitle1{
@@ -411,9 +437,9 @@
         line-height: 2vw;
         margin: 0;
         padding: 0;
-        margin-top: 4vw;
-        margin-left: 7vw;
-        width: 50vw;
+        margin-top: 5vw;
+        padding-top: 5vw;
+        text-align: center;
     }
 
     .subtitlecontent1{
@@ -435,9 +461,48 @@
         line-height: 2vw;
         margin: 0;
         padding: 0;
-        margin-top: 8vw;
+        margin-top: 5vw;
         text-align: center;
     }
+
+    .subtitleleft{
+        font-size: 1.8vw;
+        line-height: 2vw;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 40vw;
+        margin-left: 15vw;
+    }
+
+    .subtitleleftimage{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 25vw;
+        margin-left: 5vw;
+        vertical-align: top;
+    }
+
+    .subtitleright{
+        font-size: 1.8vw;
+        line-height: 2vw;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 40vw;
+        margin-left: 5vw;
+    }
+
+    .subtitlerightimage{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 25vw;
+        margin-left: 15vw;
+        vertical-align: top;
+    }
+
 /*
     .subtitlecontent2{
         font-size: 1.8vw;
@@ -456,13 +521,6 @@
         width: 44.9vw;
         margin-top: 3.2vw;
         margin-bottom: 1.3vw;
-    }
-
-    img{
-        margin: 0;
-        padding: 0;
-        width:94vw;
-        height:auto;
     }
 
     .figmaproto{
@@ -496,6 +554,11 @@
     .indexproject2{
         display: inline-block;
         margin-left: 3vw;
+    }
+
+    .endingimg{
+        margin-left: -2vw;
+        width: 100vw;
     }
 
 }

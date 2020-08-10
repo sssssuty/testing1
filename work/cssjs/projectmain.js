@@ -8,3 +8,7 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+
+// if (window.pageYOffset > 100){
+//     console.log("haha");
+// }
