@@ -225,6 +225,7 @@
         font-family: "Founders Grotesk";
         font-style: 100;
         background-color: #f3f3f3;
+        margin-bottom: 0;
     }
 
     a{
@@ -542,6 +543,7 @@
         width: 38vw;
         font-family: "Founders Grotesk", sans-serif;
         font-size: 2vw;
+        color:white;
     }
 
     .indexproject1{

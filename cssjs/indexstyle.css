@@ -32,6 +32,7 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
+        color: white;
     }
 
     .menu{
@@ -40,7 +41,8 @@
         margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
+        color: white;
     }
 
     .intro1{
@@ -127,13 +129,14 @@
 
     .top{
         position: fixed;
-        background-color: #f3f3f3;
+        background-color: black;
         margin: 0;
         margin-top: -4vw;
         padding: 0;
         height: 6.5vw;
         width:100vw;
         z-index: 10;
+        color: white;
     }
 
     #mynameen{
@@ -143,6 +146,7 @@
         margin-left: 6.8vw;
         /*margin-right: 55vw;*/
         margin-top: 4.3vw;
+        color: white;
     }
 
     .menu{
@@ -152,7 +156,8 @@
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
+        color: white;
     }
 
     #mynameen:hover{
@@ -195,7 +200,7 @@
         margin-left: 84vw;
         margin-top: 4.3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
     }
 
     .move{

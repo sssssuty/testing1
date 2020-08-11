@@ -40,7 +40,7 @@
         margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
     }
 
     .intro1{
@@ -97,7 +97,7 @@
 
     .top{
         position: fixed;
-        background-color: #f3f3f3;
+        background-color: black;
         margin: 0;
         margin-top: -4vw;
         padding: 0;
@@ -126,7 +126,7 @@
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
     }
 
     .mynameenhover:hover{
@@ -152,7 +152,7 @@
         margin-left: 83.7vw;
         margin-top: 4.3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
     }
 
     #placeholder1{
