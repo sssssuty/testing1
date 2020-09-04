@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
     setInterval(function(){
         if (num == 0){
-        elem.innerHTML = "loves to hear from the team and contribute mine.";
+        elem.innerHTML = "speaks English, Chinese, and Code.";
         };
 
         if (num == 1) {

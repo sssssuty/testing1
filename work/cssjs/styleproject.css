@@ -373,6 +373,18 @@
         width: 30vw;
     }
 
+    .role{
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2vw;
+        margin-left: 3vw;
+        /*margin-top: 3.55vw;*/
+        display: inline;
+        width: 30vw;
+    }
+
     .content{
         font-size: 1.8vw;
         line-height: 2.2vw;
@@ -444,10 +456,12 @@
     }
 
     .subtitlecontent1{
-        font-size: 1.5vw;
+        font-size: 1.8vw;
         margin: 0;
         padding: 0;
         text-align: center;
+        margin-top: 1vw;
+        /*width: 30vw;*/
     }
 
     ol{
