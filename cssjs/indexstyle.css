@@ -50,11 +50,25 @@
         font-size: 6vw;
         line-height: 6.8vw;
         width: 90vw;
+        margin-top: 10vw;
     }
 
-    .intro5{
+    .intro2{
+        position: absolute;
         font-size: 6vw;
-        margin-top: 24vw;
+        margin-top: 53vw;
+    }
+
+    .intro3{
+        position: absolute;
+        font-size: 6vw;
+        margin-top: 61vw;
+    }
+
+    .intro4{
+        position: absolute;
+        font-size: 6vw;
+        margin-top: 69vw;
     }
     
     #menuinfo{
@@ -74,7 +88,9 @@
     }
 
     #txt{
+        position: absolute;
         font-size: 6vw;
+        margin-top: 45vw;
     }
 
     .indexphoto{
@@ -103,7 +119,23 @@
     #placeholder1{
         margin:0;
         width: 50vw;
-        height: 8vw;
+        height: 30vw;
+    }
+
+    .inputbar{
+        padding-top: 69vw;
+    }
+
+    #fname{
+        font-size: 6vw;
+        height:7vw;
+        width:76vw;
+        font-family: "Founders Grotesk", sans-serif;
+        box-sizing: border-box;
+        border: 0px;
+        border-bottom: 0.5vw solid #fff;
+        outline: none;
+        background-color: black;
     }
 }
 
@@ -180,16 +212,30 @@
         margin-left: 7vw;
     }
 
-    .intro5{
+    .intro2{
         font-size: 1.9vw;
         position: absolute;
-        top: 27vw;
-        left: 23vw;
+        top: 17vw;
+        left: 22vw;
+    }
+
+    .intro3{
+        font-size: 1.9vw;
+        position: absolute;
+        top: 17vw;
+        left: 30vw;
+    }
+
+    .intro4{
+        font-size: 1.9vw;
+        position: absolute;
+        top: 17vw;
+        left: 40vw;
     }
 
     #txt{
         position: absolute;
-        top: 27vw;
+        top: 17vw;
         left: 9vw;
         font-size: 1.9vw;
     }
@@ -240,11 +286,34 @@
     #placeholder1{
         margin:0;
         width: 50vw;
-        height: 6vw;
+        height: 8vw;
     }
 
     #topmenu{
         transition-duration: 0.35s;
+    }
+
+    .inputbar{
+        padding: 0;
+        border: 0;
+        padding-top: 6vw;
+        padding-left: 7vw;
+/*        width: 50vw;*/
+    }
+    
+    #fname{
+        font-size: 1.9vw;
+        /*box-sizing: border-box;*/
+        border: 0px;
+        border-bottom: 0.2vw solid #fff;
+        background-color: black;
+        font-family: "Founders Grotesk", sans-serif;
+        width: 27.8vw;
+    }
+
+    input{
+        height:2vw;
+        /*width:50vw;*/
     }
 
 }
