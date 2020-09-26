@@ -1,5 +1,3 @@
-
-
 function startTime() {
   var today = new Date();
   var h = today.getHours();
@@ -17,17 +15,16 @@ function checkTime(i) {
 
 
 function myFunctionEnlargeBig(clr) {
-  window.open(clr);
+  window.open(clr, "_self");
 }
 
 
-function myPortfolio() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("fname");
-    filter = input.value.toUpperCase();
-    // console.log(filter);
-    if (filter =="MOMA"){
-        console.log(filter);
-        window.open("formoma.html");
-    }
-}
+// function myPortfolio() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById("fname");
+//     filter = input.value.toUpperCase();
+//     if (filter =="MOMA"){
+//         console.log(filter);
+//         window.open("formoma.html", "_self");
+//     }
+// }

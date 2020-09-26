@@ -504,8 +504,6 @@
     }
 
     .heroimage{
-        /*margin-top: -2.8vw;*/
-        /*padding-bottom: 5vw;*/
         width: 100vw;
         position: absolute;
         z-index: -1;
@@ -514,39 +512,62 @@
     }
 
     .subtitle1{
-        font-size: 1.8vw;
+        font-size: 1.4vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
         margin-top: 5vw;
         padding-top: 5vw;
-        text-align: center;
+        margin-left: 9vw;
+    }
+
+    .subtitleHeader1{
+        font-size: 2.2vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 9vw;
     }
 
     .subtitlecontent1{
         font-size: 1.8vw;
         margin: 0;
         padding: 0;
-        text-align: center;
         margin-top: 1vw;
-        /*width: 30vw;*/
-    }
-
-    ol{
-        margin: 0;
-        padding: 0;
-        border: 0;
-        margin-left: 2.8vw;
+        margin-left: 9vw;
+        width: 48vw;
     }
 
     .subtitle2{
-        font-size: 1.8vw;
+        font-size: 1.4vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
         margin-top: 5vw;
-        text-align: center;
+        margin-left: 7vw;
     }
+
+    .subtitleHeader2{
+        font-size: 2.2vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 7vw;
+    }
+
+    .subtitlecontent2{
+        font-size: 1.8vw;
+        margin: 0;
+        padding: 0;
+        margin-top: 1vw;
+        margin-left: 7vw;
+        width: 48vw;
+    }
+
+/*    ol{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        margin-left: 2.8vw;
+    }*/
 
     .subtitleleft{
         font-size: 1.8vw;
@@ -585,14 +606,6 @@
         margin-left: 15vw;
         vertical-align: top;
     }
-
-/*
-    .subtitlecontent2{
-        font-size: 1.8vw;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }*/
 
     .halfimg{
         width: 35vw;
@@ -643,6 +656,20 @@
     .endingimg{
         margin-left: -2vw;
         width: 100vw;
+    }
+
+    .onepic1{
+        width: 80vw;
+        margin-left: 9vw;
+    }
+
+    .onepic2{
+        width: 80vw;
+        margin-left: 7vw;
+    }
+
+    .dotdot{
+        font-size: 1.4vw;
     }
 
 }

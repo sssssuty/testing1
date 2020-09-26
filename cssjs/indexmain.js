@@ -57,13 +57,15 @@ function myPortfolio() {
     input = document.getElementById("fname");
     filter = input.value.toUpperCase();
     // console.log(filter);
-    if (filter =="MOMA"){
-        // console.log(filter);
-        window.open("formoma.html");
-    }
+    // if (filter =="MOMA"){
+    //     window.open("formoma.html", "_self" );
+    // }
 
     if (filter =="AARON"){
-        // console.log(filter);
-        window.open("uiux.html");
+        window.open("foraaron.html", "_self");
+    }
+
+    if (filter =="IRENE"){
+        window.open("forirene.html", "_self");
     }
 }
