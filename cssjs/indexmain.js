@@ -56,10 +56,10 @@ function myPortfolio() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("fname");
     filter = input.value.toUpperCase();
-    // console.log(filter);
-    // if (filter =="MOMA"){
-    //     window.open("formoma.html", "_self" );
-    // }
+    console.log(filter);
+    if (filter =="MOMA"){
+        window.open("formoma.html", "_self" );
+    }
 
     if (filter =="AARON"){
         window.open("foraaron.html", "_self");
