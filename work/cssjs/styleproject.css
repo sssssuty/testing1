@@ -664,11 +664,80 @@
     }
 
     .onepic2{
-        width: 80vw;
+        width: 86vw;
+        margin-left: 3.7vw;
+    }
+
+    .onepic3{
+        width: 86vw;
         margin-left: 7vw;
     }
 
     .dotdot{
+        font-size: 1.4vw;
+    }
+
+    .guggenheimvideosection1{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 45vw 36vw;
+        grid-template-rows: 45vw 45vw 45vw;
+        padding-top: 2vw;
+        padding-left: 9vw;
+    }
+
+    .guggenheimvideosection2{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 45vw 40vw;
+        grid-template-rows: 45vw
+        padding-top: 2vw;
+        padding-left: 7vw;
+    }
+
+    .guggenheimvideosection3{
+        margin:0;
+        padding: 0;
+        border:0;
+        display: grid;
+        grid-template-columns: 45vw 36vw;
+        grid-template-rows: 45vw
+        padding-top: 2vw;
+        padding-left: 9vw;
+    }
+
+    .iframe1{
+        margin: 0;
+        padding: 0;
+        border:0;
+        width: 45vw;
+        height: 45vw;
+    }
+
+    .iframe2{
+        margin: 0;
+        padding: 0;
+        border:0;
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .iframe3{
+        margin: 0;
+        padding: 0;
+        border:0;
+        width: 80vw;
+        height: 60vw;
+        margin-left: 9vw;
+        margin-top: -5vw;
+    }
+
+    .caption2{
+        display: block;
         font-size: 1.4vw;
     }
 
