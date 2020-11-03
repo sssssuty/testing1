@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
     setInterval(function(){
         if (num == 0){
-        elem.innerHTML = "speaks English, Chinese, and Code.";
+        elem.innerHTML = "speaks English, Mandarin, and Code.";
         };
 
         if (num == 1) {
@@ -57,15 +57,15 @@ function myPortfolio() {
     input = document.getElementById("fname");
     filter = input.value.toUpperCase();
     console.log(filter);
-    if (filter =="MOMA"){
-        window.open("formoma.html", "_self" );
-    }
+    // if (filter =="MOMA"){
+    //     window.open("formoma.html", "_self" );
+    // }
 
-    if (filter =="AARON"){
-        window.open("foraaron.html", "_self");
-    }
+    // if (filter =="AARON"){
+    //     window.open("foraaron.html", "_self");
+    // }
 
-    if (filter =="IRENE"){
-        window.open("forirene.html", "_self");
-    }
+    // if (filter =="IRENE"){
+    //     window.open("forirene.html", "_self");
+    // }
 }
