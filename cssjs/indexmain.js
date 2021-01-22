@@ -9,7 +9,7 @@ $( document ).ready(function() {
         };
 
         if (num == 1) {
-        elem.innerHTML = "values ideation, process and final execution.";
+        elem.innerHTML = "values ideation, process and execution.";
         };
 
         if (num == 2) {
