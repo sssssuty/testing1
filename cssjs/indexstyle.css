@@ -56,25 +56,25 @@
     #txt{
         position: absolute;
         font-size: 6vw;
-        margin-top: 90vw;
+        margin-top: 91vw;
     }
 
     .intro2{
         position: absolute;
         font-size: 6vw;
-        margin-top: 98vw;
+        margin-top: 99vw;
     }
 
     .intro3{
         position: absolute;
         font-size: 6vw;
-        margin-top: 106vw;
+        margin-top: 107vw;
     }
 
     .intro4{
         position: absolute;
         font-size: 6vw;
-        margin-top: 114vw;
+        margin-top: 115vw;
     }
     
     #menuinfo{
@@ -109,11 +109,13 @@
         display: inline-block;
         margin-right: 3vw;
         margin-bottom: 8vw;
+        display: none;
     }
 
     .indexproject2{
         display: inline-block;
         margin-bottom: 8vw;
+        display: none;
     }
 
     #placeholder1{

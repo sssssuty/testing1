@@ -21,7 +21,7 @@ $( document ).ready(function() {
         };
 
         if (num == 4) {
-        elem.innerHTML = "believes design has the power to make a difference.";
+        elem.innerHTML = "believes design can make a difference.";
         num = -1;
         };
 
