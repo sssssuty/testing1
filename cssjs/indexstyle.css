@@ -49,32 +49,32 @@
         position: absolute;
         font-size: 6vw;
         line-height: 6.8vw;
-        width: 90vw;
+        width: 80vw;
         margin-top: 10vw;
+    }
+
+    #txt{
+        position: absolute;
+        font-size: 6vw;
+        margin-top: 90vw;
     }
 
     .intro2{
         position: absolute;
         font-size: 6vw;
-        margin-top: 53vw;
-    }
-
-    .intro22{
-        position: absolute;
-        font-size: 6vw;
-        margin-top: 72vw;
+        margin-top: 98vw;
     }
 
     .intro3{
         position: absolute;
         font-size: 6vw;
-        margin-top: 61vw;
+        margin-top: 106vw;
     }
 
     .intro4{
         position: absolute;
         font-size: 6vw;
-        margin-top: 69vw;
+        margin-top: 114vw;
     }
     
     #menuinfo{
@@ -91,12 +91,6 @@
         margin: 0;
         padding:0;
         margin-top: 33.6vw;
-    }
-
-    #txt{
-        position: absolute;
-        font-size: 6vw;
-        margin-top: 45vw;
     }
 
     .indexphoto{
@@ -125,7 +119,7 @@
     #placeholder1{
         margin:0;
         width: 50vw;
-        height: 30vw;
+        height: 65vw;
     }
 
     .inputbar{

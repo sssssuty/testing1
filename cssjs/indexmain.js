@@ -17,11 +17,11 @@ $( document ).ready(function() {
         };
 
         if (num == 3) {
-        elem.innerHTML = "wants to work with you :)";
+        elem.innerHTML = "loves to work in a team and collaborate.";
         };
 
         if (num == 4) {
-        elem.innerHTML = "believes in the power of design.";
+        elem.innerHTML = "believes design has the power to make a difference.";
         num = -1;
         };
 
