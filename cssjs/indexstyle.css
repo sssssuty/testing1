@@ -147,9 +147,6 @@
 
 
 
-
-
-
 /* desktop layout for larger windows*/
 @media only screen and (min-device-width: 500px){
     body{
@@ -221,34 +218,27 @@
     .intro2{
         font-size: 1.9vw;
         position: absolute;
-        top: 17vw;
+        top: 34vw;
         left: 22vw;
-    }
-
-    .intro22{
-        font-size: 1.9vw;
-        position: absolute;
-        top: 20vw;
-        left: 9vw;
     }
 
     .intro3{
         font-size: 1.9vw;
         position: absolute;
-        top: 17vw;
+        top: 34vw;
         left: 30vw;
     }
 
     .intro4{
         font-size: 1.9vw;
         position: absolute;
-        top: 17vw;
+        top: 34vw;
         left: 40vw;
     }
 
     #txt{
         position: absolute;
-        top: 17vw;
+        top: 34vw;
         left: 9vw;
         font-size: 1.9vw;
     }
@@ -274,8 +264,9 @@
     }
 
     .indexphoto{
-        width: 38vw;
-        border-radius: 0.5vw;
+        /*width: 38vw;*/
+        width: 55vw;
+        /*border-radius: 0.5vw;*/
     }
 
     .indexcopy{
@@ -288,12 +279,14 @@
         display: inline-block;
         margin-left: 7vw;
         margin-right: 3vw;
-        margin-bottom: 5vw;
+        margin-bottom: 6vw;
     }
 
     .indexproject2{
         display: inline-block;
-        margin-left: 3vw;
+        float: right;
+        margin-right: 6vw;
+        margin-bottom: 6vw;
     }
 
     #placeholder1{

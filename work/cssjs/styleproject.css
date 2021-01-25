@@ -733,7 +733,9 @@
         width: 80vw;
         height: 60vw;
         margin-left: 9vw;
-        margin-top: -5vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+
     }
 
     .caption2{
