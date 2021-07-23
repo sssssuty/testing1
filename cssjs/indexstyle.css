@@ -1,10 +1,7 @@
-
-
 @font-face{
     font-family: "Founders Grotesk";
     src:url("../fonts/FoundersGrotesk-Regular.woff");
 }
-
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
@@ -17,35 +14,8 @@
         font-family: "Founders Grotesk";
         font-style: 100;
     }
-    .top{
-        position: fixed;
-        margin: 0;
-        margin-top: -4vw;
-        padding: 0;
-        height: 14vw;
-        width:100vw;
-        z-index: 10;
-    }
 
-    #mynameen{
-        font-size: 4vw;
-        position: absolute;
-        margin-right: 40vw;
-        margin-top: 6vw;
-        color: white;
-    }
-
-    .menu{
-        position: absolute;
-        font-size: 3.5vw;
-        margin-left: 0vw;
-        margin-right: 3vw;
-        text-decoration: underline;
-        text-decoration-color: black;
-        color: white;
-    }
-
-    .intro1{
+    .indexintro{
         position: absolute;
         font-size: 6vw;
         line-height: 6.8vw;
@@ -75,13 +45,6 @@
         position: absolute;
         font-size: 6vw;
         margin-top: 115vw;
-    }
-    
-    #menuinfo{
-        font-size: 4vw;
-        position: absolute;
-        margin-left: 82vw;
-        margin-top: 6vw;
     }
 
     .moving1{
@@ -158,53 +121,7 @@
         /*cursor: url(cursor.png), auto;*/
     }
 
-    .top{
-        position: fixed;
-        background-color: black;
-        margin: 0;
-        margin-top: -4vw;
-        padding: 0;
-        height: 6.5vw;
-        width:100vw;
-        z-index: 10;
-        color: white;
-    }
-
-    #mynameen{
-        font-style: 100;
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 6.8vw;
-        /*margin-right: 55vw;*/
-        margin-top: 4.3vw;
-        color: white;
-    }
-
-    .menu{
-        font-style: 100;
-        font-size: 1.9vw;
-        margin-left: 0vw;
-        margin-right: 3vw;
-        position: absolute;
-        text-decoration: underline;
-        text-decoration-color: black;
-        color: white;
-    }
-
-    #mynameen:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    .mynameenhover:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    #menuarchive:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    #menuinfo:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-
-    .intro1{
+    .indexintro{
         font-size: 3vw;
         width: 70vw;
         padding-top: 5vw;
@@ -289,10 +206,6 @@
         margin:0;
         width: 50vw;
         height: 8vw;
-    }
-
-    #topmenu{
-        transition-duration: 0.35s;
     }
 
     .inputbar{

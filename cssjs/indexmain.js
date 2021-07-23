@@ -48,7 +48,8 @@ function checkTime(i) {
 
 
 function myFunctionEnlargeBig(clr) {
-  window.open(clr);
+  // window.open(clr);
+  window.open(clr, "_self");
 }
 
 
@@ -56,16 +57,13 @@ function myPortfolio() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("fname");
     filter = input.value.toUpperCase();
-    console.log(filter);
-    // if (filter =="MOMA"){
-    //     window.open("formoma.html", "_self" );
-    // }
+    // console.log(filter);
+    if (filter =="DESIGN1"){
+        window.open("design1.html", "_self" );
+    }
 
-    // if (filter =="AARON"){
-    //     window.open("foraaron.html", "_self");
-    // }
-
-    // if (filter =="IRENE"){
-    //     window.open("forirene.html", "_self");
-    // }
+    if (filter =="UIUX1"){
+        window.open("uiux1.html", "_self");
+    }
+    
 }
