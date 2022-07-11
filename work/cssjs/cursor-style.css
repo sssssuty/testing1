@@ -1,0 +1,21 @@
+img {
+  cursor: none;
+}
+
+#cursor {
+  background-color: black;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: var(--pageY);
+  left: var(--pageX);
+  filter: invert(1);
+  transform:translate(-50%,-50%);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 990;
+  /* transition: all 1s cubic-bezier(0, 0, 0.06, 1); */
+  /* transition: all 1s cubic-bezier(0, 1, 0.3, 1); */
+}
