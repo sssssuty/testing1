@@ -1,0 +1,45 @@
+@font-face {
+font-family: "En KaiTi", serif;
+src: url("fonts/EnKaiTi-Standard");
+font-style: normal;
+font-weight: 200;
+}
+
+.text {
+  font-family: "En KaiTi", serif;
+  font-size: 10vw;
+  margin-left: 2vw;
+}
+
+.title {
+  font-family: "En KaiTi", serif;
+  text-align: left;
+  font-size: 3vw;
+  top: 0;
+  padding-left: 2vw;
+  width: 75vw;
+}
+
+.table1 {
+  font-family: "En KaiTi", serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 2vw;
+}
+
+.table2 {
+  font-family: "En KaiTi", serif;
+  border-collapse: collapse;
+  width: 72%;
+  margin-left: 2vw;
+}
+
+td {
+  font-size: 5vw;
+  text-align: left;
+  border: solid black 0.1vw;
+  width: 15vw;
+  text-align: center;
+  padding-bottom: 2vw;
+}
+
