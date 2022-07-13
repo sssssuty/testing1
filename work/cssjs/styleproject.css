@@ -40,6 +40,13 @@
         margin-right: 40vw;
         margin-top: 6vw;
     }
+    .top a{
+        color: black;
+    }
+
+    #topmenu{
+        transition-duration: 0.35s;
+    }
 
     .menu{
         position: absolute;
@@ -88,8 +95,8 @@
     }
 
     .category{
-        font-size: 3vw;
-        line-height: 3.5vw;
+        font-size: 4vw;
+        line-height: 4.5vw;
         margin: 0;
         padding: 0;
         margin-bottom: 4vw;
@@ -100,8 +107,8 @@
     }
 
     .time{
-        font-size: 3vw;
-        line-height: 3.5vw;
+        font-size: 4vw;
+        line-height: 4.5vw;
         margin: 0;
         padding: 0;
         margin-bottom: 4vw;
@@ -110,8 +117,8 @@
     }
 
     .role{
-        font-size: 3vw;
-        line-height: 3.5vw;
+        font-size: 4vw;
+        line-height: 4.5vw;
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
@@ -120,8 +127,8 @@
     }
 
     .content{
-        font-size: 5vw;
-        line-height: 5.5vw;
+        font-size: 4vw;
+        line-height: 4.5vw;
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
