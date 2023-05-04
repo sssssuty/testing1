@@ -5,7 +5,7 @@ $( document ).ready(function() {
 
     setInterval(function(){
         if (num == 0){
-        elem.innerHTML = "speaks English, Mandarin, and Code.";
+        elem.innerHTML = "speaks English, Mandarin, and code.";
         };
 
         if (num == 1) {
@@ -13,7 +13,7 @@ $( document ).ready(function() {
         };
 
         if (num == 2) {
-        elem.innerHTML = "enjoys storytelling with various mediums.";
+        elem.innerHTML = "is good at telling stories with various mediums.";
         };
 
         if (num == 3) {
@@ -21,7 +21,7 @@ $( document ).ready(function() {
         };
 
         if (num == 4) {
-        elem.innerHTML = "believes design can make a difference.";
+        elem.innerHTML = "has 4 years of experience.";
         num = -1;
         };
 

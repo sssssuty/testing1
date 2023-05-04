@@ -11,11 +11,10 @@
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     body{
-        background-color: #f3f3f3;
+        margin:3vw;
+        /*background-color: #f3f3f3000;*/
         font-family: "Founders Grotesk";
         font-style: 100;
-        /*overflow: hidden;*/
-        margin-left: -0.1vw;
     }
 
     a{
@@ -26,7 +25,7 @@
     .top{
         position: fixed;
         margin: 0;
-        margin-top: -2vw;
+        margin-top: -4vw;
         padding: 0;
         height: 14vw;
         width:100vw;
@@ -40,18 +39,11 @@
         margin-right: 40vw;
         margin-top: 6vw;
     }
-    .top a{
-        color: black;
-    }
-
-    #topmenu{
-        transition-duration: 0.35s;
-    }
 
     .menu{
         position: absolute;
-        font-size: 4vw;
-        margin-left: 3.1vw;
+        font-size: 3.5vw;
+        margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
@@ -60,38 +52,37 @@
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 87vw;
+        margin-left: 84.5vw;
         margin-top: 6vw;
     }
 
     #menuinfo{
         font-size: 4vw;
         position: absolute;
-        margin-left: 87vw;
+        margin-left: 62vw;
         margin-top: 6vw;
     }
 
     .info{
         margin-left: 0vw;
         background-color: #f3f3f3;
-        /*padding-left: 3vw;*/
-        /*margin-left: -3vw;*/
-        /*margin-top: -3vw;*/
-        /*width: 103vw;*/
+        padding-left: 3vw;
+        margin-left: -3vw;
+        margin-top: -3vw;
+        width: 103vw;
     }
 
     .projecttitle{
         font-size: 8vw;
         margin: 0;
         padding: 0;
-        /*margin-bottom: 2vw;*/
-        padding-top: 5vw;
-        padding-left: 8vw;
-        width: 84vw;
+        margin-bottom: 2vw;
+        padding-top: 15vw;
+        padding-left: 4vw;
         background-color: #f3f3f3;
-        /*margin-left: -3vw;*/
-        /*margin-top: -3vw;*/
-        /*width: 103vw;*/
+        margin-left: -3vw;
+        margin-top: -3vw;
+        width: 103vw;
     }
 
     .category{
@@ -99,11 +90,11 @@
         line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         margin-right: 20vw;
         display: block;
         padding-top: 6vw;
-        padding-left: 8vw;
+        padding-left: 2vw;
     }
 
     .time{
@@ -111,9 +102,9 @@
         line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         display: block;
-        padding-left: 8vw;
+        padding-left: 2vw;
     }
 
     .role{
@@ -123,7 +114,7 @@
         padding: 0;
         margin-bottom: 2vw;
         display: block;
-        padding-left: 8vw;
+        padding-left: 2vw;
     }
 
     .content{
@@ -133,9 +124,9 @@
         padding: 0;
         margin-bottom: 2vw;
         margin-top: 6vw;
-        width: 84vw;
+        width: 92vw;
         padding-bottom: 9vw;
-        margin-left: 8vw;
+        padding-left: 2vw;
     }
 
     .problemtitle{
@@ -186,6 +177,14 @@
         height: 35vw;
     }
 
+    img{
+        margin: 0;
+        padding: 0;
+        width:94vw;
+        height:auto;
+        margin-bottom: -3vw;
+    }
+
     .figmaproto{
         margin: 0;
         padding: 0;
@@ -224,13 +223,12 @@
         padding: 0;
         margin-bottom: 2vw;
         margin-top: 2vw;
-        margin-left: 8vw;
     }
     .heroimage{
-        width: 100vw;
+        width: 101vw;
         margin: 0;
-        /*margin-left: -3vw;*/
-        margin-top: -1vw;
+        margin-left: -3vw;
+        margin-top: -3vw;
     }
 
     .subtitle1{
@@ -238,9 +236,8 @@
         line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        margin-left: 8vw;
-        /*padding-left: 8vw;*/
-        padding-top: 12vw;
+        margin-left: 2vw;
+        padding-left: 2vw;
     }
 
     .subtitle2{
@@ -250,33 +247,33 @@
         padding: 0;
         /*margin-left: 2vw;*/
         background-color: #f3f3f3;
-        margin-left: 8vw;
-        /*width: 103vw;*/
-        /*padding-left: 5vw;*/
+        margin-left: -3vw;
+        width: 103vw;
+        padding-left: 5vw;
         padding-top: 12vw;
     }
 
     .subtitlecontent1{
-        font-size: 3.5vw;
+        font-size: 4vw;
         line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        margin-left: 8vw;
-        width: 84vw;
+        margin-left: 2vw;
+        width: 94vw;
         margin-top: 2vw;
-        /*padding-left: 4vw;*/
+        padding-left: 2vw;
     }
 
     .subtitlecontent2{
-        font-size: 3.5vw;
-        line-height: 3.5vw;
+        font-size: 4vw;
+        line-height: 4.5vw;
         margin: 0;
         padding: 0;
-        width: 84vw;
+        width: 98vw;
         margin-top: 2vw;
         background-color: #f3f3f3;
-        margin-left: 8vw;
-        /*padding-left: 5vw;*/
+        margin-left: -3vw;
+        padding-left: 5vw;
         margin-top: -3vw;
         padding-top: 6vw;
     }
@@ -284,34 +281,6 @@
     .placeholder1{
         height:10vw;
     }
-
-    .onepic1{
-        width: 90vw;
-        margin-left: 4vw;
-        /*margin-right: 10vw;*/
-    }
-    .onepic2{
-        width: 90vw;
-        margin-left: 4vw;
-    }
-    .onepic3{
-        width: 90vw;
-        margin-left: 4vw;
-    }
-    .subtitleHeader1{
-        font-size: 6.5vw;
-        margin-left: 7.5vw;
-        width: 90vw;
-    }
-    .subtitleHeader2{
-        font-size: 6.5vw;
-        margin-left: 7.5vw;
-        width: 90vw;
-    }
-/*    .dotdot{
-        font-size: 1.4vw;
-        padding-top: 3vw;
-    }*/
 }
 
 
@@ -320,7 +289,7 @@
 @media only screen and (min-device-width: 501px){
     body{
         border:0;
-        margin:0;
+        margin:2vw;
         font-family: "Founders Grotesk";
         font-style: 100;
         background-color: #f3f3f3;
@@ -338,12 +307,16 @@
     }
 
 
+    img{
+        width: 96vw;
+        margin: 0;
+    }
+
     .top{
         position: fixed;
         background-color: none;
         margin: 0;
-        margin-top: -2vw;
-        margin-left: 2vw;
+        margin-top: -4vw;
         padding: 0;
         height: 6.5vw;
         width: 100vw;
@@ -367,7 +340,7 @@
     #mynameen{
         font-size: 20vw;
         position: absolute;
-        margin-left: 2vw;
+        margin-left: 7vw;
         margin-right: 55vw;
         margin-top: 4.3vw;
     }
@@ -395,7 +368,7 @@
     #menuinfo{
         font-size: 2vw;
         position: absolute;
-        margin-left: 89.5vw;
+        margin-left: 84vw;
         margin-top: 4.3vw;
     }
 
@@ -696,9 +669,8 @@
     }
 
     .onepic3{
-        width: 82vw;
+        width: 86vw;
         margin-left: 7vw;
-        margin-bottom: 3vw;
     }
 
     .dotdot{
