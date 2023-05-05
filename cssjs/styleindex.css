@@ -1,7 +1,5 @@
-
-
 @font-face{
-    font-family: "Founders Grotesk";
+    font-family: "Founders Grotesk", sans-serif;
     src:url("FoundersGrotesk-Regular.woff");
 }
 
@@ -10,11 +8,11 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
     }
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
     }
     .top{
@@ -46,32 +44,31 @@
     #txt{
         position: absolute;
         font-size: 6vw;
-        margin-top: 91vw;
+        margin-top: 61vw;
+    }
+    .indexintro{
+        position: fixed;
+        font-size: 6vw;
+        margin-top: 20vw;
+        width: 80vw;
     }
 
     .intro2{
         position: absolute;
         font-size: 6vw;
-        margin-top: 99vw;
+        margin-top: 69vw;
     }
 
     .intro3{
         position: absolute;
         font-size: 6vw;
-        margin-top: 107vw;
-    }
-    
-    #menuinfo{
-        font-size: 4vw;
-        position: absolute;
-        margin-left: 62vw;
-        margin-top: 6vw;
+        margin-top: 77vw;
     }
 
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 84.5vw;
+        margin-left: 80vw;
         margin-top: 6vw;
     }
 
@@ -87,6 +84,15 @@
     #quote{
         font-size: 10vw;
         line-height: 11vw;
+    }
+    .project{
+        display: none;
+    }
+    .project2{
+        display: none;
+    }
+    .indexprojecttext{
+        display: none;
     }
 
 }
@@ -174,20 +180,6 @@
         font-size: 1.9vw;
     }
 
-/*    #mynameen:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    .mynameenhover:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    #menuarchive:hover{
-        cursor: url(cursor-hover.png), auto;
-    }
-    #menuinfo:hover{
-        cursor: url(cursor-hover.png), auto;
-    }*/
-
-
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
@@ -200,14 +192,6 @@
         text-decoration-color: white;
     }
 
-    #menuinfo{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 75vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
 
     .move{
         font-family: "Founders Grotesk", sans-serif;
@@ -218,6 +202,14 @@
         padding:0;
         margin-left: 5vw;
         margin-top: -46vw;
+    }
+    .indexprojecttext{
+        display: inline-block; 
+        height: 1000; 
+        width: 50vw; 
+        font-size: 3vw; 
+        margin-left: 2vw; 
+        margin-bottom: 1vw;
     }
 
 }

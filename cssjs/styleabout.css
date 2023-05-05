@@ -94,7 +94,7 @@
     #menuarchive{
         font-size: 4vw;
         position: absolute;
-        margin-left: 84vw;
+        margin-left: 80vw;
         margin-top: 6vw;
     }
 
@@ -117,6 +117,12 @@
         bottom: 3vw;
         font-size: 6vw;
         line-height: 6.8vw;
+    }
+    .biotext{
+        position: fixed;
+        font-size: 6vw;
+        margin-top: 20vw;
+        width: 85vw;
     }
 }
 
