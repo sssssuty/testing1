@@ -13,7 +13,7 @@ $( document ).ready(function() {
         };
 
         if (num == 2) {
-        elem.innerHTML = "is good at telling stories with various mediums.";
+        elem.innerHTML = "tells stories with various mediums.";
         };
 
         if (num == 3) {
@@ -21,13 +21,13 @@ $( document ).ready(function() {
         };
 
         if (num == 4) {
-        elem.innerHTML = "has 4 years of experience.";
+        elem.innerHTML = "has four years of experience.";
         num = -1;
         };
 
         num++;
 
-    }, 3000);
+    }, 2000);
 
 });
 
@@ -44,26 +44,4 @@ function startTime() {
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
-}
-
-
-function myFunctionEnlargeBig(clr) {
-  // window.open(clr);
-  window.open(clr, "_self");
-}
-
-
-function myPortfolio() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("fname");
-    filter = input.value.toUpperCase();
-    // console.log(filter);
-    if (filter =="DESIGN1"){
-        window.open("design1.html", "_self" );
-    }
-
-    if (filter =="UIUX1"){
-        window.open("uiux1.html", "_self");
-    }
-    
 }
