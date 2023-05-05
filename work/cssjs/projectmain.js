@@ -2,7 +2,7 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("topmenu").style.marginTop = "-4vw";
+    document.getElementById("topmenu").style.marginTop = "-2vw";
   } else {
     document.getElementById("topmenu").style.marginTop = "-13vw";
   }
