@@ -93,6 +93,11 @@
     }
     .indexprojecttext{
         display: none;
+        opacity: 0;
+    }
+    #indexprojecttext{
+        display: none;
+        opacity: 0;
     }
 
 }
