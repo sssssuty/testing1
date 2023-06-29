@@ -204,28 +204,30 @@ body {
   .a-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 32px;
-    margin-left: 30px;
+    font-size: 2vw;
     position: absolute;
+    margin-left: 3.8vw;
+    margin-top: 2.3vw;
     color: white;
   }
   .a-second-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 32px;
-    margin-left: 250px;
-    width: 550px;
+    font-size: 2vw;
     position: absolute;
+    margin-top: 2.3vw;
+    margin-left: 250px;
+    width: 33vw;
     color: white;
   }
   .input-passcode{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    margin-left: 30px;
-    height: 30px;
-    width: 200px;
+    font-size: 1.6vw;
     position: absolute;
+    margin-left: 3.8vw;
+    height: 30px;
+    width: 12vw;
     margin-top: 82vh;
     color: black;
     border-radius: 4px;
@@ -237,8 +239,8 @@ body {
     font-family: 'Founders Grotesk', sans-serif;
     background: transparent;
     font-weight: 400;
-    font-size: 24px;
-    margin-left: 250px;
+    font-size: 1.6vw;
+    margin-left: 19vw;;
     width: auto;
     position: absolute;
     margin-top: 83vh;
@@ -255,8 +257,8 @@ body {
   #noti{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    margin-left: 30px;
+    font-size: 1.6vw;
+    margin-left: 3.8vw;
     width: auto;
     position: absolute;
     margin-top: 89vh;
