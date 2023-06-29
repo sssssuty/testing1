@@ -1,0 +1,233 @@
+@font-face{
+    font-family: "Founders Grotesk", sans-serif;
+    src:url("FoundersGrotesk-Light.otf");
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/*mobile*/
+@media only screen and (max-device-width: 500px) {
+  #container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .a-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 30px;
+    position: absolute;
+    color: white;
+    top:10px;
+  }
+  .a-second-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 30px;
+    width: 85vw;
+    position: absolute;
+    color: white;
+    top:70px;
+  }
+  .index-work{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 30px;
+    width: 400px;
+    position: absolute;
+    margin-top: 70vh;
+    color: white;
+  }
+
+  .index-resume{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 30px;
+    width: 400px;
+    position: absolute;
+    margin-top: 75vh;
+    color: white;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  input{
+    border: none;
+    height: 24px;
+    padding: 0;
+  }
+}
+
+/*tablet*/
+@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+  #container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .a-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: 40px;
+    position: absolute;
+    color: white;
+  }
+  .a-second-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: 40px;
+    top: 90px;
+    width: 85vw;
+    position: absolute;
+    color: white;
+  }
+  .index-work{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: 40px;
+    width: 400px;
+    position: absolute;
+    margin-top: 70.5vh;
+    color: white;
+  }
+
+  .index-resume{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: 240px;
+    width: 20vw;
+    position: absolute;
+    margin-top: 70vh;
+    color: white;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  input{
+    border: none;
+    height: 4vw;
+    width: 20vw;
+    padding: 0;
+  }
+}
+
+
+/*laptop*/
+@media only screen and (min-device-width: 900px) {
+  #container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .a-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-left: 30px;
+    position: absolute;
+    color: white;
+  }
+  .a-second-title {
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-left: 250px;
+    width: 550px;
+    position: absolute;
+    color: white;
+  }
+  .input-passcode{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 30px;
+    height: 30px;
+    width: 200px;
+    position: absolute;
+    margin-top: 82vh;
+    color: black;
+    border-radius: 4px;
+    /*background-position: 10px 10px; */
+    background-repeat: no-repeat;
+    padding: 8px 0px 0px 8px;
+  }
+
+  .input-button{
+    font-family: 'Founders Grotesk', sans-serif;
+    background: transparent;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 250px;
+    width: auto;
+    position: absolute;
+    margin-top: 83vh;
+    color: white;
+    text-decoration: underline;
+    mix-blend-mode: difference;
+  }
+
+  .input-button:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  #noti{
+    font-family: 'Founders Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 30px;
+    width: auto;
+    position: absolute;
+    margin-top: 89vh;
+    color: white;
+    display: none;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  input{
+    border: none;
+    height: 24px;
+    padding: 0;
+  }
+}
+
