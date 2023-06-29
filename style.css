@@ -29,7 +29,7 @@ body {
   .a-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 21px;
     margin-left: 30px;
     position: absolute;
     color: white;
@@ -38,33 +38,56 @@ body {
   .a-second-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 21px;
     margin-left: 30px;
     width: 85vw;
     position: absolute;
     color: white;
     top:70px;
   }
-  .index-work{
+  .input-passcode{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 21px;
     margin-left: 30px;
-    width: 400px;
+    height: 28px;
+    width: 180px;
     position: absolute;
-    margin-top: 70vh;
+    margin-top: 76vh;
+    color: black;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    padding: 8px 0px 0px 8px;
+  }
+  .input-button{
+    font-family: 'Founders Grotesk', sans-serif;
+    background: transparent;
+    font-weight: 400;
+    font-size: 21px;
+    margin-left: 230px;
+    width: auto;
+    position: absolute;
+    margin-top: 77vh;
     color: white;
+    text-decoration: underline;
+    mix-blend-mode: difference;
   }
 
-  .index-resume{
+  .input-button:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  #noti{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 17px;
     margin-left: 30px;
-    width: 400px;
+    width: auto;
     position: absolute;
-    margin-top: 75vh;
+    margin-top: 83vh;
     color: white;
+    display: none;
   }
 
   canvas {
@@ -108,26 +131,49 @@ body {
     position: absolute;
     color: white;
   }
-  .index-work{
+  .input-passcode{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
     font-size: 40px;
-    margin-left: 40px;
-    width: 400px;
+    margin-left: 30px;
+    height: 36px;
+    width: 300px;
     position: absolute;
-    margin-top: 70.5vh;
+    margin-top: 76vh;
+    color: black;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    padding: 15px 0px 0px 15px;
+  }
+  .input-button{
+    font-family: 'Founders Grotesk', sans-serif;
+    background: transparent;
+    font-weight: 400;
+    font-size: 40px;
+    margin-left: 380px;
+    width: auto;
+    position: absolute;
+    margin-top: 76.5vh;
     color: white;
+    text-decoration: underline;
+    mix-blend-mode: difference;
   }
 
-  .index-resume{
+  .input-button:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  #noti{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
     font-size: 40px;
-    margin-left: 240px;
-    width: 20vw;
+    margin-left: 30px;
+    width: auto;
     position: absolute;
-    margin-top: 70vh;
+    margin-top: 82vh;
     color: white;
+    display: none;
   }
 
   canvas {
@@ -183,7 +229,6 @@ body {
     margin-top: 82vh;
     color: black;
     border-radius: 4px;
-    /*background-position: 10px 10px; */
     background-repeat: no-repeat;
     padding: 8px 0px 0px 8px;
   }
