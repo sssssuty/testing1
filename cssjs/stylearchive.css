@@ -14,13 +14,13 @@
         margin: 3vw;
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: black;
+        color: white;
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: black;
+        color: white;
     }
 
     .top{
@@ -31,7 +31,7 @@
         height: 14vw;
         width:100vw;
         z-index: 10;
-        color: black;
+        color: white;
     }
 
     #mynameen{
@@ -39,7 +39,7 @@
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
-        color: black;
+        color: white;
     }
 
     .menu{
@@ -49,7 +49,7 @@
         margin-right: 3vw;
         text-decoration: underline;
         text-decoration-color: white;
-        color: black;
+        color: white;
     }
 
     #menuarchive{
@@ -57,7 +57,7 @@
         position: absolute;
         margin-left: 84vw;
         margin-top: 6vw;
-        color: black;
+        color: white;
     }
 
     #menuinfo{
@@ -90,7 +90,7 @@
         height: 5vw;
         width: 94vw;
         transition: 0.5s;
-        border-top: solid black 0.2vw;
+        border-top: solid white 0.2vw;
         overflow: hidden;
         padding-top: 0.5vw;
         padding-bottom: 0.5vw;
@@ -104,7 +104,7 @@
     .project2{
         height: auto;
         width: 94vw;
-        border-top: solid black 0.2vw;
+        border-top: solid white 0.2vw;
         overflow: hidden;
         padding-top: 0.5vw;
         padding-bottom: 0.5vw;
@@ -194,13 +194,13 @@
         margin:2vw;
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: black;
+        color: white;
     }
 
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
-        color: black;
+        color: white;
     }
 
     .top{
@@ -240,7 +240,7 @@
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
-        color: black;
+        color: white;
         font-size: 2vw;
         position: absolute;
         margin-left: 89.2vw;
@@ -286,7 +286,7 @@
         height: 5vw;
         width: 92vw;
         transition: 0.5s;
-        border-top: solid black 0.2vw;
+        border-top: solid white 0.2vw;
         overflow: hidden;
         padding-top: 0.5vw;
         padding-bottom: 0.5vw;
@@ -301,7 +301,7 @@
     .project2{
         height: auto;
         width: 92vw;
-        border-top: solid black 0.2vw;
+        border-top: solid white 0.2vw;
         overflow: hidden;
         padding-top: 0.5vw;
         padding-bottom: 0.5vw;
@@ -322,7 +322,8 @@
         font-size: 2vw;
         width: 40vw;
         height: 2vw;
-        margin-bottom: 3.5vw;
+        margin-bottom: 2vw;
+        margin-top: 1.2vw;
     }
     .projecttag{
         font-size: 2vw;
