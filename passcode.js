@@ -1,11 +1,23 @@
 function myFunction() {
     var fname = document.getElementById("fname").value;
     var passcode = fname.toUpperCase();
-    if (passcode == "FACEBOOK"){
-      window.open("https://www.sutingyu.com/facebook/index.html", "_self");
+    if (passcode == "CISCO"){
+      window.open("https://www.sutingyu.com/cisco/index.html", "_self");
     }
-    if (passcode == "CMU"){
-      window.open("https://www.sutingyu.com/cmu/index.html", "_self");
+    if (passcode == "FIGMA"){
+      window.open("https://www.sutingyu.com/figma/index.html", "_self");
+    }
+    if (passcode == "IBM"){
+      window.open("https://www.sutingyu.com/ibm/index.html", "_self");
+    }
+    if (passcode == "KEYBANK"){
+      window.open("https://www.sutingyu.com/keybank/index.html", "_self");
+    }
+    if (passcode == "PWC"){
+      window.open("https://www.sutingyu.com/pwc/index.html", "_self");
+    }
+    if (passcode == "PEPSICO"){
+      window.open("https://www.sutingyu.com/Pepsico/index.html", "_self");
     }
     else{
       document.getElementById("noti").style.display = "inline-block";
