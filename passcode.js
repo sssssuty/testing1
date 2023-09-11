@@ -25,6 +25,9 @@ function myFunction() {
     if (passcode == "CZI"){
       window.open("https://www.sutingyu.com/chanzuckerberginitiative/index.html", "_self");
     }
+    if (passcode == "OKTA"){
+      window.open("https://www.sutingyu.com/okta/index.html", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
