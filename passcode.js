@@ -17,7 +17,13 @@ function myFunction() {
       window.open("https://www.sutingyu.com/pwc/index.html", "_self");
     }
     if (passcode == "PEPSICO"){
-      window.open("https://www.sutingyu.com/Pepsico/index.html", "_self");
+      window.open("https://www.sutingyu.com/pepsico/index.html", "_self");
+    }
+    if (passcode == "WALMART"){
+      window.open("https://www.sutingyu.com/walmart/index.html", "_self");
+    }
+    if (passcode == "CZI"){
+      window.open("https://www.sutingyu.com/chanzuckerberginitiative/index.html", "_self");
     }
     else{
       document.getElementById("noti").style.display = "inline-block";
