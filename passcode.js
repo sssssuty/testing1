@@ -10,7 +10,7 @@ function myFunction() {
     if (passcode == "IBM"){
       window.open("https://www.sutingyu.com/ibm/index.html", "_self");
     }
-    if (passcode == "everythingbefore"){
+    if (passcode == "EVERYTHING"){
       window.open("https://www.sutingyu.com/allprojects/index.html", "_self");
     }
     if (passcode == "PWC"){
