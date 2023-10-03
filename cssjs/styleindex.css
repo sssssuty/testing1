@@ -1,6 +1,9 @@
 @font-face{
     font-family: "Founders Grotesk", sans-serif;
-    src:url("FoundersGrotesk-Regular.woff");
+    src:url("FoundersGrotesk-Light.otf");
+}
+a{
+    color:white;
 }
 
 
@@ -14,6 +17,7 @@
     a{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
+        color:white;
     }
     .top{
         position: fixed;
@@ -26,7 +30,7 @@
     }
 
     #mynameen{
-        font-size: 4vw;
+        font-size: 2vw;
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
@@ -99,12 +103,7 @@
         display: none;
         opacity: 0;
     }
-
 }
-
-
-
-
 
 
 /* desktop layout for larger windows*/
@@ -113,13 +112,33 @@
         margin:2vw;
         font-family: "Founders Grotesk";
         font-style: 100;
-
     }
     a{
         font-family: "Founders Grotesk";
         font-style: 100;
+        color:white;
+    }
+    .indexproject1{
+        display: inline-block;
+        margin-left: 2vw;
+        margin-bottom: 5vw;
     }
 
+    .indexproject2{
+        display: inline-block;
+        margin-left: 4vw;
+    }
+    .indexphoto{
+        width: 43vw;
+        border-radius: 0.5vw;
+    }
+    .indexcopy{
+        width: 38vw;
+        font-family: "Founders Grotesk", sans-serif;
+        font-size: 1.9vw;
+        color:white;
+        margin-top: 0.5vw;
+    }
     .top{
         position: fixed;
         background-color: none;
@@ -176,6 +195,10 @@
         position: absolute;
         top: 18vw;
         left: 24vw;
+    }
+
+    #placeholder1{
+        height: 2vw;
     }
 
     #txt{
