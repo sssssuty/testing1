@@ -28,6 +28,12 @@ function myFunction() {
     if (passcode == "OKTA"){
       window.open("https://www.sutingyu.com/okta/index.html", "_self");
     }
+    if (passcode == "LINKEDIN"){
+      window.open("https://www.sutingyu.com/linkedin/index.html", "_self");
+    }
+    if (passcode == "WTW"){
+      window.open("https://www.sutingyu.com/wtw/index.html", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
