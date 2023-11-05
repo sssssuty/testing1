@@ -1,5 +1,5 @@
 @font-face{
-    font-family: "Founders Grotesk", sans-serif;
+    font-family: "Founders Grotesk", helvetica, sans-serif;
     src:url("FoundersGrotesk-Light.otf");
 }
 a{
@@ -11,11 +11,11 @@ a{
 @media only screen and (max-device-width: 500px) {
     body{
         margin:3vw;
-        font-family: "Founders Grotesk", sans-serif;
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
     }
     a{
-        font-family: "Founders Grotesk", sans-serif;
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         color:white;
     }
@@ -133,11 +133,12 @@ a{
         border-radius: 0.5vw;
     }
     .indexcopy{
-        width: 38vw;
-        font-family: "Founders Grotesk", sans-serif;
-        font-size: 1.9vw;
+        width: 41vw;
+        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-size: 28px;
+        line-height: 28px;
         color:white;
-        margin-top: 0.5vw;
+        margin-top: 14px;
     }
     .top{
         position: fixed;
@@ -184,17 +185,24 @@ a{
     }
 
     .intro2{
-        font-size: 1.9vw;
+        font-size: 28px;
         position: absolute;
         top: 18vw;
-        left: 17vw;
+        left: 16vw;
     }
 
     .intro3{
-        font-size: 1.9vw;
+        font-size: 28px;
         position: absolute;
         top: 18vw;
-        left: 24vw;
+        left: 23vw;
+    }
+
+    .intro4{
+        font-size: 28px;
+        position: absolute;
+        top: 18vw;
+        left: 32vw;
     }
 
     #placeholder1{
@@ -205,11 +213,11 @@ a{
         position: absolute;
         top: 18vw;
         left: 4vw;
-        font-size: 1.9vw;
+        font-size: 28px;
     }
 
     #menuarchive{
-        font-family: "Founders Grotesk", sans-serif;
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
@@ -221,7 +229,7 @@ a{
     }
 
     .move{
-        font-family: "Founders Grotesk", sans-serif;
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         font-size: 3.55vw;
         position: absolute;
@@ -231,10 +239,10 @@ a{
         margin-top: -46vw;
     }
     .indexprojecttext{
-        display: inline-block; 
+        display:block; 
         height: 1000; 
         width: 50vw; 
-        font-size: 3vw; 
+        font-size: 28px; 
         margin-left: 2vw; 
         margin-bottom: 1vw;
     }

@@ -12,13 +12,13 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin: 3vw;
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         color: white;
     }
 
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         color: white;
     }
@@ -192,13 +192,13 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         color: white;
     }
 
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         color: white;
     }
@@ -238,10 +238,10 @@
     }*/
 
     #menuarchive{
-        font-family: "Founders Grotesk", sans-serif;
+        font-family: "Founders Grotesk", helvetica, sans-serif, sans-serif;
         font-style: 100;
         color: white;
-        font-size: 2vw;
+        font-size: 34px;
         position: absolute;
         margin-left: 89.2vw;
         margin-top: 4.6vw;
@@ -250,7 +250,7 @@
     }
 
     #menuinfo{
-        font-size: 2vw;
+        font-size: 34px;
         position: absolute;
         margin-left: 75vw;
         margin-top: 4.6vw;
@@ -319,7 +319,7 @@
 
     .projecttitle{
         display: inline-block;
-        font-size: 2vw;
+        font-size: 34px;
         width: 40vw;
         height: 2vw;
         margin-bottom: 2vw;
@@ -331,13 +331,13 @@
 
     .projecttitle2{
         display: inline-block;
-        font-size: 2vw;
+        font-size: 34px;
         width: 40vw;
         height: 2vw;
         margin-bottom: 3.5vw;
     }
     .projecttag2{
-        font-size: 2vw;
+        font-size: 34px;
     }
 
     .projectPhotoBig1{

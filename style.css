@@ -204,7 +204,7 @@ body {
   .a-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 2vw;
+    font-size: 34px;
     position: absolute;
     margin-left: 3.8vw;
     margin-top: 2.3vw;
@@ -213,7 +213,7 @@ body {
   .a-second-title {
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 2vw;
+    font-size: 34px;
     position: absolute;
     margin-top: 2.3vw;
     margin-left: 250px;
@@ -223,7 +223,7 @@ body {
   .input-passcode{
     font-family: 'Founders Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 1.6vw;
+    font-size: 24px;
     position: absolute;
     margin-left: 3.8vw;
     height: 30px;
@@ -239,7 +239,7 @@ body {
     font-family: 'Founders Grotesk', sans-serif;
     background: transparent;
     font-weight: 400;
-    font-size: 1.6vw;
+    font-size: 24px;
     margin-left: 19vw;;
     width: auto;
     position: absolute;
