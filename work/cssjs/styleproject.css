@@ -1,5 +1,5 @@
 /*@font-face{
-    font-family: "Founders Grotesk";
+    font-family: "Founders Grotesk", helvetica, sans-serif;
     src:url("Founders Grotesk Regular.woff");
 }
 */
@@ -12,14 +12,14 @@
 @media only screen and (max-device-width: 500px) {
     body{
         background-color: #f3f3f3;
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         /*overflow: hidden;*/
         margin-left: -0.1vw;
     }
 
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -326,14 +326,14 @@
     body{
         border:0;
         margin:0;
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
         background-color: #f3f3f3;
         margin-bottom: 0;
     }
 
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -431,7 +431,7 @@
         margin-left: 7vw;
         margin-bottom: 5vw;
         display: grid;
-        grid-template-columns: 50vw auto;
+        grid-template-columns: 60vw auto;
         grid-template-rows: 3vw auto;
     }
 
@@ -450,7 +450,7 @@
     }*/
 
     .category{
-        font-size: 1.8vw;
+        font-size: 28px;
         line-height: 2.2vw;
         margin: 0;
         padding: 0;
@@ -462,7 +462,7 @@
     }
 
     .time{
-        font-size: 1.8vw;
+        font-size: 28px;
         line-height: 2.2vw;
         margin: 0;
         padding: 0;
@@ -474,7 +474,7 @@
     }
 
     .role{
-        font-size: 1.8vw;
+        font-size: 28px;
         line-height: 2.2vw;
         margin: 0;
         padding: 0;
@@ -486,10 +486,11 @@
     }
 
     .content{
-        font-size: 1.8vw;
+        font-size: 28px;
         line-height: 2.2vw;
         margin: 0;
         padding: 0;
+        margin-right: 9vw;
     }
 
     .problemsolution{
@@ -561,7 +562,7 @@
     }
 
     .subtitlecontent1{
-        font-size: 1.8vw;
+        font-size: 28px;
         margin: 0;
         padding: 0;
         margin-top: 1vw;
@@ -587,7 +588,7 @@
     }
 
     .subtitlecontent2{
-        font-size: 1.8vw;
+        font-size: 28px;
         margin: 0;
         padding: 0;
         margin-top: 1vw;
@@ -715,7 +716,7 @@
     }
 
     .dotdot{
-        font-size: 1.4vw;
+        font-size: 22px;
     }
 
     .guggenheimvideosection1{
