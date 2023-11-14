@@ -119,11 +119,10 @@
         font-size: 6vw;
         line-height: 6.8vw;
     }
-    .biotext{
-        position: fixed;
-        font-size: 6vw;
+    .biotext2{
+        font-size: 40px;
         margin-top: 20vw;
-        width: 85vw;
+        width: 90vw;
     }
 }
 
@@ -158,6 +157,17 @@
 
     .biotext{
         position: fixed;
+        background-color: none;
+        margin: 0;
+        margin-top: 10vw;
+        margin-left: 2vw;
+        padding: 0;
+        height: 6.5vw;
+        width: 70vw;
+        font-size: 34px;
+    }
+
+    .biotext2{
         background-color: none;
         margin: 0;
         margin-top: 10vw;
@@ -242,8 +252,6 @@
         position: absolute;
         bottom: 2vw;
     }
-
-
     #menuarchive{
         font-family: "Founders Grotesk", sans-serif;
         font-style: 100;
@@ -282,5 +290,26 @@
         left: 84.5vw;
         font-size: 1.9vw;
         /*line-height: 3.5vw;*/
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column1 {
+      float: left;
+      width: 27%;
+    }
+    .column2 {
+      float: left;
+      width: 27%;
+    }
+    .column3 {
+      float: left;
+      width: 46%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
     }
 }

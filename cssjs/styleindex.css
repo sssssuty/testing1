@@ -8,9 +8,10 @@ a{
 
 
 /*mobile*/
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 700px) {
     body{
         margin:3vw;
+        margin-top: 0;
         font-family: "Founders Grotesk", helvetica, sans-serif;
         font-style: 100;
     }
@@ -22,15 +23,15 @@ a{
     .top{
         position: fixed;
         margin: 0;
-        margin-top: -4vw;
+        margin-top: -41vw;
         padding: 0;
-        height: 14vw;
+/*        height: 14vw;*/
         width:100vw;
         z-index: 10;
     }
 
     #mynameen{
-        font-size: 2vw;
+        font-size: 4vw;
         position: absolute;
         margin-right: 40vw;
         margin-top: 6vw;
@@ -38,7 +39,7 @@ a{
 
     .menu{
         position: absolute;
-        font-size: 3.5vw;
+        font-size: 4vw;
         margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
@@ -51,12 +52,19 @@ a{
         margin-top: 61vw;
     }
     .indexintro{
-        position: fixed;
-        font-size: 6vw;
+/*        position: fixed;*/
         margin-top: 20vw;
         width: 80vw;
     }
-
+    .hiteam{
+        font-size: 4vw;
+        margin-top: 40vw;
+        margin-bottom: 2vw;
+    }
+    .myslogan{
+        font-size: 6vw;
+        margin-bottom: 30vw;
+    }
     .intro2{
         position: absolute;
         font-size: 6vw;
@@ -67,6 +75,11 @@ a{
         position: absolute;
         font-size: 6vw;
         margin-top: 77vw;
+    }
+
+    .indexphoto{
+        width: 94vw;
+        border-radius: 0.5vw;
     }
 
     #menuarchive{
@@ -103,11 +116,18 @@ a{
         display: none;
         opacity: 0;
     }
+    .indexproject1{
+        margin-bottom: 20vw;
+    }
+    .indexproject2{
+        margin-bottom: 20vw;
+    }
 }
 
 
+
 /* desktop layout for larger windows*/
-@media only screen and (min-device-width: 500px){
+@media only screen and (min-device-width: 700px){
     body{
         margin:2vw;
         font-family: "Founders Grotesk";
@@ -169,12 +189,17 @@ a{
         text-decoration: underline;
         text-decoration-color: white;
     }
-
     .indexintro{
-        font-size: 3vw;
         width: 70vw;
-        padding-top: 7vw;
+        padding-top: 11vw;
         margin-left: 2vw;
+    }
+    .hiteam{
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    .myslogan{
+        font-size: 65px;
     }
 
     .indexbio{
@@ -187,21 +212,21 @@ a{
     .intro2{
         font-size: 28px;
         position: absolute;
-        top: 18vw;
+        top: 500px;
         left: 16vw;
     }
 
     .intro3{
         font-size: 28px;
         position: absolute;
-        top: 18vw;
+        top: 500px;
         left: 23vw;
     }
 
     .intro4{
         font-size: 28px;
         position: absolute;
-        top: 18vw;
+        top: 500px;
         left: 32vw;
     }
 
@@ -211,7 +236,7 @@ a{
 
     #txt{
         position: absolute;
-        top: 18vw;
+        top: 500px;
         left: 4vw;
         font-size: 28px;
     }
