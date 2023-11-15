@@ -185,14 +185,14 @@ body {
   }
 
   .a-title {
-    font-size: 34px;
+    font-size: 30px;
     position: absolute;
     margin-left: 3.8vw;
     margin-top: 2.3vw;
     color: white;
   }
   .a-second-title {
-    font-size: 34px;
+    font-size: 30px;
     position: absolute;
     margin-top: 2.3vw;
     margin-left: 250px;
@@ -210,11 +210,11 @@ body {
     border-radius: 4px;
     background-repeat: no-repeat;
     padding: 2px 0px 0px 8px;
+    color: grey;
   }
-
   .input-button{
     background: transparent;
-    font-size: 18px;
+    font-size: 24px;
     margin-left: 19vw;;
     width: auto;
     position: absolute;
