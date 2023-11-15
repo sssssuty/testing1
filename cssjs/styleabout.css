@@ -173,8 +173,8 @@
         margin-left: 2vw;
         padding: 0;
         height: 6.5vw;
-        width: 70vw;
-        font-size: 28px;
+        width: 93vw;
+        font-size: 24px;
     }
 
     #mynameen{
@@ -290,25 +290,71 @@
         font-size: 1.9vw;
         /*line-height: 3.5vw;*/
     }
+    /* Create three equal columns that floats next to each other */
+    .columntext1 {
+      float: left;
+      width: 60%;
+/*      margin-right: 2%;*/
+      font-size: 48px;
+    }
+    .columntext2 {
+      float: left;
+      width: 19%;
+      margin-right: 2%;
+    }
+    .columntext3 {
+      float: left;
+      width: 19%;
+    }
+
+    .detailtext{
+        float: left;
+        width: 60%;
+        margin-right: 21%;
+    }
+    .detailtext2{
+        float: left;
+        width: 19%;
+    }
 
     /* Create three equal columns that floats next to each other */
     .column1 {
       float: left;
-      width: 27%;
+      width: 25%;
     }
     .column2 {
       float: left;
-      width: 27%;
+      width: 25%;
     }
     .column3 {
       float: left;
-      width: 46%;
+      width: 50%;
+/*      margin-right: 15%;*/
     }
+/*    .column4 {
+      float: left;
+      width: 15%;
+    }*/
+
+/*    .row{
+        border-top: 2px solid white;
+    }*/
 
     /* Clear floats after the columns */
     .row:after {
       content: "";
       display: table;
       clear: both;
+    }
+
+    .cta{
+        border-radius: 50px;
+        border: 2px solid white;
+        text-decoration: none;
+        padding: 10px 10px 11px 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        width: 60%;
     }
 }
