@@ -1,7 +1,9 @@
 @font-face{
-    font-family: "Founders Grotesk", helvetica, sans-serif;
-    src:url("FoundersGrotesk-Light.otf");
+    font-family: "Neue Montreal", helvetica, sans-serif;
+    src:url("NeueMontreal-Regular");
+    font-weight: normal;
 }
+
 a{
     color:white;
 }
@@ -12,11 +14,11 @@ a{
     body{
         margin:3vw;
         margin-top: 0;
-        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-family: "Neue Montreal", helvetica, sans-serif;
         font-style: 100;
     }
     a{
-        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-family: "Neue Montreal", helvetica, sans-serif;
         font-style: 100;
         color:white;
     }
@@ -130,11 +132,11 @@ a{
 @media only screen and (min-device-width: 700px){
     body{
         margin:2vw;
-        font-family: "Founders Grotesk";
+        font-family: "Neue Montreal";
         font-style: 100;
     }
     a{
-        font-family: "Founders Grotesk";
+        font-family: "Neue Montreal";
         font-style: 100;
         color:white;
     }
@@ -154,7 +156,7 @@ a{
     }
     .indexcopy{
         width: 41vw;
-        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-family: "Neue Montreal", helvetica, sans-serif;
         font-size: 28px;
         line-height: 28px;
         color:white;
@@ -199,7 +201,7 @@ a{
         margin-bottom: 30px;
     }
     .myslogan{
-        font-size: 65px;
+        font-size: 100px;
     }
 
     .indexbio{
@@ -242,7 +244,7 @@ a{
     }
 
     #menuarchive{
-        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-family: "Neue Montreal", helvetica, sans-serif;
         font-style: 100;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
@@ -254,7 +256,7 @@ a{
     }
 
     .move{
-        font-family: "Founders Grotesk", helvetica, sans-serif;
+        font-family: "Neue Montreal", helvetica, sans-serif;
         font-style: 100;
         font-size: 3.55vw;
         position: absolute;
