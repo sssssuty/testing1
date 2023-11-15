@@ -1,11 +1,13 @@
 @font-face{
-    font-family: "Founders Grotesk", sans-serif;
-    src:url("FoundersGrotesk-Light.otf");
+    font-family: "Neue Montreal", helvetica, sans-serif;
+    src:url("NeueMontreal-Regular");
+    font-weight: normal;
 }
 
 html,
 body {
   overflow: hidden;
+/*  font-family: PPNeueMontreal, helvetica, sans-serif;*/
 }
 
 body {
@@ -13,6 +15,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  font-family: "Neue Montreal", helvetica, sans-serif;
 }
 
 /*mobile*/
@@ -27,8 +30,6 @@ body {
   }
 
   .a-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 21px;
     margin-left: 30px;
     position: absolute;
@@ -36,8 +37,6 @@ body {
     top:10px;
   }
   .a-second-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 21px;
     margin-left: 30px;
     width: 85vw;
@@ -46,8 +45,6 @@ body {
     top:70px;
   }
   .input-passcode{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 21px;
     margin-left: 30px;
     height: 28px;
@@ -60,9 +57,7 @@ body {
     padding: 8px 0px 0px 8px;
   }
   .input-button{
-    font-family: 'Founders Grotesk', sans-serif;
     background: transparent;
-    font-weight: 400;
     font-size: 21px;
     margin-left: 230px;
     width: auto;
@@ -79,8 +74,6 @@ body {
   }
 
   #noti{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 17px;
     margin-left: 30px;
     width: auto;
@@ -114,16 +107,12 @@ body {
   }
 
   .a-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 40px;
     margin-left: 40px;
     position: absolute;
     color: white;
   }
   .a-second-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 40px;
     margin-left: 40px;
     top: 90px;
@@ -132,8 +121,6 @@ body {
     color: white;
   }
   .input-passcode{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 40px;
     margin-left: 30px;
     height: 36px;
@@ -146,9 +133,7 @@ body {
     padding: 15px 0px 0px 15px;
   }
   .input-button{
-    font-family: 'Founders Grotesk', sans-serif;
     background: transparent;
-    font-weight: 400;
     font-size: 40px;
     margin-left: 380px;
     width: auto;
@@ -165,8 +150,6 @@ body {
   }
 
   #noti{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 40px;
     margin-left: 30px;
     width: auto;
@@ -202,8 +185,6 @@ body {
   }
 
   .a-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 34px;
     position: absolute;
     margin-left: 3.8vw;
@@ -211,39 +192,33 @@ body {
     color: white;
   }
   .a-second-title {
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 34px;
     position: absolute;
     margin-top: 2.3vw;
     margin-left: 250px;
-    width: 33vw;
+    width: 35vw;
     color: white;
   }
   .input-passcode{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     position: absolute;
     margin-left: 3.8vw;
-    height: 30px;
+    height: 40px;
     width: 12vw;
     margin-top: 82vh;
     color: black;
     border-radius: 4px;
     background-repeat: no-repeat;
-    padding: 8px 0px 0px 8px;
+    padding: 2px 0px 0px 8px;
   }
 
   .input-button{
-    font-family: 'Founders Grotesk', sans-serif;
     background: transparent;
-    font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     margin-left: 19vw;;
     width: auto;
     position: absolute;
-    margin-top: 83vh;
+    margin-top: 82.8vh;
     color: white;
     text-decoration: underline;
     mix-blend-mode: difference;
@@ -255,8 +230,6 @@ body {
   }
 
   #noti{
-    font-family: 'Founders Grotesk', sans-serif;
-    font-weight: 400;
     font-size: 1.6vw;
     margin-left: 3.8vw;
     width: auto;
@@ -273,7 +246,7 @@ body {
 
   input{
     border: none;
-    height: 24px;
+    height: 30px;
     padding: 0;
   }
 }
