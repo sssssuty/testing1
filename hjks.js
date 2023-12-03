@@ -79,6 +79,9 @@ function myFunction() {
     if (passcode == "LABCORP"){
       window.open("https://www.sutingyu.com/labcorp/index.html", "_self");
     }
+    if (passcode == "CSL"){
+      window.open("https://www.sutingyu.com/csl/index.html", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
