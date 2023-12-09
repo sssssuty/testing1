@@ -82,6 +82,9 @@ function myFunction() {
     if (passcode == "CSL"){
       window.open("https://www.sutingyu.com/csl/index.html", "_self");
     }
+    if (passcode == "CTP"){
+      window.open("https://www.sutingyu.com/ctp/index.html", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
