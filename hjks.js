@@ -85,6 +85,12 @@ function myFunction() {
     if (passcode == "CTP"){
       window.open("https://www.sutingyu.com/ctp/index.html", "_self");
     }
+    if (passcode == "DESIGN"){
+      window.open("https://www.sutingyu.com/design/index.html", "_self");
+    }
+    if (passcode == "MICROSOFT"){
+      window.open("https://www.sutingyu.com/microsoft/index.html", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
