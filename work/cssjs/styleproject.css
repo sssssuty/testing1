@@ -6,6 +6,9 @@
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
+    html{
+        scroll-behavior: smooth;
+    }
     body{
         background-color: #f3f3f3;
         font-family: "Neue Montreal", helvetica, sans-serif;
@@ -70,24 +73,51 @@
     .info{
         margin-left: 0vw;
         background-color: #f3f3f3;
-        /*padding-left: 3vw;*/
-        /*margin-left: -3vw;*/
-        /*margin-top: -3vw;*/
-        /*width: 103vw;*/
     }
 
     .projecttitle{
-        font-size: 8vw;
+        font-size: 48px;
         margin: 0;
         padding: 0;
-        /*margin-bottom: 2vw;*/
-        padding-top: 5vw;
-        padding-left: 8vw;
-        width: 84vw;
+        padding-top: 20vw;
+        padding-left: 4vw;
+        width: 94vw;
         background-color: #f3f3f3;
-        /*margin-left: -3vw;*/
-        /*margin-top: -3vw;*/
-        /*width: 103vw;*/
+    }
+
+    .infocontent1{
+        display: inline-block;
+        width: 86%;
+        font-size: 48px;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+        margin-left: 4vw;
+    }
+
+    .infocontent2{
+        font-size: 24px;
+        margin-bottom: 3vw;
+        margin-left:4vw;
+        margin-top: 4vw;
+    }
+
+    .infocontent3{
+        display: inline-block;
+        width: 28vw;
+        font-size: 24px;
+        margin-left: 4vw;
+        margin-bottom: 5vw;
+    }
+
+    .subtitleHeader4{
+        margin-left: 4vw;
+        font-size: 48px;
+    }
+
+    .subtitlecontent4{
+        margin-left: 4vw;
+        font-size: 24px;
+        width: 86vw;
     }
 
     .category{
@@ -230,51 +260,49 @@
     }
 
     .subtitle1{
-        font-size: 4vw;
-        line-height: 4.5vw;
+        font-size: 24px;
         margin: 0;
         padding: 0;
-        margin-left: 8vw;
-        /*padding-left: 8vw;*/
-        padding-top: 12vw;
+        margin-left: 4vw;
+        padding-top: 8vw;
     }
 
     .subtitle2{
-        font-size: 4vw;
-        line-height: 4.5vw;
+        font-size: 24px;
         margin: 0;
         padding: 0;
-        /*margin-left: 2vw;*/
-        background-color: #f3f3f3;
-        margin-left: 8vw;
-        /*width: 103vw;*/
-        /*padding-left: 5vw;*/
-        padding-top: 12vw;
+        margin-left: 4vw;
+        padding-top: 4vw;
     }
 
     .subtitlecontent1{
-        font-size: 3.5vw;
-        line-height: 4.5vw;
+        font-size: 24px;
         margin: 0;
         padding: 0;
-        margin-left: 8vw;
-        width: 84vw;
-        margin-top: 2vw;
-        /*padding-left: 4vw;*/
+        margin-left: 4vw;
+        width: 90vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
     }
 
     .subtitlecontent2{
-        font-size: 3.5vw;
-        line-height: 3.5vw;
+        font-size: 24px;
         margin: 0;
         padding: 0;
-        width: 84vw;
-        margin-top: 2vw;
-        background-color: #f3f3f3;
-        margin-left: 8vw;
-        /*padding-left: 5vw;*/
-        margin-top: -3vw;
-        padding-top: 6vw;
+        width: 90vw;
+        margin-left: 4vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+    }
+
+    .subtitlecontent3{
+        font-size: 24px;
+        margin: 0;
+        padding: 0;
+        width: 90vw;
+        margin-left: 4vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
     }
 
     .placeholder1{
@@ -284,11 +312,11 @@
     .onepic1{
         width: 90vw;
         margin-left: 4vw;
-        /*margin-right: 10vw;*/
     }
     .onepic2{
         width: 90vw;
         margin-left: 4vw;
+        margin-bottom: 4vw;
     }
     .onepic3{
         width: 90vw;
@@ -297,28 +325,32 @@
     .onepic4{
         width: 90vw;
         margin-left: 4vw;
-        /*margin-right: 10vw;*/
     }
     .subtitleHeader1{
-        font-size: 6.5vw;
-        margin-left: 7.5vw;
+        font-size: 48px;
+        margin-left: 4vw;
         width: 90vw;
+        margin-top: 2vw;
     }
     .subtitleHeader2{
-        font-size: 6.5vw;
-        margin-left: 7.5vw;
+        font-size: 48px;
+        margin-left: 4vw;
         width: 90vw;
     }
-/*    .dotdot{
-        font-size: 1.4vw;
-        padding-top: 3vw;
-    }*/
+
+    .anchor{
+        display: none;
+    }
 }
 
 
 
 /* desktop layout for larger windows*/
 @media only screen and (min-device-width: 501px){
+    html{
+        scroll-behavior: smooth;
+    }
+
     body{
         border:0;
         margin:0;
@@ -338,79 +370,58 @@
       text-decoration: none;
     }
 
-
     .top{
-        position: fixed;
-        background-color: none;
+        display: none;
+    }
+
+    .anchor{
+        margin:0; 
+        width: 16vw; 
+        position: fixed; 
+        height: 100vh; 
+        overflow: hidden; 
+        background-color: black;
+        z-index: 2; 
+        color: white;
+    }
+
+    .namets{
+        font-size: 1.5vw;
+        display: block;
         margin: 0;
-        margin-top: -2vw;
         margin-left: 2vw;
-        padding: 0;
-        height: 6.5vw;
-        width: 100vw;
-        z-index: 10;
-/*        color: #000; 
-        color:blue;*/
-        /*mix-blend-mode: difference;*/
+        margin-top: 2vw;
+        margin-bottom: 3vw;
     }
 
-    .top:link {
-      color: black;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    
-
-    #topmenu{
-        transition-duration: 0.35s;
-    }
-
-    #mynameen{
-        font-size: 20vw;
-        position: absolute;
+    .anchortitle{
+        display: block;
+        font-size: 1vw;
+        text-decoration: overline 1px;
+        margin-bottom: 0.2vh;
+        margin-top: 3vh;
         margin-left: 2vw;
-        margin-right: 55vw;
-        margin-top: 4.3vw;
     }
 
-    .menu{
-        font-size: 1.9vw;
-        margin-left: 0vw;
-        margin-right: 3vw;
-        position: absolute;
-        text-decoration: underline;
-        text-decoration-color: white;
+    .anchorcontent{
+        display: block;
+        font-size: 1vw;
+        margin-bottom: 0.2vh;
+        margin-left: 2vw;
     }
 
-    #menuarchive{
-        font-family: "Neue Montreal", sans-serif;
-        font-style: 100;
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89.5vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: white;
+    .projectcontent{
+        margin-left: 16vw; 
+        width:84vw; 
+        height: auto; 
+        overflow: hidden;
     }
 
-    #menuinfo{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89.5vw;
-        margin-top: 4.3vw;
-    }
-
-    #mynameen:hover{
-        cursor: url(../../cssjs/cursor-hover.png), auto;
-    }
-    .mynameenhover:hover{
-        cursor: url(../../cssjs/cursor-hover.png), auto;
-    }
-    #menuarchive:hover{
-        cursor: url(../../cssjs/cursor-hover.png), auto;
-    }
-    #menuinfo:hover{
-        cursor: url(../../cssjs/cursor-hover.png), auto;
+    .heroimage{
+        width: 100%;
+        z-index: -1;
+        top: 0; 
+        left: 0;
     }
 
     .projecttitle{
@@ -418,75 +429,132 @@
         margin: 0;
         padding: 0;
         margin-bottom: 2vw;
-        /*padding-top: 5vw;*/
-        padding-top: 40vw;
-        margin-left: 7vw;
+        margin-left: 4vw;
+        margin-top: 3vw;
+        display: none;
     }
 
     .info{
-        margin-left: 7vw;
+        margin-left: 4vw;
+    }
+
+    .infocontent1{
+        display: inline-block;
+        width: 85%;
+        font-size: 2.2vw;
+        margin-top:6vw;
+        margin-bottom: 3vw;
+    }
+
+    .infocontent2{
+        display: inline-block;
+        width: 40%;
+        font-size: 1.4vw;
         margin-bottom: 5vw;
-        display: grid;
-        grid-template-columns: 60vw auto;
-        grid-template-rows: 3vw auto;
     }
 
-    #content1{
-        grid-row-start: 1;
-        grid-row-end: 4;
-        grid-column-start: 1;
-        grid-column-end: 1;
+    .infocontent3{
+        display: inline-block;
+        width: 18%;
+        font-size: 1.4vw;
     }
 
-/*    div:nth-child(odd){
-        background-color: pink;
-    }
-    div:nth-child(even){
-        background-color: blue;
-    }*/
-
-    .category{
-        font-size: 24px;
-        line-height: 34px;
+    .subtitle1{
+        font-size: 1.4vw;
+        line-height: 2vw;
         margin: 0;
         padding: 0;
+        margin-top: 3vw;
+        padding-top: 4vw;
+        margin-left: 4vw;
+    }
+
+    .subtitleHeader1{
+        display: inline-block;
+        font-size: 2.2vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 4vw;
+        margin-top: 2vw;
+/*        position: absolute;*/
+    }
+
+    .subtitlecontent1{
+        display: inline-block;
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        width: 60vw;
+        position: absolute;
+    }
+
+    .subtitle2{
+        font-size: 1.4vw;
+        line-height: 2vw;
+        margin: 0;
+        padding: 0;
+        margin-top: 5vw;
+        /*padding-top: 5vw;*/
+        margin-left: 4vw;
+    }
+
+    .subtitleHeader2{
+        font-size: 2.2vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 4vw;
+    }
+
+    .subtitlecontent2{
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        margin: 0;
+        padding: 0;
+        margin-top: 1vw;
+        margin-bottom: 1.5vw;
+        margin-left: 4vw;
+        width: 91%;
+    }
+
+    .subtitlecontent3{
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        margin: 0;
+        padding: 0;
+        margin-top: 1vw;
         margin-bottom: 2vw;
-        margin-right: 20vw;
-        display: inline;
-        margin-left: 3vw;
-        width: 30vw;
+        margin-left: 4vw;
+        width: 40%;
+        display: inline-block;
     }
 
-    .time{
-        font-size: 24px;
-        line-height: 34px;
+    .subtitleHeader4{
+        display: inline-block;
+        font-size: 2.2vw;
         margin: 0;
         padding: 0;
-        margin-bottom: 2vw;
-        margin-left: 3vw;
-        margin-top: 3.55vw;
-        display: inline;
-        width: 30vw;
+        margin-left: 4vw;
+        position: absolute;
     }
 
-    .role{
-        font-size: 24px;
-        line-height: 34px;
-        margin: 0;
-        padding: 0;
-        margin-bottom: 2vw;
-        margin-left: 3vw;
-        /*margin-top: 3.55vw;*/
-        display: inline;
-        width: 30vw;
+    .subtitlecontent4{
+        display: inline-block;
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        width: 60vw;
+        height: 10vw;
+        margin-left: 20%;
     }
 
-    .content{
-        font-size: 24px;
-        line-height: 34px;
-        margin: 0;
-        padding: 0;
-        margin-right: 6vw;
+    .onepic1{
+        width: 100%;
+        margin-top: 1vw;
+        margin-bottom: 4vw;
+    }
+
+    .onepic2{
+        width: 91%;
+        margin-left: 4vw;
+        margin-bottom: 4vw;
     }
 
     .problemsolution{
@@ -496,13 +564,7 @@
         margin-left: 9vw;
     }
 
-    .problemtitle{
-        font-size: 1.8vw;
-        /*line-height: 2vw;*/
-        margin: 0;
-        padding: 0;
-        margin-top: 4vw;
-    }
+    
 
     .solutiontitle{
         font-size: 1.8vw;
@@ -528,71 +590,10 @@
         line-height: 2vw;
         margin: 0;
         padding: 0;
-        /*margin-left: 1.4vw;*/
         width: 36vw;
     }
 
-    .heroimage{
-        width: 100vw;
-        position: absolute;
-        z-index: -1;
-        top: 0; 
-        left: 0;
-    }
 
-    .subtitle1{
-        font-size: 1.4vw;
-        line-height: 2vw;
-        margin: 0;
-        padding: 0;
-        margin-top: 5vw;
-        padding-top: 5vw;
-        margin-left: 7vw;
-    }
-
-    .subtitleHeader1{
-        font-size: 2.2vw;
-        margin: 0;
-        padding: 0;
-        margin-left: 7vw;
-    }
-
-    .subtitlecontent1{
-        font-size: 24px;
-        line-height: 34px;
-        margin: 0;
-        padding: 0;
-        margin-top: 1vw;
-        margin-left: 7vw;
-        width: 48vw;
-    }
-
-    .subtitle2{
-        font-size: 1.4vw;
-        line-height: 2vw;
-        margin: 0;
-        padding: 0;
-        margin-top: 5vw;
-        /*padding-top: 5vw;*/
-        margin-left: 7vw;
-    }
-
-    .subtitleHeader2{
-        font-size: 2.2vw;
-        margin: 0;
-        padding: 0;
-        margin-left: 7vw;
-    }
-
-    .subtitlecontent2{
-        font-size: 24px;
-        line-height: 34px;
-        margin: 0;
-        padding: 0;
-        margin-top: 1vw;
-        margin-left: 7vw;
-        width: 48vw;
-    }
 
 /*    ol{
         margin: 0;
@@ -690,32 +691,7 @@
         width: 100vw;
     }
 
-    .onepic1{
-        width: 85vw;
-        margin-left: 7vw;
-        margin-top: 1vw;
-    }
-
-    .onepic2{
-        width: 86vw;
-        margin-left: 7vw;
-    }
-
-    .onepic3{
-        width: 82vw;
-        margin-left: 7vw;
-        /*margin-bottom: 1vw;*/
-    }
-
-    .onepic4{
-        width: 26.5vw;
-        margin-right: 1vw;
-        margin-top: 1vw;
-    }
-
-    .dotdot{
-        font-size: 22px;
-    }
+    
 
     .guggenheimvideosection1{
         margin:0;
