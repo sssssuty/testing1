@@ -54,12 +54,11 @@ a{
         margin-top: 61vw;
     }
     .indexintro{
-/*        position: fixed;*/
         margin-top: 20vw;
-        width: 80vw;
+        width: 90vw;
     }
     .hiteam{
-        font-size: 4vw;
+/*        font-size: 4vw;*/
         margin-top: 40vw;
         margin-bottom: 2vw;
     }
@@ -123,6 +122,18 @@ a{
     }
     .indexproject2{
         margin-bottom: 20vw;
+    }
+    .tag{
+        font-size: 32px;
+        display: inline-block;
+        border-radius: 2vw;
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.36);
+        padding: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top: 20px;
+        margin-right: 0.5vw;
     }
 }
 
@@ -277,7 +288,7 @@ a{
     .tag{
         display: inline-block;
         border-radius: 2vw;
-        background: rgba(255, 255, 255, 0.3);
+/*        background: rgba(255, 255, 255, 0.3);*/
         backdrop-filter: blur(4.5px);
         border: 1px solid rgba(255, 255, 255, 0.36);
         padding: 6px;
