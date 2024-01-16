@@ -4,22 +4,20 @@
 }*/
 
 @font-face{
-    font-family: "Founders Grotesk";
-    src:url("fonts/FoundersGrotesk-Regular.woff");
+    font-family: "Figtree";
+/*    src:url("fonts/FoundersGrotesk-Regular.woff");*/
 }
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     body{
         margin: 3vw;
-        font-family: "Founders Grotesk", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         color: white;
     }
 
     a{
-        font-family: "Founders Grotesk", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         color: white;
     }
 
@@ -192,14 +190,12 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        font-family: "Founders Grotesk", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         color: white;
     }
 
     a{
-        font-family: "Founders Grotesk", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         color: white;
     }
 
@@ -219,7 +215,6 @@
     }
 
     #mynameen{
-        font-style: 100;
         font-size: 2vw;
         position: absolute;
         margin-left: 2vw;
@@ -238,8 +233,7 @@
     }*/
 
     #menuarchive{
-        font-family: "Founders Grotesk", helvetica, sans-serif, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif, sans-serif;
         color: white;
         font-size: 34px;
         position: absolute;

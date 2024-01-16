@@ -1,9 +1,9 @@
 @font-face{
-    font-family: "Neue Montreal", helvetica, sans-serif;
-    src:url("NeueMontreal-Regular");
+    font-family: "Figtree", helvetica, sans-serif;
+/*    src:url("NeueMontreal-Regular");
     src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
-    font-weight: normal;
+    font-weight: normal;*/
 }
 
 
@@ -11,12 +11,10 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin: 3vw;
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
     }
     a{
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
         color:white;
     }
     .top{
@@ -161,12 +159,10 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
     }
     a{
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
         color:white;
     }
 
@@ -205,7 +201,6 @@
     }
 
     #mynameen{
-        font-style: 100;
         font-size: 2vw;
         position: absolute;
         margin-left: 2vw;
@@ -218,7 +213,6 @@
     }*/
 
     .menu{
-        font-style: 100;
         font-size: 1.9vw;
         margin-left: 0vw;
         margin-right: 3vw;
@@ -279,8 +273,7 @@
         bottom: 2vw;
     }
     #menuarchive{
-        font-family: "Neue Montreal", sans-serif;
-        font-style: 100;
+        font-family: "Figtree", sans-serif;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
@@ -300,8 +293,7 @@
     }
 
     .move{
-        font-family: "Neue Montreal", sans-serif;
-        font-style: 100;
+        font-family: "Figtree", sans-serif;
         font-size: 3.55vw;
         position: absolute;
         margin: 0;

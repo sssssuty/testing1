@@ -1,9 +1,9 @@
 @font-face{
-    font-family: "Neue Montreal", helvetica, sans-serif;
-    src:url("NeueMontreal-Regular");
+    font-family: "Figtree", helvetica, sans-serif;
+/*    src:url("NeueMontreal-Regular");
     src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
-    font-weight: normal;
+    font-weight: normal;*/
 }
 
 a{
@@ -16,12 +16,10 @@ a{
     body{
         margin:3vw;
         margin-top: 0;
-        font-family: "Neue Montreal", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
     }
     a{
-        font-family: "Neue Montreal", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         color:white;
         font-size: 4vw;
     }
@@ -149,12 +147,10 @@ a{
 @media only screen and (min-device-width: 700px){
     body{
         margin:2vw;
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
     }
     a{
-        font-family: "Neue Montreal";
-        font-style: 100;
+        font-family: "Figtree";
         color:white;
     }
     .indexproject1{
@@ -173,7 +169,7 @@ a{
     }
     .indexcopy{
         width: 41vw;
-        font-family: "Neue Montreal", helvetica, sans-serif;
+        font-family: "Figtree", helvetica, sans-serif;
         font-size: 28px;
         line-height: 34px;
         color:white;
@@ -191,7 +187,6 @@ a{
     }
 
     #mynameen{
-        font-style: 100;
         font-size: 2vw;
         position: absolute;
         margin-left: 1.8vw;
@@ -200,7 +195,6 @@ a{
     }
 
     .menu{
-        font-style: 100;
         font-size: 1.9vw;
         margin-left: 0vw;
         margin-right: 3vw;
@@ -261,8 +255,7 @@ a{
     }
 
     #menuarchive{
-        font-family: "Neue Montreal", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
@@ -273,8 +266,7 @@ a{
     }
 
     .move{
-        font-family: "Neue Montreal", helvetica, sans-serif;
-        font-style: 100;
+        font-family: "Figtree", helvetica, sans-serif;
         font-size: 3.55vw;
         position: absolute;
         margin: 0;
