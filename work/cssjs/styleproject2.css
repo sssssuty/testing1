@@ -1,6 +1,6 @@
 @font-face{
     font-family: "Neue Montreal", helvetica, sans-serif;
-    src:url("NeueMontreal-Regular");
+    src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
     font-weight: normal;
 }
 
@@ -376,7 +376,7 @@
 
     .anchor{
         margin:0; 
-        width: 16vw; 
+        width: 19vw; 
         position: fixed; 
         height: 100vh; 
         overflow: hidden; 
@@ -411,8 +411,8 @@
     }
 
     .projectcontent{
-        margin-left: 16vw; 
-        width:84vw; 
+        margin-left: 19vw; 
+        width:81vw; 
         height: auto; 
         overflow: hidden;
     }
@@ -449,14 +449,14 @@
     .infocontent2{
         display: inline-block;
         width: 40%;
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         margin-bottom: 5vw;
     }
 
     .infocontent3{
         display: inline-block;
         width: 18%;
-        font-size: 1.4vw;
+        font-size: 1.2vw;
     }
 
     .subtitle1{
@@ -492,7 +492,7 @@
         line-height: 2vw;
         margin: 0;
         padding: 0;
-        margin-top: 5vw;
+        padding-top: 5vw;
         /*padding-top: 5vw;*/
         margin-left: 4vw;
     }
@@ -510,7 +510,7 @@
         margin: 0;
         padding: 0;
         margin-top: 1vw;
-        margin-bottom: 1.5vw;
+        padding-bottom: 1.5vw;
         margin-left: 4vw;
         width: 91%;
     }
@@ -554,7 +554,7 @@
     .onepic2{
         width: 91%;
         margin-left: 4vw;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
     }
 
     .problemsolution{
