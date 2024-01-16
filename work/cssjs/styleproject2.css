@@ -1,8 +1,8 @@
 @font-face{
-    font-family: "Neue Montreal", helvetica, sans-serif;
-    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
+    font-family: "Figtree", helvetica, sans-serif;
+/*    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
-    font-weight: normal;
+    font-weight: normal;*/
 }
 
 /*mobile*/
@@ -12,14 +12,14 @@
     }
     body{
         background-color: #f3f3f3;
-        font-family: "Neue Montreal", helvetica, sans-serif;
+        font-family: "Figtree", helvetica, sans-serif;
         font-style: 100;
         /*overflow: hidden;*/
         margin-left: -0.1vw;
     }
 
     a{
-        font-family: "Neue Montreal", helvetica, sans-serif;
+        font-family: "Figtree", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -355,14 +355,14 @@
     body{
         border:0;
         margin:0;
-        font-family: "Neue Montreal", helvetica, sans-serif;
+        font-family: "Figtree", helvetica, sans-serif;
         font-style: 100;
         background-color: #f3f3f3;
         margin-bottom: 0;
     }
 
     a{
-        font-family: "Neue Montreal", helvetica, sans-serif;
+        font-family: "Figtree", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -670,7 +670,7 @@
 
     .indexcopy{
         width: 38vw;
-        font-family: "Neue Montreal", sans-serif;
+        font-family: "Figtree", sans-serif;
         font-size: 2vw;
         color:white;
     }
