@@ -67,7 +67,7 @@ a{
         font-size: 18px;
     }
     .myslogan{
-        font-size: 6vw;
+        font-size: 7vw;
         margin-bottom: 30vw;
     }
     .intro2{
@@ -130,12 +130,13 @@ a{
     .tag{
         font-size: 32px;
         display: inline-block;
-        border-radius: 2vw;
+        border-radius: 50px;
         backdrop-filter: blur(4.5px);
         border: 1px solid rgba(255, 255, 255, 0.36);
         padding: 6px;
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin-top: 20px;
         margin-right: 0.5vw;
     }
