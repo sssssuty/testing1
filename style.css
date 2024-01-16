@@ -1,5 +1,5 @@
 @font-face{
-    font-family: 'Figtree', helvetica, sans-serif;
+    font-family: 'Manrope', helvetica, sans-serif;
 /*    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
     src:url("NeueMontreal-Regular");*/
@@ -17,7 +17,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-family: 'Figtree', helvetica, sans-serif;
+  font-family: 'Manrope', helvetica, sans-serif;
 }
 
 /*mobile*/

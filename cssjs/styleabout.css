@@ -1,5 +1,5 @@
 @font-face{
-    font-family: "Figtree", helvetica, sans-serif;
+    font-family: "Manrope", helvetica, sans-serif;
 /*    src:url("NeueMontreal-Regular");
     src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
@@ -11,10 +11,10 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin: 3vw;
-        font-family: "Figtree";
+        font-family: "Manrope";
     }
     a{
-        font-family: "Figtree";
+        font-family: "Manrope";
         color:white;
     }
     .top{
@@ -159,10 +159,10 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        font-family: "Figtree";
+        font-family: "Manrope";
     }
     a{
-        font-family: "Figtree";
+        font-family: "Manrope";
         color:white;
     }
 
@@ -273,7 +273,7 @@
         bottom: 2vw;
     }
     #menuarchive{
-        font-family: "Figtree", sans-serif;
+        font-family: "Manrope", sans-serif;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
@@ -293,7 +293,7 @@
     }
 
     .move{
-        font-family: "Figtree", sans-serif;
+        font-family: "Manrope", sans-serif;
         font-size: 3.55vw;
         position: absolute;
         margin: 0;

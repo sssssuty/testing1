@@ -4,7 +4,7 @@
 }*/
 
 @font-face{
-    font-family: "Figtree";
+    font-family: "Manrope";
 /*    src:url("fonts/FoundersGrotesk-Regular.woff");*/
 }
 
@@ -12,12 +12,12 @@
 @media only screen and (max-device-width: 500px) {
     body{
         margin: 3vw;
-        font-family: "Figtree", helvetica, sans-serif;
+        font-family: "Manrope", helvetica, sans-serif;
         color: white;
     }
 
     a{
-        font-family: "Figtree", helvetica, sans-serif;
+        font-family: "Manrope", helvetica, sans-serif;
         color: white;
     }
 
@@ -190,12 +190,12 @@
 @media only screen and (min-device-width: 500px){
     body{
         margin:2vw;
-        font-family: "Figtree", helvetica, sans-serif;
+        font-family: "Manrope", helvetica, sans-serif;
         color: white;
     }
 
     a{
-        font-family: "Figtree", helvetica, sans-serif;
+        font-family: "Manrope", helvetica, sans-serif;
         color: white;
     }
 
@@ -233,7 +233,7 @@
     }*/
 
     #menuarchive{
-        font-family: "Figtree", helvetica, sans-serif, sans-serif;
+        font-family: "Manrope", helvetica, sans-serif, sans-serif;
         color: white;
         font-size: 34px;
         position: absolute;
