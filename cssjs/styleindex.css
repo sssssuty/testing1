@@ -1,8 +1,8 @@
 @font-face{
     font-family: "Neue Montreal", helvetica, sans-serif;
+    src:url("NeueMontreal-Regular");
     src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
-    src:url("NeueMontreal-Regular");
     font-weight: normal;
 }
 
@@ -23,6 +23,7 @@ a{
         font-family: "Neue Montreal", helvetica, sans-serif;
         font-style: 100;
         color:white;
+        font-size: 4vw;
     }
     .top{
         position: fixed;
@@ -60,7 +61,7 @@ a{
         width: 90vw;
     }
     .hiteam{
-/*        font-size: 4vw;*/
+        font-size: 4vw;
         margin-top: 40vw;
         margin-bottom: 2vw;
     }
