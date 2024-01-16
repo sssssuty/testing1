@@ -1,5 +1,7 @@
 @font-face{
     font-family: "Neue Montreal", helvetica, sans-serif;
+    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
+    src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
     src:url("NeueMontreal-Regular");
     font-weight: normal;
 }

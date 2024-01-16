@@ -1,5 +1,7 @@
 @font-face{
     font-family: "Neue Montreal", helvetica, sans-serif;
+    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
+    src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
     src:url("NeueMontreal-Regular");
     font-weight: normal;
 }
@@ -122,6 +124,31 @@
         font-size: 40px;
         margin-top: 20vw;
         width: 90vw;
+    }
+
+    .columntext1 {
+        font-size: 48px;
+    }
+    .columntext2 {
+        font-size: 20px;
+        margin-top: 10vw;
+    }
+    .columntext3 {
+        font-size: 20px;
+        margin-top: 4vw;
+    }
+    .detailtext{
+        font-size: 20px;
+    }
+    .cta{
+        border-radius: 50px;
+        border: 2px solid white;
+        text-decoration: none;
+        padding: 10px 10px 11px 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        width: 60%;
     }
 }
 
