@@ -91,6 +91,9 @@ function myFunction() {
     if (passcode == "MICROSOFT"){
       window.open("https://www.sutingyu.com/microsoft/index.html", "_self");
     }
+    if (passcode == "SELFF"){
+      window.open("www.google.com", "_self");
+    }
     else{
       document.getElementById("noti").style.display = "inline-block";
     }
