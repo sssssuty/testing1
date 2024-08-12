@@ -1,5 +1,5 @@
 @font-face{
-    font-family: "Manrope", helvetica, sans-serif;
+    font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
 /*    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
     src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
     font-weight: normal;*/
@@ -12,14 +12,14 @@
     }
     body{
         background-color: #f3f3f3;
-        font-family: "Manrope", helvetica, sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro", helvetica, sans-serif;
         font-style: 100;
         /*overflow: hidden;*/
         margin-left: -0.1vw;
     }
 
     a{
-        font-family: "Manrope", helvetica, sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -338,6 +338,16 @@
         margin-left: 4vw;
         width: 90vw;
     }
+    .subtitleHeader3{
+        font-size: 48px;
+        margin-left: 4vw;
+        width: 90vw;
+    }
+    .subtitleHeader4{
+        font-size: 48px;
+        margin-left: 4vw;
+        width: 90vw;
+    }
 
     .anchor{
         display: none;
@@ -355,14 +365,14 @@
     body{
         border:0;
         margin:0;
-        font-family: "Manrope", helvetica, sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro", helvetica, sans-serif;
         font-style: 100;
         background-color: #f3f3f3;
         margin-bottom: 0;
     }
 
     a{
-        font-family: "Manrope", helvetica, sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro", helvetica, sans-serif;
         font-style: 100;
     }
 
@@ -406,9 +416,10 @@
 
     .anchorcontent{
         display: block;
-        font-size: 1vw;
+        font-size: 0.8vw;
         margin-bottom: 0.2vh;
         margin-left: 2vw;
+        padding-top: 0.1vw;
     }
 
     .projectcontent{
@@ -457,11 +468,11 @@
     .infocontent3{
         display: inline-block;
         width: 18%;
-        font-size: 1.2vw;
+        font-size: 1.0vw;
     }
 
     .subtitle1{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
@@ -473,6 +484,8 @@
     .subtitleHeader1{
         display: inline-block;
         font-size: 2.2vw;
+        font-weight: 500;
+        font-style: normal;
         margin: 0;
         padding: 0;
         margin-left: 4vw;
@@ -489,7 +502,7 @@
     }
 
     .subtitle2{
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         line-height: 2vw;
         margin: 0;
         padding: 0;
@@ -500,25 +513,38 @@
 
     .subtitleHeader2{
         font-size: 2.2vw;
+        font-weight: 500;
+        font-style: normal;
         margin: 0;
         padding: 0;
         margin-left: 4vw;
     }
 
     .subtitlecontent2{
-        font-size: 1.2vw;
-        line-height: 1.5vw;
+        font-size: 1vw;
+        line-height: 1.2vw;
         margin: 0;
         padding: 0;
         margin-top: 1vw;
         padding-bottom: 1.5vw;
         margin-left: 4vw;
-        width: 91%;
+        width: 60%;
     }
 
+    .subtitleHeader3{
+        font-size: 1.6vw;
+        font-weight: 500;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        margin-left: 4vw;
+        width: 50%;
+    }
+
+
     .subtitlecontent3{
-        font-size: 1.2vw;
-        line-height: 1.5vw;
+        font-size: 1vw;
+        line-height: 1.2vw;
         margin: 0;
         padding: 0;
         margin-top: 1vw;
@@ -531,6 +557,8 @@
     .subtitleHeader4{
         display: inline-block;
         font-size: 2.2vw;
+        font-weight: 500;
+        font-style: normal;
         margin: 0;
         padding: 0;
         margin-left: 4vw;
@@ -539,11 +567,30 @@
 
     .subtitlecontent4{
         display: inline-block;
-        font-size: 1.2vw;
-        line-height: 1.5vw;
+        font-size: 1vw;
+        line-height: 1.2vw;
         width: 60vw;
         height: 10vw;
         margin-left: 20%;
+    }
+
+    .subtitleHeader5{
+        display: block;
+        font-size: 1.6vw;
+        font-weight: 500;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        margin-left: 4vw;
+        margin-bottom: 1vw;
+    }
+
+    .subtitlecontent5{
+        display: block;
+        font-size: 1vw;
+        line-height: 1.2vw;
+        height: 10vw;
+        margin-left: 4vw;
     }
 
     .onepic1{
@@ -670,7 +717,7 @@
 
     .indexcopy{
         width: 38vw;
-        font-family: "Manrope", sans-serif;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 2vw;
         color:white;
     }
