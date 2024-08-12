@@ -8,8 +8,8 @@ let config = {
   TEXTURE_DOWNSAMPLE: 1,
   DENSITY_DISSIPATION: 0.95,
   VELOCITY_DISSIPATION: 0.9,
-  PRESSURE_DISSIPATION: 0.3,
-  PRESSURE_ITERATIONS: 5,
+  PRESSURE_DISSIPATION: 0.5,
+  PRESSURE_ITERATIONS: 25,
   CURL: 1,
   SPLAT_RADIUS: 0.005
 
@@ -620,7 +620,13 @@ function splat(x, y, dx, dy, color) {
   velocity.swap();
 
   gl.uniform1i(splatProgram.uniforms.uTarget, density.read[2]);
-  gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.3, color[1] * 0.3, color[2] * 0.3);
+
+  //orginal brightness
+  // gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.3, color[1] * 0.3, color[2] * 0.3);
+
+  //decrease the brightness
+  gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.15, color[1] * 0.15, color[2] * 0.15);
+
   blit(density.write[1]);
   density.swap();
 }
