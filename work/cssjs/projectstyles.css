@@ -29,13 +29,14 @@ img{
     padding: 0;
 }
 
-/* large desktop layout*/
-@media screen and (min-device-width: 1301px) {
+
+/*mobile & ipad*/
+@media screen and (max-device-width: 500px) and (min-device-width: 1px){
     #websitename{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        left: 80px;
+        left: 20px;
         color:#222;
         text-decoration-line: none;
     }
@@ -43,19 +44,24 @@ img{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        right: 80px;
+        right: 20px;
         color:#222;
         text-decoration-line: none;
+    }
+    body{
+        width: 96vw;
+        margin: auto;
     }
     .imgfullwidth{
         width: 100vw;
     }
     .imgregular{
-        width: 100%;
+        width: 100vw;
     }
     .placeholder{
         width: 1px;
         height: 100px;
+        display: block;
     }
     .labelstatus{
         font-size: 16px;
@@ -82,63 +88,45 @@ img{
         display: inline-block;
     }
     .projecttitle{
-        display: grid;
-        grid-template-areas:'left right';
+        display: block;
         gap: 40px;
-        max-width: 1400px;
         margin: auto;
     }
     .projecttitlegrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
         padding-top: 16px;
     }
     .projecttitlegrid2{
         grid-area: right;
-        width: 50vw;
-        max-width: 650px;
         padding-top: 16px;
     }
     .projectbrief{
-        display: grid;
-        grid-template-areas:'left right';
+        display: block;
         gap: 40px;
-        max-width: 1400px;
         margin: auto;
     }
     .projectbriefgrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
         border-top: 1px solid #bbb;
         padding-top: 16px;
     }
     .projectbriefgrid2{
         grid-area: right;
-        width: 50vw;
-        max-width: 650px;
         border-top: 1px solid #bbb;
         padding-top: 16px;
     }
     .projectsection{
-        display: grid;
-        grid-template-areas:'left right';
+        display: block;
         gap: 40px;
-        max-width: 1400px;
         margin: auto;
         border-top: 1px solid #bbb;
     }
     .projectsectiongrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
         padding-top: 16px;
     }
     .projectsectiongrid2{
         grid-area: right;
-        width: 50vw;
-        max-width: 650px;
         padding-top: 16px;
     }
     .largefont1{
@@ -176,6 +164,7 @@ img{
         padding-bottom: 16px;
     }
 }
+
 
 
 /* desktop layout*/
@@ -328,13 +317,14 @@ img{
 }
 
 
-/*mobile & ipad*/
-@media screen and (max-device-width: 500px) and (min-device-width: 1px){
+
+/* large desktop layout*/
+@media screen and (min-device-width: 1301px) {
     #websitename{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        left: 20px;
+        left: 40px;
         color:#222;
         text-decoration-line: none;
     }
@@ -342,24 +332,19 @@ img{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        right: 20px;
+        right: 40px;
         color:#222;
         text-decoration-line: none;
-    }
-    body{
-        width: 96vw;
-        margin: auto;
     }
     .imgfullwidth{
         width: 100vw;
     }
     .imgregular{
-        width: 100vw;
+        width: 100%;
     }
     .placeholder{
         width: 1px;
         height: 100px;
-        display: block;
     }
     .labelstatus{
         font-size: 16px;
@@ -386,45 +371,63 @@ img{
         display: inline-block;
     }
     .projecttitle{
-        display: block;
+        display: grid;
+        grid-template-areas:'left right';
         gap: 40px;
+        max-width: 1400px;
         margin: auto;
     }
     .projecttitlegrid1{
         grid-area: left;
+        width: 50vw;
+        max-width: 650px;
         padding-top: 16px;
     }
     .projecttitlegrid2{
         grid-area: right;
+        width: 50vw;
+        max-width: 650px;
         padding-top: 16px;
     }
     .projectbrief{
-        display: block;
+        display: grid;
+        grid-template-areas:'left right';
         gap: 40px;
+        max-width: 1400px;
         margin: auto;
     }
     .projectbriefgrid1{
         grid-area: left;
+        width: 50vw;
+        max-width: 650px;
         border-top: 1px solid #bbb;
         padding-top: 16px;
     }
     .projectbriefgrid2{
         grid-area: right;
+        width: 50vw;
+        max-width: 650px;
         border-top: 1px solid #bbb;
         padding-top: 16px;
     }
     .projectsection{
-        display: block;
+        display: grid;
+        grid-template-areas:'left right';
         gap: 40px;
+        max-width: 1400px;
         margin: auto;
         border-top: 1px solid #bbb;
     }
     .projectsectiongrid1{
         grid-area: left;
+        width: 50vw;
+        max-width: 650px;
         padding-top: 16px;
     }
     .projectsectiongrid2{
         grid-area: right;
+        width: 50vw;
+        max-width: 650px;
         padding-top: 16px;
     }
     .largefont1{
