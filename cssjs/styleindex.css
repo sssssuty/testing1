@@ -2,8 +2,14 @@
     font-family: "Inter", helvetica, sans-serif;
 }
 
+body{
+    margin:0;
+    font-family: "Inter", helvetica, sans-serif;
+    font-weight: 400;
+}
 a{
     color:white;
+    font-weight: 400;
 }
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
@@ -23,11 +29,6 @@ a{
         color:#222;
         text-decoration-line: none;
     }
-    body{
-        margin:3vw;
-        margin-top: 0;
-        font-family: "Inter", helvetica, sans-serif;
-    }
     a{
         font-family: "Inter", helvetica, sans-serif;
         color:white;
@@ -41,13 +42,6 @@ a{
 /*        height: 14vw;*/
         width:100vw;
         z-index: 10;
-    }
-
-    #mynameen{
-        font-size: 4vw;
-        position: absolute;
-        margin-right: 40vw;
-        margin-top: 6vw;
     }
 
     .menu{
@@ -65,8 +59,9 @@ a{
         margin-top: 61vw;
     }
     .indexintro{
+        margin: auto;
         margin-top: 20vw;
-        width: 90vw;
+        width: 94vw;
     }
     .hiteam{
         font-size: 4vw;
@@ -96,14 +91,6 @@ a{
         width: 94vw;
         border-radius: 0.5vw;
     }
-
-    #menuarchive{
-        font-size: 4vw;
-        position: absolute;
-        margin-left: 80vw;
-        margin-top: 6vw;
-    }
-
     .moving1{
         font-size: 10vw;
         line-height: 12vw;
@@ -123,13 +110,15 @@ a{
     .project2{
         display: none;
     }
+    
     .indexprojecttext{
         display: none;
         opacity: 0;
     }
-    #indexprojecttext{
-        display: none;
-        opacity: 0;
+    .indexproject{
+        display: block;
+        width: 94vw;
+        margin: auto;
     }
     .indexproject1{
         margin-bottom: 20vw;
@@ -170,30 +159,31 @@ a{
         color:#222;
         text-decoration-line: none;
     }
-    body{
-        margin:2vw;
-        font-family: "Inter", helvetica, sans-serif;
-    }
-    a{
-        font-family: "Inter", helvetica, sans-serif;
-        color:white;
+    .indexproject{
+        display: grid;
+        grid-template-areas:'left right';
+        gap: 40px;
+        max-width: 1100px;
+        margin: auto;
     }
     .indexproject1{
-        display: inline-block;
-        margin-left: 2vw;
-        margin-bottom: 5vw;
+        grid-area: left;
+        width: 530px;
+        max-width: 550px;
+        padding-top: 16px;
     }
-
     .indexproject2{
-        display: inline-block;
-        margin-left: 4vw;
+        grid-area: right;
+        width: 530px;
+        max-width: 550px;
+        padding-top: 16px;
     }
     .indexphoto{
-        width: 43vw;
+        width: 100%;
         border-radius: 0.5vw;
     }
     .indexcopy{
-        width: 41vw;
+        width: 100%;
         font-family: "Inter", helvetica, sans-serif;
         font-size: 28px;
         line-height: 34px;
@@ -210,15 +200,6 @@ a{
         width:100vw;
         z-index: 10;
     }
-
-    #mynameen{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 1.8vw;
-        margin-right: 55vw;
-        margin-top: 4.3vw;
-    }
-
     .menu{
         font-size: 1.9vw;
         margin-left: 0vw;
@@ -230,7 +211,6 @@ a{
     .indexintro{
         width: 60vw;
         padding-top: 11vw;
-        margin-left: 2vw;
     }
     .hiteam{
         font-size: 28px;
@@ -278,18 +258,6 @@ a{
         left: 4vw;
         font-size: 28px;
     }
-
-    #menuarchive{
-        font-family: "Inter", helvetica, sans-serif;
-        /*src:url(HelveticaNeue.woff);*/
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89.5vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
-
     .move{
         font-family: "Inter", helvetica, sans-serif;
         font-size: 3.55vw;
@@ -304,10 +272,8 @@ a{
         height: 1000; 
         width: 50vw; 
         font-size: 28px; 
-        margin-left: 2vw; 
         margin-bottom: 1vw;
     }
-
     .tag{
         display: inline-block;
         border-radius: 2vw;
@@ -319,6 +285,11 @@ a{
         padding-right: 12px;
         margin-top: 20px;
         margin-right: 0.5vw;
+    }
+    #indexsection{
+        width: 1100px;
+        margin: auto;
+        /* background-color: blue; */
     }
 }
 
@@ -328,7 +299,7 @@ a{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        left: 80px;
+        left: 40px;
         color:#222;
         text-decoration-line: none;
     }
@@ -336,34 +307,33 @@ a{
         position:fixed;
         font-size: 30px;
         top: 50px;
-        right: 80px;
+        right: 40px;
         color:#222;
         text-decoration-line: none;
     }
-    body{
-        margin:2vw;
-        font-family: "Inter", helvetica, sans-serif;
-    }
-    a{
-        font-family: "Inter", helvetica, sans-serif;
-        color:white;
+    .indexproject{
+        display: grid;
+        grid-template-areas:'left right';
+        gap: 40px;
+        max-width: 1400px;
+        margin: auto;
     }
     .indexproject1{
-        display: inline-block;
-        margin-left: 2vw;
-        margin-bottom: 5vw;
+        grid-area: left;
+        width: 680px;
+        padding-top: 16px;
     }
-
     .indexproject2{
-        display: inline-block;
-        margin-left: 4vw;
+        grid-area: right;
+        width: 680px;
+        padding-top: 16px;
     }
     .indexphoto{
-        width: 43vw;
+        width: 100%;
         border-radius: 0.5vw;
     }
     .indexcopy{
-        width: 41vw;
+        width: 100%;
         font-family: "Inter", helvetica, sans-serif;
         font-size: 28px;
         line-height: 34px;
@@ -380,15 +350,6 @@ a{
         width:100vw;
         z-index: 10;
     }
-
-    #mynameen{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 1.8vw;
-        margin-right: 55vw;
-        margin-top: 4.3vw;
-    }
-
     .menu{
         font-size: 1.9vw;
         margin-left: 0vw;
@@ -400,7 +361,6 @@ a{
     .indexintro{
         width: 60vw;
         padding-top: 11vw;
-        margin-left: 2vw;
     }
     .hiteam{
         font-size: 28px;
@@ -448,18 +408,6 @@ a{
         left: 4vw;
         font-size: 28px;
     }
-
-    #menuarchive{
-        font-family: "Inter", helvetica, sans-serif;
-        /*src:url(HelveticaNeue.woff);*/
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89.5vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
-
     .move{
         font-family: "Inter", helvetica, sans-serif;
         font-size: 3.55vw;
@@ -474,7 +422,6 @@ a{
         height: 1000; 
         width: 50vw; 
         font-size: 28px; 
-        margin-left: 2vw; 
         margin-bottom: 1vw;
     }
 
@@ -489,5 +436,11 @@ a{
         padding-right: 12px;
         margin-top: 20px;
         margin-right: 0.5vw;
+    }
+    #indexsection{
+        width: 1400px;
+        overflow:hidden;
+        margin: auto;
+        /* background-color: red; */
     }
 }
