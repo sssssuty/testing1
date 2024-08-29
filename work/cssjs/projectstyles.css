@@ -1,0 +1,249 @@
+@font-face{
+/*    font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;*/
+    font-family: "Inter", helvetica, sans-serif;
+}
+
+img{
+    width: 100%; 
+    margin: 0;
+    vertical-align: top;
+}
+
+html{
+    font-family: "Inter", helvetica, sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* desktop layout for larger windows*/
+@media only screen and (min-device-width: 1701px){
+
+    body{
+        width: 1700px;
+        margin:auto;
+    }
+    .divisionline{
+        border-top: 1px solid black;
+        margin-bottom: 20px;
+    }
+    .divisionspace{
+        height: 40px;
+    }
+    .bold0{
+        font-size: 36px;
+        font-family: "Inter", helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-weight:600;
+        font-style: normal;
+        margin-bottom: 20px;
+    }
+    .bold1{
+        font-size: 24px;
+        font-family: "Inter", helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-weight:600;
+        font-style: normal;
+        margin-bottom: 20px;
+    }
+    .bold2{
+        font-size: 18px;
+        font-family: "Inter", helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        margin-bottom: 10px;
+    }
+    .bodytext1{
+        font-size: 36px;
+        font-family: "Inter", helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 10px;
+    }
+    .bodytext2{
+        font-size: 18px;
+        font-family: "Inter", helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 10px;
+    }
+    .projectherotitle{
+        position: absolute;
+    }
+    .projectbriefcontent{
+        width: 49.5%; 
+        display: inline-block; 
+        margin: 0; 
+        margin-right: 2%; 
+        vertical-align: top;
+    }
+    .projectbriefcontentdetailscolumn{
+        width:24%; 
+        display: inline-block; 
+        vertical-align: top;
+    }
+    .sectiontitlesection1{
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+/*        padding: 2%;*/
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .sectiontitlesection2{
+        width: 20%;
+        margin-left: 2%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .textimagesection1{
+        display:inline-block;
+        width: 49%;
+        vertical-align: text-top;
+        margin-right: 1%;
+    }
+    .textimagesection2{
+        display:inline-block;
+        width: 49%;
+        vertical-align: text-top;
+    }
+}
+
+/* desktop layout*/
+@media screen and (min-device-width: 501px) and (max-device-width: 1700px){
+    body{
+        background-color: lightpink;
+    }
+    .divisionline{
+        border-top: 1px solid black;
+        margin: 10px 0 10px 0 ;
+    }
+    .divisionspace{
+        height: 40px;
+    }
+    .bold1{
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .bold2{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .bodytext1{
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .bodytext2{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .projectherotitle{
+        position: absolute;
+    }
+    .projectbriefcontent{
+        width: 49.5%; 
+        display: inline-block; 
+        margin: 0; 
+        margin-right: 2%; 
+        vertical-align: top;
+    }
+    .projectbriefcontentdetailscolumn{
+        width:24%; 
+        display: inline-block; 
+        vertical-align: top;
+    }
+    .sectiontitlesection1{
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+/*        padding: 2%;*/
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .sectiontitlesection2{
+        width: 20%;
+        margin-left: 2%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .textimagesection{
+        display:inline-block;
+        width: 49%;
+        vertical-align: text-top;
+    }
+}
+
+
+/*mobile & ipad*/
+@media screen and (max-device-width: 500px) and (min-device-width: 1px){
+    body{
+        background-color: yellow;
+    }
+    .divisionline{
+        border-top: 1px solid black;
+        margin: 10px 0 10px 0 ;
+    }
+    .divisionspace{
+        height: 40px;
+    }
+    .bold1{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .bold2{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .bodytext1{
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .bodytext2{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .projectherotitle{
+        position: absolute;
+    }
+    .projectbriefcontent{
+        width: 49.5%; 
+        display: inline-block; 
+        margin: 0; 
+        margin-right: 2%; 
+        vertical-align: top;
+    }
+    .projectbriefcontentdetailscolumn{
+        width:24%; 
+        display: inline-block; 
+        vertical-align: top;
+    }
+    .sectiontitlesection1{
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+/*        padding: 2%;*/
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .sectiontitlesection2{
+        width: 20%;
+        margin-left: 2%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 2%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .textimagesection{
+        display:inline-block;
+        width: 49%;
+        vertical-align: text-top;
+    }
+}
