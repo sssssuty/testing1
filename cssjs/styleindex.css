@@ -1,25 +1,376 @@
 @font-face{
-    font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
-/*    src:url("NeueMontreal-Regular");
-    src:url('Fonts/NeueMontreal-Regular.otf') format('otf');
-    src:url("https://www.sutingyu.com/fonts/NeueMontreal-Regular.otf") format('otf');
-    font-weight: normal;*/
+    font-family: "Inter", helvetica, sans-serif;
 }
 
 a{
     color:white;
 }
 
+/* large desktop layout*/
+@media screen and (min-device-width: 1301px) {
+    #websitename{
+        position:fixed;
+        font-size: 30px;
+        top: 50px;
+        left: 80px;
+        color:#222;
+        text-decoration-line: none;
+    }
+    #websiteabout{
+        position:fixed;
+        font-size: 30px;
+        top: 50px;
+        right: 80px;
+        color:#222;
+        text-decoration-line: none;
+    }
+    body{
+        margin:2vw;
+        font-family: "Inter", helvetica, sans-serif;
+    }
+    a{
+        font-family: "Inter", helvetica, sans-serif;
+        color:white;
+    }
+    .indexproject1{
+        display: inline-block;
+        margin-left: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .indexproject2{
+        display: inline-block;
+        margin-left: 4vw;
+    }
+    .indexphoto{
+        width: 43vw;
+        border-radius: 0.5vw;
+    }
+    .indexcopy{
+        width: 41vw;
+        font-family: "Inter", helvetica, sans-serif;
+        font-size: 28px;
+        line-height: 34px;
+        color:white;
+        margin-top: 14px;
+    }
+    .top{
+        position: fixed;
+        background-color: none;
+        margin: 0;
+        margin-top: -4vw;
+        padding: 0;
+        height: 8.5vw;
+        width:100vw;
+        z-index: 10;
+    }
+
+    #mynameen{
+        font-size: 2vw;
+        position: absolute;
+        margin-left: 1.8vw;
+        margin-right: 55vw;
+        margin-top: 4.3vw;
+    }
+
+    .menu{
+        font-size: 1.9vw;
+        margin-left: 0vw;
+        margin-right: 3vw;
+        position: absolute;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+    .indexintro{
+        width: 60vw;
+        padding-top: 11vw;
+        margin-left: 2vw;
+    }
+    .hiteam{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .myslogan{
+        font-size: 60px;
+    }
+
+    .indexbio{
+        font-size: 2.4vw;
+        width: 70vw;
+        padding-top: 5vw;
+        margin-left: 7vw;
+    }
+
+    .intro2{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 16vw;
+    }
+
+    .intro3{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 23vw;
+    }
+
+    .intro4{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 32vw;
+    }
+
+    #placeholder1{
+        height: 2vw;
+    }
+
+    #txt{
+        position: absolute;
+        top: 500px;
+        left: 4vw;
+        font-size: 28px;
+    }
+
+    #menuarchive{
+        font-family: "Inter", helvetica, sans-serif;
+        /*src:url(HelveticaNeue.woff);*/
+        font-size: 2vw;
+        position: absolute;
+        margin-left: 89.5vw;
+        margin-top: 4.3vw;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+
+    .move{
+        font-family: "Inter", helvetica, sans-serif;
+        font-size: 3.55vw;
+        position: absolute;
+        margin: 0;
+        padding:0;
+        margin-left: 5vw;
+        margin-top: -46vw;
+    }
+    .indexprojecttext{
+        display:block; 
+        height: 1000; 
+        width: 50vw; 
+        font-size: 28px; 
+        margin-left: 2vw; 
+        margin-bottom: 1vw;
+    }
+
+    .tag{
+        display: inline-block;
+        border-radius: 2vw;
+/*        background: rgba(255, 255, 255, 0.3);*/
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.36);
+        padding: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top: 20px;
+        margin-right: 0.5vw;
+    }
+}
+
+/* desktop layout*/
+@media screen and (min-device-width: 501px) and (max-device-width: 1300px) {
+    #websitename{
+        position:fixed;
+        font-size: 20px;
+        top: 40px;
+        left: 20px;
+        color:#222;
+        text-decoration-line: none;
+    }
+    #websiteabout{
+        position:fixed;
+        font-size: 20px;
+        top: 40px;
+        right: 20px;
+        color:#222;
+        text-decoration-line: none;
+    }
+    body{
+        margin:2vw;
+        font-family: "Inter", helvetica, sans-serif;
+    }
+    a{
+        font-family: "Inter", helvetica, sans-serif;
+        color:white;
+    }
+    .indexproject1{
+        display: inline-block;
+        margin-left: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .indexproject2{
+        display: inline-block;
+        margin-left: 4vw;
+    }
+    .indexphoto{
+        width: 43vw;
+        border-radius: 0.5vw;
+    }
+    .indexcopy{
+        width: 41vw;
+        font-family: "Inter", helvetica, sans-serif;
+        font-size: 28px;
+        line-height: 34px;
+        color:white;
+        margin-top: 14px;
+    }
+    .top{
+        position: fixed;
+        background-color: none;
+        margin: 0;
+        margin-top: -4vw;
+        padding: 0;
+        height: 8.5vw;
+        width:100vw;
+        z-index: 10;
+    }
+
+    #mynameen{
+        font-size: 2vw;
+        position: absolute;
+        margin-left: 1.8vw;
+        margin-right: 55vw;
+        margin-top: 4.3vw;
+    }
+
+    .menu{
+        font-size: 1.9vw;
+        margin-left: 0vw;
+        margin-right: 3vw;
+        position: absolute;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+    .indexintro{
+        width: 60vw;
+        padding-top: 11vw;
+        margin-left: 2vw;
+    }
+    .hiteam{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .myslogan{
+        font-size: 60px;
+    }
+
+    .indexbio{
+        font-size: 2.4vw;
+        width: 70vw;
+        padding-top: 5vw;
+        margin-left: 7vw;
+    }
+
+    .intro2{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 16vw;
+    }
+
+    .intro3{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 23vw;
+    }
+
+    .intro4{
+        font-size: 28px;
+        position: absolute;
+        top: 500px;
+        left: 32vw;
+    }
+
+    #placeholder1{
+        height: 2vw;
+    }
+
+    #txt{
+        position: absolute;
+        top: 500px;
+        left: 4vw;
+        font-size: 28px;
+    }
+
+    #menuarchive{
+        font-family: "Inter", helvetica, sans-serif;
+        /*src:url(HelveticaNeue.woff);*/
+        font-size: 2vw;
+        position: absolute;
+        margin-left: 89.5vw;
+        margin-top: 4.3vw;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+
+    .move{
+        font-family: "Inter", helvetica, sans-serif;
+        font-size: 3.55vw;
+        position: absolute;
+        margin: 0;
+        padding:0;
+        margin-left: 5vw;
+        margin-top: -46vw;
+    }
+    .indexprojecttext{
+        display:block; 
+        height: 1000; 
+        width: 50vw; 
+        font-size: 28px; 
+        margin-left: 2vw; 
+        margin-bottom: 1vw;
+    }
+
+    .tag{
+        display: inline-block;
+        border-radius: 2vw;
+/*        background: rgba(255, 255, 255, 0.3);*/
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.36);
+        padding: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top: 20px;
+        margin-right: 0.5vw;
+    }
+}
 
 /*mobile*/
-@media only screen and (max-device-width: 700px) {
+@media only screen and (max-device-width: 500px) {
+    #websitename{
+        position:fixed;
+        font-size: 30px;
+        top: 50px;
+        left: 20px;
+        color:#222;
+        text-decoration-line: none;
+    }
+    #websiteabout{
+        position:fixed;
+        font-size: 30px;
+        top: 50px;
+        right: 20px;
+        color:#222;
+        text-decoration-line: none;
+    }
     body{
         margin:3vw;
         margin-top: 0;
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
     }
     a{
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         color:white;
         font-size: 4vw;
     }
@@ -142,159 +493,3 @@ a{
     }
 }
 
-
-
-/* desktop layout for larger windows*/
-@media only screen and (min-device-width: 700px){
-    body{
-        margin:2vw;
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
-    }
-    a{
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
-        color:white;
-    }
-    .indexproject1{
-        display: inline-block;
-        margin-left: 2vw;
-        margin-bottom: 5vw;
-    }
-
-    .indexproject2{
-        display: inline-block;
-        margin-left: 4vw;
-    }
-    .indexphoto{
-        width: 43vw;
-        border-radius: 0.5vw;
-    }
-    .indexcopy{
-        width: 41vw;
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
-        font-size: 28px;
-        line-height: 34px;
-        color:white;
-        margin-top: 14px;
-    }
-    .top{
-        position: fixed;
-        background-color: none;
-        margin: 0;
-        margin-top: -4vw;
-        padding: 0;
-        height: 8.5vw;
-        width:100vw;
-        z-index: 10;
-    }
-
-    #mynameen{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 1.8vw;
-        margin-right: 55vw;
-        margin-top: 4.3vw;
-    }
-
-    .menu{
-        font-size: 1.9vw;
-        margin-left: 0vw;
-        margin-right: 3vw;
-        position: absolute;
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
-    .indexintro{
-        width: 60vw;
-        padding-top: 11vw;
-        margin-left: 2vw;
-    }
-    .hiteam{
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    .myslogan{
-        font-size: 60px;
-    }
-
-    .indexbio{
-        font-size: 2.4vw;
-        width: 70vw;
-        padding-top: 5vw;
-        margin-left: 7vw;
-    }
-
-    .intro2{
-        font-size: 28px;
-        position: absolute;
-        top: 500px;
-        left: 16vw;
-    }
-
-    .intro3{
-        font-size: 28px;
-        position: absolute;
-        top: 500px;
-        left: 23vw;
-    }
-
-    .intro4{
-        font-size: 28px;
-        position: absolute;
-        top: 500px;
-        left: 32vw;
-    }
-
-    #placeholder1{
-        height: 2vw;
-    }
-
-    #txt{
-        position: absolute;
-        top: 500px;
-        left: 4vw;
-        font-size: 28px;
-    }
-
-    #menuarchive{
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
-        /*src:url(HelveticaNeue.woff);*/
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89.5vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
-
-    .move{
-        font-family: 'Neue Haas Grotesk Display Pro' helvetica, sans-serif;
-        font-size: 3.55vw;
-        position: absolute;
-        margin: 0;
-        padding:0;
-        margin-left: 5vw;
-        margin-top: -46vw;
-    }
-    .indexprojecttext{
-        display:block; 
-        height: 1000; 
-        width: 50vw; 
-        font-size: 28px; 
-        margin-left: 2vw; 
-        margin-bottom: 1vw;
-    }
-
-    .tag{
-        display: inline-block;
-        border-radius: 2vw;
-/*        background: rgba(255, 255, 255, 0.3);*/
-        backdrop-filter: blur(4.5px);
-        border: 1px solid rgba(255, 255, 255, 0.36);
-        padding: 6px;
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-top: 20px;
-        margin-right: 0.5vw;
-    }
-
-}
