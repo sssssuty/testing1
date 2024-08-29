@@ -22,10 +22,10 @@
     }
     body{
         margin: 3vw;
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
     }
     a{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         color:white;
     }
     .top{
@@ -181,10 +181,10 @@
     }
     body{
         margin:2vw;
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
     }
     a{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         color:white;
     }
 
@@ -281,7 +281,7 @@
         bottom: 2vw;
     }
     #menuarchive{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
@@ -301,7 +301,7 @@
     }
 
     .move{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         font-size: 3.55vw;
         position: absolute;
         margin: 0;
@@ -426,10 +426,10 @@
     }
     body{
         margin:2vw;
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
     }
     a{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         color:white;
     }
 
@@ -540,7 +540,7 @@
         bottom: 2vw;
     }
     #menuarchive{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         /*src:url(HelveticaNeue.woff);*/
         font-size: 2vw;
         position: absolute;
@@ -560,7 +560,7 @@
     }
 
     .move{
-        font-family: 'Neue Haas Grotesk Display Pro', helvetica, sans-serif;
+        font-family: "Inter", helvetica, sans-serif;
         font-size: 3.55vw;
         position: absolute;
         margin: 0;
