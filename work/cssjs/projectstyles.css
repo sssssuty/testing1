@@ -4,7 +4,7 @@
 
 html{
     font-family: "Inter", helvetica, sans-serif;
-    background-color: #f1f1f1;
+    background-color: #fdfdfd;
     margin: 0;
 }
 
@@ -67,7 +67,7 @@ img{
         font-size: 16px;
         font-weight: 400;
         color: #222;
-        background-color: #01AE42;
+        /* background-color: #01AE42; */
         padding:16px;
         height: 20px;
         text-align: center;
@@ -198,13 +198,13 @@ img{
     }
     .placeholder{
         width: 1px;
-        height: 100px;
+        height: 50px;
     }
     .labelstatus{
         font-size: 16px;
         font-weight: 400;
         color: #222;
-        background-color: #01AE42;
+        /* background-color: #01AE42; */
         padding:16px;
         height: 20px;
         text-align: center;
@@ -344,13 +344,13 @@ img{
     }
     .placeholder{
         width: 1px;
-        height: 100px;
+        height: 50px;
     }
     .labelstatus{
         font-size: 16px;
         font-weight: 400;
         color: #222;
-        background-color: #01AE42;
+        /* background-color: #01AE42; */
         padding:16px;
         height: 20px;
         text-align: center;
