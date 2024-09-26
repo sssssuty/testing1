@@ -8,30 +8,36 @@ body{
     font-weight: 400;
 }
 a{
-    color:white;
+    color:#222;
     font-weight: 400;
 }
+nav{
+    background-color: #fafafa;
+    border-bottom: 1px solid lightgray;
+    /* min-height: 50px; */
+    position:fixed;
+    font-size: 30px;
+    top: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 10;
+}
+
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     #websitename{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        left: 20px;
         color:#222;
         text-decoration-line: none;
     }
     #websiteabout{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        right: 20px;
+        margin-right: 8vw;
+        float: right;
         color:#222;
         text-decoration-line: none;
     }
     a{
         font-family: "Inter", helvetica, sans-serif;
-        color:white;
+        color:#222;
         font-size: 4vw;
     }
     .top{
@@ -43,16 +49,14 @@ a{
         width:100vw;
         z-index: 10;
     }
-
     .menu{
         position: absolute;
         font-size: 4vw;
         margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: #fafafa;
     }
-
     #txt{
         position: absolute;
         font-size: 6vw;
@@ -80,13 +84,11 @@ a{
         font-size: 6vw;
         margin-top: 69vw;
     }
-
     .intro3{
         position: absolute;
         font-size: 6vw;
         margin-top: 77vw;
     }
-
     .indexphoto{
         width: 94vw;
         border-radius: 0.5vw;
@@ -99,7 +101,6 @@ a{
         padding:0;
         margin-top: 33.6vw;
     }
-
     #quote{
         font-size: 10vw;
         line-height: 11vw;
@@ -110,7 +111,6 @@ a{
     .project2{
         display: none;
     }
-    
     .indexprojecttext{
         display: none;
         opacity: 0;
@@ -131,7 +131,7 @@ a{
         display: inline-block;
         border-radius: 50px;
         backdrop-filter: blur(4.5px);
-        border: 1px solid rgba(255, 255, 255, 0.36);
+        border: 1px solid #222;
         padding: 6px;
         padding-bottom: 12px;
         padding-left: 20px;
@@ -143,28 +143,25 @@ a{
 
 /* desktop layout*/
 @media screen and (min-device-width: 501px) and (max-device-width: 1300px) {
-    #websitename{
-        position:fixed;
+    nav{
         font-size: 20px;
-        top: 40px;
-        left: 20px;
-        color:#222;
+        padding: 30px;
+    }
+    #websitename{
+        font-size: 20px;
         text-decoration-line: none;
     }
     #websiteabout{
-        position:fixed;
-        font-size: 20px;
-        top: 40px;
-        right: 20px;
-        color:#222;
+        margin-right: 6vw;
+        float: right;
         text-decoration-line: none;
     }
     .indexproject{
         display: grid;
         grid-template-areas:'left right';
         gap: 40px;
-        max-width: 1100px;
-        margin: auto;
+        max-width: 70%;
+        /* margin: auto; */
     }
     .indexproject1{
         grid-area: left;
@@ -187,7 +184,7 @@ a{
         font-family: "Inter", helvetica, sans-serif;
         font-size: 28px;
         line-height: 34px;
-        color:white;
+        color:#fafafa;
         margin-top: 14px;
     }
     .top{
@@ -206,11 +203,11 @@ a{
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: #fafafa;
     }
     .indexintro{
-        width: 60vw;
-        padding-top: 11vw;
+        width: 80vw;
+        padding-top: 20vw;
     }
     .hiteam{
         font-size: 28px;
@@ -226,32 +223,27 @@ a{
         padding-top: 5vw;
         margin-left: 7vw;
     }
-
     .intro2{
         font-size: 28px;
         position: absolute;
         top: 500px;
         left: 16vw;
     }
-
     .intro3{
         font-size: 28px;
         position: absolute;
         top: 500px;
         left: 23vw;
     }
-
     .intro4{
         font-size: 28px;
         position: absolute;
         top: 500px;
         left: 32vw;
     }
-
     #placeholder1{
         height: 2vw;
     }
-
     #txt{
         position: absolute;
         top: 500px;
@@ -277,9 +269,8 @@ a{
     .tag{
         display: inline-block;
         border-radius: 2vw;
-/*        background: rgba(255, 255, 255, 0.3);*/
         backdrop-filter: blur(4.5px);
-        border: 1px solid rgba(255, 255, 255, 0.36);
+        border: 1px solid #222;
         padding: 6px;
         padding-left: 12px;
         padding-right: 12px;
@@ -287,7 +278,7 @@ a{
         margin-right: 0.5vw;
     }
     #indexsection{
-        width: 1100px;
+        width: 90%;
         margin: auto;
         /* background-color: blue; */
     }
@@ -295,21 +286,21 @@ a{
 
 /* large desktop layout*/
 @media screen and (min-device-width: 1301px) {
+    #navwidth{
+        max-width: 1450px;
+        margin: auto;
+    }
+    nav{
+        font-size: 28px;
+        padding: 30px;
+    }
     #websitename{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        left: 40px;
-        color:#222;
         text-decoration-line: none;
     }
     #websiteabout{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        right: 40px;
-        color:#222;
         text-decoration-line: none;
+        margin-right: 3vw;
+        float: right;
     }
     .indexproject{
         display: grid;
@@ -337,7 +328,7 @@ a{
         font-family: "Inter", helvetica, sans-serif;
         font-size: 28px;
         line-height: 34px;
-        color:white;
+        color:#fafafa;
         margin-top: 14px;
     }
     .top{
@@ -356,7 +347,7 @@ a{
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: #fafafa;
     }
     .indexintro{
         width: 60vw;
@@ -367,7 +358,8 @@ a{
         margin-bottom: 20px;
     }
     .myslogan{
-        font-size: 60px;
+        font-size: 50px;
+        max-width: 1000px;
     }
 
     .indexbio{
@@ -428,9 +420,8 @@ a{
     .tag{
         display: inline-block;
         border-radius: 2vw;
-/*        background: rgba(255, 255, 255, 0.3);*/
         backdrop-filter: blur(4.5px);
-        border: 1px solid rgba(255, 255, 255, 0.36);
+        border: 1px solid #222;
         padding: 6px;
         padding-left: 12px;
         padding-right: 12px;
