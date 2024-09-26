@@ -22,6 +22,9 @@ nav{
     padding: 40px;
     z-index: 10;
 }
+#placeholder1{
+    height: 2vw;
+}
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
@@ -90,7 +93,7 @@ nav{
         margin-top: 77vw;
     }
     .indexphoto{
-        width: 94vw;
+        width: 90vw;
         border-radius: 0.5vw;
     }
     .moving1{
@@ -117,7 +120,7 @@ nav{
     }
     .indexproject{
         display: block;
-        width: 94vw;
+        width: 90vw;
         margin: auto;
     }
     .indexproject1{
@@ -138,6 +141,9 @@ nav{
         padding-right: 20px;
         margin-top: 20px;
         margin-right: 0.5vw;
+    }
+    #placeholder1{
+        height: 5vw;
     }
 }
 
@@ -165,14 +171,14 @@ nav{
     }
     .indexproject1{
         grid-area: left;
-        width: 530px;
-        max-width: 550px;
+        width: 43vw;
+        max-width: 500px;
         padding-top: 16px;
     }
     .indexproject2{
         grid-area: right;
-        width: 530px;
-        max-width: 550px;
+        width: 43vw;
+        max-width: 500px;
         padding-top: 16px;
     }
     .indexphoto{

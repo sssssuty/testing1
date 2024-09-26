@@ -10,28 +10,29 @@ body{
 
 a{
     font-family: "Inter", helvetica, sans-serif;
-    color:white;
+    color:#222;
+    font-weight: 400;
+}
+.divisionline{
+    border-top: 1px solid lightgray; 
+    margin-bottom: 20px;
+}
+.aboutpagefont1{
+    font-size: 28px;
+}
+.aboutpagefont2{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: right; 
+    float: right;
+}
+.aboutpagefont2left{
+    font-size: 20px;
     font-weight: 400;
 }
 
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
-    #websitename{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        left: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        right: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
     .top{
         position: fixed;
         margin: 0;
@@ -127,7 +128,7 @@ a{
     }
     .cta{
         border-radius: 50px;
-        border: 2px solid white;
+        border: 2px solid #222;
         text-decoration: none;
         padding: 10px 10px 11px 10px;
         margin-bottom: 10px;
@@ -144,28 +145,16 @@ a{
     }
     .font2gray{
         font-size: 24px;
-        color: gray;
+        color: lightgray;
+    }
+    .aboutpagefont2{
+        text-align: left; 
+        float: left;
     }
 }
 
 /* desktop layout*/
 @media screen and (min-device-width: 501px) and (max-device-width: 1300px) {
-    #websitename{
-        position:fixed;
-        font-size: 20px;
-        top: 40px;
-        left: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 20px;
-        top: 40px;
-        right: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
     .top{
         position: fixed;
         background-color: none;
@@ -195,7 +184,6 @@ a{
         padding-top: 10vw;
         height: 6.5vw;
         width: 92vw;
-        font-size: 24px;
     }
 
     .intro1{
@@ -291,7 +279,7 @@ a{
     .font2gray{
         font-size: 24px;
         line-height: 30px;
-        color: gray;
+        color: lightgray;
     }
 
     .detailtext{
@@ -336,7 +324,7 @@ a{
 
     .cta{
         border-radius: 50px;
-        border: 2px solid white;
+        border: 2px solid #222;
         text-decoration: none;
         padding: 10px 10px 11px 10px;
         margin-bottom: 10px;
@@ -344,26 +332,14 @@ a{
         display: block;
         width: 60%;
     }
+    .aboutpagefont2{
+        text-align: right; 
+        float: right;
+    }
 }
 
 /* large desktop layout*/
 @media screen and (min-device-width: 1301px) {
-    #websitename{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        left: 40px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 30px;
-        top: 50px;
-        right: 40px;
-        color:#222;
-        text-decoration-line: none;
-    }
     .top{
         position: fixed;
         background-color: none;
@@ -394,7 +370,7 @@ a{
         padding: 0;
         height: 6.5vw;
         width: 90vw;
-        font-size: 24px;
+        max-width: 1400px;
     }
     .intro1{
         font-size: 5vw;
@@ -445,7 +421,7 @@ a{
         margin-left: 89vw;
         margin-top: 4.3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: #222;
     }
 
     #menuinfo{
@@ -454,7 +430,7 @@ a{
         margin-left: 74.7vw;
         margin-top: 4.3vw;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: #222;
     }
 
     .move{
@@ -508,7 +484,7 @@ a{
     .font2gray{
         font-size: 24px;
         line-height: 30px;
-        color: gray;
+        color: lightgray;
     }
 
     .detailtext{
@@ -558,7 +534,7 @@ a{
 
     .cta{
         border-radius: 50px;
-        border: 2px solid white;
+        border: 2px solid #222;
         text-decoration: none;
         padding: 10px 10px 11px 10px;
         margin-bottom: 10px;
