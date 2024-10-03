@@ -1,0 +1,92 @@
+@font-face{
+    font-family: "Inter", helvetica, sans-serif;
+}
+
+html{
+    font-family: "Inter", helvetica, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+.largefont1{
+    font-size: 68px;
+    font-weight: 400;
+}
+
+.largefont2{
+    font-size: 40px;
+    font-weight: 350;
+}
+
+.largefont3{
+    font-size: 28px;
+    font-weight: 350;
+}
+
+.largefont4{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.largefont5{
+    font-size: 20px;
+    font-weight: 350;
+}
+
+.italicfont{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 350;
+    line-height: 1.5;
+}
+
+.bodytext{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.fontcolorblack{
+    color: #222;
+}
+
+.fontcolorgray{
+    color: #999;
+}
+
+.enterviewbc{
+    background-color: #F4F2FD;
+}
+.enterviewhighlight{
+    color: #6C32F4;
+}
+.safetynetbc{
+    background-color: #E6F6EA;
+}
+.safetynethighlight{
+    color: #00A94E;
+}
+.mdsrewardsbc{
+    background-color: #FBF4E7;
+}
+.mdsrewardshighlight{
+    color: #F88F24;
+}
+.bopisbc{
+    background-color: #E7F3FB;
+}
+.bopishighlight{
+    color: #00ADD8;
+}

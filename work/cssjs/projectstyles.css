@@ -6,11 +6,19 @@ html{
     font-family: "Inter", helvetica, sans-serif;
     background-color: #fdfdfd;
     margin: 0;
+    scroll-behavior: smooth;
+    scroll-margin-top: 180px;
 }
 
 body{
     margin: 0;
     padding: 0;
+}
+
+div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    scroll-margin-top: 180px;
 }
 
 h1{
@@ -28,45 +36,37 @@ img{
     margin: 0;
     padding: 0;
 }
-
+.highlightbackground{
+    border-radius: 10px;
+    vertical-align: middle;
+}
+#sidebarcontent > div > a{
+    text-decoration: none;
+    /* color:#bbb; */
+}
+.icons{
+    width: 30px;
+    display: block;
+    margin-bottom: 60px;
+}
 
 /*mobile & ipad*/
 @media screen and (max-device-width: 500px) and (min-device-width: 1px){
-    #websitename{
-        position:fixed;
-        font-size: 28px;
-        top: 50px;
-        left: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 28px;
-        top: 50px;
-        right: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
     body{
-        width: 96vw;
-        margin: auto;
+        margin: 0;
     }
     .imgfullwidth{
-        width: 96vw;
+        width: 100vw;
     }
     .imgregular{
         width: 96vw;
     }
     .placeholder{
         width: 1px;
-        height: 100px;
+        height: 80px;
         display: block;
     }
     .labelstatus{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
         /* background-color: #01AE42; */
         padding:16px;
         height: 20px;
@@ -76,9 +76,6 @@ img{
         display: inline-block;
     }
     .labelhashtag{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
         border: 1px solid lightgray;
         padding:16px;
         height: 20px;
@@ -94,11 +91,9 @@ img{
     }
     .projecttitlegrid1{
         grid-area: left;
-        padding-top: 16px;
     }
     .projecttitlegrid2{
         grid-area: right;
-        padding-top: 16px;
     }
     .projectbrief{
         display: block;
@@ -107,234 +102,50 @@ img{
     }
     .projectbriefgrid1{
         grid-area: left;
-        border-top: 1px solid #bbb;
-        padding-top: 16px;
     }
     .projectbriefgrid2{
         grid-area: right;
-        border-top: 1px solid #bbb;
-        padding-top: 16px;
     }
     .projectsection{
         display: block;
         gap: 40px;
         margin: auto;
-        border-top: 1px solid #bbb;
     }
     .projectsectiongrid1{
         grid-area: left;
-        padding-top: 16px;
+        padding: 30px;
+
+        border-radius: 10px;
     }
     .projectsectiongrid2{
         grid-area: right;
-        padding-top: 16px;
-    }
-    .largefont1{
-        font-size: 64px;
-        font-weight: 400;
-        color: #222;
-    }
-    .largefont2{
-        font-size: 48px;
-        font-weight: 350;
-        color: #222;
-    }
-    .largefont3{
-        font-size: 28px;
-        font-weight: 350;
-        color: #222;
-    }
-    .regularfont1black{
-        font-size: 18px;
-        font-weight: 400;
-        color: #222;
-        padding-bottom: 4px;
-    }
-    .regularfont1gray{
-        font-size: 18px;
-        font-weight: 400;
-        color: #999;
-        padding-bottom: 4px;
+        padding: 30px;
+
+        border-radius: 10px;
     }
     .innersectiontitle{
-        padding-top: 16px;
         border-top: 1px solid #bbb;
     }
     .innersectionend{
         padding-bottom: 16px;
+    }
+    #sidebar{
+        display: none;
+    }
+    .maxcontentwidth{
+        max-width: 92vw;
+        margin: auto;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
 
 
 /* desktop layout*/
-@media screen and (min-device-width: 501px) and (max-device-width: 1300px) {
-    #websitename{
-        position:fixed;
-        font-size: 20px;
-        top: 40px;
-        left: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 20px;
-        top: 40px;
-        right: 20px;
-        color:#222;
-        text-decoration-line: none;
-    }
+@media screen and (min-device-width: 501px) and (max-device-width: 1100px) {
     body{
-        width: 96vw;
-        margin: auto;
-        /* overflow: hidden; */
-    }
-    .imgfullwidth{
-        width: 100%;
-    }
-    .imgregular{
-        width: 100%;
-    }
-    .placeholder{
-        width: 1px;
-        height: 50px;
-    }
-    .labelstatus{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
-        /* background-color: #01AE42; */
-        padding:16px;
-        height: 20px;
-        text-align: center;
-        border-radius: 30px;
-        margin: 26px 0px;
-        display: inline-block;
-    }
-    .labelhashtag{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
-        border: 1px solid lightgray;
-        padding:16px;
-        height: 20px;
-        text-align: center;
-        border-radius: 30px;
-        margin: 26px 0px;
-        display: inline-block;
-    }
-    .projecttitle{
-        display: block;
-        margin: auto;
-        width: 96vw;
-    }
-    .projecttitlegrid1{
-        grid-area: left;
-        width: 90vw;
-        padding-top: 16px;
-    }
-    .projecttitlegrid2{
-        grid-area: right;
-        width: 90vw;
-        padding-top: 16px;
-    }
-    .projectbrief{
-        display: grid;
-        grid-template-areas:'left right';
-        gap: 40px;
-        margin: auto;
-        width: 96vw;
-    }
-    .projectbriefgrid1{
-        grid-area: left;
-        width: 45vw;
-        max-width: 580px;
-        border-top: 1px solid #bbb;
-        padding-top: 16px;
-    }
-    .projectbriefgrid2{
-        grid-area: right;
-        width: 45vw;
-        max-width: 580px;
-        border-top: 1px solid #bbb;
-        padding-top: 16px;
-    }
-    .projectsection{
-        display: grid;
-        grid-template-areas:'left right';
-        gap: 40px;
-        width: 96vw;
-        margin: auto;
-        border-top: 1px solid #bbb;
-    }
-    .projectsectiongrid1{
-        grid-area: left;
-        width: 45vw;
-        max-width: 580px;
-        padding-top: 16px;
-    }
-    .projectsectiongrid2{
-        grid-area: right;
-        width: 45vw;
-        max-width: 580px;
-        padding-top: 16px;
-    }
-    .largefont1{
-        font-size: 64px;
-        font-weight: 400;
-        color: #222;
-    }
-    .largefont2{
-        font-size: 48px;
-        font-weight: 350;
-        color: #222;
-    }
-    .largefont3{
-        font-size: 28px;
-        font-weight: 350;
-        color: #222;
-    }
-    .regularfont1black{
-        font-size: 18px;
-        font-weight: 400;
-        color: #222;
-        padding-bottom: 4px;
-    }
-    .regularfont1gray{
-        font-size: 18px;
-        font-weight: 400;
-        padding-bottom: 4px;
-        color: #999;
-    }
-    .innersectiontitle{
-        padding-top: 16px;
-        border-top: 1px solid #bbb;
-    }
-    .innersectionend{
-        padding-bottom: 16px;
-    }
-}
-
-
-
-/* large desktop layout*/
-@media screen and (min-device-width: 1301px) {
-    #websitename{
-        position:fixed;
-        font-size: 28px;
-        top: 50px;
-        left: 40px;
-        color:#222;
-        text-decoration-line: none;
-    }
-    #websiteabout{
-        position:fixed;
-        font-size: 28px;
-        top: 50px;
-        right: 40px;
-        color:#222;
-        text-decoration-line: none;
+        margin:0;
     }
     .imgfullwidth{
         width: 100vw;
@@ -347,10 +158,16 @@ img{
         height: 50px;
     }
     .labelstatus{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
         /* background-color: #01AE42; */
+        padding:16px;
+        height: 20px;
+        text-align: center;
+        border-radius: 30px;
+        /* margin: 26px 0px; */
+        display: inline-block;
+    }
+    .labelhashtag{
+        border: 1px solid lightgray;
         padding:16px;
         height: 20px;
         text-align: center;
@@ -358,16 +175,115 @@ img{
         margin: 26px 0px;
         display: inline-block;
     }
+    .projecttitle{
+        display: block;
+        margin: auto;
+        width: 96vw;
+    }
+    .projecttitlegrid1{
+        grid-area: left;
+        width: 90vw;
+    }
+    .projecttitlegrid2{
+        grid-area: right;
+        width: 90vw;
+    }
+    .projectbrief{
+        display: grid;
+        grid-template-areas:'left right';
+        gap: 40px;
+        margin: auto;
+        width: 96vw;
+    }
+    .projectbriefgrid1{
+        grid-area: left;
+        width: 45vw;
+        max-width: 580px;
+    }
+    .projectbriefgrid2{
+        grid-area: right;
+        width: 45vw;
+        max-width: 580px;
+    }
+    .projectsection{
+        display: grid;
+        grid-template-areas:'left right forth';
+        gap: 40px;
+        width: 92vw;
+        margin: auto;
+    }
+    .projectsectiongrid1{
+        grid-area: left;
+        width: 26vw;
+        max-width: 580px;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .projectsectiongrid2{
+        grid-area: right;
+        width: 26vw;
+        max-width: 580px;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .projectsectiongrid3{
+        grid-area: forth;
+        width: 26vw;
+        max-width: 580px;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .innersectiontitle{
+        border-top: 1px solid #bbb;
+    }
+    .innersectionend{
+        padding-bottom: 16px;
+    }
+    #sidebar{
+        display: none;
+    }
+    .maxcontentwidth{
+        max-width: 92vw;
+        margin: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+
+/* large desktop layout*/
+@media screen and (min-device-width: 1101px) {
+    .imgfullwidth{
+        width: 100vw;
+        max-width: 1800px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .imgregular{
+        width: 100%;
+    }
+    .placeholder{
+        width: 1px;
+        height: 20px;
+    }
+    .labelstatus{
+        /* background-color: #01AE42; */
+        padding:16px;
+        height: 20px;
+        text-align: center;
+        border-radius: 30px;
+        /* margin: 26px 0px; */
+        display: inline-block;
+    }
     .labelhashtag{
-        font-size: 16px;
-        font-weight: 400;
-        color: #222;
         border: 1px solid lightgray;
         padding:16px;
         height: 20px;
         text-align: center;
         border-radius: 30px;
-        margin: 26px 0px;
+        /* margin: 26px 0px; */
         display: inline-block;
     }
     .projecttitle{
@@ -379,89 +295,81 @@ img{
     }
     .projecttitlegrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
-        padding-top: 16px;
+        width: 80vw;
+        max-width: 680px;
     }
     .projecttitlegrid2{
         grid-area: right;
-        width: 50vw;
         max-width: 650px;
-        padding-top: 16px;
     }
     .projectbrief{
         display: grid;
         grid-template-areas:'left right';
         gap: 40px;
         max-width: 1400px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     .projectbriefgrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
+        width: 45vw;
+        max-width: 680px;
         border-top: 1px solid #bbb;
-        padding-top: 16px;
     }
     .projectbriefgrid2{
         grid-area: right;
-        width: 50vw;
-        max-width: 650px;
+        width: 45vw;
+        max-width: 680px;
         border-top: 1px solid #bbb;
-        padding-top: 16px;
+    }
+    .maxcontentwidth{
+        max-width: 1400px;
+        margin: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #sidebar{
+        z-index: 1000;
+        width: 22%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 3%;
+    }
+    #actualcontent{
+        display: inline-block;
+        width: 74%;
+        vertical-align: top;
     }
     .projectsection{
         display: grid;
-        grid-template-areas:'left right';
-        gap: 40px;
-        max-width: 1400px;
-        margin: auto;
-        border-top: 1px solid #bbb;
+        grid-template-areas:'left right forth';
+        gap: 4%;
+        margin:auto;
     }
     .projectsectiongrid1{
         grid-area: left;
-        width: 50vw;
-        max-width: 650px;
-        padding-top: 16px;
+        max-width: 340px;
+        padding: 30px;
+        border-radius: 10px;
     }
     .projectsectiongrid2{
         grid-area: right;
-        width: 50vw;
-        max-width: 650px;
-        padding-top: 16px;
+        max-width: 340px;
+        padding: 30px;
+        border-radius: 10px;
     }
-    .largefont1{
-        font-size: 64px;
-        font-weight: 400;
-        color: #222;
-    }
-    .largefont2{
-        font-size: 48px;
-        font-weight: 350;
-        color: #222;
-    }
-    .largefont3{
-        font-size: 28px;
-        font-weight: 350;
-        color: #222;
-    }
-    .regularfont1black{
-        font-size: 18px;
-        font-weight: 400;
-        color: #222;
-        padding-bottom: 4px;
-    }
-    .regularfont1gray{
-        font-size: 18px;
-        font-weight: 400;
-        color: #999;
-        padding-bottom: 4px;
+    .projectsectiongrid3{
+        grid-area: forth;
+        max-width: 340px;
+        padding: 30px;
+        border-radius: 10px;
     }
     .innersectiontitle{
-        padding-top: 16px;
         border-top: 1px solid #bbb;
+        padding-top: 8px;
     }
     .innersectionend{
         padding-bottom: 16px;
     }
+    
 }

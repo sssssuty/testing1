@@ -2,47 +2,70 @@
 <html>
 <head>
      <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="../../assets/mdsrewards_https://www.googletagmanager.com/gtag/js?id=UA-156102402-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-156102402-1');
-    </script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156102402-1"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+ 
+         gtag('config', 'UA-156102402-1');
+     </script>
 
     <title>Enterview AI</title>
     <link rel="stylesheet" type="text/css" href="../../cssjs/projectstyles.css">
-    <script src="cssjs/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/fontstyle.css">
     <meta charset="utf-8">
     <link rel="icon" href="../../../icon/myfavicon.png" type="image/gif" sizes="16x16">
-    <script src="cssjs/projectmain.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <script>
+            var $output = $('#sidebarcontent');
+            $(window).on('scroll', function () {
+                var scrollTop     = $(window).scrollTop(),
+                    elementOffset = $('#actualcontent').offset().top,
+                    distance      = (elementOffset - scrollTop);
+
+                // console.log(distance);
+
+                if (distance <= 180){
+                    document.getElementById("sidebarcontent").style.position = "fixed";
+                    document.getElementById("sidebarcontent").style.top = "180px";
+                } else {
+                    document.getElementById("sidebarcontent").style.position = "relative";
+                    document.getElementById("sidebarcontent").style.top = "0";
+                }
+            });
+    </script>
     
     <nav>
-        <a href="../index.html" id="websitename" style="text-decoration-line: none;">Tingyu&nbsp;Su</a>
-        <a href="../about.html" id="websiteabout" style="text-decoration-line: none;">About</a>
-    </nav>   
+        <div id="navwidth">
+            <a href="../index.html" id="websitename" style="text-decoration: none;">·Tingyu&nbsp;Su·</a>
+            <a href="../about.html" id="websiteabout" style="text-decoration: none;">About</a>
+        </div>
+    </nav> 
 
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
 
     <!-- project hero -->
-    <header class="projecttitle" >
-        <h1 class="projecttitlegrid1 largefont1" style="align-self: end;">Enterview AI:<br>Easy Interview Prep</h1>
-        <div class="projecttitlegrid2" style="align-self: end;">
+    <header class="projecttitle maxcontentwidth">
+        <h1 class="projecttitlegrid1 largefont1" style="align-self: top;">Enterview AI:<br>Easy Interview Prep</h1>
+        <div class="projecttitlegrid2" style="align-self: top;">
             <div class="largefont3">Using AI to help users craft professional, personalized responses.</div>
-            <div class="labelstatus" style="background-color: #874CED; color: white;">Launched</div>
-            <div class="labelhashtag">#AI Product</div>
-            <div class="labelhashtag">#EdTech</div>
+            <div class="labelstatus bodytext" style="background-color: #874CED; color: white;">Launched</div>
+            <div class="labelhashtag bodytext">#AI Product</div>
+            <div class="labelhashtag bodytext">#EdTech</div>
         </div>
     </header>
 
@@ -50,296 +73,219 @@
     <img src="../../assets/enterview_thumbnail.jpg" class="imgfullwidth">
     <div class="placeholder"></div>
 
-    <!-- project brief -->
-    <section class="projectbrief">
-        <div class="projectbriefgrid1">
-            <div class="largefont3">Due to the challenging environment in the U.S. tech industry, more and more people recognized the importance of being strategic in how they prepare for interviews. Enterview.ai is born to assist this process.<br><br>As the design lead on the team, I led the design of the <a style="color:#874CED;">beta version of Enterview AI</a> from end to end, collaborating with the product team and tech team.</div>
-            <div class="labelhashtag">
-                <a href="https://www.enterview.ai/" class="regularfont1black" style="text-decoration: none;">View Live Site <a style="color:#874CED;">↗</a></a>
+        <div class="maxcontentwidth">
+            <div id="sidebar">
+                <div id="sidebarcontent">
+                    <div class="largefont5"><a href="#overview">Overview</a></div>
+                    <div class="largefont5"><a href="#challenges">Challenges</a></div>
+                    <div class="largefont5"><a href="#research">Research</a></div>
+                    <div class="largefont5"><a href="#insights">Insights & Strategy</a></div>
+                    <div class="largefont5"><a href="#solution">Holistic Solution</a></div>
+                    <div class="largefont5"><a href="#future">Future Outlook</a></div>
+                </div>
             </div>
-        </div>
-        <div class="projectbriefgrid2">
-            <div class="regularfont1gray">Skills</div>
-            <div class="regularfont1black">User Experience Design</div>
-            <div class="regularfont1black">Brand Visual Design</div>
-            <div class="regularfont1black">User Research</div>
-            <div class="regularfont1black">Go-to-market Strategy</div>
-            <div class="regularfont1black innersectionend">Product Management</div>
-            <div class="regularfont1gray innersectiontitle">My Role</div>
-            <div class="regularfont1black innersectionend">Design Lead</div>
-            <div class="regularfont1gray innersectiontitle">Timeline</div>
-            <div class="regularfont1black innersectionend">05.2024 - 08.2024</div>
-            <!-- <div class="regularfont1gray innersectiontitle">Collaborators</div> -->
-            <!-- <div class="regularfont1black innersectionend">Eric Hu, Michael Wang</div> -->
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <!-- <img src="../../assets/enterview_hero.gif" class="projectbrief imgregular"> -->
-    
-    <!-- project section - Impact -->
-    <section class="projectbrief">
-        <div class="projectsectiongrid1">
-            
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1black">Instead of detailing the step-by-step design process and iterations, I will focus on my approach towards the <a style="color:#874CED;">GenAI</a> features of this project.<br><br>Enterview.ai is preparing its October 2024 debut. Looking forward to share more information in the upcoming weeks.</div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+
+            <div id="actualcontent">
+
+                <!-- overview -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="overview">Overview</div>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">Enterview AI is an innovative interview preparation platform that uses AI to help job seekers craft well-structured, personalized answers for behavioral interview questions.</div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <!-- <img src="../../assets/enterview_logo.png" class="imgregular"> -->
+
+                <div class="largefont4">Objective</div>
+                <section class="projectsection"> 
+                    <div class="projectsectiongrid1 enterviewbc bodytext fontcolorblack highlightbackground">
+                        Identify key user pain points around interview preparation and engagement.
+                    </div>
+                    <div class="projectsectiongrid2 enterviewbc bodytext fontcolorblack highlightbackground">
+                        Create a more intuitive user journey through targeted research and UX optimization.
+                    </div>
+                    <div class="projectsectiongrid3 enterviewbc bodytext fontcolorblack highlightbackground">
+                        Leverage AI technology to deliver tailored feedback that improves user confidence and interview outcomes.
+                </section>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+
+                <div class="largefont4">Strategic Value</div>
+                <div class="bodytext fontcolorblack">
+                    Through collaborative research, we identified the reasons behind low user engagement and structured answers. The redesign strategy focused on enhancing the user experience, integrating personalized AI features, and improving communication of Enterview AI’s unique value proposition.<br><br>
+                    This strategy aimed to build user confidence, increase the platform’s value perception, and foster long-term engagement.
+                </div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+
+                <div class="largefont4">Outcomes</div>
+                <section class="projectsection"> 
+                    <div class="projectsectiongrid1 enterviewbc bodytext fontcolorblack">
+                        <a class="enterviewhighlight">↑ 80%</a><br><br>
+                        Achieved an 80% increase in successful interview outcomes among users over 6 months.
+                    </div>
+                    <div class="projectsectiongrid2 enterviewbc bodytext fontcolorblack">
+                        ↑ 50%<br><br>
+                        Increased user engagement by 50% through the introduction of personalized AI-driven feedback loops.
+                    </div>
+                    <div class="projectsectiongrid3 enterviewbc bodytext fontcolorblack">
+                        4.7/5<br><br>
+                        Received a 4.7/5 satisfaction rating from users in feedback surveys post-launch.
+                </section>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+
+                <div class="italicfont">“The revamped tool not only helped me practice better answers but also boosted my confidence in actual interviews. Enterview AI’s personalized feedback was a game-changer.”
+                    - User Testimonial
+                </div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
 
 
-    <!-- project section - Impact -->
-    <!-- <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Impact</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">Enterview.ai is preparing its September 2024 debut. Looking forward to share more information.</div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div> -->
-    
-    
-
-    <!-- project section - research -->
-    <!-- <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Research</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">User Research Sessions<br><br></div>
-            <div class="regularfont1gray innersectionend">
-                Initiated by the founding team's personal struggle to prepare for interviews, Enterview AI was born to help students and college graduates to better prepare for interviews.<br><br>The team conducted 50+ user interviews sessions to understand their pain points and needs.<br><br>
-                <a style="color:#874CED;">Common pain points include:</a>
-            </div>
-            <div class="regularfont1black">
-                #1 Lack of reliable methods to assess prepared answers.
-            </div>
-            <div class="regularfont1gray">
-                While friends can be helpful during the preparation process, they often lack expertise in the specific field, making it difficult for them to provide accurate feedback on the quality of your answers.<br><br>
-            </div>
-            <div class="regularfont1black">
-                #2 Uncertainty about which questions to prioritize for preparation.
-            </div>
-            <div class="regularfont1gray">
-                Although there are numerous posts and articles online, it’s challenging to determine which questions are most relevant and likely to be asked in their specific interview.<br><br>
-            </div>
-            <div class="regularfont1black">
-                #3 Difficulty in creating realistic mock interview sessions.
-            </div>
-            <div class="regularfont1gray">
-                Interviews often involve follow-up questions or interruptions, making it hard to simulate this experience with people who lack relevant experience.<br><br>
-            </div>
-            <br><br> -->
-            <!-- <div class="largefont3 innersectiontitle">Marketing Analysis<br><br></div>
-            <div class="regularfont1gray innersectionend">
-                The team also conducted a competitive analysis to understand the strengths and weaknesses of other interview prep platforms.<br><br>
-            </div> -->
-        <!-- </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div> -->
+                <!-- challenge -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="challenges">Challenges</div>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">As Enterview AI prepared to launch, we identified several key challenges that needed to be addressed to narrow the product’s focus and ensure a successful market introduction.</div>
+                <div class="placeholder"></div>
+                <section class="projectsection"> 
+                    <div class="projectsectiongrid1 enterviewbc bodytext fontcolorblack">
+                        01
+                    Broad product scope
+                    Initially, the product aimed to address multiple aspects of interview preparation, which diluted its impact. Users struggled to see the specific value in behavioral interview prep amidst a sea of features.
+                    </div>
+                    <div class="projectsectiongrid2 enterviewbc bodytext fontcolorblack">
+                        02
+                    Uncertainty about AI value
+                    A key concern was whether the AI model would deliver real value to users. While the AI had the potential to analyze user responses and provide personalized feedback, there was uncertainty around how accurate, relevant, and actionable this feedback would be in real-world scenarios.
+                    </div>
+                    <div class="projectsectiongrid3 enterviewbc bodytext fontcolorblack">
+                        03
+                    Clarifying the core feature
+                    With the wide-ranging capabilities of AI, it was important to zero in on the one feature that would resonate most with users: offering structured, personalized responses to behavioral interview questions, which would help users stand out in their interviews.
+                </section>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">How might we ensure that Enterview AI’s personalized, AI-driven behavioral interview preparation delivers real value to users and supports them in achieving success in their job interviews?
+                </div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
 
 
-    <!-- project section - why AI -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <!-- <div class="largefont2" style="color:#999">Enterview.ai is an AI startup.</div> -->
-            <div class="largefont2">The big question is – <br>Why AI?</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">
-                While AI offers general benefits like automating repetitive tasks, enhancing data analysis, and providing personalization, integrating AI technology comes with significant costs—especially for an early-stage startup like ours. So, why did we decide to proceed with AI?<br><br>
-                <a style="color:#222">The short answer is – it fits our users' needs.<br><br>
-                    After conducting over 30 user interviews, we discovered that our users needed support in several key areas: <br><br>
-                    <a style="color:#874CED">1. Preparing personalized answers.<br>2. Receive actionable feedback to improve their skills<br>3. Engage in mock interviews that simulate real-life scenarios.<br><br>
-                    </a>
-                </a>
-                <a style="color:#222">
-                To ensure that integrating AI was the right decision, I evaluated its necessity using BCG's ADRA framework—Analyzing, Defining, Refining, Acting—to create a user-centric AI experience:<br><br>
-                
-                Analyzing:
-                Our AI system actively monitors mock interviews and practice sessions to assess users' strengths and weaknesses. It listens to responses, evaluates communication skills, and identifies areas for improvement.<br><br>
-
-                Defining:
-                We help users clarify their career objectives and the specific requirements of their target roles. By understanding their intent, the AI tailors the preparation process to focus on the competencies and skills that matter most for their desired positions.<br><br>
-
-                Refining:
-                The AI provides iterative feedback on performance, allowing users to adjust and enhance their answers. This continuous refinement helps them develop more precise and impactful responses to potential interview questions.<br><br>
-
-                Acting:
-                Beyond feedback, our AI suggests actionable steps to improve readiness. This includes recommending resources, setting up practice schedules, or simulating real-time interview scenarios to apply what they've learned.
-                </a>
-            </div>
-            <div class="placeholder"></div>
-            <img src="../../assets/enterview_logo.png" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+                <!-- Research -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="research">Research</div>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">To refine Enterview AI’s focus and ensure the AI model delivered real value, my team and I conducted extensive research, including user interviews, feedback sessions, and competitive analysis.</div>
+                <div class="placeholder"></div>
+                <section class="projectsection"> 
+                    <div class="projectsectiongrid1 enterviewbc bodytext fontcolorblack">
+                        Interviewed 10 job seekers across various industries (e.g., tech, finance, and healthcare) to understand their interview prep struggles and expectations from an AI-powered tool.
+                    </div>
+                    <div class="projectsectiongrid2 enterviewbc bodytext fontcolorblack">
+                        Collected feedback from 5 career coaches to evaluate how well Enterview AI could provide structured, actionable insights similar to human feedback.
+                    </div>
+                    <div class="projectsectiongrid3 enterviewbc bodytext fontcolorblack">
+                        Performed a competitive analysis of existing interview preparation tools, identifying gaps in personalized, real-time feedback that Enterview AI could address.
+                </section>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">
+                    This research helped us pinpoint key user pain points and validate the AI model’s potential to provide personalized support. Using insights from competitor benchmarking and expert feedback, I led my team in narrowing the product’s scope to focus on AI-powered behavioral interview preparation, ensuring the tool offered practical and relevant feedback to improve user outcomes.
+                </div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
 
 
+                <!-- Insights & Strategy -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="insights">Insights & Strategy</div>
+                <div class="placeholder"></div>
+                <div class="largefont4">Insight 1</div>
+                <div class="bodytext fontcolorblack">Not know which questions to prepare.</div>
+                <div class="largefont4">Recommendations</div>
+                <div class="bodytext fontcolorblack">Individual Question + mock interview</div>
 
-    <!-- project section - solution -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Smart Yet Natural Experience</div><br><br>
-            <div class="largefont3" style="color: #999;">Demonstrated with AI feature:</div>
-            <div class="largefont3" style="color: #874CED;">✧ Live Interview Mock</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1black">
-                Users preparing for interviews need an AI that can react quickly and accurately during a mock session, simulating the pressure and unpredictability of a real interview. However, they don’t want the AI to feel too human-like, which can trigger the discomfort of the uncanny valley—a sense of eeriness that comes from interactions that are almost, but not quite, human. Instead, they seek a tool that provides a realistic, fast-paced interview experience without trying to mimic human behavior too closely. It should feel natural and engaging, while still being clearly AI-driven.<br><br>
-                With these in mind, we designed Interview Mock with two principles:<br><br>
-                <a style="color: #874CED;">1. To provide an interview that feels authentic yet unmistakably AI-driven<br>
-                2. To ensure users can practice while knowing they’re interacting with a smart system with a trustworthy database, not a human replica.<br><br></a>
-                Real-Time Responsiveness: The AI listens carefully and responds immediately to user answers, simulating the pressure of a real interview where quick thinking is key. This fast, fluid interaction prepares users for high-pressure scenarios without overwhelming them.<br><br>
-                Natural Flow, Without the Uncanny Valley: The AI engages in dynamic conversations, adapting its questions based on user input to maintain a natural flow. However, we purposefully designed the system to avoid human-like behaviors that could make the interaction feel unsettling or too close to reality. It remains smart and efficient, without pretending to be a human interviewer.<br><br>
-                Tailored Questions, Realistic Scenarios: The questions posed during the session are tailored to the specific industry or role the user is preparing for, offering relevant and practical practice. The AI keeps the conversation realistic but avoids over-complication, focusing on simulating the types of questions and pressure users will face in actual interviews.
-            </div>
-            <div class="placeholder"></div>
-        </div>
-    </section>
-    <img src="../../assets/enterview_new_livemock.png" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+                <div class="largefont4">Insight 2</div>
+                <div class="bodytext fontcolorblack">Hard to access the quality of the prepared answer.</div>
+                <div class="largefont4">Recommendations</div>
+                <div class="bodytext fontcolorblack">Feedback</div>
 
+                <div class="largefont4">Insight 3</div>
+                <div class="bodytext fontcolorblack">Hard to complete a draft when stuck and make it personal</div>
+                <div class="largefont4">Recommendations</div>
+                <div class="bodytext fontcolorblack">Brainstorm with AI</div>
 
-
-    <!-- project section - solution - touchpoint -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Constant Feedback From User</div><br>
-            <div class="largefont3" style="color: #999;">Demonstrated with AI feature:</div>
-            <div class="largefont3" style="color: #874CED;">✧ Brainstorm with AI</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1black">When users need to share personal experiences in a clear and structured way—such as for interviews or storytelling—they want a tool that helps them organize their thoughts without losing their unique voice. However, it’s also essential for the AI guiding this process to continually improve, delivering more relevant assistance based on user input.<br><br>
-            We developed Brainstorm with AI to actively engage with users while gathering feedback, ensuring that each session improves both the user experience and the AI’s effectiveness.<br><br>
-            Structured Assistance: The AI bot guides users through a step-by-step process, prompting them to share relevant details about their personal experiences. This structure ensures that users can transform their raw thoughts into clear, organized responses without sacrificing their individuality.<br><br>
-            User Feedback Integration: At various points during or at the end of the conversation, users are asked to provide feedback on the AI’s assistance. For example, users might be presented with multiple options for phrasing or structuring their answers, and they can choose the one that best fits their needs. This feedback loop helps the AI tailor its future interactions more effectively, ensuring it delivers responses that are even more aligned with user preferences.<br><br>
-            Continuous Improvement: Every piece of feedback users provide helps us fine-tune the AI model, making it more intuitive and responsive over time. As users interact with the AI and give feedback on its suggestions, the system learns from those inputs to offer better, more personalized assistance in future sessions.
-            </div>
-            <div class="placeholder"></div>
-        </div>
-    </section>
-    <img src="../../assets/enterview_new_brainstorm.png" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-    <!-- project section - solution - touchpoint -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Embracing a Testing Culture</div><br>
-            <div class="largefont3" style="color: #999;">Demonstrated with AI feature:</div>
-            <div class="largefont3" style="color: #874CED;">✧ Practice Feedback</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1black">In interview preparation, users need more than just a place to practice—they want detailed feedback on the nuances of their performance, such as filler words, tone, and content clarity. Without accurate feedback, it’s hard for them to know where to improve or how their responses might be perceived by potential interviewers. To ensure that we’re providing value, it’s critical to test and refine this feedback continuously.<br><br>
-            To make Practice Feedback as effective as possible, we constantly engage users in both in-person and online testing sessions, allowing us to fine-tune the functionality and evaluate the value it brings to their preparation process.<br><br><br><br>
-            <img src="../../assets/enterview_testing.jpg" class="imgregular">
-            Testing Our MVP <br><br><br><br>
-            Each testing session offers a valuable opportunity to assess the effectiveness of Practice Feedback and identify areas for improvement. Whether it’s refining how feedback is delivered or expanding the scope of analysis, we are committed to iterating based on real user feedback.<br><br>
-            After conducting over 15 usability testing sessions with our MVP product, we’ve gained valuable insights. These include the importance of emphasizing actionable improvements over compliments, integrating suggestions across different AI features, restructuring feedback sections, and more. These learnings have been pivotal in shaping the beta version of Practice Feedback, ensuring it delivers maximum value to users.
-            </div>
-            <div class="placeholder"></div>
-        </div>
-    </section>
-    <img src="../../assets/enterview_new_feedback.png" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-    <!-- project section - solution - touchpoint -->
-    <!-- <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Flexibility to practice anytime without scheduling conflicts.</div><br>
-            <div class="regularfont1gray" style="color: #874CED;">✧ AI Feature</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">No need to schedule time with friends or mentors for mock interviews. Our AI-powered mock interview feature allows users to practice anytime, anywhere.
-            </div>
-            <div class="placeholder"></div>
-            <img src="../../assets/enterview_mock.png" class="projectbrief imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div> -->
+                <div class="largefont4">Insight 4</div>
+                <div class="bodytext fontcolorblack">Scattered thoughts + brief notes to see during interview</div>
+                <div class="largefont4">Recommendations</div>
+                <div class="bodytext fontcolorblack">Notes</div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
 
 
 
 
-    <!-- project section - solution - redemption -->
-    <!-- <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Prepare with actionable items and visible progress.</div><br>
-            <div class="regularfont1gray" style="color: #874CED;">AI Feature</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">
-                We mentioned the service from every level of the online and store experience: homepage, product category page, product detail page, shopping cart, and checkout page.<br><br>
-                The example shown below is the product detail page, where customers can check if the desired item is available for BOPIS and if so, from which New York City store. When they add the item to the cart, a pop-up will show up, further emphasizing the service.</div>
-            </div>
-            <div class="placeholder"></div>
-        </div>
-    </section>
-    <div class="placeholder"></div> -->
+                <!-- Holistic Solution -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="solution">Holistic Solution</div>
+                <div class="placeholder"></div>
+                <div class="largefont4">User Flow</div>
+                <div class="largefont4">Design System</div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
 
 
 
-
-    <!-- project section - solution - redemption -->
-    <!-- <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Keep scattered thoughts and practice notes in one place.</div><br>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">
-                It's easy to lose track of our thoughts and notes when preparing for interviews and track down what was prepared month ago. Our note-taking feature helps users keep practice notes in one place.
-            </div>
-            <div class="placeholder"></div>
-            <img src="../../assets/enterview_notes.png" class="projectbrief imgregular">
-            <div class="placeholder"></div>
-            <div class="placeholder"></div>
-
-            <div class="regularfont1gray">
-                Users can also choose to conduct mock interviews with or without their notes, easing the learning curve.
-            </div>
-            <div class="placeholder"></div>
-            <img src="../../assets/enterview_notes2.png" class="projectbrief imgregular">
-        </div>
+                <!-- Future Outlook -->
+                <div class="innersectiontitle"></div>
+                <div class="placeholder"></div>
+                <div class="largefont2" id="future">Future Outlook</div>
+                <div class="placeholder"></div>
+                <div class="bodytext fontcolorblack">Resume prep, expert agent, community engagement</div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
         
-    </section> -->
+
+
+            </div>            
+        </div>
+
+        
+    <!-- </section> -->
+    <div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div><div class="placeholder"></div>
+    <div class="placeholder"></div>
     
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-    <!-- project section - solution - request a case study -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Request a case study</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">Want to learn more about this project? Get in touch to request a case study.</div>
-            <div class="labelhashtag">
-                <a href="mailto:hello@sutingyu.com?Subject=Hello" class="regularfont1black" style="text-decoration: none;">Get in Touch <a style="color:#874CED;">→</a></a>
-            </div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
     
 </body>
 

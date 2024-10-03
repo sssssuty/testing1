@@ -2,8 +2,7 @@
 <html>
 <head>
      <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="../../assets/mdsrewards_https://www.googletagmanager.com/gtag/js?id=UA-156102402-1"></script>
-    <script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156102402-1">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -13,228 +12,279 @@
 
     <title>MoMA Design Store Rewards</title>
     <link rel="stylesheet" type="text/css" href="../../cssjs/projectstyles.css">
-    <script src="cssjs/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/fontstyle.css">
     <meta charset="utf-8">
     <link rel="icon" href="../../../icon/myfavicon.png" type="image/gif" sizes="16x16">
-    <script src="cssjs/projectmain.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <script>
+        var $output = $('#sidebarcontent');
+        $(window).on('scroll', function () {
+            var scrollTop     = $(window).scrollTop(),
+                elementOffset = $('#actualcontent').offset().top,
+                distance      = (elementOffset - scrollTop);
+
+            // console.log(distance);
+
+            if (distance <= 180){
+                document.getElementById("sidebarcontent").style.position = "fixed";
+                document.getElementById("sidebarcontent").style.top = "180px";
+            } else {
+                document.getElementById("sidebarcontent").style.position = "relative";
+                document.getElementById("sidebarcontent").style.top = "0";
+            }
+        });
+    </script>
     
     <nav>
-        <a href="../index.html" id="websitename" style="text-decoration-line: none;">Tingyu&nbsp;Su</a>
-        <a href="../about.html" id="websiteabout" style="text-decoration-line: none;">About</a>
-    </nav>   
+        <div id="navwidth">
+            <a href="../index.html" id="websitename" style="text-decoration: none;">·Tingyu&nbsp;Su·</a>
+            <a href="../about.html" id="websiteabout" style="text-decoration: none;">About</a>
+        </div>
+    </nav> 
 
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
 
     <!-- project hero -->
-    <header class="projecttitle" >
-        <h1 class="projecttitlegrid1 largefont1" style="align-self: end;">MoMA Design Store Rewards</h1>
-        <div class="projecttitlegrid2" style="align-self: end;">
+    <header class="projecttitle maxcontentwidth" >
+        <h1 class="projecttitlegrid1 largefont1" style="align-self: top;">MoMA Design Store Rewards</h1>
+        <div class="projecttitlegrid2" style="align-self: top;">
             <div class="largefont3">Loyalty through seamless shopping & rewards.</div>
-            <div class="labelstatus" style="background-color: #FF9013;">Launched</div>
-            <div class="labelhashtag">#Omni-Retail</div>
-            <div class="labelhashtag">#CustomerRetention</div>
+            <div class="labelstatus bodytext" style="background-color: #FF9013;">Launched</div>
+            <div class="labelhashtag bodytext">#Omni-Retail</div>
+            <div class="labelhashtag bodytext">#CustomerRetention</div>
         </div>
     </header>
 
     <div class="placeholder"></div>
     <img src="../../assets/mdsrewards_banner1.jpg" class="imgfullwidth">
     <div class="placeholder"></div>
-
-    <!-- project brief -->
-    <section class="projectbrief">
-        <div class="projectbriefgrid1">
-            <div class="largefont3">I led the design of the <a style="color:#FF9013;">MoMA Design Store Rewards</a> - new loyalty program of MoMA's retail division - merging digital and physical shopping and enhancing engagement and loyalty while boosting transaction rates for a rewarding customer experience.</div>
-            <div class="labelhashtag">
-                <a href="https://store.moma.org/pages/rewards-program" class="regularfont1black" style="text-decoration: none;">View Live Site <a style="color:#FF9013;">↗</a></a>
+    
+    <div class="maxcontentwidth">
+        <section class="projectbrief">
+            <div class="projectbriefgrid1">
+                <div class="largefont3">I led the design of the <a style="color:#FF9013;">MoMA Design Store Rewards</a> - new loyalty program of MoMA's retail division - merging digital and physical shopping and enhancing engagement and loyalty while boosting transaction rates for a rewarding customer experience.</div>
+                <div class="labelhashtag">
+                    <a href="https://store.moma.org/pages/rewards-program" class="bodytext fontcolorblack" style="text-decoration: none;">View Live Site <a style="color:#FF9013;">↗</a></a>
+                </div>
+                
             </div>
+            <div class="projectbriefgrid2">
+                <div class="bodytext fontcolorgray">Skills</div>
+                <div class="bodytext fontcolorblack">User Experience Design</div>
+                <div class="bodytext fontcolorblack">Brand Visual Design</div>
+                <div class="bodytext fontcolorblack">Project Management</div>
+                <div class="bodytext fontcolorblack">Stakeholder Management</div>
+                <div class="bodytext fontcolorgray innersectiontitle">My Role</div>
+                <div class="bodytext fontcolorblack">Digital Design Lead</div>
+                <div class="bodytext fontcolorgray innersectiontitle">Timeline</div>
+                <div class="bodytext fontcolorblack">06.2022 - 02.2023</div>
+                <div class="bodytext fontcolorgray innersectiontitle">Collaborators</div>
+                <div class="bodytext fontcolorblack">Amy Kim, Tracy Leung, Jihyeon Leem, Malachi Alston, Georgina Clement</div>
+            </div>
+        </section>
+        <img src="../../assets/mdsrewards_new_herogif.gif" class="imgregular">
+
+        <div id="sidebar">
+            <div id="sidebarcontent">
+                <div class="largefont5"><a href="#overview">Overview</a></div>
+                <!-- <div class="largefont5"><a href="#challenges">Objectives & Approach</a></div> -->
+                <!-- <div class="largefont5"><a href="#research">Research</a></div> -->
+                <!-- <div class="largefont5"><a href="#insights">Insights & Strategy</a></div> -->
+                <div class="largefont5"><a href="#solution">Objectives & Approach</a></div>
+                <div class="largefont5"><a href="#future">Future Outlook</a></div>
+            </div>
+        </div>
+
+        <div id="actualcontent">
+
+            <!-- overview -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="overview">Overview</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">
+                Due to covid and large inventory delay issues, retail stores struggled to keep up the retention rate. Particularly, MoMA Design Store's customer return to purchase rate consistently stayed below the industry average of 14.5%. Also, customers treated the online and in-store experiences as separate entities, leading to fragmented journeys and diminished loyalty.<br><br>
+                
+                Recognizing the situation, the marketing team saw this as an opportunity to rethink our retention strategy and initiated the project.</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
             
-        </div>
-        <div class="projectbriefgrid2">
-            <div class="regularfont1gray">Skills</div>
-            <div class="regularfont1black">User Experience Design</div>
-            <div class="regularfont1black">Brand Visual Design</div>
-            <div class="regularfont1black">Project Management</div>
-            <div class="regularfont1black innersectionend">Stakeholder Management</div>
-            <div class="regularfont1gray innersectiontitle">My Role</div>
-            <div class="regularfont1black innersectionend">Digital Design Manager</div>
-            <div class="regularfont1gray innersectiontitle">Timeline</div>
-            <div class="regularfont1black innersectionend">06.2022 - 02.2023</div>
-            <div class="regularfont1gray innersectiontitle">Collaborators</div>
-            <div class="regularfont1black innersectionend">Amy Kim, Tracy Leung, Jihyeon Leem, Malachi Alston, Georgina Clement</div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <img src="../../assets/mdsrewards_new_herogif.gif" class="projectbrief imgregular">
-    <!-- <img src="../../assets/mdsrewards_rewardsloggedout_mobile.png" class="projectbrief imgregular"> -->
-    <div class="placeholder"></div>
 
+            <div class="largefont4">Project Goals</div>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 mdsrewardsbc bodytext fontcolorblack highlightbackground">
+                    <img class="icons" src="../../assets/mdsicon1.png">
+                    Boost customer retention and engagement by offering tailored rewards and incentives.
+                </div>
+                <div class="projectsectiongrid2 mdsrewardsbc bodytext fontcolorblack highlightbackground">
+                    <img class="icons" src="../../assets/mdsicon2.png">
+                    Provide a seamless shopping experience across all digital and physical touchpoints.
+                </div>
+                <div class="projectsectiongrid3 mdsrewardsbc bodytext fontcolorblack highlightbackground">
+                    <img class="icons" src="../../assets/mdsicon3.png">
+                    Set MoMA Design Store apart from the museum experience, creating a distinct identity.
+                </div>
+            </section>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
 
-    <!-- project section - Impact -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Impact</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">By the first month of release, overall customer retention rate was <a style="color:#FF9013;">increased by 6%</a>, exceeded the industry average.<br><br></div>
+            <div class="largefont4">Strategic Value</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">
+                The team concluded that a loyalty program would help achieve the goal. <br><br>Retailers often use loyalty programs to boost customer retention and sales by offering rewards and personalized experiences. These programs provide valuable data on consumer behavior, enabling targeted marketing and product improvements. They also foster brand loyalty, driving increased spending, positive word-of-mouth, and opportunities for customer feedback, cross-selling, and upselling.
+            </div>
+            <div class="placeholder"></div>
+            <img src="../../assets/mdsrewards_new_loyaltyprogramresearch.png" class="imgregular">
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+            <div class="largefont4">Outcomes</div>
             <div>
-                <a class="largefont3">1.6M</a><a class="regularfont1black"> rewards points earned</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="largefont3">97k</a><a class="regularfont1black"> rewards points redeemed</a><br><br>
+                To protect the data privacy of the company, the following outcomes are based on the first month of the program launch.
             </div>
-            <div>
-                <a class="largefont3">$149</a> <a class="regularfont1black"> AOV for rewards customers vs</a> <a class="largefont3">$117</a> <a class="regularfont1black">for non-rewards customers</a><br><br>
-                <a class="largefont3">27%</a> <a class="regularfont1black"> RPR for rewards customers vs</a> <a class="largefont3">8%</a> <a class="regularfont1black">for non-rewards customers</a><br><br>
-                <a class="largefont3">1.53</a> <a class="regularfont1black"> Avg. no. of purchases for rewards customers vs</a> <a class="largefont3">1.10</a> <a class="regularfont1black">for non-rewards customers</a><br><br>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack mdsrewardsbc highlightbackground" style="padding:30px;">
+                <a class="mdsrewardshighlight largefont3">Retention Rate ↑ 6%</a><br><br>
+                By the first month of release, overall customer retention rate was increased by 6%, exceeded the industry average by 3%.
+            </div><br>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 mdsrewardsbc bodytext fontcolorblack">
+                    <a class="mdsrewardshighlight largefont3">97K</a><br><br>
+                    Rewards points redeemed online and in-store during the first month of program launch.
+                </div>
+                <div class="projectsectiongrid2 mdsrewardsbc bodytext fontcolorblack">
+                    <a class="mdsrewardshighlight largefont3">↑ 50%</a><br><br>
+                    $149 average order value for rewards customers vs $117 for non-rewards customers.
+                </div>
+                <div class="projectsectiongrid3 mdsrewardsbc bodytext fontcolorblack">
+                    <a class="mdsrewardshighlight largefont3">↑ 40%</a><br><br>
+                    1.53 average number of purchases per customer vs 1.10 from the previous month.
+            </section>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+            <div class="italicfont">“MoMA Design Store is my go-to for holiday shopping and wedding gifts. Love this new program that gets me extra rewards!”
+                - Customer Testimonial
             </div>
-            <img src="../../assets/mdsrewards_new_newcustomersintiers.png" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
 
 
-    <!-- project section - problem -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Problem - Why We Started?</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">Due to covid and large inventory delay issues, retail stores struggled to keep up the retention rate. Particularly, MoMA Design Store's <a style="color:#222;">customer return to purchase rate</a> consistently stayed below the industry average of 14.5%.<br><br>Also, customers treated the online and in-store experiences as separate entities, leading to <a style="color:#222;">fragmented journeys and diminished loyalty.</a><br><br>Recognizing the situation, we saw this as an opportunity to rethink our retention strategy.</div>
-            <!-- <div class="largefont3 innersectionend"></div> -->
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <img src="../../assets/mdsrewards_new_problem.jpg" class="projectbrief imgregular">
-    <div class="placeholder"></div><div class="placeholder"></div>
+
+            <!-- Objectives & Approach -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="solution">Objectives & Approach</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">In the beginning of this project, we identified several key objectives that needed to be addressed to ensure a successful market introduction. Throughout the process, I kept an iterative approach and always think about our customers.</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack mdsrewardsbc highlightbackground" style="padding:30px;">
+                <a class=" largefont4">Objective 1. </a>
+                <a class="largefont4">Build the new program with the least amount of effort, yet well-built.</a><br>
+                In addition to a tight timeline, the team needed to manage the project alongside the busy holiday season.
+            </div><br>
+
+            <div class="largefont4 ">1.1 Identify Valuable Touchpoints</div>
+            <div class="bodytext fontcolorblack">As co-lead on the project alongside a customer retention specialist, I began by identifying the most valuable touchpoints to ensure a well-rounded service. My goal was to understand which team members needed to be involved in the preparation process to deliver a comprehensive, well-built program.</div>
+            <div class="bodytext fontcolorblack">Unlike previous product launches or events, this loyalty program required coordination across the entire Retail department and awareness from the Museum department. While my partner handled the detailed logistics of perks and rewards, my focus shifted to refining the online and in-store customer experiences.</div>
+            <div class="placeholder"></div>
+
+            <div class="largefont4 ">1.2 Evaluate different user journey flows.</div>
+            <div class="bodytext fontcolorblack">In the early stages, the design team and I mapped out various user flows and corresponding information architecture to gauge the level of effort required.</div>
+            <div class="bodytext fontcolorblack">The team ultimately selected the final plan, as it achieved the project’s core goals while minimizing the workload for the team.</div>
+            <div class="placeholder"></div>
+
+            <div class="largefont4 ">1.3 Allocate work between internal teams and external partners.</div>
+            <div class="bodytext fontcolorblack">To prevent overwhelming our internal teams, we brought on three external partners to assist with project execution. They helped verify the user flow, reviewed visual and copy content, and conducted testing to ensure the platform’s stability.</div>
+            <div class="placeholder"></div>
+
+            <div class="largefont4 ">1.4 Accessibility is vital for a well-considerated experience.</div>
+            <div class="bodytext fontcolorblack">Aligned with MoMA's nationwide accessibility guidelines, we ensured that our digital pages were well-structured and user-friendly. Additionally, we prepared in-person support for customers in stores to further enhance accessibility.</div>
+
+
+            
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack mdsrewardsbc highlightbackground" style="padding:30px;">
+                <a class=" largefont4">Objective 2. </a>
+                <a class="largefont4">Bridge the online and in-store shopping experience.</a><br>
+                Because the online and in-store experiences are operated by different teams, thus this project required an additional layer of collaboration and coordination.
+            </div><br>
+            <div class="largefont4 ">2.1 User flow of redemption</div>
+            <div class="bodytext fontcolorblack">User flow of redemption</div>
+
+
+
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack mdsrewardsbc highlightbackground" style="padding:30px;">
+                <a class=" largefont4">Objective 3. </a>
+                <a class="largefont4">Differentiate MoMA Design Store Rewards with MoMA museum membership.</a><br>
+                The museum membership has been a long-standing program, and the new program needed to be distinct and not to be confused with the museum membership.
+            </div><br>
+            <div class="largefont4 ">3.1 Different visual identity</div>
+            <div class="bodytext fontcolorblack">Visual identity</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+
+            <!-- Future Outlook -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="future">Future Outlook</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">What I learned</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
     
+
+
+        </div>            
+    </div>    
     
-
-    <!-- project section - research -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Research</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">Our Current Situation<br><br></div>
-            <div class="regularfont1gray innersectionend">Like many <a style="color:#222;">omni-channel retailers</a>, customers can make purchases at the MoMA Design Store's online website, physical stores in North America, Asia, and Europe, or through wholesale orders.<br><br>
-                As a division under the Museum of Modern Art, customers with <a style="color:#222;">museum memberships</a> enjoy exclusive benefits, such as early access to launches and discounts.<br><br>
-                In addition to <a style="color:#222;">seasonal sales</a> where customers can enjoy up to 60% off, MoMA Design Store curates <a style="color:#222;">seasonal pop-up stores</a>about three times a year, each around different themes, to bring good design to our audiences.<br><br>
-            </div>
-            <img src="../../assets/mdsrewards_new_store_exterior.jpg" class="imgregular">
-            <div class="placeholder"></div>
-            <div class="largefont3 innersectiontitle">User Research<br><br></div>
-            <div class="regularfont1gray innersectionend">Our research, which included over 80 email surveys and in-person user sessions, revealed <a style="color:#222;">a gap between customers' appreciation for our product and their willingness to purchase at full price</a>. The data also indicate that most customers are eager to learn more about MoMA Design Store's <a style="color:#222;">exclusive launches</a> and are interested in receiving <a style="color:#222;">personalized content.</a></div>
-            <img src="../../assets/mdsrewards_new_store_interior.jpg" class="imgregular">
-            <div class="placeholder"></div>
-            <div class="largefont3 innersectiontitle">Market Analysis<br><br></div>
-            <div class="regularfont1gray innersectionend">Many retailers leverage loyalty programs to enhance customer retention and drive sales by offering rewards and personalized experiences. These programs yield <a style="color:#222;">valuable insights through data collection on consumer behavior</a>, enabling more <a style="color:#222;">targeted marketing strategies and product enhancements</a>. Additionally, they cultivate <a style="color:#222;">a sense of community and brand loyalty</a>, leading to increased spending, positive word-of-mouth, and opportunities for customer feedback, cross-selling, and upselling.</div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <img src="../../assets/mdsrewards_new_loyaltyprogramresearch.png" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Solution</div>
-            <div class="largefont3 innersectionend">Building Connections Through a Loyalty Program</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">We set out to design the <a style="color:#222;">MoMA Design Store Rewards</a> program — a comprehensive loyalty initiative aimed at <a style="color:#222;">deepening customer engagement</a>.<br><br>By merging digital and physical shopping environments, we envisioned a <a style="color:#222;">seamless customer experience</a> where rewards would not only incentivize purchases but also foster a sense of community.<br><br>Through <a style="color:#222;">personalized recommendations</a> and <a style="color:#222;">meaningful rewards</a>, we aimed to <a style="color:#222;">build long-lasting relationships</a> with art and design lovers who are passionate about the MoMA brand.<br><br></div>
-            <img src="../../assets/mdsrewards_new_logoanimation.gif" class="imgregular">
-        </div>
-    </section>
-    
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - touchpoint -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Integrating the program at every touchpoint.</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">Here we present a comprehensive map of every interaction point our customers may experience with our service, encompassing both digital and physical realms. Within these varied touchpoints, we Integrated distinct content tailored to achieve specific objectives.<br><br>
-                The touchpoints highlighted in green are strategically designed to include segments that actively promote our loyalty program, aiming to entice customers to join. Meanwhile, the areas marked in orange are focused on content that motivates customers to make purchases, effectively utilizing the benefits offered by the loyalty program.<br><br>
-            </div>
-            <img src="../../assets/mdsrewards_new_touchpoints.png" class="imgregular">
-            <div class="placeholder"></div>
-            <div class="placeholder"></div>
-            <div class="regularfont1gray">To emphasize the benefits of the loyalty program and highlight the incentives, we created content for each touchpoint highlighted in orange.
-            </div>
-        </div>
-    </section>
-    <img src="../../assets/mdsrewards_new_screens1.gif" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - redemption -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Streamlining in-store and online redemptions.</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">While points can be automatically redeemed for online purchases, customers require additional identification to enjoy their perks. To streamline the process, we developed a email redemption system that allows customers to redeem their rewards in-store by presenting a unique code sent to their email.
-            </div>
-            <div class="placeholder"></div>
-            <img src="../../assets/mdsrewards_new_redemption2.png" class="imgregular">
-        </div>
-    </section>
-    
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - visualidentity -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Visual Identity</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">My team started with two visual directions for the brand identity. One direction highlights MoMA Design Store’s core mission: “to bring good design into people’s lives by putting it into their homes and hands.” The other concept conveys the visual representation of a loyalty program, stacking perks. After two rounds of review with the larger team, the second option was chosen to revise and refine.</div>
-            <div class="placeholder"></div>
-            <img src="../../assets/mdsrewards_new_branding.png" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-    <!-- project section - solution - request a case study -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Request a case study</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">Want to learn more about this project? Get in touch to request a case study.</div>
-            <div class="labelhashtag">
-                <a href="mailto:hello@sutingyu.com?Subject=Hello" class="regularfont1black" style="text-decoration: none;">Get in Touch <a style="color:#FF9013;">→</a></a>
-            </div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+    <!-- </section> -->
+<div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div>
     
 </body>
 
