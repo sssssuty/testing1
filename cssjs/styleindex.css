@@ -10,6 +10,7 @@ body{
 a{
     color:#222;
     font-weight: 400;
+    text-decoration: none;
 }
 nav{
     background-color: #fafafa;
@@ -24,6 +25,9 @@ nav{
 }
 #placeholder1{
     height: 2vw;
+}
+div{
+    text-decoration: none;
 }
 
 /*mobile*/
@@ -41,7 +45,7 @@ nav{
     a{
         font-family: "Inter", helvetica, sans-serif;
         color:#222;
-        font-size: 4vw;
+        /* font-size: 4vw; */
     }
     .top{
         position: fixed;
@@ -54,7 +58,7 @@ nav{
     }
     .menu{
         position: absolute;
-        font-size: 4vw;
+        /* font-size: 4vw; */
         margin-left: 0vw;
         margin-right: 3vw;
         text-decoration: underline;
@@ -62,7 +66,7 @@ nav{
     }
     #txt{
         position: absolute;
-        font-size: 6vw;
+        /* font-size: 6vw; */
         margin-top: 61vw;
     }
     .indexintro{
@@ -71,25 +75,22 @@ nav{
         width: 94vw;
     }
     .hiteam{
-        font-size: 4vw;
+        /* font-size: 4vw; */
         margin-top: 40vw;
         margin-bottom: 2vw;
     }
-    .indexcopy{
-        font-size: 18px;
-    }
     .myslogan{
-        font-size: 7vw;
+        /* font-size: 7vw; */
         margin-bottom: 30vw;
     }
     .intro2{
         position: absolute;
-        font-size: 6vw;
+        /* font-size: 6vw; */
         margin-top: 69vw;
     }
     .intro3{
         position: absolute;
-        font-size: 6vw;
+        /* font-size: 6vw; */
         margin-top: 77vw;
     }
     .indexphoto{
@@ -97,7 +98,7 @@ nav{
         border-radius: 0.5vw;
     }
     .moving1{
-        font-size: 10vw;
+        /* font-size: 10vw; */
         line-height: 12vw;
         position: absolute;
         margin: 0;
@@ -105,7 +106,7 @@ nav{
         margin-top: 33.6vw;
     }
     #quote{
-        font-size: 10vw;
+        /* font-size: 10vw; */
         line-height: 11vw;
     }
     .project{
@@ -130,13 +131,13 @@ nav{
         margin-bottom: 20vw;
     }
     .tag{
-        font-size: 32px;
+        /* font-size: 32px; */
         display: inline-block;
         border-radius: 50px;
         backdrop-filter: blur(4.5px);
         border: 1px solid #222;
         padding: 6px;
-        padding-bottom: 12px;
+        padding-bottom: 16px;
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 20px;
@@ -150,11 +151,11 @@ nav{
 /* desktop layout*/
 @media screen and (min-device-width: 501px) and (max-device-width: 1300px) {
     nav{
-        font-size: 20px;
+        /* font-size: 20px; */
         padding: 30px;
     }
     #websitename{
-        font-size: 20px;
+        /* font-size: 20px; */
         text-decoration-line: none;
     }
     #websiteabout{
@@ -188,10 +189,11 @@ nav{
     .indexcopy{
         width: 100%;
         font-family: "Inter", helvetica, sans-serif;
-        font-size: 28px;
+        /* font-size: 28px; */
         line-height: 34px;
-        color:#fafafa;
+        /* color:#fafafa; */
         margin-top: 14px;
+        padding-bottom: 16px;
     }
     .top{
         position: fixed;
@@ -204,45 +206,45 @@ nav{
         z-index: 10;
     }
     .menu{
-        font-size: 1.9vw;
+        /* font-size: 1.9vw; */
         margin-left: 0vw;
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: #fafafa;
+        /* text-decoration-color: #fafafa; */
     }
     .indexintro{
         width: 80vw;
         padding-top: 20vw;
     }
     .hiteam{
-        font-size: 28px;
+        /* font-size: 28px; */
         margin-bottom: 20px;
     }
     .myslogan{
-        font-size: 60px;
+        /* font-size: 60px; */
     }
 
     .indexbio{
-        font-size: 2.4vw;
+        /* font-size: 2.4vw; */
         width: 70vw;
         padding-top: 5vw;
         margin-left: 7vw;
     }
     .intro2{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 16vw;
     }
     .intro3{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 23vw;
     }
     .intro4{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 32vw;
@@ -254,11 +256,11 @@ nav{
         position: absolute;
         top: 500px;
         left: 4vw;
-        font-size: 28px;
+        /* font-size: 28px; */
     }
     .move{
         font-family: "Inter", helvetica, sans-serif;
-        font-size: 3.55vw;
+        /* font-size: 3.55vw; */
         position: absolute;
         margin: 0;
         padding:0;
@@ -269,7 +271,7 @@ nav{
         display:block; 
         height: 1000; 
         width: 50vw; 
-        font-size: 28px; 
+        /* font-size: 28px;  */
         margin-bottom: 1vw;
     }
     .tag{
@@ -297,7 +299,7 @@ nav{
         margin: auto;
     }
     nav{
-        font-size: 28px;
+        /* font-size: 28px; */
         padding: 30px;
     }
     #websitename{
@@ -332,10 +334,11 @@ nav{
     .indexcopy{
         width: 100%;
         font-family: "Inter", helvetica, sans-serif;
-        font-size: 28px;
+        /* font-size: 28px; */
         line-height: 34px;
-        color:#fafafa;
+        /* color:#fafafa; */
         margin-top: 14px;
+        padding-bottom: 16px;
     }
     .top{
         position: fixed;
@@ -348,49 +351,49 @@ nav{
         z-index: 10;
     }
     .menu{
-        font-size: 1.9vw;
+        /* font-size: 1.9vw; */
         margin-left: 0vw;
         margin-right: 3vw;
         position: absolute;
         text-decoration: underline;
-        text-decoration-color: #fafafa;
+        /* text-decoration-color: #fafafa; */
     }
     .indexintro{
         width: 60vw;
         padding-top: 11vw;
     }
     .hiteam{
-        font-size: 28px;
+        /* font-size: 28px; */
         margin-bottom: 20px;
     }
     .myslogan{
-        font-size: 50px;
+        /* font-size: 50px; */
         max-width: 1000px;
     }
 
     .indexbio{
-        font-size: 2.4vw;
+        /* font-size: 2.4vw; */
         width: 70vw;
         padding-top: 5vw;
         margin-left: 7vw;
     }
 
     .intro2{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 16vw;
     }
 
     .intro3{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 23vw;
     }
 
     .intro4{
-        font-size: 28px;
+        /* font-size: 28px; */
         position: absolute;
         top: 500px;
         left: 32vw;
@@ -404,11 +407,11 @@ nav{
         position: absolute;
         top: 500px;
         left: 4vw;
-        font-size: 28px;
+        /* font-size: 28px; */
     }
     .move{
         font-family: "Inter", helvetica, sans-serif;
-        font-size: 3.55vw;
+        /* font-size: 3.55vw; */
         position: absolute;
         margin: 0;
         padding:0;
@@ -419,7 +422,7 @@ nav{
         display:block; 
         height: 1000; 
         width: 50vw; 
-        font-size: 28px; 
+        /* font-size: 28px;  */
         margin-bottom: 1vw;
     }
 
