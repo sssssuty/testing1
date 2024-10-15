@@ -13,37 +13,61 @@
 
     <title>Buy Online, Pick Up in Store</title>
     <link rel="stylesheet" type="text/css" href="../../cssjs/projectstyles.css">
-    <script src="cssjs/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="../../../cssjs/fontstyle.css">
     <meta charset="utf-8">
     <link rel="icon" href="../../../icon/myfavicon.png" type="image/gif" sizes="16x16">
-    <script src="cssjs/projectmain.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <script>
+        var $output = $('#sidebarcontent');
+        $(window).on('scroll', function () {
+            var scrollTop     = $(window).scrollTop(),
+                elementOffset = $('#actualcontent').offset().top,
+                distance      = (elementOffset - scrollTop);
+
+            // console.log(distance);
+
+            if (distance <= 180){
+                document.getElementById("sidebarcontent").style.position = "fixed";
+                document.getElementById("sidebarcontent").style.top = "180px";
+            } else {
+                document.getElementById("sidebarcontent").style.position = "relative";
+                document.getElementById("sidebarcontent").style.top = "0";
+            }
+        });
+    </script>
     
     <nav>
-        <a href="../index.html" id="websitename" style="text-decoration-line: none;">Tingyu&nbsp;Su</a>
-        <a href="../about.html" id="websiteabout" style="text-decoration-line: none;">About</a>
-    </nav>   
+        <div id="navwidth">
+            <a href="../index.html" id="websitename" style="text-decoration: none;">·Tingyu&nbsp;Su·</a>
+            <a href="../about.html" id="websiteabout" style="text-decoration: none;">About</a>
+        </div>
+    </nav> 
 
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
     <div class="placeholder"></div>
 
     <!-- project hero -->
-    <header class="projecttitle" >
-        <h1 class="projecttitlegrid1 largefont1" style="align-self: end;">Buy Online, <br>Pick Up in Store</h1>
-        <div class="projecttitlegrid2" style="align-self: end;">
+    <header class="projecttitle maxcontentwidth">
+        <h1 class="projecttitlegrid1 largefont1" style="align-self: top;">Buy Online, <br>Pick Up in Store</h1>
+        <div class="projecttitlegrid2" style="align-self: top;">
             <div class="largefont3">Minimizing operational shipping costs while merging digital and physical shopping.</div>
-            <div class="labelstatus" style="background-color: #28A2C5;">Launched</div>
-            <div class="labelhashtag">#Omni-Retail</div>
-            <div class="labelhashtag">#Operational Cost Reduction</div>
-            <div class="labelhashtag">#Payment</div>
+            <div class="labelstatus bodytext" style="background-color: #28A2C5;">Launched</div>
+            <div class="labelhashtag bodytext">#Omni-Retail</div>
+            <div class="labelhashtag bodytext">#Operational Cost Reduction</div>
+            <div class="labelhashtag bodytext">#Payment</div>
             
         </div>
     </header>
@@ -52,176 +76,220 @@
     <img src="../../assets/bopis_hero.jpg" class="imgfullwidth">
     <div class="placeholder"></div>
 
-    <!-- project brief -->
-    <section class="projectbrief">
-        <div class="projectbriefgrid1">
-            <div class="largefont3">I led the digital design side of the <a style="color:#28A2C5;">Buy Online, Pick Up in Store (BOPIS) service</a> at MoMA Design Store - merging digital and physical shopping and minimizing shipping costs.</div>
-            <div class="labelhashtag">
-                <a href="https://store.moma.org/collections/only-at-moma" class="regularfont1black" style="text-decoration: none;">View Live Site <a style="color:#28A2C5;">↗</a></a>
+    <div class="maxcontentwidth">
+        <div id="sidebar">
+            <div id="sidebarcontent">
+                <div class="largefont5"><a href="#overview">Overview</a></div>
+                <div class="largefont5"><a href="#challenges">Challenges</a></div>
+                <div class="largefont5"><a href="#research">Research</a></div>
+                <div class="largefont5"><a href="#insights">Insights & Strategy</a></div>
+                <div class="largefont5"><a href="#solution">Holistic Solution</a></div>
+                <div class="largefont5"><a href="#future">Future Outlook</a></div>
             </div>
-            
         </div>
-        <div class="projectbriefgrid2">
-            <div class="regularfont1gray">Skills</div>
-            <div class="regularfont1black">User Experience Design</div>
-            <div class="regularfont1black">Brand Visual Design</div>
-            <div class="regularfont1black">Frontend Development</div>
-            <div class="regularfont1black innersectionend">Stakeholder Management</div>
-            <div class="regularfont1gray innersectiontitle">My Role</div>
-            <div class="regularfont1black innersectionend">Digital Design Manager</div>
-            <div class="regularfont1gray innersectiontitle">Timeline</div>
-            <div class="regularfont1black innersectionend">05.2022 - 08.2022</div>
-            <div class="regularfont1gray innersectiontitle">Collaborators</div>
-            <div class="regularfont1black innersectionend">Amy Kim, Tracy Leung</div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <img src="../../assets/bopis_new_hero.gif" class="projectbrief imgregular">
-    <!-- <img src="../../assets/mdsrewards_rewardsloggedout_mobile.png" class="projectbrief imgregular"> -->
-    <div class="placeholder"></div>
 
+        <div id="actualcontent">
 
-    <!-- project section - Impact -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Impact</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">One year after we launched the program, we serve <a style="color:#28A2C5;">500+ order every month</a>, at our New York City stores.<br><br></div>
-            <div class="regularfont1gray">Due to data sensitivity, I can not share more quantitative data around this.</div>
-            <img src="../../assets/bopis_new_shoppingbag.jpg" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-    <!-- project section - problem -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Problem - Why We Started?</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">Shipping costs, whether for initial delivery or returns, have always been a significant expense for retailers, particularly in light of the need for careful cost management during the pandemic and early post-pandemic period.<br><br>Prompted by the marketing and data teams, the larger retail team began investigating this issue more closely.</div>
+            <!-- overview -->
+            <div class="innersectiontitle"></div>
             <div class="placeholder"></div>
-            <img src="../../assets/bopis_new_boxes.png" class="projectbrief imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    
-    
+            <div class="largefont2" id="overview">Overview</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">Enterview AI is an innovative interview preparation platform that uses AI to help job seekers craft well-structured, personalized answers for behavioral interview questions.</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <!-- <img src="../../assets/enterview_logo.png" class="imgregular"> -->
 
-    <!-- project section - research -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Research</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">Strategies Used By Other Retailers<br><br></div>
-            <div class="regularfont1gray innersectionend">
-                #1 <a class="regularfont1black">Optimize Supply Chain and Logistics</a>: Streamlining the supply chain, including optimizing inventory management, negotiating better shipping rates, and using data analytics for demand forecasting.<br><br>
-                #2 <a class="regularfont1black">Leverage Store Inventory for Online Orders</a>: Leveraging physical store inventory to fulfill online orders reduces travel distance for products, thus saving on shipping expenses and time.<br><br>
-                #3 <a class="regularfont1black">Offer Buy Online and Pick Up In Stores</a>: By allowing customers to order online and pick up in-store, retailers can reduce shipping costs and bridge the gap between online and physical shopping experiences.<br><br>
-                #4 <a class="regularfont1black">Offer Buy Online and Ship From Stores</a>: Similar to BOPIS, BOSHIP involves shipping online orders to a local store for pickup, reducing logistics costs associated with home delivery. <br><br>
-                #5 <a class="regularfont1black">Use Data Analytics for Efficient Routing</a>: Utilizing data analytics for efficient routing optimizes shipping routes and regional warehousing, lowering both costs and delivery times. <br><br>
-                #6 <a class="regularfont1black">Encourage In-Store Returns</a>: For online purchases, encourage customers to return items to the store. This can drive foot traffic while saving on return shipping costs.<br><br>
-            </div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+            <div class="largefont4">Objective</div>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 bopisbc bodytext fontcolorblack highlightbackground">
+                    Identify key user pain points around interview preparation and engagement.
+                </div>
+                <div class="projectsectiongrid2 bopisbc bodytext fontcolorblack highlightbackground">
+                    Create a more intuitive user journey through targeted research and UX optimization.
+                </div>
+                <div class="projectsectiongrid3 bopisbc bodytext fontcolorblack highlightbackground">
+                    Leverage AI technology to deliver tailored feedback that improves user confidence and interview outcomes.
+            </section>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
 
-
-
-
-    <!-- project section - solution -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Solution</div>
-            <div class="largefont3 innersectionend">Buy Online and Pick Up in Store</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">After evaluating the strategies and examine the team's bandwidth, we decided to proceed with Buy Online and Pick Up In Store service. Simultaneously, we would mention In Store Return more frequently in marketing materials. If the BOPIS launch was successful, the team will plan to launch Buy Online and Ship From Store service to further optimize the operation.<br><br></div>
-            <img src="../../assets/bopis_new_logo.jpg" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - touchpoint -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Targeting local customers with geolocation.</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">"People don't hate ads. They hate bad ads."<br><br>We want to delivery the message to the right audiences. Collaborated with the product manager and the development team, we implemented geolocation targeting to show the BOPIS banner to local customers only.<br><br>The example shown below is the skinny top banner on the homepage of MoMA Design Store's website. Other site visitors will see our evergreen banner, mentioning the museum membership and the new loyalty program.
-            </div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <img src="../../assets/bopis_0.jpg" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - redemption -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont3">Blending the new service into every step.</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">
-                We mentioned the service from every level of the online and store experience: homepage, product category page, product detail page, shopping cart, and checkout page.<br><br>
-                The example shown below is the product detail page, where customers can check if the desired item is available for BOPIS and if so, from which New York City store. When they add the item to the cart, a pop-up will show up, further emphasizing the service.</div>
+            <div class="largefont4">Strategic Value</div>
+            <div class="bodytext fontcolorblack">
+                Through collaborative research, we identified the reasons behind low user engagement and structured answers. The redesign strategy focused on enhancing the user experience, integrating personalized AI features, and improving communication of Enterview AI’s unique value proposition.<br><br>
+                This strategy aimed to build user confidence, increase the platform’s value perception, and foster long-term engagement.
             </div>
             <div class="placeholder"></div>
-        </div>
-    </section>
-    <img src="../../assets/bopis_new_addtocartprocess.png" class="projectbrief imgregular">
-    <div class="placeholder"></div>
-
-
-
-    <!-- project section - solution - visualidentity -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2" style="color: lightgray;">Next Step</div>
-            <div class="largefont2">Adjust the payment logic.</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="regularfont1gray">Due to the team's limited bandwidth, the checkout process was initially built with basic functionality.<br><br>While customers can complete BOPIS (Buy Online, Pick Up In Store) purchases when all items are available at the same location, they cannot do so if items are spread across different stores.<br><br>The system should not only allow customers to proceed with purchasing items from multiple locations but also notify them that they will need to pick up items from different stores before confirming the purchase.</div>
             <div class="placeholder"></div>
-            <img src="../../assets/bopis_new_checkout.png" class="imgregular">
-            <img src="../../assets/bopis_new_checkout2.png" class="imgregular">
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
 
+            <div class="largefont4">Outcomes</div>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 bopisbc bodytext fontcolorblack">
+                    <a class="bopishighlight">↑ 80%</a><br><br>
+                    Achieved an 80% increase in successful interview outcomes among users over 6 months.
+                </div>
+                <div class="projectsectiongrid2 bopisbc bodytext fontcolorblack">
+                    ↑ 50%<br><br>
+                    Increased user engagement by 50% through the introduction of personalized AI-driven feedback loops.
+                </div>
+                <div class="projectsectiongrid3 bopisbc bodytext fontcolorblack">
+                    4.7/5<br><br>
+                    Received a 4.7/5 satisfaction rating from users in feedback surveys post-launch.
+            </section>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
 
-    <!-- project section - solution - request a case study -->
-    <section class="projectsection">
-        <div class="projectsectiongrid1">
-            <div class="largefont2">Request a case study</div>
-        </div>
-        <div class="projectsectiongrid2">
-            <div class="largefont3">Want to learn more about this project? Get in touch to request a case study.</div>
-            <div class="labelhashtag">
-                <a href="mailto:hello@sutingyu.com?Subject=Hello" class="regularfont1black" style="text-decoration: none;">Get in Touch <a style="color:#28A2C5;">→</a></a>
+            <div class="italicfont">“The revamped tool not only helped me practice better answers but also boosted my confidence in actual interviews. Enterview AI’s personalized feedback was a game-changer.”
+                - User Testimonial
             </div>
-        </div>
-    </section>
-    <div class="placeholder"></div>
-    <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+            <!-- challenge -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="challenges">Challenges</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">As Enterview AI prepared to launch, we identified several key challenges that needed to be addressed to narrow the product’s focus and ensure a successful market introduction.</div>
+            <div class="placeholder"></div>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 bopisbc bodytext fontcolorblack">
+                    01
+                Broad product scope
+                Initially, the product aimed to address multiple aspects of interview preparation, which diluted its impact. Users struggled to see the specific value in behavioral interview prep amidst a sea of features.
+                </div>
+                <div class="projectsectiongrid2 bopisbc bodytext fontcolorblack">
+                    02
+                Uncertainty about AI value
+                A key concern was whether the AI model would deliver real value to users. While the AI had the potential to analyze user responses and provide personalized feedback, there was uncertainty around how accurate, relevant, and actionable this feedback would be in real-world scenarios.
+                </div>
+                <div class="projectsectiongrid3 bopisbc bodytext fontcolorblack">
+                    03
+                Clarifying the core feature
+                With the wide-ranging capabilities of AI, it was important to zero in on the one feature that would resonate most with users: offering structured, personalized responses to behavioral interview questions, which would help users stand out in their interviews.
+            </section>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">How might we ensure that Enterview AI’s personalized, AI-driven behavioral interview preparation delivers real value to users and supports them in achieving success in their job interviews?
+            </div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+            <!-- Research -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="research">Research</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">To refine Enterview AI’s focus and ensure the AI model delivered real value, my team and I conducted extensive research, including user interviews, feedback sessions, and competitive analysis.</div>
+            <div class="placeholder"></div>
+            <section class="projectsection"> 
+                <div class="projectsectiongrid1 bopisbc bodytext fontcolorblack">
+                    Interviewed 10 job seekers across various industries (e.g., tech, finance, and healthcare) to understand their interview prep struggles and expectations from an AI-powered tool.
+                </div>
+                <div class="projectsectiongrid2 bopisbc bodytext fontcolorblack">
+                    Collected feedback from 5 career coaches to evaluate how well Enterview AI could provide structured, actionable insights similar to human feedback.
+                </div>
+                <div class="projectsectiongrid3 bopisbc bodytext fontcolorblack">
+                    Performed a competitive analysis of existing interview preparation tools, identifying gaps in personalized, real-time feedback that Enterview AI could address.
+            </section>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">
+                This research helped us pinpoint key user pain points and validate the AI model’s potential to provide personalized support. Using insights from competitor benchmarking and expert feedback, I led my team in narrowing the product’s scope to focus on AI-powered behavioral interview preparation, ensuring the tool offered practical and relevant feedback to improve user outcomes.
+            </div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+            <!-- Insights & Strategy -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="insights">Insights & Strategy</div>
+            <div class="placeholder"></div>
+            <div class="largefont4">Insight 1</div>
+            <div class="bodytext fontcolorblack">Not know which questions to prepare.</div>
+            <div class="largefont4">Recommendations</div>
+            <div class="bodytext fontcolorblack">Individual Question + mock interview</div>
+
+            <div class="largefont4">Insight 2</div>
+            <div class="bodytext fontcolorblack">Hard to access the quality of the prepared answer.</div>
+            <div class="largefont4">Recommendations</div>
+            <div class="bodytext fontcolorblack">Feedback</div>
+
+            <div class="largefont4">Insight 3</div>
+            <div class="bodytext fontcolorblack">Hard to complete a draft when stuck and make it personal</div>
+            <div class="largefont4">Recommendations</div>
+            <div class="bodytext fontcolorblack">Brainstorm with AI</div>
+
+            <div class="largefont4">Insight 4</div>
+            <div class="bodytext fontcolorblack">Scattered thoughts + brief notes to see during interview</div>
+            <div class="largefont4">Recommendations</div>
+            <div class="bodytext fontcolorblack">Notes</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+
+
+            <!-- Holistic Solution -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="solution">Holistic Solution</div>
+            <div class="placeholder"></div>
+            <div class="largefont4">User Flow</div>
+            <div class="largefont4">Design System</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+
+
+
+            <!-- Future Outlook -->
+            <div class="innersectiontitle"></div>
+            <div class="placeholder"></div>
+            <div class="largefont2" id="future">Future Outlook</div>
+            <div class="placeholder"></div>
+            <div class="bodytext fontcolorblack">Resume prep, expert agent, community engagement</div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
     
+
+
+        </div>            
+    </div>
+
+    
+<!-- </section> -->
+<div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div><div class="placeholder"></div>
+<div class="placeholder"></div>
+
+
 </body>
 
 </html>
