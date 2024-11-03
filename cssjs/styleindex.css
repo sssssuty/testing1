@@ -29,7 +29,11 @@ nav{
 div{
     text-decoration: none;
 }
-
+.cta:hover{
+    cursor: pointer;
+    background-color: #222;
+    color: #fafafa;
+}
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     #websitename{
