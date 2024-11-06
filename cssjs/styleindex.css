@@ -85,7 +85,7 @@ div{
     }
     .myslogan{
         /* font-size: 7vw; */
-        margin-bottom: 30vw;
+        margin-bottom: 20vw;
     }
     .intro2{
         position: absolute;
@@ -149,6 +149,11 @@ div{
     }
     #placeholder1{
         height: 5vw;
+    }
+    .indexcopy{
+        width: 100%;
+        margin-top: 28px;
+        padding-bottom: 28px;
     }
 }
 
