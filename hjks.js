@@ -13,6 +13,9 @@ function myFunction() {
     if (passcode == "FINTECH"){
       window.open("https://www.sutingyu.com/work/fintech/index.html", "_self");
     }
+    if (passcode == "DESIGNENGINEER"){
+      window.open("https://www.sutingyu.com/work/designengineer/index.html", "_self");
+    }
     // if (passcode == "SELFF"){
     //   window.open("www.google.com", "_self");
     // }
