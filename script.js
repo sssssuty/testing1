@@ -625,7 +625,7 @@ function splat(x, y, dx, dy, color) {
   // gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.3, color[1] * 0.3, color[2] * 0.3);
 
   //decrease the brightness
-  gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.15, color[1] * 0.15, color[2] * 0.15);
+  gl.uniform3f(splatProgram.uniforms.color, color[0] * 0.08, color[1] * 0.08, color[2] * 0.08);
 
   blit(density.write[1]);
   density.swap();

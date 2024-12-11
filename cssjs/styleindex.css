@@ -34,6 +34,94 @@ div{
     background-color: #222;
     color: #fafafa;
 }
+
+.projectpagebackgroundcolor{
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.purple{
+    background-color: #F1EBFF;
+    border: #F1EBFF 2px solid;
+}
+
+.purple:hover{
+    border: #9747FF 2px solid;
+    transition-duration: 0.6s;
+}
+
+.green{
+    background-color: #E6F6EA;
+    border: #E6F6EA 2px solid;
+}
+
+.green:hover{
+    border: #00A94E 2px solid;
+    transition-duration: 0.6s;
+}
+
+.orange{
+    background-color: #FBF4E7;
+    border: #FBF4E7 2px solid;
+}
+
+.orange:hover{
+    border: #F88F24 2px solid;
+    transition-duration: 0.6s;
+}
+
+.hovernotclickable{
+   cursor: no-drop; 
+}
+
+.hoverhand{
+    cursor: pointer;
+}
+
+
+.curved-lines-container {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    width: 40%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.curved-line-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+#curve-line-1 {
+    stroke: #9747FF; /* Purple Line */
+}
+
+#curve-line-2 {
+    stroke: #F88F24; /* Orange Line */
+}
+
+text {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    fill: #222;
+    font-weight: bold;
+    animation: text-move 8s linear infinite;
+}
+
+@keyframes text-move {
+    from {
+        text-anchor: start;
+    }
+    to {
+        text-anchor: end;
+    }
+}
+
+
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     #websitename{
@@ -75,17 +163,17 @@ div{
     }
     .indexintro{
         margin: auto;
-        margin-top: 20vw;
-        width: 94vw;
+        margin-top: 40vw;
+        width: 90vw;
     }
     .hiteam{
         /* font-size: 4vw; */
-        margin-top: 40vw;
+        /* margin-top: 40vw; */
         margin-bottom: 2vw;
     }
     .myslogan{
-        /* font-size: 7vw; */
-        margin-bottom: 20vw;
+        font-size: 80px;
+        margin-top: 10vw;
     }
     .intro2{
         position: absolute;
@@ -98,7 +186,7 @@ div{
         margin-top: 77vw;
     }
     .indexphoto{
-        width: 90vw;
+        width: 100%;
         border-radius: 0.5vw;
     }
     .moving1{
@@ -125,14 +213,14 @@ div{
     }
     .indexproject{
         display: block;
-        width: 90vw;
+        width: 80vw;
         margin: auto;
     }
     .indexproject1{
-        margin-bottom: 20vw;
+        margin-bottom: 10vw;
     }
     .indexproject2{
-        margin-bottom: 20vw;
+        margin-bottom: 4vw;
     }
     .tag{
         /* font-size: 32px; */
@@ -176,20 +264,21 @@ div{
         display: grid;
         grid-template-areas:'left right';
         gap: 40px;
-        max-width: 70%;
+        max-width: 96%;
+        /* padding-top: 16px; */
         /* margin: auto; */
     }
     .indexproject1{
         grid-area: left;
         width: 43vw;
         max-width: 500px;
-        padding-top: 16px;
+        /* padding-top: 16px; */
     }
     .indexproject2{
         grid-area: right;
-        width: 43vw;
-        max-width: 500px;
-        padding-top: 16px;
+        width: 35vw;
+        max-width: 400px;
+        /* padding-top: 16px; */
     }
     .indexphoto{
         width: 100%;
@@ -201,7 +290,7 @@ div{
         /* font-size: 28px; */
         line-height: 34px;
         /* color:#fafafa; */
-        margin-top: 14px;
+        /* margin-top: 14px; */
         padding-bottom: 16px;
     }
     .top{
@@ -329,12 +418,12 @@ div{
     .indexproject1{
         grid-area: left;
         width: 680px;
-        padding-top: 16px;
+        /* padding-top: 16px; */
     }
     .indexproject2{
         grid-area: right;
-        width: 680px;
-        padding-top: 16px;
+        width: 600px;
+        /* padding-top: 16px; */
     }
     .indexphoto{
         width: 100%;
@@ -346,7 +435,7 @@ div{
         /* font-size: 28px; */
         line-height: 34px;
         /* color:#fafafa; */
-        margin-top: 14px;
+        /* margin-top: 14px; */
         padding-bottom: 16px;
     }
     .top{
@@ -374,6 +463,7 @@ div{
     .hiteam{
         /* font-size: 28px; */
         margin-bottom: 20px;
+        max-width: 700px;
     }
     .myslogan{
         /* font-size: 50px; */

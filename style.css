@@ -31,11 +31,11 @@ body {
   }
 
   .a-title {
-    font-size: 21px;
+    font-size: 40px;
     margin-left: 30px;
     position: absolute;
     color: white;
-    top:10px;
+    top:40px;
   }
   .a-second-title {
     font-size: 21px;
@@ -46,32 +46,38 @@ body {
     top:70px;
   }
   .input-passcode{
-    font-size: 18px;
+    font-size: 14px;
     margin-left: 30px;
     height: 28px;
     width: 180px;
     position: absolute;
-    margin-top: 76vh;
+    margin-top: 24vh;
     color: black;
     border-radius: 4px;
     background-repeat: no-repeat;
     padding: 4px 2px 2px 8px;
   }
   .input-button{
-    background: transparent;
+    /* background: transparent; */
     font-size:18px;
     margin-left: 230px;
     width: auto;
     position: absolute;
-    margin-top: 77vh;
+    margin-top: 24vh;
     color: white;
     text-decoration: underline;
     mix-blend-mode: difference;
+    border: white 1px solid;
+    border-radius: 100px;
+    height:36px;
+    width: 36px;
   }
 
   .input-button:hover {
-    color: white;
+    color: black;
     cursor: pointer;
+    background-color: white;
+    transition-duration: 0.8s;
   }
 
   #noti{
@@ -108,10 +114,11 @@ body {
   }
 
   .a-title {
-    font-size: 40px;
+    font-size: 60px;
     margin-left: 40px;
     position: absolute;
     color: white;
+    margin-top: 40px;
   }
   .a-second-title {
     font-size: 40px;
@@ -122,16 +129,16 @@ body {
     color: white;
   }
   .input-passcode{
-    font-size: 40px;
+    font-size: 20px;
     margin-left: 30px;
     height: 36px;
     width: 300px;
     position: absolute;
-    margin-top: 76vh;
+    margin-top: 14vh;
     color: black;
     border-radius: 4px;
     background-repeat: no-repeat;
-    padding: 15px 0px 0px 15px;
+    padding: 8px 0px 8px 16px;
   }
   .input-button{
     background: transparent;
@@ -139,15 +146,21 @@ body {
     margin-left: 380px;
     width: auto;
     position: absolute;
-    margin-top: 76.5vh;
+    margin-top: 14vh;
     color: white;
     text-decoration: underline;
     mix-blend-mode: difference;
+    border: white 1px solid;
+    border-radius: 100px;
+    height:50px;
+    width: 50px;
   }
 
   .input-button:hover {
-    color: white;
+    color: black;
     cursor: pointer;
+    background-color: white;
+    transition-duration: 0.8s;
   }
 
   #noti{
@@ -186,7 +199,7 @@ body {
   }
 
   .a-title {
-    font-size: 40px;
+    font-size: 80px;
     position: absolute;
     margin-left: 3.8vw;
     margin-top: 2.3vw;
@@ -205,8 +218,8 @@ body {
     position: absolute;
     margin-left: 3.8vw;
     height: 40px;
-    width: 12vw;
-    margin-top: 82vh;
+    width: 23vw;
+    margin-top: 20vh;
     color: black;
     border-radius: 4px;
     background-repeat: no-repeat;
@@ -216,18 +229,24 @@ body {
   .input-button{
     background: transparent;
     font-size: 24px;
-    margin-left: 19vw;;
-    width: auto;
+    margin-left: 29vw;;
+    /* width: auto; */
     position: absolute;
-    margin-top: 82.8vh;
+    margin-top: 20vh;
     color: white;
     text-decoration: underline;
     mix-blend-mode: difference;
+    border: white 1px solid;
+    border-radius: 100px;
+    height:42px;
+    width: 42px;
   }
 
   .input-button:hover {
-    color: white;
+    color: black;
     cursor: pointer;
+    background-color: white;
+    transition-duration: 0.8s;
   }
 
   #noti{
