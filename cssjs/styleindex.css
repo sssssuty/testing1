@@ -70,6 +70,16 @@ div{
     transition-duration: 0.6s;
 }
 
+.blue{
+    background-color: #E7F3FB;
+    border: #E7F3FB 2px solid;
+}
+
+.blue:hover{
+    border: #00ADD8 2px solid;
+    transition-duration: 0.6s;
+}
+
 .hovernotclickable{
    cursor: no-drop; 
 }
