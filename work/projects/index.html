@@ -47,37 +47,50 @@
         </div>
     
         <!-- New Curved Line Section -->
-        <!-- <div class="curved-lines-container">
-            <svg class="curved-line-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-                <path
-                    id="curve-line-1"
-                    d="M10,150 Q300,50 600,150 T990,150"
-                    fill="transparent"
-                    stroke="#9747FF"
-                    stroke-width="4"
-                ></path>
+        <!-- <div class="curved-lines-container" style="z-index: -2; width: 70%; right: calc(-5%); top: 5%;">
+            <svg class="curved-line-svg" viewBox="0 0 1400 1400" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <path
+                        id="curve-line-1"
+                        d="M 1334 699 Q 1082 755 853 610 C 642 478 980 126 1217 351 C 1280 424 1146 510 1008 350 A 84 70 0 1 1 1344 210"
+                        fill="transparent"
+                    />
+                </defs>
+                <use href="#curve-line-1" stroke="#F1EBFF" stroke-width="60" />
                 <text>
-                    <textPath href="#curve-line-1" startOffset="0%">
-                        art direction - art direction - art direction - art direction
+                    <textPath href="#curve-line-1" startOffset="0%" class="scrolling-text">
+                        Product Design  -  UIUX Design  -  Frontend Engineering  -  Brand Design  - Animation  -  Advertising  -  
+                        Product Design  -  UIUX Design  -  Frontend Engineering  -  Brand Design  - Animation  -  Advertising  -  
+                        Product Design  -  UIUX Design  -  Frontend Engineering  -  Brand Design  - Animation  -  Advertising
                     </textPath>
                 </text>
             </svg>
-            <svg class="curved-line-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-                <path
-                    id="curve-line-2"
-                    d="M10,150 Q300,100 600,100 T990,150"
-                    fill="transparent"
-                    stroke="#F88F24"
-                    stroke-width="4"
-                ></path>
-                <text>
-                    <textPath href="#curve-line-2" startOffset="0%">
-                        javascript - javascript - javascript - javascript - javascript
-                    </textPath>
-                </text>
-            </svg>
-        </div> -->
-    
+        </div>
+
+        <style>
+            .curved-lines-container {
+                position: absolute;
+                top: 20%;
+                overflow: visible;
+            }
+            .curved-line-svg {
+                width: 100%;
+                height: auto;
+            }
+            .curved-line-svg text {
+                fill: #222;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        </style> -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const textPath = document.querySelector('.scrolling-text');
+                const originalText = textPath.textContent.trim();
+                textPath.textContent = originalText.repeat(3);
+            });
+        </script>
 
         <div id="placeholder1"></div>
         <div id="placeholder1"></div>

@@ -88,40 +88,6 @@ div{
     cursor: pointer;
 }
 
-
-.curved-lines-container {
-    position: absolute;
-    right: 10%;
-    top: 20%;
-    width: 40%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.curved-line-svg {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-}
-
-#curve-line-1 {
-    stroke: #9747FF; /* Purple Line */
-}
-
-#curve-line-2 {
-    stroke: #F88F24; /* Orange Line */
-}
-
-text {
-    font-size: 18px;
-    font-family: "Inter", sans-serif;
-    fill: #222;
-    font-weight: bold;
-    animation: text-move 8s linear infinite;
-}
-
 @keyframes text-move {
     from {
         text-anchor: start;
