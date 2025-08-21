@@ -3,23 +3,23 @@ $( document ).ready(function(){
     var num = 0;
     setInterval(function(){
         if (num == 0){
-        elem.innerHTML = "speaks English, Mandarin, and code.";
+        elem.innerHTML = "speaks English, Mandarin, Javascript, and Java.";
         };
 
         if (num == 1) {
-        elem.innerHTML = "values ideation, process and execution.";
+        elem.innerHTML = "bridges creative vision and business strategy with execution.";
         };
 
         if (num == 2) {
-        elem.innerHTML = "tells stories with various mediums.";
+        elem.innerHTML = "crafts stories across mediums to inspire and connect.";
         };
 
         if (num == 3) {
-        elem.innerHTML = "loves to work in a team and collaborate.";
+        elem.innerHTML = "thrives on collaboration and building teams.";
         };
 
         if (num == 4) {
-        elem.innerHTML = "has four years of experience.";
+        elem.innerHTML = "directs product design and art direction with vision.";
         num = -1;
         };
 
