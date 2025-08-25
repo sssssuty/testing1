@@ -3,23 +3,23 @@ $( document ).ready(function(){
     var num = 0;
     setInterval(function(){
         if (num == 0){
-        elem.innerHTML = "speaks English, Mandarin, Javascript, and Java.";
+        elem.innerHTML = "speaking English, Mandarin, Javascript, and Java.";
         };
 
         if (num == 1) {
-        elem.innerHTML = "bridges creative vision and business strategy with execution.";
+        elem.innerHTML = "bridging creative vision and business strategy with execution.";
         };
 
         if (num == 2) {
-        elem.innerHTML = "crafts stories across mediums to inspire and connect.";
+        elem.innerHTML = "crafting stories across mediums to inspire and connect.";
         };
 
         if (num == 3) {
-        elem.innerHTML = "thrives on collaboration and building teams.";
+        elem.innerHTML = "thriving on collaboration and building teams.";
         };
 
         if (num == 4) {
-        elem.innerHTML = "directs product design and art direction with vision.";
+        elem.innerHTML = "directing product design and art direction with vision.";
         num = -1;
         };
 
