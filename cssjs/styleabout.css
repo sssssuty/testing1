@@ -1,36 +1,8 @@
-@font-face{
-    font-family: "Inter", helvetica, sans-serif;
-}
-
-body{
-    margin: 0;
-    font-family: "Inter", helvetica, sans-serif;
-    font-weight: 400;
-}
-
-a{
-    font-family: "Inter", helvetica, sans-serif;
-    color:#222;
-    font-weight: 400;
-}
+body { margin: 0; }
 .divisionline{
     border-top: 1px solid lightgray; 
     margin-bottom: 20px;
 }
-.aboutpagefont1{
-    font-size: 28px;
-}
-.aboutpagefont2{
-    font-size: 20px;
-    font-weight: 400;
-    text-align: right; 
-    float: right;
-}
-.aboutpagefont2left{
-    font-size: 20px;
-    font-weight: 400;
-}
-
 /*mobile*/
 @media only screen and (max-device-width: 500px) {
     .top{
@@ -228,15 +200,7 @@ a{
         bottom: 2vw;
     }
 
-    .move{
-        font-family: "Inter", helvetica, sans-serif;
-        font-size: 3.55vw;
-        position: absolute;
-        margin: 0;
-        padding:0;
-        margin-left: 5vw;
-        margin-top: -46vw;
-    }
+    .move { position: absolute; margin: 0; padding: 0; margin-left: 5vw; margin-top: -46vw; }
 
     #txt{
         position: absolute;
@@ -413,35 +377,9 @@ a{
         position: absolute;
         bottom: 2vw;
     }
-    #menuarchive{
-        font-family: "Inter", helvetica, sans-serif;
-        /*src:url(HelveticaNeue.woff);*/
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 89vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: #222;
-    }
-
-    #menuinfo{
-        font-size: 2vw;
-        position: absolute;
-        margin-left: 74.7vw;
-        margin-top: 4.3vw;
-        text-decoration: underline;
-        text-decoration-color: #222;
-    }
-
-    .move{
-        font-family: "Inter", helvetica, sans-serif;
-        font-size: 3.55vw;
-        position: absolute;
-        margin: 0;
-        padding:0;
-        margin-left: 5vw;
-        margin-top: -46vw;
-    }
+    #menuarchive { font-size: 2vw; position: absolute; margin-left: 89vw; margin-top: 4.3vw; text-decoration: underline; text-decoration-color: #222; }
+    #menuinfo { font-size: 2vw; position: absolute; margin-left: 74.7vw; margin-top: 4.3vw; text-decoration: underline; text-decoration-color: #222; }
+    .move { position: absolute; margin: 0; padding: 0; margin-left: 5vw; margin-top: -46vw; }
 
     #txt{
         position: absolute;

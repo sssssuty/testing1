@@ -1,92 +1,74 @@
-@font-face{
-    font-family: "Inter", helvetica, sans-serif;
+/* ===== Font face (single source) ===== */
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-html{
-    font-family: "Inter", helvetica, sans-serif;
+/* ===== Base typography ===== */
+html,
+body {
+    font-family: 'Suisse Intl', helvetica, sans-serif;
+    font-weight: 400;
+}
+
+html {
     background-color: #fafafa;
     margin: 0;
 }
 
-h1{
+a {
+    color: #222;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+h1, h2 {
     margin: 0;
     padding: 0;
     padding-bottom: 20px;
 }
 
-h2{
-    margin: 0;
-    padding: 0;
-    padding-bottom: 20px;
-}
+/* ===== Font size / weight utilities ===== */
+.largefont1 { font-size: 60px; font-weight: 400; }
+.largefont2 { font-size: 40px; font-weight: 400; }
+.largefont3 { font-size: 32px; font-weight: 400; }
+.largefont4 { font-size: 24px; font-weight: 400; }
+.largefont5 { font-size: 20px; font-weight: 400; }
 
-.largefont1{
-    font-size: 68px;
-    font-weight: 400;
-}
-
-.largefont2{
-    font-size: 40px;
-    font-weight: 350;
-}
-
-.largefont3{
-    font-size: 28px;
-    font-weight: 400;
-}
-
-.largefont4{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.largefont5{
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.italicfont{
+.italicfont {
     font-size: 28px;
     font-style: italic;
     font-weight: 350;
     line-height: 1.5;
 }
 
-.bodytext{
+.bodytext {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
 }
 
-.fontcolorblack{
-    color: #222;
-}
+/* ===== Color utilities (text) ===== */
+.fontcolorblack { color: #222; }
+.fontcolorgray { color: #999; }
 
-.fontcolorgray{
-    color: #999;
-}
+.enterviewbc { background-color: #F4F2FD; }
+.enterviewhighlight { color: #9747FF; }
+.safetynetbc { background-color: #E6F6EA; }
+.safetynethighlight { color: #00A94E; }
+.mdsrewardsbc { background-color: #FBF4E7; }
+.mdsrewardshighlight { color: #F88F24; }
+.bopisbc { background-color: #E7F3FB; }
+.bopishighlight { color: #00ADD8; }
 
-.enterviewbc{
-    background-color: #F4F2FD;
-}
-.enterviewhighlight{
-    color: #9747FF;
-}
-.safetynetbc{
-    background-color: #E6F6EA;
-}
-.safetynethighlight{
-    color: #00A94E;
-}
-.mdsrewardsbc{
-    background-color: #FBF4E7;
-}
-.mdsrewardshighlight{
-    color: #F88F24;
-}
-.bopisbc{
-    background-color: #E7F3FB;
-}
-.bopishighlight{
-    color: #00ADD8;
-}
+/* ===== About page typography ===== */
+.aboutpagefont1 { font-size: 28px; }
+.aboutpagefont2 { font-size: 20px; font-weight: 400; text-align: right; float: right; }
+.aboutpagefont2left { font-size: 20px; font-weight: 400; }
+
+.font3 { font-size: 36px; line-height: 48px; }
+.font2 { font-size: 24px; line-height: 30px; }
+.font2gray { font-size: 24px; line-height: 30px; color: lightgray; }
+.detailtext { font-size: 20px; }
