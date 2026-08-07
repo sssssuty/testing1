@@ -36,6 +36,12 @@
   }
   a { color: inherit; text-decoration: none; }
   a:hover { opacity: 0.55; }
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
 
   .wrap {
     max-width: var(--max);
@@ -188,6 +194,14 @@
     background: #0d0df1;
     overflow: hidden;
     cursor: pointer;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  .about-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   .about-media img,
   .about-block-media img {
@@ -203,6 +217,14 @@
     background: #0d0df1;
     overflow: hidden;
     cursor: pointer;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  .about-block-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   .about-dither {
     position: absolute;
@@ -242,7 +264,7 @@
     font-weight: 500;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #0d0df1;
     margin-bottom: 14px;
   }
   .about-block-body {
@@ -373,10 +395,15 @@
       border-bottom: 1px solid var(--line);
     }
     .nav.is-open .nav-links { display: flex; }
-    .nav-links > a,
-    .nav-clock {
+    .nav-links > a {
       padding: 14px 0;
       border-top: 1px solid var(--line);
+    }
+    .nav-clock {
+      order: 10;
+      margin-top: 28px;
+      padding: 16px 0 4px;
+      color: var(--muted);
     }
     .nav-divider { display: none; }
   }
@@ -474,8 +501,8 @@
       <div class="about-block">
         <p class="about-block-tag">Education</p>
         <div class="about-block-body">
-          <p>Master of Integrated Innovation for Products &amp; Services<br>Carnegie Mellon University<br>Pittsburgh, PA, USA</p>
-          <p>Bachelor of Fine Art Communication Design<br>Minor in Computer Science<br>Parsons School of Design at the New School<br>New York, NY, USA</p>
+          <p>Master of Integrated Innovation for Products &amp; Services<br>Carnegie Mellon University<br><span class="about-block-note">Pittsburgh, PA, USA</span></p>
+          <p>Bachelor of Fine Art Communication Design<br>Minor in Computer Science<br>Parsons School of Design at the New School<br><span class="about-block-note">New York, NY, USA</span></p>
         </div>
       </div>
       <div class="about-block" aria-hidden="true"></div>
@@ -488,7 +515,7 @@
             <span class="about-exp-role">Founding Designer at Youlify</span>
             <span class="about-exp-meta">Jan 2025 – Present, San Francisco, CA</span>
           </div>
-          <p class="about-exp-desc">Leading product and brand design for an AI revenue cycle management platform helping US healthcare get paid.</p>
+          <p class="about-exp-desc">Leading product and brand design for an AI revenue cycle management solution helping US healthcare get paid.</p>
           <div aria-hidden="true"></div>
         </article>
         <article class="about-exp">
@@ -512,7 +539,7 @@
             <span class="about-exp-role">Design Lead at The Museum of Modern Art</span>
             <span class="about-exp-meta">2021 – 2023, New York, NY</span>
           </div>
-          <p class="about-exp-desc">Led digital design across MoMA Design Store platforms and launched Rewards from 0 to 1.</p>
+          <p class="about-exp-desc">Oversaw digital design of MoMA Design Store platforms across North America, Europe and Asia;<br>Supported major project launches;<br>Led the Rewards from 0 to 1.</p>
           <div aria-hidden="true"></div>
         </article>
         <article class="about-exp">
@@ -520,7 +547,7 @@
             <span class="about-exp-role">Associate Art Director at Jane Smith Agency</span>
             <span class="about-exp-meta">2020, New York, NY</span>
           </div>
-          <p class="about-exp-desc">Art directed brand and campaign work across fashion, beauty, and consumer clients.</p>
+          <p class="about-exp-desc">Art directed brand and campaign work across 10+ fashion, lifestyle, and real estate clients.</p>
           <div aria-hidden="true"></div>
         </article>
       </div>
@@ -538,14 +565,26 @@
         </div>
       </div>
       <div class="about-block">
-        <p class="about-block-tag">Featured In</p>
+        <p class="about-block-tag">I'm Featured In</p>
         <div class="about-block-body">
           <p>Fast Company</p>
           <p>The Next Web</p>
           <p>设计</p>
         </div>
       </div>
-      <div class="about-block" aria-hidden="true"></div>
+      <div class="about-block">
+        <p class="about-block-tag">My Work Was Featured In</p>
+        <div class="about-block-body">
+          <p>Forbes</p>
+          <p>USA Today</p>
+          <p>Axio</p>
+          <p>Modern Healthcare</p>
+          <p>WWD</p>
+          <p>Glossy</p>
+          <p>Apartment Therapy</p>
+          <p>HypeBeast</p>
+        </div>
+      </div>
     </div>
     <div class="about-below">
       <div class="about-block">
@@ -559,7 +598,7 @@
         <p class="about-block-tag">Speaking</p>
         <div class="about-block-body">
           <p><a href="https://luma.com/klj4miwd?tk=65B1WX" target="_blank" rel="noopener">Designing What's Next: Founding AI Designers in SF</a></p>
-          <p class="about-block-note">Organized By <a href="https://www.designpreneurshackathon.com/" target="_blank" rel="noopener">Designpreneurs Hackathon</a></p>
+          <p class="about-block-note">Organized By <a href="https://www.designpreneurshackathon.com/" target="_blank" rel="noopener">Designpreneurs</a></p>
         </div>
       </div>
       <div class="about-block">
@@ -599,6 +638,7 @@
 </footer>
 
 <script src="glitch-field.js"></script>
+<script src="image-protect.js"></script>
 <script>
   (function () {
     var clock = document.getElementById("sf-clock");

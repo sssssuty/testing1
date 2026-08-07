@@ -36,7 +36,14 @@
   }
   a { color: inherit; text-decoration: none; }
   a:hover { opacity: 0.55; }
-  img { display: block; max-width: 100%; }
+  img {
+    display: block;
+    max-width: 100%;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
 
   .wrap {
     max-width: var(--max);
@@ -251,10 +258,19 @@
   .project-meta .v a:hover { opacity: 1; }
 
   .project-media {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 10;
     background: var(--ph);
     overflow: hidden;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  .project-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   .project-media img {
     width: 100%;
@@ -311,10 +327,15 @@
       border-bottom: 1px solid var(--line);
     }
     .nav.is-open .nav-links { display: flex; }
-    .nav-links > a,
-    .nav-clock {
+    .nav-links > a {
       padding: 14px 0;
       border-top: 1px solid var(--line);
+    }
+    .nav-clock {
+      order: 10;
+      margin-top: 28px;
+      padding: 16px 0 4px;
+      color: var(--muted);
     }
     .nav-divider { display: none; }
   }
@@ -372,7 +393,7 @@
 <main>
   <section class="projects" id="work">
     <div class="wrap">
-      <h1 class="work-heading">Selected Projects I Can Show</h1>
+      <h1 class="work-heading">Some Recent Projects</h1>
 
       <article class="project">
         <div class="project-copy">
@@ -409,9 +430,9 @@
         <div class="project-copy">
           <p class="project-label">2022 - 2023</p>
           <h2 class="project-title">MoMA Design Store Rewards</h2>
-          <p class="project-desc">Designed MoMA Design Store Rewards, generating $700k+ in revenue and boosting retention by 6%.</p>
+          <p class="project-desc">During my time at MoMA, I led the digital design of the MoMA Design Store Rewards program.</p>
           <ul class="project-meta">
-            <li><span class="k">Role</span><span class="v">Design Lead</span></li>
+            <li><span class="k">Role</span><span class="v">Digital Design Lead</span></li>
             <li><span class="k">Platforms</span><span class="v">Omni-Retail</span></li>
             <li><span class="k">Focus</span><span class="v">Customer Retention, 0 to 1</span></li>
             <li><span class="k">Link</span><span class="v"><a href="https://store.moma.org/" target="_blank" rel="noopener">Official Site</a></span></li>
@@ -422,7 +443,7 @@
         </div>
       </article>
 
-      <p class="work-brands">Brands I've had the pleasure of designing for include <span class="work-brands-list">Enterview AI <span class="work-brands-sep">/</span> MSA The Safety Company <span class="work-brands-sep">/</span> Honda <span class="work-brands-sep">/</span> Parisa Wang New York <span class="work-brands-sep">/</span> Cle De Peau Beaute <span class="work-brands-sep">/</span> Natural Diamound Council <span class="work-brands-sep">/</span> Vetir Vert Monde <span class="work-brands-sep">/</span> Prabal Gurung <span class="work-brands-sep">/</span> The Vic <span class="work-brands-sep">/</span> Pactrick Ta <span class="work-brands-sep">/</span> Jane Smith Agency <span class="work-brands-sep">/</span> The Museum of Modern Art <span class="work-brands-sep">/</span> Solomon R. Guggenheim Museum <span class="work-brands-sep">/</span> The Rubin Museum of Art <span class="work-brands-sep">/</span> Carnegie Mellon University</span></p>
+      <p class="work-brands">Brands I've had the pleasure of designing for include<br><span class="work-brands-list">Enterview AI <span class="work-brands-sep">/</span> MSA The Safety Company <span class="work-brands-sep">/</span> Honda <span class="work-brands-sep">/</span> Parisa Wang New York <span class="work-brands-sep">/</span> Cle De Peau Beaute <span class="work-brands-sep">/</span> Natural Diamound Council <span class="work-brands-sep">/</span> Vetir Vert Monde <span class="work-brands-sep">/</span> Prabal Gurung <span class="work-brands-sep">/</span> The Vic <span class="work-brands-sep">/</span> Pactrick Ta <span class="work-brands-sep">/</span> Jane Smith Agency <span class="work-brands-sep">/</span> The Museum of Modern Art <span class="work-brands-sep">/</span> Solomon R. Guggenheim Museum <span class="work-brands-sep">/</span> The Rubin Museum of Art <span class="work-brands-sep">/</span> Carnegie Mellon University</span></p>
 
       <p class="work-cta">
         Want the full story?
@@ -447,6 +468,7 @@
   </div>
 </footer>
 
+<script src="image-protect.js"></script>
 <script>
   (function () {
     var clock = document.getElementById("sf-clock");

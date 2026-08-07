@@ -36,7 +36,14 @@
   }
   a { color: inherit; text-decoration: none; }
   a:hover { opacity: 0.55; }
-  img { display: block; max-width: 100%; }
+  img {
+    display: block;
+    max-width: 100%;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
 
   .wrap {
     max-width: var(--max);
@@ -165,6 +172,11 @@
     line-height: 1.55;
     color: var(--muted);
   }
+  .hero-sub a {
+    color: #0d0df1;
+    text-decoration: none;
+  }
+  .hero-sub a:hover { opacity: 0.55; }
 
   /* ---------- Thumbs ---------- */
   .hero-thumbs {
@@ -178,6 +190,14 @@
     overflow: hidden;
     background: #0d0df1;
     cursor: pointer;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  .thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   .thumb-photo {
     width: 100%;
@@ -248,10 +268,15 @@
       border-bottom: 1px solid var(--line);
     }
     .nav.is-open .nav-links { display: flex; }
-    .nav-links > a,
-    .nav-clock {
+    .nav-links > a {
       padding: 14px 0;
       border-top: 1px solid var(--line);
+    }
+    .nav-clock {
+      order: 10;
+      margin-top: 28px;
+      padding: 16px 0 4px;
+      color: var(--muted);
     }
     .nav-divider { display: none; }
   }
@@ -311,9 +336,9 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <h1>Leading products and brands from ambitious idea to trusted experience.</h1>
+        <h1>Building products and brands from ambitious idea to trusted experience.</h1>
         <p class="hero-sub">
-          I'm currently leading product and brand design at Youlify, an AI solution that helps US healthcare organizations and physicians get paid.
+          I'm currently leading product and brand design at <a href="https://www.youlify.ai/" target="_blank" rel="noopener">Youlify</a>, an AI solution that helps US healthcare organizations and physicians get paid.
         </p>
       </div>
       <div class="hero-thumbs" aria-label="Selected work">
@@ -353,6 +378,7 @@
 </footer>
 
 <script src="glitch-field.js"></script>
+<script src="image-protect.js"></script>
 <script>
   (function () {
     var clock = document.getElementById("sf-clock");
