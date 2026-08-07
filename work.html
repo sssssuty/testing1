@@ -188,7 +188,7 @@
   }
 
   .work-cta {
-    margin-top: clamp(48px, 8vw, 80px);
+    margin: 0 0 clamp(48px, 8vw, 80px);
     padding: 28px clamp(24px, 4vw, 40px);
     border-radius: 4px;
     background: #0d0df1;
@@ -197,20 +197,121 @@
     font-weight: 500;
     line-height: 1.55;
   }
-  .work-cta a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .work-cta a,
+  .work-cta-here {
+    display: inline;
     color: #ffffff;
     text-decoration: none;
+    border: 0;
     border-bottom: 1px solid currentColor;
-    padding-bottom: 2px;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
   }
-  .work-cta a:hover { opacity: 0.75; }
-  .work-cta a svg {
-    width: 17.6px;
-    height: 17.6px;
-    flex-shrink: 0;
+  .work-cta a:hover,
+  .work-cta-here:hover { opacity: 0.75; }
+  .work-cta-here:focus,
+  .work-cta-here:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .code-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: var(--pad);
+  }
+  .code-modal.is-open { display: flex; }
+  .code-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.35);
+  }
+  .code-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 400px);
+    padding: 52px 28px 28px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+  }
+  .code-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .code-modal-close:hover { opacity: 0.55; }
+  .code-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .code-modal-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    background: #ffffff;
+  }
+  .code-modal-input:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .code-modal-submit {
+    align-self: flex-start;
+    padding: 10px 18px;
+    border: 0;
+    background: #0d0df1;
+    color: #ffffff;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .code-modal-submit:hover { opacity: 0.85; }
+  .code-modal-error {
+    display: none;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #c62828;
+  }
+  .code-modal-error.is-visible { display: block; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .project-label {
@@ -393,13 +494,19 @@
 <main>
   <section class="projects" id="work">
     <div class="wrap">
+      <p class="work-cta">
+        Have a portfolio code? Enter
+        <button type="button" class="work-cta-here" id="open-code-modal" aria-haspopup="dialog" aria-controls="code-modal">here</button>,
+        or <a href="mailto:hello@sutingyu.com">email me</a> for a curated portfolio.
+      </p>
+
       <h1 class="work-heading">Some Recent Projects</h1>
 
       <article class="project">
         <div class="project-copy">
           <p class="project-label">2025 - Present</p>
           <h2 class="project-title">Youlify</h2>
-          <p class="project-desc">An AI revenue cycle management solution that helps US healthcare systems and physicians get paid. We helped to managed $22+M revenue loss in 2025.<br>I'm leading both product design and brand design from zero to one.</p>
+          <p class="project-desc">An AI revenue cycle management solution that helps US healthcare systems and physicians get paid. We helped to prevent $22+M revenue loss in 2025.<br>I'm leading both product design and brand design from zero to one.</p>
           <ul class="project-meta">
             <li><span class="k">Role</span><span class="v">Founding Designer</span></li>
             <li><span class="k">Platforms</span><span class="v">Web Application</span></li>
@@ -443,28 +550,39 @@
         </div>
       </article>
 
-      <p class="work-brands">Brands I've had the pleasure of designing for include<br><span class="work-brands-list">Enterview AI <span class="work-brands-sep">/</span> MSA The Safety Company <span class="work-brands-sep">/</span> Honda <span class="work-brands-sep">/</span> Parisa Wang New York <span class="work-brands-sep">/</span> Cle De Peau Beaute <span class="work-brands-sep">/</span> Natural Diamound Council <span class="work-brands-sep">/</span> Vetir Vert Monde <span class="work-brands-sep">/</span> Prabal Gurung <span class="work-brands-sep">/</span> The Vic <span class="work-brands-sep">/</span> Pactrick Ta <span class="work-brands-sep">/</span> Jane Smith Agency <span class="work-brands-sep">/</span> The Museum of Modern Art <span class="work-brands-sep">/</span> Solomon R. Guggenheim Museum <span class="work-brands-sep">/</span> The Rubin Museum of Art <span class="work-brands-sep">/</span> Carnegie Mellon University</span></p>
-
-      <p class="work-cta">
-        Want the full story?
-        <a href="mailto:hello@sutingyu.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m22 7-10 7L2 7"/>
-          </svg>
-          Email
-        </a>
-        me for a curated portfolio.
-      </p>
+      <p class="work-brands">Brands I've had the pleasure of designing for include<br><span class="work-brands-list">Enterview AI <span class="work-brands-sep">/</span> MSA The Safety Company <span class="work-brands-sep">/</span> Honda <span class="work-brands-sep">/</span> Parisa Wang New York <span class="work-brands-sep">/</span> Jane Smith Agency <span class="work-brands-sep">/</span> Cle De Peau Beaute <span class="work-brands-sep">/</span> Natural Diamound Council <span class="work-brands-sep">/</span> Vetir Vert Monde <span class="work-brands-sep">/</span> Prabal Gurung <span class="work-brands-sep">/</span> The Vic <span class="work-brands-sep">/</span> Pactrick Ta <span class="work-brands-sep">/</span> Solomon R. Guggenheim Museum <span class="work-brands-sep">/</span> The Rubin Museum of Art <span class="work-brands-sep">/</span> Carnegie Mellon University</span></p>
 
     </div>
   </section>
 </main>
 
+<div class="code-modal" id="code-modal" aria-hidden="true">
+  <div class="code-modal-backdrop" data-close-modal></div>
+  <div class="code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="code-modal-title">
+    <button type="button" class="code-modal-close" data-close-modal aria-label="Close">&times;</button>
+    <h2 id="code-modal-title" class="visually-hidden">Enter portfolio code</h2>
+    <form class="code-modal-form" id="code-modal-form">
+      <input
+        class="code-modal-input"
+        id="portfolio-code"
+        type="text"
+        name="code"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="Portfolio code"
+        aria-describedby="code-modal-error"
+      >
+      <button type="submit" class="code-modal-submit">Confirm</button>
+      <p class="code-modal-error" id="code-modal-error" role="alert">The code you entered looks unfamiliar.</p>
+    </form>
+  </div>
+</div>
+
 <footer>
   <div class="wrap foot">
     <span>© 2026 Tingyu Su</span>
-    <span class="foot-tagline">Leading products and brands from ambitious idea to trusted experience.</span>
+    <span class="foot-tagline">Building products and brands from ambitious idea to trusted experience.</span>
   </div>
 </footer>
 
@@ -506,6 +624,77 @@
     window.addEventListener("resize", function () {
       if (window.matchMedia("(min-width: 861px)").matches) setOpen(false);
     });
+  })();
+  (function () {
+    // Change this to your real portfolio access code.
+    var PORTFOLIO_CODE = "tingyu";
+
+    var modal = document.getElementById("code-modal");
+    var openBtn = document.getElementById("open-code-modal");
+    var form = document.getElementById("code-modal-form");
+    var input = document.getElementById("portfolio-code");
+    var error = document.getElementById("code-modal-error");
+    if (!modal || !openBtn || !form || !input || !error) return;
+
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      error.classList.remove("is-visible");
+      input.value = "";
+      setTimeout(function () { input.focus(); }, 0);
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      error.classList.remove("is-visible");
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener("click", openModal);
+
+    modal.addEventListener("click", function (e) {
+      if (e.target.hasAttribute("data-close-modal")) closeModal();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var value = (input.value || "").trim();
+      if (value && value === PORTFOLIO_CODE) {
+        error.classList.remove("is-visible");
+        closeModal();
+        // Unlock any gated projects for this session.
+        document.querySelectorAll(".project[hidden]").forEach(function (el) {
+          el.hidden = false;
+          el.style.display = "";
+        });
+        try { sessionStorage.setItem("portfolioUnlocked", "1"); } catch (err) {}
+      } else {
+        error.classList.add("is-visible");
+        input.focus();
+        input.select();
+      }
+    });
+
+    input.addEventListener("input", function () {
+      error.classList.remove("is-visible");
+    });
+
+    try {
+      if (sessionStorage.getItem("portfolioUnlocked") === "1") {
+        document.querySelectorAll(".project[hidden]").forEach(function (el) {
+          el.hidden = false;
+          el.style.display = "";
+        });
+      }
+    } catch (err) {}
   })();
 </script>
 
