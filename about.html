@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Tingyu Su</title>
+<meta name="description" content="About Tingyu Su — digital product designer.">
+<link rel="icon" href="assets/favicon/favicon.png" type="image/png">
+<link rel="stylesheet" href="https://use.typekit.net/zoh5fgq.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #111111;
+    --muted: #6b6b6b;
+    --line: #e8e8e8;
+    --ph: #e0e0e0;
+    --font: "forma-djr-deck", sans-serif;
+    --pad: clamp(20px, 4vw, 48px);
+    --max: 1440px;
+    --nav-h: 64px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.55; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    width: 100%;
+  }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .nav .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-divider {
+    width: 1px;
+    height: 12px;
+    background: var(--line);
+    flex-shrink: 0;
+  }
+  .nav-clock {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .nav-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-email svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  main {
+    flex: 1;
+    padding: clamp(48px, 10vh, 120px) 0 clamp(80px, 14vh, 160px);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+  }
+  .about-title {
+    grid-column: span 2;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0;
+    max-width: 50vw;
+    margin: 0;
+  }
+  .about-title-icon {
+    display: inline-block;
+    width: 0.9em;
+    height: auto;
+    vertical-align: -0.12em;
+  }
+  .about-title-rotate {
+    display: inline;
+  }
+  .about-title-rotate.is-fading {
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .about-title-rotate.is-visible {
+    opacity: 1;
+    transition: opacity 0.35s ease;
+  }
+  .about-media {
+    grid-column: span 1;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 640px;
+    background: #0d0df1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .about-media img,
+  .about-block-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .about-block-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #0d0df1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .about-dither {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: #0d0df1;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .about-dither glitch-field {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .about-media:hover .about-dither,
+  .about-media:focus-within .about-dither,
+  .about-block-media:hover .about-dither,
+  .about-block-media:focus-within .about-dither {
+    opacity: 0;
+  }
+  .about-below {
+    margin-top: clamp(40px, 6vw, 72px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+    font-weight: 500;
+  }
+  .about-below + .about-below {
+    margin-top: clamp(36px, 5vw, 56px);
+  }
+  .about-block-tag {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .about-block-body {
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .about-block-body p {
+    margin: 0;
+  }
+  .about-block-body a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .about-block-note {
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: none;
+  }
+  .about-block-note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-transform: none;
+  }
+  .about-experience {
+    margin-top: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+  }
+  .about-exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .about-exp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+  }
+  .about-exp-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .about-exp-role {
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .about-exp-meta {
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .about-exp-desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.65;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .foot-tagline {
+    color: var(--ink);
+  }
+
+  @media (max-width: 860px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-title,
+    .about-media {
+      grid-column: auto;
+    }
+    .about-title {
+      font-size: 24px;
+      max-width: 100%;
+    }
+    .about-media {
+      aspect-ratio: 16 / 10;
+      max-height: none;
+    }
+    .about-below {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-exp {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .nav-links { gap: 18px; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-dither { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">Tingyu Su</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <span class="nav-clock" id="sf-clock">San Francisco --:--:--</span>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="https://medium.com/@tingyusu" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        Writing
+      </a>
+      <a href="https://www.linkedin.com/in/tingyu-su-design/" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="mailto:hello@sutingyu.com" class="nav-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+        Email
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="about-grid">
+      <h1 class="about-title">
+        Enjoying my eighth year riding the creative wave.
+        <img class="about-title-icon" src="assets/Artboard%201.svg" alt="" aria-hidden="true" width="41" height="37">
+        <br>
+        <span class="about-title-rotate is-visible" id="about-rotate" aria-live="polite">I craft stories across mediums to inspire and connect.</span>
+      </h1>
+      <div class="about-media">
+        <img src="assets/About_1.jpg" alt="Portrait of Tingyu Su" width="800" height="1000" decoding="async">
+        <div class="about-dither" aria-hidden="true">
+          <glitch-field
+            lite="1"
+            photo-src="assets/About_1.jpg"
+            photo-invert
+            pixel="2"
+            photo-cut="0.71"
+            photo-ink="0.94"
+            photo-mid="0.54"
+            photo-lite="0.31"
+            photo-wobble="0.25"
+            density="0.5"
+            scale="1.15"
+            speed="0.12"
+            glitch="0.25"
+            fps="4"
+            seed="5"
+            colors="A5B4FC,C7D2FE,818CF8,0D0DF1"
+          ></glitch-field>
+        </div>
+      </div>
+    </div>
+    <div class="about-below">
+      <div class="about-block">
+        <p class="about-block-tag">Bio</p>
+        <div class="about-block-body">
+          <p>My path began as a full-stack designer and creative technologist. Looking back, it maps naturally onto the double diamond.<br><br>In the first diverge, I built breadth across UI/UX, branding, typography, motion, print, games, art direction, and digital art.<br><br>That range taught me how disciplines inform one another, and it led me to converge on tech products and services, where design decisions ship and scale.<br><br>In the second diverge, I stepped into the roles that surround design. I worked as a product manager, an HCI researcher, and a front-end engineer, and each role deepened my understanding of how products get built.<br><br>The final converge brought me back to design with conviction. It is where I do my best work, and it remains the work I love most.</p>
+        </div>
+      </div>
+      <div class="about-block">
+        <p class="about-block-tag">Education</p>
+        <div class="about-block-body">
+          <p>Master of Integrated Innovation for Products &amp; Services<br>Carnegie Mellon University<br>Pittsburgh, PA, USA</p>
+          <p>Bachelor of Fine Art Communication Design<br>Minor in Computer Science<br>Parsons School of Design at the New School<br>New York, NY, USA</p>
+        </div>
+      </div>
+      <div class="about-block" aria-hidden="true"></div>
+    </div>
+    <div class="about-experience">
+      <p class="about-block-tag">Recent Experience</p>
+      <div class="about-exp-list">
+        <article class="about-exp">
+          <div class="about-exp-main">
+            <span class="about-exp-role">Founding Designer at Youlify</span>
+            <span class="about-exp-meta">Jan 2025 – Present, San Francisco, CA</span>
+          </div>
+          <p class="about-exp-desc">Leading product and brand design for an AI revenue cycle management platform helping US healthcare get paid.</p>
+          <div aria-hidden="true"></div>
+        </article>
+        <article class="about-exp">
+          <div class="about-exp-main">
+            <span class="about-exp-role">Founding Designer at Tells</span>
+            <span class="about-exp-meta">2025, San Francisco, CA</span>
+          </div>
+          <p class="about-exp-desc">Designed the brand and desktop &amp; mobile software for an all-in-one edtech product for poker players.</p>
+          <div aria-hidden="true"></div>
+        </article>
+        <article class="about-exp">
+          <div class="about-exp-main">
+            <span class="about-exp-role">Front-end Engineer at CSPNJ x Carnegie Mellon University Human-Computer Interaction</span>
+            <span class="about-exp-meta">2024, Pittsburgh, PA</span>
+          </div>
+          <p class="about-exp-desc">Built high-quality front-end web interface from 0 to 1 using React. Collaborated with designers, ML engineers, and researchers, focusing on efficiency to ensure seamless integration between disciplines.</p>
+          <div aria-hidden="true"></div>
+        </article>
+        <article class="about-exp">
+          <div class="about-exp-main">
+            <span class="about-exp-role">Design Lead at The Museum of Modern Art</span>
+            <span class="about-exp-meta">2021 – 2023, New York, NY</span>
+          </div>
+          <p class="about-exp-desc">Led digital design across MoMA Design Store platforms and launched Rewards from 0 to 1.</p>
+          <div aria-hidden="true"></div>
+        </article>
+        <article class="about-exp">
+          <div class="about-exp-main">
+            <span class="about-exp-role">Associate Art Director at Jane Smith Agency</span>
+            <span class="about-exp-meta">2020, New York, NY</span>
+          </div>
+          <p class="about-exp-desc">Art directed brand and campaign work across fashion, beauty, and consumer clients.</p>
+          <div aria-hidden="true"></div>
+        </article>
+      </div>
+    </div>
+    <div class="about-below">
+      <div class="about-block">
+        <p class="about-block-tag">Awards</p>
+        <div class="about-block-body">
+          <p>iF Design Award</p>
+          <p>IDEA Award</p>
+          <p>IDA Award</p>
+          <p>Indigo Award</p>
+          <p>NY Digital Design Award</p>
+          <p>TITAN Health Award</p>
+        </div>
+      </div>
+      <div class="about-block">
+        <p class="about-block-tag">Featured In</p>
+        <div class="about-block-body">
+          <p>Fast Company</p>
+          <p>The Next Web</p>
+          <p>设计</p>
+        </div>
+      </div>
+      <div class="about-block" aria-hidden="true"></div>
+    </div>
+    <div class="about-below">
+      <div class="about-block">
+        <p class="about-block-tag">Writing</p>
+        <div class="about-block-body">
+          <p><a href="https://zenodo.org/records/17203424" target="_blank" rel="noopener">Navigating Uncertainty: Financial Management Practices of International Graduate Students in the U.S.</a></p>
+          <p class="about-block-note">Featured By CHI 2025, Workshop</p>
+        </div>
+      </div>
+      <div class="about-block">
+        <p class="about-block-tag">Speaking</p>
+        <div class="about-block-body">
+          <p><a href="https://luma.com/klj4miwd?tk=65B1WX" target="_blank" rel="noopener">Designing What's Next: Founding AI Designers in SF</a></p>
+          <p class="about-block-note">Organized By <a href="https://www.designpreneurshackathon.com/" target="_blank" rel="noopener">Designpreneurs Hackathon</a></p>
+        </div>
+      </div>
+      <div class="about-block">
+        <div class="about-block-media">
+          <img src="assets/About_2.jpg" alt="Tingyu Su speaking at an event" width="800" height="1000" decoding="async">
+          <div class="about-dither" aria-hidden="true">
+            <glitch-field
+              lite="1"
+              photo-src="assets/About_2.jpg"
+              photo-invert
+              pixel="2"
+              photo-cut="0.71"
+              photo-ink="0.94"
+              photo-mid="0.54"
+              photo-lite="0.31"
+              photo-wobble="0.25"
+              density="0.5"
+              scale="1.15"
+              speed="0.12"
+              glitch="0.25"
+              fps="4"
+              seed="11"
+              colors="A5B4FC,C7D2FE,818CF8,0D0DF1"
+            ></glitch-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Tingyu Su</span>
+    <span class="foot-tagline">Leading products and brands from ambitious idea to trusted experience.</span>
+  </div>
+</footer>
+
+<script src="glitch-field.js"></script>
+<script>
+  (function () {
+    var clock = document.getElementById("sf-clock");
+    if (!clock) return;
+    var fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "America/Los_Angeles",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false
+    });
+    function tick() {
+      clock.textContent = "San Francisco " + fmt.format(new Date());
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    var lines = [
+      "I craft stories across mediums to inspire and connect.",
+      "I direct product design and art direction with vision.",
+      "I bridge creative vision and business strategy with execution."
+    ];
+    var el = document.getElementById("about-rotate");
+    if (el && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var i = 0;
+      var holdMs = 3200;
+      var fadeMs = 350;
+      setInterval(function () {
+        el.classList.remove("is-visible");
+        el.classList.add("is-fading");
+        setTimeout(function () {
+          i = (i + 1) % lines.length;
+          el.textContent = lines[i];
+          el.classList.remove("is-fading");
+          el.classList.add("is-visible");
+        }, fadeMs);
+      }, holdMs);
+    }
+  })();
+</script>
+
+</body>
+</html>

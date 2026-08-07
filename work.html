@@ -1,47 +1,403 @@
 <!DOCTYPE html>
-<html style="background-color: #fafafa; color:#222;">
+<html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156102402-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work · Tingyu Su</title>
+<meta name="description" content="Selected work by Tingyu Su.">
+<link rel="icon" href="assets/favicon/favicon.png" type="image/png">
+<link rel="stylesheet" href="https://use.typekit.net/zoh5fgq.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #111111;
+    --muted: #6b6b6b;
+    --line: #e8e8e8;
+    --ph: #e0e0e0;
+    --font: "forma-djr-deck", sans-serif;
+    --pad: clamp(20px, 4vw, 48px);
+    --max: 1440px;
+    --nav-h: 64px;
+  }
 
-        gtag('config', 'UA-156102402-1');
-    </script>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.55; }
+  img { display: block; max-width: 100%; }
 
-    <title>Info</title>
-    <link rel="stylesheet" type="text/css" href="cssjs/fontstyle.css">
-    <link rel="stylesheet" type="text/css" href="cssjs/styleabout.css">
-    <link rel="stylesheet" type="text/css" href="cssjs/styleindex.css">
-    <link rel="stylesheet" type="text/css" href="cssjs/style.css">
-    <script src="cssjs/jquery-3.3.1.js"></script>
-    <script src="cssjs/hjks.js"></script>
-    <meta charset="utf-8">
-    <link rel="icon" href="icon/myfavicon.png" type="image/gif" sizes="16x16">
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    width: 100%;
+  }
 
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .nav .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-divider {
+    width: 1px;
+    height: 12px;
+    background: var(--line);
+    flex-shrink: 0;
+  }
+  .nav-clock {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .nav-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-email svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- Projects ---------- */
+  main { flex: 1; }
+  .projects {
+    padding: clamp(48px, 10vh, 120px) 0 clamp(60px, 10vw, 120px);
+  }
+  .work-heading {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0;
+    white-space: nowrap;
+    margin: 0 0 clamp(48px, 8vw, 80px);
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+    padding-bottom: clamp(72px, 12vw, 140px);
+  }
+  .project:last-of-type { padding-bottom: 0; }
+
+  .work-brands {
+    margin-top: clamp(48px, 8vw, 80px);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .work-brands-list {
+    color: var(--ink);
+  }
+  .work-brands-sep {
+    color: var(--muted);
+  }
+
+  .work-cta {
+    margin-top: clamp(48px, 8vw, 80px);
+    padding: 28px clamp(24px, 4vw, 40px);
+    border-radius: 4px;
+    background: #0d0df1;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .work-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+  }
+  .work-cta a:hover { opacity: 0.75; }
+  .work-cta a svg {
+    width: 17.6px;
+    height: 17.6px;
+    flex-shrink: 0;
+  }
+
+  .project-label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .project-title {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .project-desc {
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: none;
+    width: 100%;
+    margin-bottom: 28px;
+  }
+  .project-meta {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .project-meta li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 8px;
+  }
+  .project-meta .k { color: var(--muted); }
+  .project-meta .v a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .project-meta .v a:hover { opacity: 1; }
+
+  .project-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--ph);
+    overflow: hidden;
+  }
+  .project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .foot-tagline {
+    color: var(--ink);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .project {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding-bottom: 64px;
+    }
+    .work-heading {
+      font-size: 24px;
+      white-space: nowrap;
+    }
+    .project-desc { max-width: none; }
+    .nav-links { gap: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+</style>
 </head>
-
 <body>
-    
-    <nav>
-      <div id="navwidth">
-        <a href="index.html" id="websitename" style="text-decoration: none; ">Tingyu&nbsp;Su</a>
-        <a href="work.html" id="websiteabout" style="text-decoration: none;">·Work·</a>
-      </div>
-    </nav>
 
-    <section id="indexsection" style="cursor: default;">
-        <div class="indexintro">
-            <input type="text" class='input-passcode' id="fname" onfocus="this.value=''" value="Enter passcode to proceed" style="font-weight: 500;">
-            <input type="button" class='input-button' onclick="myFunction()" value="→" style="font-weight: 500;text-decoration: none;">
-            <div id='noti' style="display: none;">Please enter a valid passcode, or <a href="mailto:hello@sutingyu.com?Subject=Hello">email me.</a></div>
-        </div>        
-    </section>
-    
-    
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">Tingyu Su</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <span class="nav-clock" id="sf-clock">San Francisco --:--:--</span>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="https://medium.com/@tingyusu" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        Writing
+      </a>
+      <a href="https://www.linkedin.com/in/tingyu-su-design/" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="mailto:hello@sutingyu.com" class="nav-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+        Email
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="projects" id="work">
+    <div class="wrap">
+      <h1 class="work-heading">Selected Projects I Can Show</h1>
+
+      <article class="project">
+        <div class="project-copy">
+          <p class="project-label">2025 - Present</p>
+          <h2 class="project-title">Youlify</h2>
+          <p class="project-desc">An AI revenue cycle management solution that helps US healthcare systems and physicians get paid. We helped to managed $22+M revenue loss in 2025.<br>I'm leading both product design and brand design from zero to one.</p>
+          <ul class="project-meta">
+            <li><span class="k">Role</span><span class="v">Founding Designer</span></li>
+            <li><span class="k">Platforms</span><span class="v">Web Application</span></li>
+            <li><span class="k">Awards</span><span class="v">IF Design Award, IDEA Award, IDA Award, Indigo Award, NY Digital Design</span></li>
+            <li><span class="k">Link</span><span class="v"><a href="https://www.youlify.ai/" target="_blank" rel="noopener">Official Site</a></span></li>
+          </ul>
+        </div>
+        <div class="project-media">
+          <img src="assets/thumbnail_youlify.jpg" alt="Youlify claims dashboard" width="1280" height="800" decoding="async">
+        </div>
+      </article>
+
+      <article class="project" style="display: none" hidden>
+        <div class="project-copy">
+          <p class="project-label">2025</p>
+          <h2 class="project-title">Tells</h2>
+          <p class="project-desc">Tells is an all-in-one edtech solution for poker players.<br>I designed both the brand and desktop &amp; mobile software.</p>
+          <ul class="project-meta">
+            <li><span class="k">Role</span><span class="v">Founding Designer</span></li>
+            <li><span class="k">Platforms</span><span class="v">Web Application &amp; Mobile APP</span></li>
+            <li><span class="k">Link</span><span class="v"><a href="https://www.tells.poker/" target="_blank" rel="noopener">Official Site</a></span></li>
+          </ul>
+        </div>
+        <div class="project-media" role="img" aria-label="Tells project image placeholder"></div>
+      </article>
+
+      <article class="project">
+        <div class="project-copy">
+          <p class="project-label">2022 - 2023</p>
+          <h2 class="project-title">MoMA Design Store Rewards</h2>
+          <p class="project-desc">Designed MoMA Design Store Rewards, generating $700k+ in revenue and boosting retention by 6%.</p>
+          <ul class="project-meta">
+            <li><span class="k">Role</span><span class="v">Design Lead</span></li>
+            <li><span class="k">Platforms</span><span class="v">Omni-Retail</span></li>
+            <li><span class="k">Focus</span><span class="v">Customer Retention, 0 to 1</span></li>
+            <li><span class="k">Link</span><span class="v"><a href="https://store.moma.org/" target="_blank" rel="noopener">Official Site</a></span></li>
+          </ul>
+        </div>
+        <div class="project-media">
+          <img src="assets/thumbnail_momarewards.jpg" alt="MoMA Design Store Rewards" width="1280" height="800" decoding="async">
+        </div>
+      </article>
+
+      <p class="work-brands">Brands I've had the pleasure of designing for include <span class="work-brands-list">Enterview AI <span class="work-brands-sep">/</span> MSA The Safety Company <span class="work-brands-sep">/</span> Honda <span class="work-brands-sep">/</span> Parisa Wang New York <span class="work-brands-sep">/</span> Cle De Peau Beaute <span class="work-brands-sep">/</span> Natural Diamound Council <span class="work-brands-sep">/</span> Vetir Vert Monde <span class="work-brands-sep">/</span> Prabal Gurung <span class="work-brands-sep">/</span> The Vic <span class="work-brands-sep">/</span> Pactrick Ta <span class="work-brands-sep">/</span> Jane Smith Agency <span class="work-brands-sep">/</span> The Museum of Modern Art <span class="work-brands-sep">/</span> Solomon R. Guggenheim Museum <span class="work-brands-sep">/</span> The Rubin Museum of Art <span class="work-brands-sep">/</span> Carnegie Mellon University</span></p>
+
+      <p class="work-cta">
+        Want the full story?
+        <a href="mailto:hello@sutingyu.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-10 7L2 7"/>
+          </svg>
+          Email
+        </a>
+        me for a curated portfolio.
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Tingyu Su</span>
+    <span class="foot-tagline">Leading products and brands from ambitious idea to trusted experience.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var clock = document.getElementById("sf-clock");
+    if (!clock) return;
+    var fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "America/Los_Angeles",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false
+    });
+    function tick() {
+      clock.textContent = "San Francisco " + fmt.format(new Date());
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 
 </body>
-
 </html>
