@@ -501,13 +501,13 @@
         or <a href="mailto:hello@sutingyu.com">email me</a> for a curated portfolio.
       </p>
 
-      <h1 class="work-heading">Some Recent Projects</h1>
+      <h1 class="work-heading">Selected Projects</h1>
 
       <article class="project">
         <div class="project-copy">
           <p class="project-label">2025 - Present</p>
           <h2 class="project-title">Youlify</h2>
-          <p class="project-desc">An AI revenue cycle management solution that helps US healthcare systems and physicians get paid. We helped to prevent $22+M revenue loss in 2025.<br>I'm leading both product design and brand design from zero to one.</p>
+          <p class="project-desc">An AI revenue cycle management solution that helps US healthcare systems and physicians get paid.<br>I'm leading both product design and brand design from zero to one.</p>
           <ul class="project-meta">
             <li><span class="k">Role</span><span class="v">Founding Designer</span></li>
             <li><span class="k">Platforms</span><span class="v">Web Application</span></li>
@@ -520,7 +520,7 @@
         </div>
       </article>
 
-      <article class="project" style="display: none" hidden>
+      <article class="project is-curated" data-curated hidden>
         <div class="project-copy">
           <p class="project-label">2025</p>
           <h2 class="project-title">Tells</h2>
@@ -586,6 +586,7 @@
   </div>
 </footer>
 
+<script src="projects-auth.js"></script>
 <script src="image-protect.js"></script>
 <script>
   (function () {
@@ -626,15 +627,22 @@
     });
   })();
   (function () {
-    // Change this to your real portfolio access code.
-    var PORTFOLIO_CODE = "tingyu";
+    var PASSCODE_THOUGHTFUL = "THOUGHTFUL";
+    var PASSCODE_PROJECTS = "PROJECTS";
+    var STORAGE_KEY = "tingyu-portfolio-unlocked";
 
     var modal = document.getElementById("code-modal");
     var openBtn = document.getElementById("open-code-modal");
     var form = document.getElementById("code-modal-form");
     var input = document.getElementById("portfolio-code");
     var error = document.getElementById("code-modal-error");
+    var heading = document.querySelector(".work-heading");
+    var curated = document.querySelectorAll("[data-curated]");
     if (!modal || !openBtn || !form || !input || !error) return;
+
+    function normalizePasscode(value) {
+      return (value || "").trim().toUpperCase();
+    }
 
     function openModal() {
       modal.classList.add("is-open");
@@ -649,6 +657,27 @@
       modal.setAttribute("aria-hidden", "true");
       error.classList.remove("is-visible");
       openBtn.focus();
+    }
+
+    function unlockCurated() {
+      curated.forEach(function (el) {
+        el.hidden = false;
+        el.style.display = "";
+      });
+      if (heading) heading.textContent = "Curated Projects";
+      try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch (err) {}
+    }
+
+    function lockCurated() {
+      curated.forEach(function (el) {
+        el.hidden = true;
+        el.style.display = "none";
+      });
+      if (heading) heading.textContent = "Selected Projects";
+    }
+
+    function isCuratedUnlocked() {
+      try { return sessionStorage.getItem(STORAGE_KEY) === "1"; } catch (err) { return false; }
     }
 
     openBtn.addEventListener("click", openModal);
@@ -666,35 +695,33 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var value = (input.value || "").trim();
-      if (value && value === PORTFOLIO_CODE) {
+      var value = normalizePasscode(input.value);
+      if (value === PASSCODE_PROJECTS) {
+        error.classList.remove("is-visible");
+        if (window.TingyuProjectsAuth) TingyuProjectsAuth.grant();
+        window.location.href = "projects.html";
+        return;
+      }
+      if (value === PASSCODE_THOUGHTFUL) {
         error.classList.remove("is-visible");
         closeModal();
-        // Unlock any gated projects for this session.
-        document.querySelectorAll(".project[hidden]").forEach(function (el) {
-          el.hidden = false;
-          el.style.display = "";
-        });
-        try { sessionStorage.setItem("portfolioUnlocked", "1"); } catch (err) {}
-      } else {
-        error.classList.add("is-visible");
-        input.focus();
-        input.select();
+        unlockCurated();
+        return;
       }
+      error.classList.add("is-visible");
+      input.focus();
+      input.select();
     });
 
     input.addEventListener("input", function () {
       error.classList.remove("is-visible");
     });
 
-    try {
-      if (sessionStorage.getItem("portfolioUnlocked") === "1") {
-        document.querySelectorAll(".project[hidden]").forEach(function (el) {
-          el.hidden = false;
-          el.style.display = "";
-        });
-      }
-    } catch (err) {}
+    if (isCuratedUnlocked()) {
+      unlockCurated();
+    } else {
+      lockCurated();
+    }
   })();
 </script>
 
