@@ -58,11 +58,31 @@
     return true;
   }
 
+  /* Keep authorized visitors inside the private-project flow across site pages. */
+  function syncProjectLinks() {
+    if (!global.document || !touch()) return false;
+
+    var links = global.document.querySelectorAll('.nav-links a[href="work.html"]');
+    links.forEach(function (link) {
+      link.setAttribute("href", "projects.html");
+    });
+    return true;
+  }
+
   global.TingyuProjectsAuth = {
     isAllowed: isAllowed,
     grant: grant,
     touch: touch,
+    syncProjectLinks: syncProjectLinks,
     clear: clear,
     TTL_MS: TTL_MS
   };
+
+  if (global.document) {
+    if (global.document.readyState === "loading") {
+      global.document.addEventListener("DOMContentLoaded", syncProjectLinks);
+    } else {
+      syncProjectLinks();
+    }
+  }
 })(typeof window !== "undefined" ? window : this);

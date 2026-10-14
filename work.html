@@ -187,120 +187,78 @@
     color: var(--muted);
   }
 
-  .work-cta {
+  /* ---------- Passcode gate ---------- */
+  .passcode-gate {
     margin: 0 0 clamp(48px, 8vw, 80px);
     padding: 28px clamp(24px, 4vw, 40px);
     border-radius: 4px;
     background: #0d0df1;
     color: #ffffff;
+  }
+  .passcode-gate[hidden] { display: none !important; }
+  .passcode-prompt {
     font-size: 24px;
     font-weight: 500;
     line-height: 1.5;
+    margin-bottom: 20px;
   }
-  .work-cta a,
-  .work-cta-here {
-    display: inline;
-    color: #ffffff;
-    text-decoration: none;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    background: none;
-    box-shadow: none;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-  }
-  .work-cta a:hover,
-  .work-cta-here:hover { opacity: 0.75; }
-  .work-cta-here:focus,
-  .work-cta-here:focus-visible {
-    outline: none;
-    box-shadow: none;
-  }
-
-  .code-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: var(--pad);
-  }
-  .code-modal.is-open { display: flex; }
-  .code-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(17, 17, 17, 0.35);
-  }
-  .code-modal-dialog {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 400px);
-    padding: 52px 28px 28px;
-    background: #ffffff;
-    border: 1px solid var(--line);
-  }
-  .code-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    background: transparent;
-    color: var(--ink);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .code-modal-close:hover { opacity: 0.55; }
-  .code-modal-form {
+  .passcode-row {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    align-items: stretch;
+    gap: 10px;
+    max-width: 420px;
   }
-  .code-modal-input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--line);
-    border-radius: 0;
-    font-family: var(--font);
+  .passcode-input {
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 500;
+    line-height: 1.4;
     color: var(--ink);
     background: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 14px;
+    outline: none;
   }
-  .code-modal-input:focus {
-    outline: 2px solid var(--ink);
+  .passcode-input::placeholder { color: var(--muted); }
+  .passcode-input:focus-visible {
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
-  .code-modal-submit {
-    align-self: flex-start;
-    padding: 10px 18px;
-    border: 0;
-    background: #0d0df1;
-    color: #ffffff;
-    font-family: var(--font);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  .code-modal-submit:hover { opacity: 0.85; }
-  .code-modal-error {
-    display: none;
-    margin: 0;
-    font-size: 13px;
+  .passcode-submit {
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
-    color: #c62828;
+    color: #0d0df1;
+    background: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 11px 16px 13px;
+    cursor: pointer;
   }
-  .code-modal-error.is-visible { display: block; }
+  .passcode-submit:hover { opacity: 0.85; }
+  .passcode-noti {
+    display: none;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+  .passcode-noti.is-visible { display: block; }
+  .passcode-noti a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .passcode-noti a:hover { opacity: 0.75; }
+  .project.is-curated[hidden] { display: none !important; }
 
   .visually-hidden {
     position: absolute;
@@ -495,11 +453,27 @@
 <main>
   <section class="projects" id="work">
     <div class="wrap">
-      <p class="work-cta">
-        Have a portfolio code? Enter
-        <button type="button" class="work-cta-here" id="open-code-modal" aria-haspopup="dialog" aria-controls="code-modal">here</button>,
-        or <a href="mailto:hello@sutingyu.com">email me</a> for a curated portfolio.
-      </p>
+      <div class="passcode-gate" id="passcode-gate">
+        <p class="passcode-prompt">Have a key? Enter the passcode to unlock curated projects.</p>
+        <form class="passcode-row" id="passcode-form" autocomplete="off">
+          <label class="visually-hidden" for="passcode-input">Passcode</label>
+          <input
+            type="text"
+            class="passcode-input"
+            id="passcode-input"
+            name="passcode"
+            placeholder="Enter passcode to proceed"
+            spellcheck="false"
+            autocapitalize="characters"
+            autocomplete="off"
+          >
+          <button type="submit" class="passcode-submit">Confirm</button>
+        </form>
+        <p class="passcode-noti" id="passcode-noti" role="status" aria-live="polite">
+          Please enter a valid passcode, or
+          <a href="mailto:hello@sutingyu.com?Subject=Hello">email me</a>.
+        </p>
+      </div>
 
       <h1 class="work-heading">Selected Projects</h1>
 
@@ -556,29 +530,6 @@
   </section>
 </main>
 
-<div class="code-modal" id="code-modal" aria-hidden="true">
-  <div class="code-modal-backdrop" data-close-modal></div>
-  <div class="code-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="code-modal-title">
-    <button type="button" class="code-modal-close" data-close-modal aria-label="Close">&times;</button>
-    <h2 id="code-modal-title" class="visually-hidden">Enter portfolio code</h2>
-    <form class="code-modal-form" id="code-modal-form">
-      <input
-        class="code-modal-input"
-        id="portfolio-code"
-        type="text"
-        name="code"
-        autocomplete="off"
-        autocapitalize="off"
-        spellcheck="false"
-        placeholder="Portfolio code"
-        aria-describedby="code-modal-error"
-      >
-      <button type="submit" class="code-modal-submit">Confirm</button>
-      <p class="code-modal-error" id="code-modal-error" role="alert">The code you entered looks unfamiliar.</p>
-    </form>
-  </div>
-</div>
-
 <footer>
   <div class="wrap foot">
     <span>© 2026 Tingyu Su</span>
@@ -627,100 +578,82 @@
     });
   })();
   (function () {
+    var STORAGE_KEY = "tingyu-portfolio-unlocked";
     var PASSCODE_THOUGHTFUL = "THOUGHTFUL";
     var PASSCODE_PROJECTS = "PROJECTS";
-    var STORAGE_KEY = "tingyu-portfolio-unlocked";
-
-    var modal = document.getElementById("code-modal");
-    var openBtn = document.getElementById("open-code-modal");
-    var form = document.getElementById("code-modal-form");
-    var input = document.getElementById("portfolio-code");
-    var error = document.getElementById("code-modal-error");
+    var gate = document.getElementById("passcode-gate");
+    var form = document.getElementById("passcode-form");
+    var input = document.getElementById("passcode-input");
+    var noti = document.getElementById("passcode-noti");
     var heading = document.querySelector(".work-heading");
     var curated = document.querySelectorAll("[data-curated]");
-    if (!modal || !openBtn || !form || !input || !error) return;
 
     function normalizePasscode(value) {
       return (value || "").trim().toUpperCase();
     }
 
-    function openModal() {
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      error.classList.remove("is-visible");
-      input.value = "";
-      setTimeout(function () { input.focus(); }, 0);
+    function isUnlocked() {
+      try {
+        return sessionStorage.getItem(STORAGE_KEY) === "1";
+      } catch (e) {
+        return false;
+      }
     }
 
-    function closeModal() {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      error.classList.remove("is-visible");
-      openBtn.focus();
+    function setUnlocked() {
+      try {
+        sessionStorage.setItem(STORAGE_KEY, "1");
+      } catch (e) {}
     }
 
-    function unlockCurated() {
+    function grantProjectsAccess() {
+      if (window.TingyuProjectsAuth) TingyuProjectsAuth.grant();
+      window.location.href = "projects.html";
+    }
+
+    function unlock() {
       curated.forEach(function (el) {
         el.hidden = false;
-        el.style.display = "";
       });
+      if (gate) gate.hidden = true;
       if (heading) heading.textContent = "Curated Projects";
-      try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch (err) {}
+      if (noti) noti.classList.remove("is-visible");
     }
 
-    function lockCurated() {
+    function lock() {
       curated.forEach(function (el) {
         el.hidden = true;
-        el.style.display = "none";
       });
+      if (gate) gate.hidden = false;
       if (heading) heading.textContent = "Selected Projects";
     }
 
-    function isCuratedUnlocked() {
-      try { return sessionStorage.getItem(STORAGE_KEY) === "1"; } catch (err) { return false; }
+    if (isUnlocked()) {
+      unlock();
+    } else {
+      lock();
     }
 
-    openBtn.addEventListener("click", openModal);
-
-    modal.addEventListener("click", function (e) {
-      if (e.target.hasAttribute("data-close-modal")) closeModal();
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+    if (form && input) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        closeModal();
-      }
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var value = normalizePasscode(input.value);
-      if (value === PASSCODE_PROJECTS) {
-        error.classList.remove("is-visible");
-        if (window.TingyuProjectsAuth) TingyuProjectsAuth.grant();
-        window.location.href = "projects.html";
-        return;
-      }
-      if (value === PASSCODE_THOUGHTFUL) {
-        error.classList.remove("is-visible");
-        closeModal();
-        unlockCurated();
-        return;
-      }
-      error.classList.add("is-visible");
-      input.focus();
-      input.select();
-    });
-
-    input.addEventListener("input", function () {
-      error.classList.remove("is-visible");
-    });
-
-    if (isCuratedUnlocked()) {
-      unlockCurated();
-    } else {
-      lockCurated();
+        var value = normalizePasscode(input.value);
+        if (value === PASSCODE_PROJECTS) {
+          grantProjectsAccess();
+          return;
+        }
+        if (value === PASSCODE_THOUGHTFUL) {
+          setUnlocked();
+          unlock();
+          input.blur();
+          return;
+        }
+        if (noti) {
+          noti.classList.add("is-visible");
+          input.focus();
+          input.select();
+        }
+      });
     }
   })();
 </script>
