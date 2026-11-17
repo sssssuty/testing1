@@ -62,9 +62,10 @@
   function syncProjectLinks() {
     if (!global.document || !touch()) return false;
 
-    var links = global.document.querySelectorAll('.nav-links a[href="work.html"]');
+    var links = global.document.querySelectorAll('.nav-links a[href$="work.html"]');
     links.forEach(function (link) {
-      link.setAttribute("href", "projects.html");
+      var href = link.getAttribute("href") || "";
+      link.setAttribute("href", href.replace(/work\.html$/, "projects.html"));
     });
     return true;
   }

@@ -285,6 +285,17 @@
     .nav-divider { display: none; }
   }
 
+  /* ---------- Six-column grid (desktop) ---------- */
+  @media (min-width: 861px) {
+    .hero > .wrap {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      column-gap: clamp(28px, 4vw, 64px);
+    }
+    .hero-copy { grid-column: span 4; max-width: none; }
+    .hero-thumbs { grid-column: 1 / -1; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .thumb-dither { transition: none; }

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="projects-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask Your Revenue Data Anything · Tingyu Su</title>
+<link rel="icon" href="../assets/favicon/favicon.png" type="image/png">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="An AI conversation with data visualization for Youlify, designed by Tingyu Su.">
+<link rel="stylesheet" href="https://use.typekit.net/zoh5fgq.css">
+<link rel="stylesheet" href="case.css">
+<script src="../projects-auth.js"></script>
+<script>
+  /* Gate before paint: only visitors who entered the passcode can view. */
+  (function () {
+    if (!window.TingyuProjectsAuth || !TingyuProjectsAuth.isAllowed()) {
+      location.replace("../work.html");
+      return;
+    }
+    TingyuProjectsAuth.touch();
+    document.documentElement.classList.remove("projects-locked");
+  })();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0;url=../work.html">
+</noscript>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="logo">Tingyu Su</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <span class="nav-clock" id="sf-clock">San Francisco --:--:--</span>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="https://medium.com/@tingyusu" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        Writing
+      </a>
+      <a href="https://www.linkedin.com/in/tingyu-su-design/" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="mailto:hello@sutingyu.com" class="nav-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+        Email
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="projects-content" hidden>
+  <article>
+    <!-- Hero: title, hero image, timeframe, my responsibility -->
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="case-copy">
+          <p class="tag case-kicker">Youlify · AI Conversation With Data Visualization</p>
+          <h1 class="case-title">Ask Your Revenue Data Anything</h1>
+          <p class="case-sub">A conversational AI analyst that answers billing questions in plain language, with a chart and the claims behind it.</p>
+        </div>
+        <div class="ph case-hero-media" role="img" aria-label="Image placeholder: Conversation view with an answer and a chart"></div>
+        <div class="case-meta">
+          <div>
+            <p class="tag">Company</p>
+            <p>Youlify</p>
+          </div>
+          <div>
+            <p class="tag">Timeframe</p>
+            <p>2026</p>
+          </div>
+          <div>
+            <p class="tag">My Responsibility</p>
+            <ul>
+            <li>Product design lead</li>
+            <li>Conversation design</li>
+            <li>Data visualization system</li>
+            <li>Prototyping and testing</li>
+            </ul>
+          </div>
+          <div>
+            <p class="tag">Platform</p>
+            <p>Web Application</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap case-body">
+      <nav class="case-toc" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#approach">Approach</a>
+        <a href="#solution">Solution</a>
+        <a href="#impact">Impact</a>
+      </nav>
+
+      <div class="case-content">
+        <section class="case-section" id="overview">
+          <p class="tag">Overview</p>
+          <h2>Billing data is rich. Getting an answer from it was slow.</h2>
+          <p>Youlify runs the revenue cycle for healthcare practices. Every claim, denial, and payment lives in the system. But when a practice owner asked a simple question, like why collections dropped last month, someone still had to export a report and build a chart by hand.</p>
+          <p>I designed a conversation where users ask a question and get three things back: a short answer, a chart, and the claims behind the number.</p>
+          <figure class="fig fig-wide">
+            <div class="ph" role="img" aria-label="Image placeholder: The conversation view: question, answer, chart, and source claims"></div>
+            <figcaption>The conversation view: question, answer, chart, and source claims</figcaption>
+          </figure>
+        </section>
+        <section class="case-section" id="problem">
+          <p class="tag">Problem</p>
+          <h2>Dashboards only answer the questions we predicted.</h2>
+          <p>Working with practice owners, billing managers, and our own billing team, three problems kept coming up.</p>
+          <ul class="rows">
+            <li><span class="k">Fixed dashboards</span><span class="d">Each new question needed a new report. Most questions were asked once and never again.</span></li>
+            <li><span class="k">Not everyone is an analyst</span><span class="d">Physicians know their practice, not pivot tables. They wanted answers, not tools.</span></li>
+            <li><span class="k">Money needs proof</span><span class="d">A wrong number is worse than no number. Users would not trust an AI answer they could not check.</span></li>
+          </ul>
+        </section>
+        <section class="case-section" id="approach">
+          <p class="tag">Approach</p>
+          <h2>Answer first. Chart second. Proof third.</h2>
+          <p>Every response follows the same order, so users always know where to look.</p>
+          <ul class="rows">
+            <li><span class="k">Answer</span><span class="d">One or two sentences that state the result in plain words.</span></li>
+            <li><span class="k">Chart</span><span class="d">The AI picks the chart type from the question. Trends get a line. Comparisons get bars. A single number gets a stat.</span></li>
+            <li><span class="k">Proof</span><span class="d">The filters, date range, and claims used. One click opens the full list.</span></li>
+          </ul>
+          <div class="fig fig-pair">
+            <div class="fig-grid">
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Question types mapped to chart types"></div>
+                <figcaption>Question types mapped to chart types</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Chart anatomy: title, unit, legend, source"></div>
+                <figcaption>Chart anatomy: title, unit, legend, source</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p>I kept the chart set small on purpose. A few chart types cover most billing questions, and a small set is easier to keep correct and consistent.</p>
+        </section>
+        <section class="case-section" id="solution">
+          <p class="tag">Solution</p>
+          <h2>A conversation that leads to action.</h2>
+          <ul class="rows">
+            <li><span class="k">Suggested questions</span><span class="d">The empty state offers questions based on the user's role and recent activity, so no one starts from a blank box.</span></li>
+            <li><span class="k">Follow-ups</span><span class="d">Users refine the same chart by asking: "only Medicare" or "compare to last quarter". The chart updates in place.</span></li>
+            <li><span class="k">Drill down</span><span class="d">Click any bar or point to see the claims behind it.</span></li>
+            <li><span class="k">Pin to dashboard</span><span class="d">Save a useful answer as a live tile. The dashboard becomes personal over time.</span></li>
+            <li><span class="k">Hand off to an agent</span><span class="d">When an answer shows a problem, the user can act on it. For example, send a group of denied claims to the appeals agent.</span></li>
+          </ul>
+          <figure class="fig fig-wide">
+            <div class="ph" role="img" aria-label="Image placeholder: A follow-up question updates the chart in place"></div>
+            <figcaption>A follow-up question updates the chart in place</figcaption>
+          </figure>
+          <div class="fig fig-trio">
+            <div class="fig-grid">
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Drill down into claims"></div>
+                <figcaption>Drill down into claims</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Pin to dashboard"></div>
+                <figcaption>Pin to dashboard</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Hand off to an agent"></div>
+                <figcaption>Hand off to an agent</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" id="impact">
+          <p class="tag">Impact</p>
+          <h2>From waiting for a report to asking a question.</h2>
+          <p>Questions that used to need a custom report now take one message. Our billing team uses the same tool to prepare client reviews, and practice owners can check their numbers without waiting for us.</p>
+          <ul class="stats">
+            <li><span class="n">3.6M+</span><span class="t">Claims processed on the platform</span></li>
+            <li><span class="n">$175M+</span><span class="t">Transactions managed</span></li>
+          </ul>
+        </section>
+
+        <nav class="case-next" aria-label="Next project">
+          <p class="tag">Next Project</p>
+          <a href="end-to-end-product-workflow.html">End-To-End Product Workflow →</a>
+        </nav>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Tingyu Su</span>
+    <span class="foot-tagline">Building products and brands from ambitious idea to trusted experience.</span>
+  </div>
+</footer>
+
+<script src="../image-protect.js"></script>
+<script src="case.js"></script>
+
+</body>
+</html>

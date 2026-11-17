@@ -7,6 +7,11 @@
 <meta name="description" content="Selected work by Tingyu Su.">
 <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
 <link rel="stylesheet" href="https://use.typekit.net/zoh5fgq.css">
+<script src="projects-auth.js"></script>
+<script>
+  /* Visitors who already entered the passcode go straight to the curated projects. */
+  if (window.TingyuProjectsAuth && TingyuProjectsAuth.isAllowed()) location.replace("projects.html");
+</script>
 <style>
   :root {
     --bg: #ffffff;
@@ -258,7 +263,6 @@
     text-underline-offset: 3px;
   }
   .passcode-noti a:hover { opacity: 0.75; }
-  .project.is-curated[hidden] { display: none !important; }
 
   .visually-hidden {
     position: absolute;
@@ -400,6 +404,13 @@
     .nav-divider { display: none; }
   }
 
+  /* ---------- Six-column grid (desktop) ---------- */
+  @media (min-width: 861px) {
+    .project { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .project-copy { grid-column: span 2; }
+    .project-media { grid-column: span 4; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
@@ -494,20 +505,6 @@
         </div>
       </article>
 
-      <article class="project is-curated" data-curated hidden>
-        <div class="project-copy">
-          <p class="project-label">2025</p>
-          <h2 class="project-title">Tells</h2>
-          <p class="project-desc">Tells is an all-in-one edtech solution for poker players.<br>I designed both the brand and desktop &amp; mobile software.</p>
-          <ul class="project-meta">
-            <li><span class="k">Role</span><span class="v">Founding Designer</span></li>
-            <li><span class="k">Platforms</span><span class="v">Web Application &amp; Mobile APP</span></li>
-            <li><span class="k">Link</span><span class="v"><a href="https://www.tells.poker/" target="_blank" rel="noopener">Official Site</a></span></li>
-          </ul>
-        </div>
-        <div class="project-media" role="img" aria-label="Tells project image placeholder"></div>
-      </article>
-
       <article class="project">
         <div class="project-copy">
           <p class="project-label">2022 - 2023</p>
@@ -537,7 +534,6 @@
   </div>
 </footer>
 
-<script src="projects-auth.js"></script>
 <script src="image-protect.js"></script>
 <script>
   (function () {
@@ -578,74 +574,22 @@
     });
   })();
   (function () {
-    var STORAGE_KEY = "tingyu-portfolio-unlocked";
-    var PASSCODE_THOUGHTFUL = "THOUGHTFUL";
-    var PASSCODE_PROJECTS = "PROJECTS";
-    var gate = document.getElementById("passcode-gate");
+    var PASSCODE = "THOUGHTFUL";
     var form = document.getElementById("passcode-form");
     var input = document.getElementById("passcode-input");
     var noti = document.getElementById("passcode-noti");
-    var heading = document.querySelector(".work-heading");
-    var curated = document.querySelectorAll("[data-curated]");
 
-    function normalizePasscode(value) {
-      return (value || "").trim().toUpperCase();
-    }
-
-    function isUnlocked() {
-      try {
-        return sessionStorage.getItem(STORAGE_KEY) === "1";
-      } catch (e) {
-        return false;
-      }
-    }
-
-    function setUnlocked() {
-      try {
-        sessionStorage.setItem(STORAGE_KEY, "1");
-      } catch (e) {}
-    }
-
-    function grantProjectsAccess() {
+    /* A valid passcode opens the curated projects for 30 minutes. */
+    function openProjects() {
       if (window.TingyuProjectsAuth) TingyuProjectsAuth.grant();
       window.location.href = "projects.html";
-    }
-
-    function unlock() {
-      curated.forEach(function (el) {
-        el.hidden = false;
-      });
-      if (gate) gate.hidden = true;
-      if (heading) heading.textContent = "Curated Projects";
-      if (noti) noti.classList.remove("is-visible");
-    }
-
-    function lock() {
-      curated.forEach(function (el) {
-        el.hidden = true;
-      });
-      if (gate) gate.hidden = false;
-      if (heading) heading.textContent = "Selected Projects";
-    }
-
-    if (isUnlocked()) {
-      unlock();
-    } else {
-      lock();
     }
 
     if (form && input) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var value = normalizePasscode(input.value);
-        if (value === PASSCODE_PROJECTS) {
-          grantProjectsAccess();
-          return;
-        }
-        if (value === PASSCODE_THOUGHTFUL) {
-          setUnlocked();
-          unlock();
-          input.blur();
+        if ((input.value || "").trim().toUpperCase() === PASSCODE) {
+          openProjects();
           return;
         }
         if (noti) {

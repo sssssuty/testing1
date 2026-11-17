@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="projects-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Design System That Lets One Designer Ship Like A Team · Tingyu Su</title>
+<link rel="icon" href="../assets/favicon/favicon.png" type="image/png">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="The Youlify design system, designed by Tingyu Su.">
+<link rel="stylesheet" href="https://use.typekit.net/zoh5fgq.css">
+<link rel="stylesheet" href="case.css">
+<script src="../projects-auth.js"></script>
+<script>
+  /* Gate before paint: only visitors who entered the passcode can view. */
+  (function () {
+    if (!window.TingyuProjectsAuth || !TingyuProjectsAuth.isAllowed()) {
+      location.replace("../work.html");
+      return;
+    }
+    TingyuProjectsAuth.touch();
+    document.documentElement.classList.remove("projects-locked");
+  })();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0;url=../work.html">
+</noscript>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="logo">Tingyu Su</a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <span class="nav-clock" id="sf-clock">San Francisco --:--:--</span>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="https://medium.com/@tingyusu" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        Writing
+      </a>
+      <a href="https://www.linkedin.com/in/tingyu-su-design/" class="nav-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="mailto:hello@sutingyu.com" class="nav-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-10 7L2 7"/>
+        </svg>
+        Email
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="projects-content" hidden>
+  <article>
+    <!-- Hero: title, hero image, timeframe, my responsibility -->
+    <header class="case-hero">
+      <div class="wrap">
+        <div class="case-copy">
+          <p class="tag case-kicker">Youlify · Design System</p>
+          <h1 class="case-title">A Design System That Lets One Designer Ship Like A Team</h1>
+          <p class="case-sub">Shared tokens, components, and AI patterns that keep a fast-moving product consistent.</p>
+        </div>
+        <div class="ph case-hero-media" role="img" aria-label="Image placeholder: Design system overview"></div>
+        <div class="case-meta">
+          <div>
+            <p class="tag">Company</p>
+            <p>Youlify</p>
+          </div>
+          <div>
+            <p class="tag">Timeframe</p>
+            <p>2025 – Present</p>
+          </div>
+          <div>
+            <p class="tag">My Responsibility</p>
+            <ul>
+            <li>System architecture</li>
+            <li>Tokens and components</li>
+            <li>AI interaction patterns</li>
+            <li>Documentation and design-to-code workflow</li>
+            </ul>
+          </div>
+          <div>
+            <p class="tag">Platform</p>
+            <p>Web Application &amp; Brand</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap case-body">
+      <nav class="case-toc" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#approach">Approach</a>
+        <a href="#solution">Solution</a>
+        <a href="#impact">Impact</a>
+      </nav>
+
+      <div class="case-content">
+        <section class="case-section" id="overview">
+          <p class="tag">Overview</p>
+          <h2>One designer, a fast team, and a product full of dense data.</h2>
+          <p>As the only designer at Youlify, I could not review every screen. Engineers ship quickly, often with AI coding tools. I needed a system that makes the right design the easy choice, with or without me in the room.</p>
+          <figure class="fig fig-wide">
+            <div class="ph" role="img" aria-label="Image placeholder: System overview"></div>
+            <figcaption>System overview</figcaption>
+          </figure>
+        </section>
+        <section class="case-section" id="problem">
+          <p class="tag">Problem</p>
+          <h2>Speed was creating drift.</h2>
+          <ul class="rows">
+            <li><span class="k">Inconsistent screens</span><span class="d">The same claim status looked different in different places. Tables behaved differently from page to page.</span></li>
+            <li><span class="k">Brand and product apart</span><span class="d">Marketing and product used different colors and type.</span></li>
+            <li><span class="k">New AI patterns</span><span class="d">Agents, reasoning, and review steps had no standard, so each feature invented its own.</span></li>
+          </ul>
+        </section>
+        <section class="case-section" id="approach">
+          <p class="tag">Approach</p>
+          <h2>Build from real screens, not from a library.</h2>
+          <p>I started by auditing what we had shipped and kept only what repeated. The system stays small so it stays in use.</p>
+          <ul class="rows">
+            <li><span class="k">Tokens first</span><span class="d">Color, type, and spacing are shared by the brand and the product.</span></li>
+            <li><span class="k">Few components, done well</span><span class="d">Tables, filters, statuses, and drawers carry most of the product, so they got the most care.</span></li>
+            <li><span class="k">Written for people and AI</span><span class="d">Each component has clear rules that engineers and their coding tools can both follow.</span></li>
+          </ul>
+          <div class="fig fig-pair">
+            <div class="fig-grid">
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Interface audit"></div>
+                <figcaption>Interface audit</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Token structure"></div>
+                <figcaption>Token structure</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" id="solution">
+          <p class="tag">Solution</p>
+          <h2>Foundations, components, and patterns for AI.</h2>
+          <ul class="rows">
+            <li><span class="k">Foundations</span><span class="d">Indigo-based color, a clear type scale, and spacing made for dense data.</span></li>
+            <li><span class="k">Data components</span><span class="d">Tables, filters, and charts with consistent sorting, selection, and bulk actions.</span></li>
+            <li><span class="k">Status language</span><span class="d">One set of labels and colors for every claim state.</span></li>
+            <li><span class="k">AI patterns</span><span class="d">Standard ways to show what an agent did, why it did it, and where a person needs to review.</span></li>
+          </ul>
+          <div class="fig fig-trio">
+            <div class="fig-grid">
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Foundations"></div>
+                <figcaption>Foundations</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: Data components"></div>
+                <figcaption>Data components</figcaption>
+              </figure>
+              <figure>
+                <div class="ph" role="img" aria-label="Image placeholder: AI patterns"></div>
+                <figcaption>AI patterns</figcaption>
+              </figure>
+            </div>
+          </div>
+          <figure class="fig fig-wide">
+            <div class="ph" role="img" aria-label="Image placeholder: From design tokens to code"></div>
+            <figcaption>From design tokens to code</figcaption>
+          </figure>
+        </section>
+        <section class="case-section" id="impact">
+          <p class="tag">Impact</p>
+          <h2>Consistent by default.</h2>
+          <p>New features now start from existing parts. Engineers can build many screens without a full mockup, and my time moves from fixing details to solving new problems.</p>
+          <p>The same tokens run the product, the website, and marketing materials.</p>
+        </section>
+
+        <nav class="case-next" aria-label="Next project">
+          <p class="tag">Next Project</p>
+          <a href="ai-conversation-data-visualization.html">AI Conversation With Data Visualization →</a>
+        </nav>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Tingyu Su</span>
+    <span class="foot-tagline">Building products and brands from ambitious idea to trusted experience.</span>
+  </div>
+</footer>
+
+<script src="../image-protect.js"></script>
+<script src="case.js"></script>
+
+</body>
+</html>

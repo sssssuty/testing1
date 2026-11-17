@@ -373,7 +373,7 @@
       line-height: 1.5;
     }
     .about-media {
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 4 / 5;
       max-height: none;
     }
     .about-below {
@@ -412,6 +412,17 @@
       color: var(--muted);
     }
     .nav-divider { display: none; }
+  }
+
+  /* ---------- Six-column grid (desktop) ---------- */
+  @media (min-width: 861px) {
+    .about-grid,
+    .about-below,
+    .about-exp { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .about-copy { grid-column: span 4; max-width: none; }
+    .about-media { grid-column: 5 / span 2; }
+    .about-block,
+    .about-exp > * { grid-column: span 2; }
   }
 
   :focus-visible {
