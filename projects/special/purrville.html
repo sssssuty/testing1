@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<!--
+  Purrville
+  A small town where cats live like people. Upload a cat photo, make an avatar,
+  and it moves into your house. Kittens go to school, grown-ups go to the office,
+  everyone hangs out with friends, travels, and sleeps when people sleep.
+  You can watch the houses and the office. Everything else happens out of sight,
+  and cats leave a note on the fridge before they go.
+
+  Open source, MIT license. No accounts, no server, no tracking.
+  Everything is stored in this browser (localStorage). Cats move between towns
+  through exported files. To run one shared town for everyone, replace the
+  Store object (search for "const Store") with calls to a backend.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Upload your cat, make an avatar, and watch it live in a town of cats. No account needed.">
+<title>Purrville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bagel+Fat+One&family=Gochi+Hand&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#1b1f6b; --deep:#0e1040; --ink:#17154a; --lilac:#f3f0ff; --lilac2:#e4ddff;
+  --pink:#ff4f9a; --sun:#ffd23f; --mint:#3fd6b0; --muted:#5f5a8f;
+  --display:'Bagel Fat One','Arial Rounded MT Bold',system-ui,sans-serif;
+  --ui:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;
+  --hand:'Gochi Hand','Comic Sans MS',cursive;
+  --pop:4px 4px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--deep);color:var(--ink);font:15px/1.45 var(--ui);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+#world{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;display:block;touch-action:none;cursor:grab}
+#world.grabbing{cursor:grabbing}
+
+/* top bar */
+.top{position:fixed;inset:0 0 auto 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:10px;padding:14px 14px 0 20px;z-index:8;pointer-events:none}
+.top>*{pointer-events:auto}
+.brand{color:var(--lilac);pointer-events:none}
+.brand h1{margin:0;font:400 32px/1 var(--display);color:var(--sun);text-shadow:3px 3px 0 var(--pink)}
+.brand p{margin:5px 0 0;font-size:13px;text-shadow:0 1px 6px rgba(14,16,64,.7)}
+.glass{background:rgba(23,21,74,.55);border:1.5px solid rgba(243,240,255,.3);color:var(--lilac);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.viewsw{justify-self:center;display:flex;gap:3px;padding:4px;align-items:center}
+.viewsw button,.seg button{border:0;background:none;color:var(--lilac);font-weight:700;font-size:14px;padding:7px 13px;border-radius:999px;cursor:pointer}
+.viewsw button.on,.seg button.on{background:var(--lilac);color:var(--ink)}
+.viewsw select{appearance:none;-webkit-appearance:none;border:0;background:rgba(243,240,255,.14);color:var(--lilac);font-weight:700;font-size:14px;padding:7px 28px 7px 12px;border-radius:999px;cursor:pointer;max-width:170px;background-image:linear-gradient(45deg,transparent 50%,#f3f0ff 50%),linear-gradient(135deg,#f3f0ff 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.viewsw select option{color:var(--ink)}
+.viewsw select[hidden]{display:none}
+.ctrls{justify-self:end;display:flex;gap:8px;align-items:center}
+.seg{display:flex;padding:3px;gap:2px}
+.seg button{font-size:13px;padding:6px 10px}
+.ibtn{height:38px;min-width:38px;padding:0 13px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;cursor:pointer;gap:7px}
+.ibtn.on{background:var(--lilac);color:var(--ink)}
+.clock{font-variant-numeric:tabular-nums}
+.clock .rate{font-size:11.5px;background:var(--pink);color:#fff;border-radius:999px;padding:1px 7px}
+.clock .rate.live{background:var(--mint);color:var(--ink)}
+.menuwrap{position:relative}
+.menu{position:absolute;right:0;top:46px;background:var(--lilac);color:var(--ink);border:2px solid var(--ink);border-radius:16px;box-shadow:var(--pop);padding:6px;min-width:230px;display:none}
+.menu.open{display:block}
+.menu button{display:flex;width:100%;text-align:left;border:0;background:none;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.menu button:hover{background:var(--lilac2)}
+.menu hr{border:0;border-top:1.5px solid var(--lilac2);margin:4px 6px}
+.only-m{display:none!important}
+
+/* side panel */
+.panel{position:fixed;right:14px;top:70px;bottom:14px;width:340px;background:var(--lilac);border:2px solid var(--ink);border-radius:20px;box-shadow:var(--pop);display:flex;flex-direction:column;overflow:hidden;z-index:4;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.panel.closed{transform:translateX(390px);opacity:0;pointer-events:none}
+.tabs{display:flex;gap:4px;padding:10px 10px 0;border-bottom:2px solid var(--ink)}
+.tabs button{flex:1;border:0;background:none;padding:10px 6px 9px;border-radius:12px 12px 0 0;font-weight:700;font-size:14px;color:var(--muted);cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--lilac)}
+.tabbody{flex:1;overflow:auto;padding:4px 16px 20px;overscroll-behavior:contain}
+.intro{font-size:13.5px;color:var(--muted);margin:12px 0 6px}
+.sub{font:400 17px var(--display);margin:22px 0 4px}
+.empty{color:var(--muted);padding:18px 4px;text-align:center}
+.note{background:var(--paper,#fff27a);padding:16px 14px 10px;margin:18px 4px 6px;transform:rotate(var(--rot,0deg));box-shadow:2px 3px 0 rgba(23,21,74,.22);position:relative;border-radius:3px}
+.note::before{content:'';position:absolute;top:-8px;left:50%;width:16px;height:16px;border-radius:50%;background:var(--mag,#ff4f9a);border:2px solid var(--ink);transform:translateX(-50%)}
+.note p{font:400 21px/1.22 var(--hand);margin:0 0 10px;color:#221f5c}
+.note .sig{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#4a467a}
+.note .sig img{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.55);flex:none}
+.note.old{background:#fff;transform:none;box-shadow:none;border:1.5px dashed #cfc6f5;opacity:.75;margin:10px 0}
+.note.old::before{display:none}
+.note.old p{font-size:17px}
+.row-btn{display:flex;gap:12px;align-items:center;padding:8px;margin:0 -8px;border-radius:14px;cursor:pointer;border:0;background:none;width:calc(100% + 16px);text-align:left}
+.row-btn:hover{background:var(--lilac2)}
+.row-btn img{width:54px;height:54px;border-radius:14px;background:var(--lilac2);flex:none}
+.row-btn .n{font:400 18px/1.1 var(--display)}
+.row-btn .s{font-size:13px;color:var(--muted)}
+.row-btn .st{font-size:13.5px;font-weight:700}
+.row-btn .st.away{color:#b0245f;font-weight:400}
+
+/* cat card */
+.card{position:fixed;left:14px;bottom:14px;width:336px;background:var(--lilac);border:2px solid var(--ink);border-radius:20px;box-shadow:var(--pop);padding:16px;z-index:6;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.card.hidden{transform:translateY(24px);opacity:0;pointer-events:none}
+.card .head{display:flex;gap:12px;align-items:center;padding-right:30px}
+.card .head img{width:76px;height:76px;border-radius:18px;background:var(--lilac2);flex:none}
+.card h3{margin:0;font:400 26px/1.05 var(--display);word-break:break-word}
+.card .by{font-size:14px;color:var(--muted)}
+.pill{display:inline-block;background:var(--ink);color:var(--lilac);border-radius:999px;padding:2px 10px;font-size:12.5px;font-weight:700;margin-top:6px}
+.now{margin:12px 0 4px;font-weight:700;font-size:15.5px}
+.rels{font-size:14px;margin-top:6px;display:grid;gap:2px;color:var(--ink)}
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.btn{border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer;background:#fff;font-size:14px}
+.btn:hover{background:var(--lilac2)}
+.btn.dark{background:var(--ink);color:var(--lilac)}
+.btn.ghost{border-color:transparent;background:none;color:#b0245f;text-decoration:underline;text-underline-offset:3px}
+.x{position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:#fff;font-size:18px;line-height:1;cursor:pointer;display:grid;place-items:center}
+
+.add{position:fixed;bottom:22px;left:calc((100% - 368px) / 2);transform:translateX(-50%);z-index:5;border:2px solid var(--ink);background:var(--sun);color:var(--ink);font:400 19px/1 var(--display);padding:15px 24px 14px;border-radius:999px;box-shadow:var(--pop);cursor:pointer;white-space:nowrap}
+.add:hover{background:#ffe066}
+.add:active{transform:translateX(-50%) translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+body.panel-closed .add{left:50%}
+body.has-card .add{left:calc(350px + (100% - 350px - 368px) / 2)}
+body.panel-closed.has-card .add{left:calc(350px + (100% - 350px) / 2)}
+
+/* modals */
+.modal{position:fixed;inset:0;background:rgba(14,16,64,.7);display:flex;align-items:center;justify-content:center;z-index:20;padding:20px}
+.modal[hidden]{display:none}
+.sheet{background:var(--lilac);border:2px solid var(--ink);border-radius:24px;box-shadow:6px 6px 0 var(--pink);width:min(880px,100%);max-height:calc(100dvh - 40px);overflow:auto;padding:28px;position:relative}
+.sheet h2{margin:0 0 6px;font:400 32px/1.05 var(--display);padding-right:44px}
+.lede{margin:0 0 20px;color:var(--muted);max-width:62ch}
+.drop{display:block;border:2.5px dashed var(--ink);border-radius:22px;padding:44px 20px;text-align:center;cursor:pointer;background:#fff;position:relative}
+.drop.over{background:#fff3b8}
+.drop input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.drop svg{display:block;margin:0 auto 8px}
+.drop b{display:block;font:400 22px var(--display);margin-bottom:2px}
+.drop span{color:var(--muted)}
+.linkbtn{border:0;background:none;color:var(--ink);font-weight:700;margin-top:16px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:4px 0}
+.make{display:grid;grid-template-columns:262px 1fr;gap:28px}
+.cropwrap{position:relative;width:262px;height:262px;border-radius:20px;overflow:hidden;background:var(--night);border:2px solid var(--ink);touch-action:none;cursor:move}
+#crop{width:258px;height:258px;display:block}
+.hint{position:absolute;left:0;right:0;bottom:8px;text-align:center;color:#fff;font-size:12.5px;font-weight:700;pointer-events:none}
+.zoomrow{display:flex;align-items:center;gap:10px;margin:10px 0 16px;width:262px;font-size:13px;color:var(--muted)}
+input[type=range]{flex:1;accent-color:var(--pink)}
+.previewbox{width:262px;height:170px;border-radius:20px;background:#ffe9a8;border:2px solid var(--ink);overflow:hidden}
+#preview{width:258px;height:166px;display:block}
+.make.nophoto .cropwrap,.make.nophoto .zoomrow,.make.nophoto .facefield{display:none}
+.field{margin-bottom:16px}
+.field>label,.field>.lbl{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.field .help{font-size:13px;color:var(--muted);margin-top:6px}
+.inp{width:100%;border:2px solid var(--ink);background:#fff;border-radius:14px;padding:11px 12px;font:700 16px var(--ui);color:var(--ink);outline:none}
+.inp:focus{box-shadow:0 0 0 3px var(--sun)}
+.row{display:flex;gap:8px;align-items:center}
+.row .inp{flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:14px;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--lilac)}
+.swatches{display:flex;gap:16px}
+.sw{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12.5px;color:var(--muted)}
+.sw input{width:46px;height:46px;border:2px solid var(--ink);border-radius:50%;padding:0;background:none;cursor:pointer;overflow:hidden}
+.sw input::-webkit-color-swatch-wrapper{padding:0}
+.sw input::-webkit-color-swatch{border:0;border-radius:50%}
+.sw input::-moz-color-swatch{border:0;border-radius:50%}
+.launch{width:100%;margin-top:6px;padding:16px;border:2px solid var(--ink);border-radius:999px;background:var(--pink);color:#fff;font:400 20px var(--display);box-shadow:var(--pop);cursor:pointer}
+.launch:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.about p{margin:0 0 12px;max-width:62ch}
+.about h3{font:400 20px var(--display);margin:20px 0 6px}
+.toast{position:fixed;left:50%;top:76px;transform:translateX(-50%) translateY(-8px);background:var(--sun);border:2px solid var(--ink);box-shadow:var(--pop);padding:10px 16px;border-radius:999px;font-weight:700;z-index:40;opacity:0;transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:760px){
+  .toast{top:122px}
+  .toast.show{top:122px}
+  .top{grid-template-columns:1fr auto;grid-template-areas:"brand ctrls" "view view";padding:10px 10px 0 14px;row-gap:8px}
+  .brand{grid-area:brand}.ctrls{grid-area:ctrls;gap:6px}.viewsw{grid-area:view;justify-self:stretch}
+  .brand h1{font-size:25px;text-shadow:2px 2px 0 var(--pink);margin-top:5px}
+  .brand p{display:none}
+  .viewsw select{flex:1;max-width:none}
+  .viewsw .only-m{margin-left:auto}
+  .hide-m{display:none!important}
+  .only-m{display:inline-flex!important}
+  .menu button.only-m{display:flex!important}
+  .ibtn{padding:0 11px}
+  .panel{left:0;right:0;top:auto;bottom:0;width:auto;height:66dvh;border-radius:22px 22px 0 0;border-bottom:0;box-shadow:0 -4px 0 var(--ink);z-index:9}
+  .panel.closed{transform:translateY(105%)}
+  .card{left:8px;right:8px;width:auto;bottom:calc(8px + env(safe-area-inset-bottom))}
+  .add,body.panel-closed .add,body.has-card .add,body.panel-closed.has-card .add{left:50%;bottom:calc(18px + env(safe-area-inset-bottom))}
+  body.has-card .add{display:none}
+  .modal{padding:0;align-items:flex-end}
+  .sheet{border-radius:24px 24px 0 0;max-height:94dvh;padding:22px 18px 28px;box-shadow:none;border-bottom:0}
+  .sheet h2{font-size:26px}
+  .make{grid-template-columns:1fr;gap:6px}
+  .cropwrap,.zoomrow,.previewbox{margin-left:auto;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="world" aria-label="Purrville, a town where cats live like people"></canvas>
+
+<header class="top">
+  <div class="brand"><h1>Purrville</h1><p id="stats"></p></div>
+  <nav class="viewsw glass" aria-label="Choose what to watch">
+    <button data-v="home" class="on">Home</button>
+    <select id="homeSel" aria-label="Choose a house"></select>
+    <button data-v="office">Office</button>
+    <button class="only-m panelBtn" data-panel>Fridge</button>
+  </nav>
+  <div class="ctrls">
+    <button class="ibtn glass clock" id="clock" title="Change speed"><span id="clockT"></span><span class="rate live" id="rateBadge">Live</span></button>
+    <div class="seg glass hide-m" id="speed" role="group" aria-label="Speed">
+      <button data-r="live" class="on">Live</button><button data-r="1">60×</button><button data-r="12">720×</button>
+    </div>
+    <button class="ibtn glass hide-m panelBtn" data-panel>Fridge</button>
+    <div class="menuwrap">
+      <button class="ibtn glass" id="menuBtn" aria-label="More" aria-expanded="false">•••</button>
+      <div class="menu" id="menu">
+        <button data-act="export">Export town file</button>
+        <button data-act="import">Import cats from a file</button>
+        <button data-act="names">Show or hide names</button>
+        <hr>
+        <button data-act="about">About Purrville</button>
+        <button data-act="reset">Reset town</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<aside class="panel" id="panel" aria-label="Details">
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="tabbody" id="tabbody"></div>
+</aside>
+
+<section class="card hidden" id="card" aria-live="polite"></section>
+
+<button class="add" id="addBtn">Bring your cat</button>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<div class="modal" id="creator" hidden role="dialog" aria-modal="true" aria-labelledby="creatorTitle">
+  <div class="sheet">
+    <button class="x" data-close="creator" aria-label="Close">✕</button>
+    <h2 id="creatorTitle">Bring your cat to Purrville</h2>
+    <p class="lede">Upload a photo and we turn it into an avatar. Your cat moves into your house and lives on its own: school or work, friends, trips, bedtime. Photos stay on this device.</p>
+
+    <div id="stepUpload">
+      <label class="drop" id="drop">
+        <input type="file" accept="image/*" id="file">
+        <svg width="64" height="52" viewBox="0 0 64 52" aria-hidden="true"><path d="M10 50 L10 22 L4 4 L20 14 Q32 8 44 14 L60 4 L54 22 L54 50 Z" fill="#ffd23f" stroke="#17154a" stroke-width="3" stroke-linejoin="round"/><circle cx="24" cy="30" r="3.5" fill="#17154a"/><circle cx="40" cy="30" r="3.5" fill="#17154a"/><path d="M29 37 L35 37 L32 40 Z" fill="#ff4f9a"/></svg>
+        <b>Choose a cat photo</b>
+        <span>or drop one here. A clear shot of the face works best.</span>
+      </label>
+      <button class="linkbtn" id="noPhoto">No photo? Draw an illustrated cat instead</button>
+    </div>
+
+    <div id="stepMake" hidden>
+      <div class="make" id="make">
+        <div>
+          <div class="cropwrap" id="cropWrap"><canvas id="crop"></canvas><div class="hint">Drag to center the face</div></div>
+          <div class="zoomrow"><span>Zoom</span><input type="range" id="zoom" min="1" max="4" step="0.01" value="1.3" aria-label="Zoom photo"></div>
+          <div class="previewbox"><canvas id="preview" aria-label="Avatar preview"></canvas></div>
+        </div>
+        <div>
+          <div class="field">
+            <label for="cName">Cat's name</label>
+            <div class="row"><input class="inp" id="cName" maxlength="24" placeholder="Mochi" autocomplete="off"><button class="btn" id="dice" type="button">Random</button></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Age</span>
+            <div class="chips" id="ageChips"></div>
+            <div class="help" id="ageHelp"></div>
+          </div>
+          <div class="field" id="jobField">
+            <span class="lbl">Job at the office</span>
+            <div class="chips" id="jobChips"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">You are their</span>
+            <div class="chips" id="titleChips"></div>
+          </div>
+          <div class="field">
+            <label for="cParent">Your name</label>
+            <input class="inp" id="cParent" maxlength="24" placeholder="Your cat moves into your house" autocomplete="off">
+            <div class="help">Cats with the same creator name live in the same house.</div>
+          </div>
+          <div class="field">
+            <span class="lbl">Personality</span>
+            <div class="chips" id="persChips"></div>
+            <div class="help" id="persDesc"></div>
+          </div>
+          <div class="field facefield">
+            <span class="lbl">Face</span>
+            <div class="chips" id="faceChips"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Coat</span>
+            <div class="chips" id="patChips"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Colors <span style="font-weight:400;color:var(--muted)">(picked from your photo)</span></span>
+            <div class="swatches">
+              <label class="sw"><input type="color" id="cFur" value="#f0a35e">Fur</label>
+              <label class="sw"><input type="color" id="cAccent" value="#c46a2c">Markings</label>
+              <label class="sw"><input type="color" id="cEye" value="#8cc152">Eyes</label>
+            </div>
+          </div>
+          <button class="launch" id="launch">Move into Purrville</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="about" hidden role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+  <div class="sheet about">
+    <button class="x" data-close="about" aria-label="Close">✕</button>
+    <h2 id="aboutTitle">About Purrville</h2>
+    <p>Purrville is a town where cats live like people. Anyone can bring a cat. There are no accounts.</p>
+    <p>Each cat moves into its creator's house. On weekdays, kittens go to school and grown-ups go to the office. Some days they hang out with friends after school or work. On weekends they sleep in, run errands, visit friends and sometimes take trips. At night they go to bed when people do.</p>
+    <p>You can watch the houses and the office. School, commutes, cafés and trips happen out of sight. Before a cat leaves home it writes a note on the fridge, and takes it down when it gets back.</p>
+    <p>The clock follows your own time by default. Use 60× or 720× to fast-forward, and Live to come back.</p>
+    <h3>Where your cats live</h3>
+    <p>Cats and photos are saved in this browser only. To move cats to a friend's town, use Export town file, send the file, and have them choose Import cats from a file.</p>
+    <h3>Open source</h3>
+    <p>The whole site is this one HTML file, MIT licensed. Save it, change it, host it on any static host. To give everyone one shared town, connect the Store object in the source to a backend.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+'use strict';
+/* ================= utilities ================= */
+const TAU = Math.PI * 2;
+const $ = s => document.querySelector(s);
+const rand = (a = 1, b) => b === undefined ? Math.random() * a : a + Math.random() * (b - a);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+function hashStr(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { let s = (seed >>> 0) || 1; return () => { s ^= s << 13; s ^= s >>> 17; s ^= s << 5; return (s >>> 0) / 4294967296; }; }
+const rpick = (r, arr) => arr[Math.floor(r() * arr.length)];
+function hexToRgb(h) { const n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 8) & 255, n & 255]; }
+function toHex(c) { return '#' + c.map(v => clamp(Math.round(v), 0, 255).toString(16).padStart(2, '0')).join(''); }
+function shade(hex, amt) { let [r, g, b] = hexToRgb(hex); if (amt < 0) { r *= 1 + amt; g *= 1 + amt; b *= 1 + amt; } else { r += (255 - r) * amt; g += (255 - g) * amt; b += (255 - b) * amt; } return toHex([r, g, b]); }
+function mix(a, b, t) { const A = hexToRgb(a), B = hexToRgb(b); return toHex(A.map((v, i) => v + (B[i] - v) * t)); }
+const lum = c => 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
+const sat = c => { const mx = Math.max(...c), mn = Math.min(...c); return mx ? (mx - mn) / mx : 0; };
+function hue(c) { const [r, g, b] = c.map(v => v / 255), mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn; if (!d) return 0; let h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; return (h * 60 + 360) % 360; }
+const cdist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+
+/* ================= content ================= */
+const PERS = {
+  playful:  { label: 'Playful',  desc: 'Always up for a game. Stays up late.',                 wake: 10,  bed: 35,  social: 1.3,  travel: 1.0, dil: .8 },
+  lazy:     { label: 'Lazy',     desc: 'Sleeps in, naps on the sofa, leaves work right on time.', wake: 35, bed: -15, social: .8,   travel: .7,  dil: .5 },
+  curious:  { label: 'Curious',  desc: 'Loves trips and new places.',                          wake: 0,   bed: 15,  social: 1.1,  travel: 2.6, dil: 1.0 },
+  social:   { label: 'Social',   desc: 'Hangs out with friends whenever possible.',            wake: 0,   bed: 20,  social: 2.1,  travel: 1.2, dil: .9 },
+  grumpy:   { label: 'Grumpy',   desc: 'Prefers home. Hangs out only with real friends.',      wake: 5,   bed: -5,  social: .45,  travel: .6,  dil: 1.1 },
+  diligent: { label: 'Diligent', desc: 'Up early. First at the desk and last to leave.',       wake: -30, bed: -20, social: .8,   travel: 1.0, dil: 1.9 },
+};
+const PATTERNS = { solid: 'Solid', tabby: 'Tabby', tuxedo: 'Tuxedo', calico: 'Calico', spots: 'Spotted' };
+const TITLES = ['Mom', 'Dad', 'Parent'];
+const JOBS = ['Designer', 'Engineer', 'Accountant', 'Marketer', 'Product manager', 'Data scientist', 'Sales lead', 'Lawyer', 'Editor', 'HR partner'];
+const NAMES = ['Mochi', 'Tofu', 'Biscuit', 'Noodle', 'Pickle', 'Waffles', 'Mango', 'Dumpling', 'Sesame', 'Bean', 'Pumpkin', 'Olive', 'Udon', 'Clementine', 'Maple', 'Ziggy', 'Pistachio', 'Momo', 'Sprout', 'Tater', 'Juniper', 'Kiwi', 'Taro', 'Marshmallow', 'Gnocchi', 'Fig'];
+const COATS = [['#f0a35e', '#c46a2c', 'tabby'], ['#2e2a3a', '#1a1722', 'tuxedo'], ['#f3e7d6', '#e08a3c', 'calico'], ['#8a8fa3', '#5d6175', 'tabby'], ['#fbf7f0', '#d9cbb8', 'solid'], ['#c9b29b', '#7a5f4a', 'spots'], ['#3b3b4a', '#22222c', 'solid']];
+const EYES = ['#9ccc65', '#f2b632', '#6fb7e8', '#c58b3c', '#7fd1b9'];
+const SEEDS = [
+  { name: 'Pudding',  parent: 'Ana',   title: 'Mom', age: 'adult',  job: 'Accountant',      pers: 'lazy',     fur: '#f0a35e', accent: '#c46a2c', eye: '#8cc152', pattern: 'tabby' },
+  { name: 'Bao',      parent: 'Ana',   title: 'Mom', age: 'kitten',                          pers: 'social',   fur: '#fbf7f0', accent: '#d9cbb8', eye: '#7ec8e3', pattern: 'solid' },
+  { name: 'Grumbles', parent: 'Theo',  title: 'Dad', age: 'adult',  job: 'Engineer',        pers: 'grumpy',   fur: '#8a8fa3', accent: '#5d6175', eye: '#e9a23b', pattern: 'tabby' },
+  { name: 'Nori',     parent: 'Theo',  title: 'Dad', age: 'kitten',                          pers: 'diligent', fur: '#3b3b4a', accent: '#22222c', eye: '#c9e265', pattern: 'solid' },
+  { name: 'Socks',    parent: 'Marco', title: 'Dad', age: 'adult',  job: 'Designer',        pers: 'playful',  fur: '#2e2a3a', accent: '#1a1722', eye: '#f2c14e', pattern: 'tuxedo' },
+  { name: 'Pepper',   parent: 'Marco', title: 'Dad', age: 'kitten',                          pers: 'playful',  fur: '#c9b29b', accent: '#7a5f4a', eye: '#9ccc65', pattern: 'spots' },
+  { name: 'Miso',     parent: 'Jun',   title: 'Mom', age: 'adult',  job: 'Product manager', pers: 'social',   fur: '#f3e7d6', accent: '#e08a3c', eye: '#6fb7e8', pattern: 'calico' },
+];
+const VENUES = {
+  kschool: ['the park', 'the arcade', 'the ice cream shop', 'the library', 'the skate park'],
+  awork: ['a café downtown', 'karaoke', 'the bowling alley', 'a rooftop bar', 'the night market', 'a ramen place'],
+  weekend: ['the beach', 'the farmers market', 'the museum', 'the park', 'the movies', 'the aquarium'],
+};
+const BIZ = ['Tokyo', 'New York', 'London', 'Seoul', 'Berlin', 'Singapore', 'Toronto'];
+const GETAWAY = ['Lisbon', 'Kyoto', 'Hawaii', 'Paris', 'Mexico City', 'the mountains', 'Lake Tahoe'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const LINES = {
+  wake: ['*stretch*', 'five more minutes', 'morning already?'],
+  wash: ['brush brush', '*splash*', 'looking good'],
+  bath: ['splish splash', 'rubber duck time', 'bubbles!'],
+  breakfast: ['good morning', 'pass the milk', 'crunch crunch', 'is it Friday yet?'],
+  coffee: ['coffee first', 'need caffeine', '*sip*'],
+  snack: ['snack time', 'one more cookie'],
+  homework: ['what is 7 times 8?', 'spelling is hard', 'almost done!', 'I need a pencil'],
+  tv: ['one more episode', 'ooh, plot twist', 'who has the remote?'],
+  chill: ['what a day', '*purrs*', 'so comfy'],
+  play: ['tag!', 'wheee', 'catch me!'],
+  dinner: ['yum, salmon', 'how was your day?', 'pass the fish please'],
+  read: ['one more chapter', '*turns page*'],
+  host: ['wanna play?', 'want a snack?', 'come see my room'],
+  guest: ['your house is cool', 'thanks for having me', 'can I stay for dinner?'],
+  movein: ['new house!', 'which bed is mine?', 'so many boxes'],
+  desk: ['typing...', 'inbox zero!', 'so many tabs', 'hmm, a bug', 'is it lunch yet?', 'one more email', 'ship it!'],
+  standup: ['yesterday I worked on fish', 'no blockers', 'quick update'],
+  meeting: ["let's circle back", 'great point', 'can you see my screen?', 'any questions?'],
+  ocoffee: ['refill time', '*sip*', 'oat milk, please'],
+  lunch: ['tuna again?', 'yum', 'what are you having?'],
+};
+const GRUMPY_DESK = ['who scheduled this?', 'leave me alone', 'ugh, meetings'];
+const HOME_PAIR = [o => `hi ${o}!`, o => `${o}, wanna play?`, o => `how was your day, ${o}?`];
+const OFFICE_PAIR = [o => `morning, ${o}`, o => `${o}, got a sec?`, o => `nice tie, ${o}`, o => `lunch later, ${o}?`];
+const REPLIES_HOME = ['sure!', 'ok!', 'meow!', 'tell you later'];
+const REPLIES_OFFICE = ['sure', 'sounds good', 'in a meeting soon', 'haha, thanks'];
+const SIGNOFF = { playful: ['Save me a fish!', 'Hide and seek later?'], lazy: ['Wake me for dinner.', 'Do not move my blanket.'], curious: ['Will report back.', 'So much to see!'], social: ['Love you all!', 'Miss you already!'], grumpy: ['Do not touch my bowl.', 'Do not wait up.'], diligent: ['Homework is done.', 'Dishes are done.'] };
+const PALS = [
+  { up: '#ffe9a8', down: '#cdeee2', roof: '#ff4f9a', wall: '#fff3d6', rug: '#b57bff', sofa: '#3fd6b0', bed: '#ff8fc2', cab: '#9fd3ff', door: '#ffd23f', chair: '#ff9f1c' },
+  { up: '#dcd5ff', down: '#ffe0c7', roof: '#3fd6b0', wall: '#f3f0ff', rug: '#ff8fc2', sofa: '#ff4f9a', bed: '#9fd3ff', cab: '#ffd23f', door: '#b57bff', chair: '#3fd6b0' },
+  { up: '#cdeee2', down: '#ffd6e7', roof: '#6c55e0', wall: '#fff3d6', rug: '#ffd23f', sofa: '#6c55e0', bed: '#ffd23f', cab: '#ff8fc2', door: '#3fd6b0', chair: '#ff4f9a' },
+  { up: '#ffd6e7', down: '#e4ddff', roof: '#ff9f1c', wall: '#ffffff', rug: '#3fd6b0', sofa: '#ff9f1c', bed: '#b57bff', cab: '#cdeee2', door: '#ff4f9a', chair: '#6c55e0' },
+];
+const BLANKETS = ['#ff4f9a', '#3fd6b0', '#6c55e0', '#ffd23f', '#ff9f1c', '#9fd3ff'];
+const NOTE_PAPER = ['#fff27a', '#ffc6df', '#b8f2dc', '#cfe6ff', '#ffd9b0'];
+const ACT_TEXT = { sleep: 'sleeping', wake: 'waking up', wash: 'brushing teeth', bath: 'taking a bath', breakfast: 'eating breakfast', coffee: 'making coffee', snack: 'having a snack', homework: 'doing homework', tv: 'watching TV', chill: 'relaxing on the sofa', play: 'playing', dinner: 'eating dinner', read: 'reading in bed', nap: 'napping on the sofa', movein: 'unpacking boxes', desk: 'working at the desk', desknap: 'dozing off at the desk', standup: 'at the morning standup', meeting: 'in a meeting', ocoffee: 'getting coffee', lunch: 'eating lunch' };
+
+/* ================= storage (swap for a backend to share one town) ================= */
+const Store = {
+  key: 'purrville.v1',
+  load() { try { return JSON.parse(localStorage.getItem(this.key) || 'null'); } catch (e) { return null; } },
+  save(data) { try { localStorage.setItem(this.key, JSON.stringify(data)); return true; } catch (e) { return false; } },
+  clear() { try { localStorage.removeItem(this.key); } catch (e) {} },
+};
+
+/* ================= time =================
+   T is minutes since 1970-01-01 in local time. A "plan day" runs from 4:00 AM to 4:00 AM. */
+const nowLocalMin = () => (Date.now() - new Date().getTimezoneOffset() * 60000) / 60000;
+let T = nowLocalMin(), live = true, rate = 1;
+const planDay = t => Math.floor((t - 240) / 1440);
+const weekdayOfPlan = p => (((p + 4) % 7) + 7) % 7;
+const calDay = t => Math.floor(t / 1440);
+const weekdayOf = t => (((calDay(t) + 4) % 7) + 7) % 7;
+const minOfDay = t => ((t % 1440) + 1440) % 1440;
+function fmtClock(t) { const m = Math.floor(minOfDay(t)), h = Math.floor(m / 60), mm = m % 60; return `${(h % 12) || 12}:${String(mm).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`; }
+function fmtWhen(t) { return calDay(t) === calDay(T) ? fmtClock(t) : `${DAYS[weekdayOf(t)]} ${fmtClock(t)}`; }
+function daylight(md) { if (md < 330 || md > 1140) return 0; if (md < 420) return (md - 330) / 90; if (md > 1050) return (1140 - md) / 90; return 1; }
+function skyColors(md) {
+  const d = daylight(md), dusk = d > 0 && d < 1 ? 1 - Math.abs(d - .5) * 2 : 0;
+  return [mix(mix('#0e1040', '#6cc4ff', d), '#ff7a8a', dusk * .5), mix(mix('#262b86', '#d4efff', d), '#ffc27a', dusk * .7)];
+}
+
+/* ================= cats ================= */
+const world = { cats: [], notes: [], plans: {}, hangs: {}, relDay: -1 };
+const catById = id => world.cats.find(c => c.id === id);
+const nameOf = id => (catById(id) || {}).name || 'a friend';
+const homeKey = c => c.parent.trim().toLowerCase();
+const homeSceneId = c => 'home:' + homeKey(c);
+const rel = (a, b) => a.rel[b.id] || 0;
+const addRel = (a, b, d) => { if (a && b) a.rel[b.id] = clamp(rel(a, b) + d, -100, 100); };
+
+function makeCat(o) {
+  const c = {
+    id: o.id || uid(), name: o.name, parent: o.parent, title: o.title || 'Parent', age: o.age === 'kitten' ? 'kitten' : 'adult',
+    job: o.job || null, pers: o.pers || 'curious', fur: o.fur, accent: o.accent, eye: o.eye, pattern: o.pattern || 'solid',
+    face: o.photo ? (o.face || 'photo') : 'drawn', photo: o.photo || null, born: o.born ?? T, rel: o.rel || {},
+    place: null, x: 0, y: 0, fl: 1, path: [], spotKey: '', liftCur: 0, dir: 1, phase: rand(10), bubble: null, nextLine: 0, leaving: null, detour: null,
+  };
+  if (c.age === 'adult' && !c.job) c.job = pick(JOBS);
+  c._seed = hashStr(c.id) % 1000;
+  if (c.photo) { c._img = new Image(); c._img.onload = () => { c._thumb = null; panelSig = ''; if (selected === c) renderCard(); }; c._img.src = c.photo; }
+  return c;
+}
+function sanitizeCat(o) {
+  if (!o || typeof o !== 'object') return null;
+  const str = (v, n, d) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, n) : d);
+  const col = (v, d) => (typeof v === 'string' && /^#[0-9a-f]{6}$/i.test(v) ? v : d);
+  const num = (v, d) => (typeof v === 'number' && isFinite(v) ? v : d);
+  const relIn = {};
+  if (o.rel && typeof o.rel === 'object') for (const k of Object.keys(o.rel).slice(0, 500)) if (/^[a-z0-9]{4,40}$/i.test(k)) relIn[k] = clamp(num(o.rel[k], 0), -100, 100);
+  const photo = typeof o.photo === 'string' && /^data:image\/(png|jpeg|webp);base64,/.test(o.photo) && o.photo.length < 400000 ? o.photo : null;
+  const age = o.age === 'kitten' ? 'kitten' : 'adult';
+  return {
+    id: typeof o.id === 'string' && /^[a-z0-9]{4,40}$/i.test(o.id) ? o.id : uid(),
+    name: str(o.name, 24, pick(NAMES)), parent: str(o.parent, 24, 'Someone'), title: TITLES.includes(o.title) ? o.title : 'Parent',
+    age, job: age === 'adult' ? str(o.job, 24, pick(JOBS)) : null, pers: PERS[o.pers] ? o.pers : 'curious',
+    fur: col(o.fur, '#f0a35e'), accent: col(o.accent, '#c46a2c'), eye: col(o.eye, '#9ccc65'),
+    pattern: PATTERNS[o.pattern] ? o.pattern : 'solid', face: o.face === 'drawn' ? 'drawn' : 'photo', photo, born: num(o.born, T), rel: relIn,
+  };
+}
+function serialize() {
+  return {
+    app: 'purrville', v: 1, relDay: world.relDay, hangs: world.hangs,
+    cats: world.cats.map(c => ({ id: c.id, name: c.name, parent: c.parent, title: c.title, age: c.age, job: c.job, pers: c.pers, fur: c.fur, accent: c.accent, eye: c.eye, pattern: c.pattern, face: c.face, photo: c.photo, born: c.born, rel: c.rel })),
+    notes: world.notes.slice(-300),
+  };
+}
+let warnedFull = false;
+function save() { if (!Store.save(serialize()) && !warnedFull) { warnedFull = true; toast('This browser is out of space. Export your town to keep a copy.'); } }
+
+/* ================= daily plans =================
+   Each cat gets a list of blocks {s, loc, act, d}. s is minutes from midnight of the plan day (240 to 1680).
+   loc: 'H' own home, 'H:<key>' someone else's home, 'O' office, 'A' away (not visible). */
+function tripStart(c, s) {
+  if (s * 1440 + 240 <= c.born) return null;
+  const wd = weekdayOfPlan(s), r = rng(hashStr(c.id + '|trip|' + s)), P = PERS[c.pers], x = r(), dsel = r(), len = r();
+  if (c.age === 'adult') {
+    if (wd >= 2 && wd <= 4 && x < .02 * P.travel) return { kind: 'business', L: len < .5 ? 2 : 3, dest: BIZ[Math.floor(dsel * BIZ.length)] };
+    if (wd === 6 && x < .07 * P.travel) return { kind: 'getaway', L: 2, dest: GETAWAY[Math.floor(dsel * GETAWAY.length)] };
+  } else if (wd === 6 && x < .035 * P.travel) return { kind: 'grandma', L: 2, dest: "grandma's" };
+  return null;
+}
+function tripOn(c, p) { for (let s = p; s >= p - 3; s--) { const tr = tripStart(c, s); if (tr && s + tr.L - 1 >= p) return { ...tr, s }; } return null; }
+
+function computeDay(p) {
+  const wd = weekdayOfPlan(p), weekend = wd === 0 || wd === 6, start = p * 1440 + 240, hang = new Map();
+  if (world.hangs[p]) {
+    for (const h of world.hangs[p]) if (catById(h.a) && catById(h.b)) { hang.set(h.a, h); hang.set(h.b, h); }
+  } else {
+    const elig = world.cats.filter(c => c.born <= start && !tripOn(c, p));
+    const r = rng(hashStr('day|' + p));
+    const want = elig.filter(c => rng(hashStr(c.id + '|hang|' + p))() < (weekend ? .4 : c.age === 'kitten' ? .33 : .2) * PERS[c.pers].social);
+    for (let i = want.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [want[i], want[j]] = [want[j], want[i]]; }
+    const used = new Set(), list = [];
+    for (const a of want) {
+      if (used.has(a.id)) continue;
+      const cands = want.filter(b => b !== a && !used.has(b.id) && (weekend || b.age === a.age)); if (!cands.length) continue;
+      const ws = cands.map(b => Math.max(2, 25 + rel(a, b))); let x = r() * ws.reduce((s, w) => s + w, 0), b = cands[0];
+      for (let k = 0; k < cands.length; k++) { x -= ws[k]; if (x <= 0) { b = cands[k]; break; } }
+      used.add(a.id); used.add(b.id);
+      const kind = weekend ? 'weekend' : a.age === 'kitten' ? 'kschool' : 'awork', h = { kind, a: a.id, b: b.id };
+      if (homeKey(a) !== homeKey(b) && r() < .5) h.host = r() < .5 ? a.id : b.id; else h.venue = rpick(r, VENUES[kind]);
+      list.push(h); hang.set(a.id, h); hang.set(b.id, h);
+    }
+    world.hangs[p] = list;
+    if (p > world.relDay) {
+      world.relDay = p;
+      for (const h of list) { const a = catById(h.a), b = catById(h.b); addRel(a, b, 8); addRel(b, a, 8); }
+      if (!weekend) for (const a of elig) for (const b of elig) if (a !== b && a.age === b.age) addRel(a, b, a.age === 'kitten' ? 1.5 : .7);
+    }
+    for (const k of Object.keys(world.hangs)) if (+k < p - 6) delete world.hangs[k];
+  }
+  world.plans[p] = { hang, blocks: new Map() };
+  for (const k of Object.keys(world.plans)) if (+k < p - 6 || +k > p + 6) delete world.plans[k];
+}
+
+function buildPlan(c, p) {
+  const P = PERS[c.pers], wd = weekdayOfPlan(p), weekend = wd === 0 || wd === 6, r = rng(hashStr(c.id + '|plan|' + p)), kid = c.age === 'kitten';
+  const start = p * 1440 + 240, B = [];
+  const at = (s, loc, act, d) => { const last = B[B.length - 1]; if (last && s <= last.s) s = last.s + 1; if (s >= 1680) return; B.push({ s: Math.round(s), loc, act, d }); };
+  if (c.born > start) { // moving-in day
+    const m = Math.max(241, Math.round(c.born - p * 1440));
+    at(240, 'H', 'sleep'); at(m, 'H', 'movein'); if (m < 1110) at(1110, 'H', 'dinner'); at(Math.max(m + 70, 1160), 'H', 'tv'); at(kid ? 1270 : 1350, 'H', 'sleep'); return B;
+  }
+  const tr = tripOn(c, p);
+  if (tr) {
+    const td = { kind: tr.kind, dest: tr.dest };
+    if (tr.s !== p) {
+      at(240, 'A', 'trip', td);
+      if (tr.s + tr.L - 1 === p) { at(1140, 'H', 'chill'); at(1170, 'H', 'dinner'); at(1210, 'H', 'tv'); if (kid) at(1250, 'H', 'bath'); at((kid ? 1275 : 1360) + P.bed * .6 + r() * 20, 'H', 'sleep'); }
+      return B;
+    }
+    const wake = (weekend ? 460 : 400) + P.wake * .6 + r() * 25;
+    at(240, 'H', 'sleep'); at(wake, 'H', 'wake'); at(wake + 6, 'H', 'wash'); at(wake + 16, 'H', 'breakfast'); at(wake + 50, 'A', 'trip', td);
+    return B;
+  }
+  const h = world.plans[p].hang.get(c.id);
+  let role = null, other = null, hostHome = null;
+  if (h && (!catById(h.a) || !catById(h.b) || (h.host && !catById(h.host)))) { /* friend moved out */ }
+  else if (h) { other = h.a === c.id ? h.b : h.a; if (h.host) { const hc = catById(h.host); hostHome = homeKey(hc); role = homeKey(c) === hostHome ? 'host' : 'guest'; } else role = 'venue'; }
+  at(240, 'H', 'sleep');
+  if (!weekend && kid) {
+    const wake = 402 + P.wake * .5 + r() * 25;
+    at(wake, 'H', 'wake'); at(wake + 5, 'H', 'wash'); at(wake + 15, 'H', 'breakfast');
+    at(Math.max(wake + 38, 452 + r() * 10), 'A', 'school', { label: 'school' });
+    if (role === 'host') { at(900, 'A', 'walk', { label: 'walking home' }); at(922, 'H', 'host', { with: other }); at(1050, 'H', 'snack'); at(1065, 'H', 'homework'); }
+    else if (role === 'guest') { at(900, 'A', 'walk', { label: 'walking to a friend' }); at(925, 'H:' + hostHome, 'guest', { with: other }); at(1050, 'A', 'walk', { label: 'walking home' }); at(1070, 'H', 'snack'); at(1082, 'H', 'homework'); }
+    else if (role === 'venue') { at(900, 'A', 'hangout', { with: other, venue: h.venue }); at(1050, 'A', 'walk', { label: 'walking home' }); at(1070, 'H', 'snack'); at(1082, 'H', 'homework'); }
+    else { at(900, 'A', 'walk', { label: 'walking home' }); at(922, 'H', 'snack'); at(940, 'H', r() < .5 ? 'play' : 'tv'); at(990, 'H', 'homework'); at(1040, 'H', r() < .5 ? 'play' : 'tv'); }
+    at(1110, 'H', 'dinner'); at(1150, 'H', r() < .5 ? 'tv' : 'play'); at(1222, 'H', 'bath'); at(1242, 'H', 'read'); at(1262 + P.bed * .5 + r() * 25, 'H', 'sleep');
+  } else if (!weekend) {
+    const wake = 398 + P.wake + r() * 35;
+    at(wake, 'H', 'wake'); at(wake + 6, 'H', 'wash'); at(wake + 16, 'H', 'coffee'); at(wake + 26, 'H', 'breakfast');
+    const dep = Math.max(wake + 48, 488 + r() * 18);
+    at(dep, 'A', 'commute', { label: 'commuting to work', to: 'work' });
+    at(dep + 28 + r() * 8, 'O', 'desk'); at(585, 'O', 'standup'); at(600, 'O', 'desk');
+    const cf = 622 + r() * 40; at(cf, 'O', 'ocoffee'); at(cf + 9, 'O', 'desk');
+    if (r() < .25) at(720 + r() * 10, 'A', 'lunchout', { label: 'out for lunch' }); else at(720 + r() * 10, 'O', 'lunch');
+    at(768, 'O', 'desk');
+    if (hashStr(c.id + '|mtg|' + p) % 5 < 2) { at(870, 'O', 'meeting'); at(915, 'O', 'desk'); }
+    if (r() < .5) { at(945, 'O', 'ocoffee'); at(955, 'O', 'desk'); }
+    if (c.pers === 'lazy' && r() < .5) { at(990, 'O', 'desknap'); at(1006, 'O', 'desk'); }
+    const lv = 1030 + (P.dil - 1) * 40 + r() * 25;
+    if (role === 'host') { at(lv, 'A', 'commute', { label: 'commuting home' }); at(lv + 30, 'H', 'host', { with: other }); at(1255, 'H', 'chill'); }
+    else if (role === 'guest') { at(lv, 'A', 'commute', { label: 'heading to a friend' }); at(Math.max(lv + 35, 1095), 'H:' + hostHome, 'guest', { with: other }); at(1255, 'A', 'walk', { label: 'walking home' }); at(1278, 'H', 'chill'); }
+    else if (role === 'venue') { at(lv, 'A', 'hangout', { with: other, venue: h.venue }); at(1245, 'A', 'commute', { label: 'heading home' }); at(1275, 'H', 'chill'); }
+    else { at(lv, 'A', 'commute', { label: 'commuting home' }); at(lv + 30, 'H', 'chill'); at(1125, 'H', 'dinner'); at(1165, 'H', r() < .6 ? 'tv' : 'read'); }
+    at(1335, 'H', 'wash'); at(1350 + P.bed + r() * 30, 'H', 'sleep');
+  } else {
+    const wake = (kid ? 450 : 470) + P.wake * 1.2 + r() * 50;
+    at(wake, 'H', 'wake'); at(wake + 8, 'H', 'wash'); at(wake + 20, 'H', 'breakfast'); at(wake + 55, 'H', kid ? (r() < .5 ? 'play' : 'tv') : (r() < .5 ? 'read' : 'chill'));
+    if (role === 'host') { at(660, 'H', 'host', { with: other }); at(960, 'H', 'chill'); }
+    else if (role === 'guest') { at(640, 'A', 'walk', { label: 'walking to a friend' }); at(660, 'H:' + hostHome, 'guest', { with: other }); at(960, 'A', 'walk', { label: 'walking home' }); at(982, 'H', 'chill'); }
+    else if (role === 'venue') { at(640, 'A', 'hangout', { with: other, venue: h.venue }); at(990, 'H', 'chill'); }
+    else {
+      if (r() < .3) { at(600 + r() * 60, 'A', 'errand', { label: 'grocery shopping' }); at(705 + r() * 20, 'H', 'chill'); }
+      if (r() < (kid ? .35 : .22)) { at(840, 'A', 'park', { label: 'the park' }); at(960, 'H', kid ? 'play' : 'chill'); }
+      else if (c.pers === 'lazy' || r() < .25) { at(800, 'H', 'nap'); at(860, 'H', kid ? 'play' : 'tv'); }
+    }
+    at(1125, 'H', 'dinner'); at(1165, 'H', kid ? (r() < .5 ? 'tv' : 'play') : 'tv');
+    if (kid) { at(1230, 'H', 'bath'); at(1250, 'H', 'read'); at(1290 + P.bed * .5 + r() * 25, 'H', 'sleep'); }
+    else { at(1350, 'H', 'wash'); at(1380 + P.bed + r() * 35, 'H', 'sleep'); }
+  }
+  return B;
+}
+function getBlocks(c, p) {
+  if (!world.plans[p]) computeDay(p);
+  const pl = world.plans[p]; let B = pl.blocks.get(c.id);
+  if (!B) { B = buildPlan(c, p); pl.blocks.set(c.id, B); }
+  return B;
+}
+function blockIndex(B, m) { let i = 0; for (let k = 0; k < B.length; k++) { if (B[k].s <= m) i = k; else break; } return i; }
+function blockAt(c, t) { const p = planDay(t), B = getBlocks(c, p), i = blockIndex(B, t - p * 1440); return { ...B[i], i, p }; }
+
+/* ================= scenes ================= */
+const FL0 = 306, FL1 = 536, HH = 586, OFL = 344, OH = 400;
+let scenes = new Map(), sceneSig = '';
+function homeLayout(n) {
+  const bedW = 118, nb = Math.max(2, n), tableN = Math.max(2, n) + 1, tw = tableN * 54 + 34;
+  const W = Math.max(1000, 210 + nb * bedW + 20 + 250, 720 + tw + 250);
+  const L = { W, H: HH, ground: 556, n, nb };
+  L.stairs = { bx: 36, tx: 178 };
+  L.beds = []; for (let i = 0; i < nb; i++) L.beds.push(212 + i * bedW);
+  L.bathWall = W - 250; L.sink = W - 210; L.tub = W - 116;
+  L.sofa = 214; L.seats = [250, 298, 346]; L.lamp = 420; L.tv = 456;
+  L.livingWall = 534; L.counter = 552;
+  L.fridge = W - 214; L.door = W - 110; L.exit = W - 78;
+  const t0 = 722, t1 = L.fridge - 24; L.table = t0 + Math.max(0, (t1 - t0 - tw) / 2); L.tableW = tw;
+  L.chairs = []; for (let i = 0; i < tableN; i++) L.chairs.push(L.table + 30 + i * 54);
+  return L;
+}
+function officeLayout(n) {
+  const nd = Math.max(6, n), deskW = 112, x0 = 476, meetW = 340;
+  const W = Math.max(1280, x0 + nd * deskW + 40 + meetW + 14);
+  const L = { W, H: OH, ground: 358, nd };
+  L.door = 18; L.entry = 52; L.coffee = 162; L.cooler = 262; L.lunch = 300; L.lunchW = 150; L.wall = 462;
+  L.lunchSeats = [322, 356, 390, 424];
+  L.desks = []; for (let i = 0; i < nd; i++) L.desks.push(x0 + i * deskW);
+  L.meet = W - 14 - meetW; L.mt0 = L.meet + 50; L.mt1 = W - 50;
+  L.meetSeats = []; for (let x = L.mt0 + 24; x < L.mt1 - 10; x += 44) L.meetSeats.push(x);
+  return L;
+}
+function rebuildScenes() {
+  const sig = world.cats.map(c => c.id + homeKey(c) + c.age).join('|');
+  if (sig === sceneSig) return;
+  sceneSig = sig;
+  const groups = new Map();
+  for (const c of world.cats) { const k = homeKey(c); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(c); }
+  const m = new Map();
+  for (const [k, res] of groups) m.set('home:' + k, { id: 'home:' + k, key: k, kind: 'home', owner: res[0].parent, residents: res, L: homeLayout(res.length), pal: PALS[hashStr(k) % PALS.length] });
+  const adults = world.cats.filter(c => c.age === 'adult');
+  m.set('office', { id: 'office', kind: 'office', adults, L: officeLayout(adults.length) });
+  scenes = m;
+  for (const c of world.cats) if (c.place && !scenes.has(c.place)) c.place = null;
+  refreshHomeSel();
+}
+function blockScene(c, b) {
+  if (b.loc === 'H') return homeSceneId(c);
+  if (b.loc === 'O') return 'office';
+  if (b.loc.startsWith('H:')) { const id = 'home:' + b.loc.slice(2); return scenes.has(id) ? id : null; }
+  return null;
+}
+const floorY = (S, fl) => S.kind === 'home' ? (fl === 0 ? FL0 : FL1) : OFL;
+const doorSpot = S => S.kind === 'home' ? { x: S.L.exit, fl: 1 } : { x: S.L.entry, fl: 0 };
+const fridgeSpot = S => ({ x: S.L.fridge - 26, fl: 1, face: 1, pose: 'stand', lift: 0 });
+
+function spotFor(c, b, S) {
+  const L = S.L;
+  if (S.kind === 'home') {
+    const ri = S.residents.indexOf(c);
+    const guests = world.cats.filter(o => o.place === S.id && !S.residents.includes(o));
+    const gi = ri >= 0 ? ri : S.residents.length + Math.max(0, guests.indexOf(c));
+    const bed = () => ({ x: L.beds[Math.max(0, ri) % L.nb] + 46, fl: 0, lift: 34, pose: 'sleep', face: 1, bed: true });
+    const sofa = () => gi < 3 ? { x: L.seats[gi], fl: 1, lift: 30, pose: 'sit', face: 1 } : { x: 244 + (gi - 3) * 44, fl: 1, lift: 0, pose: 'sit', face: 1 };
+    const chair = () => { const cx = L.chairs[gi % L.chairs.length]; return { x: cx, fl: 1, lift: 24, pose: 'sit', face: cx < L.table + L.tableW / 2 ? 1 : -1, eat: b.act !== 'homework' }; };
+    switch (b.act) {
+      case 'sleep': return ri >= 0 ? bed() : sofa();
+      case 'wake': return { ...bed(), lift: 0, pose: 'stand', bed: false };
+      case 'read': return { ...bed(), pose: 'sit', bed: false, face: -1 };
+      case 'wash': return { x: L.sink - 4 + ((gi % 3) - 1) * 22, fl: 0, lift: 0, pose: 'stand', face: 1 };
+      case 'bath': return { x: L.tub - 14 + (gi % 2) * 26, fl: 0, lift: 6, pose: 'sit', face: 1, tub: true };
+      case 'breakfast': case 'dinner': case 'homework': case 'snack': return chair();
+      case 'coffee': return { x: L.counter + 50 + (gi % 3) * 32, fl: 1, lift: 0, pose: 'stand', face: -1 };
+      case 'play': return { x: 280 + ((gi * 47) % 120), fl: 1, lift: 0, pose: 'play', face: 1 };
+      case 'nap': return { ...sofa(), pose: 'sleep' };
+      default: return sofa();
+    }
+  }
+  const idx = Math.max(0, S.adults.indexOf(c));
+  const desk = () => ({ x: L.desks[idx % L.nd] + 34, fl: 0, lift: 20, pose: 'sit', face: 1 });
+  switch (b.act) {
+    case 'desk': return desk();
+    case 'desknap': return { ...desk(), pose: 'doze' };
+    case 'standup': { const room = L.W - 14 - L.meet - 60, step = Math.min(46, room / Math.max(1, S.adults.length)); return { x: L.meet + 34 + idx * step, fl: 0, lift: 0, pose: 'stand', face: idx % 2 ? -1 : 1 }; }
+    case 'meeting': { const x = L.meetSeats[idx % L.meetSeats.length]; return { x, fl: 0, lift: 20, pose: 'sit', face: x < (L.mt0 + L.mt1) / 2 ? 1 : -1 }; }
+    case 'lunch': { const x = L.lunchSeats[idx % 4]; return { x, fl: 0, lift: 20, pose: 'sit', face: idx % 2 ? -1 : 1, eat: true }; }
+    case 'ocoffee': return { x: L.coffee + 38 + (idx % 3) * 22, fl: 0, lift: 0, pose: 'stand', face: -1 };
+    default: return desk();
+  }
+}
+
+/* ================= fridge notes ================= */
+function departureOf(c, t) {
+  let p = planDay(t), B = getBlocks(c, p), i = blockIndex(B, t - p * 1440);
+  if (B[i].loc === 'H') return null;
+  for (let guard = 0; guard < 8; guard++) {
+    while (i > 0 && B[i - 1].loc !== 'H') i--;
+    if (i > 0) return { key: `${c.id}:${p}:${i}`, p, i, at: p * 1440 + B[i].s };
+    const prev = getBlocks(c, p - 1);
+    if (prev[prev.length - 1].loc === 'H') return { key: `${c.id}:${p}:0`, p, i: 0, at: p * 1440 + B[0].s };
+    p--; B = prev; i = B.length - 1;
+  }
+  return null;
+}
+function composeNote(c, dep) {
+  let p = dep.p, i = dep.i, ret = null, trip = null, hang = null, school = false, work = false, errand = false, park = false;
+  for (let guard = 0; guard < 120; guard++) {
+    const B = getBlocks(c, p);
+    if (i >= B.length) { p++; i = 0; continue; }
+    const b = B[i];
+    if (b.loc === 'H') { ret = p * 1440 + b.s; break; }
+    if (b.act === 'school') school = true;
+    if (b.loc === 'O' || (b.d && b.d.to === 'work')) work = true;
+    if (b.act === 'trip') trip = b.d;
+    if (b.act === 'hangout') hang = { with: b.d.with, venue: b.d.venue };
+    if (b.loc.startsWith('H:')) hang = { with: b.d.with, house: true };
+    if (b.act === 'errand') errand = true;
+    if (b.act === 'park') park = true;
+    i++;
+  }
+  const when = ret == null ? 'later' : calDay(ret) === calDay(dep.at) ? `around ${fmtClock(ret)}` : `${DAYS_LONG[weekdayOf(ret)]} ${minOfDay(ret) < 720 ? 'morning' : minOfDay(ret) < 1020 ? 'afternoon' : 'evening'}`;
+  let text;
+  if (trip) {
+    text = trip.kind === 'business' ? `Business trip to ${trip.dest}. Back ${when}.` : trip.kind === 'grandma' ? `Visiting grandma for the weekend. Back ${when}!` : `Weekend trip to ${trip.dest}! Back ${when}.`;
+  } else {
+    const fr = hang ? nameOf(hang.with) : '';
+    const hangBit = hang ? (hang.house ? `${fr}'s house` : `${hang.venue} with ${fr}`) : '';
+    if ((school || work) && hang) text = `${school ? 'School' : 'Work'}, then ${hangBit}. Home ${when}.`;
+    else if (school) text = `Off to school! Home ${when}.`;
+    else if (work) text = `Gone to work. Home ${when}.`;
+    else if (hang) text = hang.house ? `At ${fr}'s house. Home ${when}.` : `Out with ${fr} at ${hang.venue}. Home ${when}.`;
+    else if (errand) text = `Grocery run. Back ${when}.`;
+    else if (park) text = `At the park. Back ${when}.`;
+    else text = `Out for a bit. Back ${when}.`;
+  }
+  if (rng(hashStr(dep.key))() < .6) text += ' ' + rpick(rng(hashStr(dep.key + 's')), SIGNOFF[c.pers]);
+  return text;
+}
+function postNote(c, dep) {
+  if (!dep || world.notes.some(n => n.key === dep.key)) return;
+  world.notes.push({ key: dep.key, cat: c.id, name: c.name, home: homeKey(c), text: composeNote(c, dep), at: dep.at, back: null });
+  if (world.notes.length > 400) world.notes.splice(0, world.notes.length - 400);
+  panelSig = '';
+}
+function closeNotes(c) { let any = false; for (const n of world.notes) if (n.cat === c.id && n.back == null) { n.back = T; any = true; } if (any) panelSig = ''; }
+
+/* ================= cat agents ================= */
+const walkSpeed = () => live ? 95 : rate >= 12 ? 420 : 170;
+const fastFactor = () => live ? 1 : rate >= 12 ? 4 : 2;
+function say(c, text, t = 2.4) { c.bubble = { text, t }; }
+function planPath(c, S, sp) {
+  const pts = [];
+  const st = S.L.stairs, onStairs = S.kind === 'home' && c.y > FL0 + 1 && c.y < FL1 - 1;
+  if (onStairs) { pts.push(sp.fl === 1 ? { x: st.bx, y: FL1, fl: 1 } : { x: st.tx, y: FL0, fl: 0 }); }
+  else if (S.kind === 'home' && c.fl !== sp.fl) {
+    if (c.fl === 1) pts.push({ x: st.bx, y: FL1, fl: 1 }, { x: st.tx, y: FL0, fl: 0 });
+    else pts.push({ x: st.tx, y: FL0, fl: 0 }, { x: st.bx, y: FL1, fl: 1 });
+  }
+  pts.push({ x: sp.x, y: floorY(S, sp.fl), fl: sp.fl });
+  c.path = pts;
+}
+function stepPath(c, dt) {
+  let budget = walkSpeed() * dt;
+  while (c.path.length && budget > 0) {
+    const p = c.path[0], dx = p.x - c.x, dy = p.y - c.y, d = Math.hypot(dx, dy);
+    if (Math.abs(dx) > .5) c.dir = dx > 0 ? 1 : -1;
+    if (d <= budget) { c.x = p.x; c.y = p.y; c.fl = p.fl; c.path.shift(); budget -= d; c.phase += d * .13; }
+    else { c.x += dx / d * budget; c.y += dy / d * budget; c.phase += budget * .13; budget = 0; }
+  }
+}
+function enter(c, sceneId) {
+  const S = scenes.get(sceneId); if (!S) return;
+  const d = doorSpot(S);
+  Object.assign(c, { place: sceneId, x: d.x, fl: d.fl, y: floorY(S, d.fl), liftCur: 0, spotKey: '', path: [], detour: null, leaving: null, doorAt: performance.now() / 1000 });
+  if (sceneId === homeSceneId(c)) { closeNotes(c); say(c, c.age === 'kitten' ? "I'm home!" : pick(["I'm home", 'home sweet home'])); }
+  else if (S.kind === 'office') say(c, minOfDay(T) < 720 ? 'good morning' : 'back!');
+  else { say(c, 'hello!'); const host = S.residents.find(o => o.place === S.id); if (host) host.reply = { at: performance.now() / 1000 + 1.2, text: 'come in!' }; }
+  if (pendingSelect === c.id && sceneId === currentSceneId()) { pendingSelect = null; select(c); }
+  panelSig = '';
+}
+function leave(c) {
+  const wasSel = selected === c;
+  Object.assign(c, { place: null, path: [], leaving: null, spotKey: '', detour: null });
+  if (wasSel) { deselect(); toast(`${c.name} headed out. Check the fridge for a note.`); }
+  panelSig = '';
+}
+function agent(c, now, dt) {
+  if (c.bubble) { c.bubble.t -= dt; if (c.bubble.t <= 0) c.bubble = null; }
+  if (c.reply && now >= c.reply.at) { if (c.place) say(c, c.reply.text); c.reply = null; }
+  const b = blockAt(c, T), want = blockScene(c, b);
+  c.cb = b;
+  if (c.place && !scenes.has(c.place)) c.place = null;
+  if (!c.place) { if (want) enter(c, want); return; }
+  const S = scenes.get(c.place);
+  if (c.place !== want) {
+    if (!c.leaving) {
+      const dep = c.place === homeSceneId(c) ? departureOf(c, T) : null;
+      c.detour = null; c.spotKey = '';
+      if (dep && !world.notes.some(n => n.key === dep.key)) { c.leaving = 'fridge'; c.dep = dep; planPath(c, S, fridgeSpot(S)); }
+      else { c.leaving = 'door'; planPath(c, S, doorSpot(S)); }
+    }
+    stepPath(c, dt);
+    c.liftCur = lerp(c.liftCur, 0, Math.min(1, dt * 8));
+    if (!c.path.length) {
+      if (c.leaving === 'fridge') { c.leaving = 'write'; c.writeEnd = now + 2.4 / fastFactor(); c.dir = 1; say(c, 'leaving a note...', 2.4 / fastFactor()); postNote(c, c.dep); }
+      else if (c.leaving === 'write') { if (now >= c.writeEnd) { c.leaving = 'door'; planPath(c, S, doorSpot(S)); } }
+      else if (c.leaving === 'door') { c.doorAt = now; leave(c); }
+    }
+    return;
+  }
+  c.leaving = null;
+  if (c.detour && now >= c.detour.until) c.detour = null;
+  const sp = c.detour || spotFor(c, b, S);
+  const key = `${Math.round(sp.x)},${sp.fl}`;
+  if (key !== c.spotKey) { c.spotKey = key; planPath(c, S, sp); }
+  stepPath(c, dt);
+  c.sp = sp;
+  const atSpot = !c.path.length;
+  c.liftCur = lerp(c.liftCur, atSpot ? (sp.lift || 0) : 0, Math.min(1, dt * 8));
+  if (atSpot) {
+    if (sp.face) c.dir = sp.face;
+    chatter(c, b, S, now);
+    maybeDetour(c, b, S, now, dt);
+  }
+}
+function chatter(c, b, S, now) {
+  if (now < c.nextLine) return;
+  c.nextLine = now + rand(9, 22) / Math.sqrt(fastFactor());
+  if (b.act === 'sleep' || b.act === 'nap' || c.detour || Math.random() > .55) return;
+  const near = world.cats.filter(o => o !== c && o.place === c.place && !o.path.length && Math.abs(o.x - c.x) < 110 && Math.abs(o.y - c.y) < 30 && o.cb && o.cb.act !== 'sleep');
+  if (near.length && Math.random() < .45) {
+    const o = pick(near), office = S.kind === 'office';
+    say(c, pick(office ? OFFICE_PAIR : HOME_PAIR)(o.name));
+    o.reply = { at: now + 1.5, text: pick(office ? REPLIES_OFFICE : REPLIES_HOME) };
+    addRel(c, o, .5); addRel(o, c, .5);
+    return;
+  }
+  if (b.act === 'host' || b.act === 'guest') { const o = catById(b.d && b.d.with); if (o && o.place === c.place && Math.random() < .5) { say(c, pick(HOME_PAIR)(o.name)); o.reply = { at: now + 1.5, text: pick(REPLIES_HOME) }; addRel(c, o, 1); return; } }
+  const lines = (c.pers === 'grumpy' && b.act === 'desk') ? GRUMPY_DESK : LINES[b.act];
+  if (lines) say(c, pick(lines));
+}
+function maybeDetour(c, b, S, now, dt) {
+  if (c.detour) return;
+  const dur = 10 / fastFactor();
+  if (S.kind === 'office' && b.act === 'desk' && Math.random() < dt / 70) {
+    const cols = world.cats.filter(o => o !== c && o.place === 'office' && o.cb && o.cb.act === 'desk' && !o.path.length && !o.detour);
+    if (!cols.length) return;
+    const o = pick(cols);
+    c.detour = { x: o.x - 46, fl: 0, lift: 0, pose: 'stand', face: 1, until: now + dur, text: `chatting with ${o.name}` };
+    say(c, pick(OFFICE_PAIR)(o.name)); o.reply = { at: now + 1.8 / Math.sqrt(fastFactor()), text: pick(REPLIES_OFFICE) };
+    addRel(c, o, 1); addRel(o, c, 1);
+  } else if (S.kind === 'home' && ['tv', 'chill', 'host', 'guest', 'homework'].includes(b.act) && Math.random() < dt / 110) {
+    c.detour = { ...fridgeSpot(S), until: now + dur * .7, text: 'raiding the fridge' };
+    say(c, minOfDay(T) > 1260 ? 'midnight snack' : 'snack run');
+  }
+}
+function resync() {
+  // keep notes consistent if the clock moved backwards
+  world.notes = world.notes.filter(n => n.at <= T + 1);
+  for (const n of world.notes) if (n.back != null && n.back > T + 1) n.back = null;
+  for (const c of world.cats) {
+    const b = blockAt(c, T), want = blockScene(c, b);
+    c.cb = b; c.leaving = null; c.detour = null; c.path = []; c.place = want;
+    if (want) {
+      const S = scenes.get(want), sp = spotFor(c, b, S);
+      Object.assign(c, { x: sp.x, fl: sp.fl, y: floorY(S, sp.fl), liftCur: sp.lift || 0, spotKey: `${Math.round(sp.x)},${sp.fl}`, sp });
+      if (sp.face) c.dir = sp.face;
+    }
+    if (want === homeSceneId(c)) closeNotes(c);
+    else { const dep = departureOf(c, T); if (dep) postNote(c, dep); }
+  }
+  panelSig = '';
+}
+
+/* ================= drawing cats ================= */
+const OUT = 'rgba(23,21,74,.62)';
+function ell(x, cx, cy, rx, ry, rot = 0) { x.beginPath(); x.ellipse(cx, cy, rx, ry, rot, 0, TAU); }
+function fs(x, col, w = 1.6) { x.fillStyle = col; x.fill(); if (w > 0) { x.lineWidth = w; x.strokeStyle = OUT; x.stroke(); } }
+function rr(x, X, Y, w, h, r) { x.beginPath(); if (x.roundRect) x.roundRect(X, Y, w, h, r); else x.rect(X, Y, w, h); }
+function tailStroke(x, col, w) { x.lineWidth = w + 2.8; x.strokeStyle = OUT; x.stroke(); x.lineWidth = w; x.strokeStyle = col; x.stroke(); }
+function hasPhoto(c) { const im = c._img; return c.face === 'photo' && im && im.complete !== false && (im.naturalWidth || im.width); }
+function leg(x, c, lx, top, len, col, ang = 0) {
+  x.save(); x.translate(lx, top); x.rotate(ang);
+  rr(x, -3.6, 0, 7.2, len, 3.6); fs(x, col, 1.4);
+  if (c.pattern === 'tuxedo') { rr(x, -3.6, len - 5, 7.2, 5, 2.5); x.fillStyle = '#f7f2ea'; x.fill(); }
+  x.restore();
+}
+function bodyPattern(x, c, cx, cy, rx, ry, rot = 0) {
+  const p = c.pattern; if (p === 'solid') return;
+  x.save(); ell(x, cx, cy, rx - .8, ry - .8, rot); x.clip();
+  const r = rng(c._seed + 7);
+  if (p === 'tabby') { x.strokeStyle = c.accent; x.lineWidth = Math.max(2.4, rx * .11); x.globalAlpha = .85; for (let i = -3; i <= 3; i++) { const sx = cx + i * rx * .28; x.beginPath(); x.moveTo(sx - 2, cy - ry - 2); x.quadraticCurveTo(sx + 3, cy - ry * .2, sx - 1, cy + ry * .35); x.stroke(); } }
+  else if (p === 'tuxedo') { x.fillStyle = '#f7f2ea'; ell(x, cx + rx * .35, cy + ry * .75, rx * .75, ry * .65); x.fill(); }
+  else if (p === 'spots') { x.fillStyle = c.accent; for (let i = 0; i < 5; i++) { ell(x, cx + (r() - .5) * rx * 1.6, cy + (r() - .6) * ry * 1.4, rx * (.12 + r() * .1), ry * (.18 + r() * .12)); x.fill(); } }
+  else if (p === 'calico') { const cols = [c.accent, '#2b2735', c.accent]; for (let i = 0; i < 3; i++) { x.fillStyle = cols[i]; ell(x, cx + (r() - .5) * rx * 1.5, cy - ry * .3 + (r() - .5) * ry, rx * (.3 + r() * .2), ry * (.45 + r() * .3), r() * 3); x.fill(); } }
+  x.restore();
+}
+function drawHead(x, c, hx, hy, hr, closed, facing, t, photo, tilt = 0) {
+  x.save(); x.translate(hx, hy); if (tilt) x.rotate(tilt);
+  for (const [a1, a2] of [[-2.55, -1.75], [-1.4, -.6]]) {
+    const am = (a1 + a2) / 2, b1 = [Math.cos(a1) * hr * .9, Math.sin(a1) * hr * .9], b2 = [Math.cos(a2) * hr * .9, Math.sin(a2) * hr * .9], ap = [Math.cos(am) * hr * 1.7, Math.sin(am) * hr * 1.7];
+    x.beginPath(); x.moveTo(b1[0], b1[1]); x.lineTo(ap[0], ap[1]); x.lineTo(b2[0], b2[1]); x.closePath(); fs(x, c.fur);
+    const mx = (b1[0] + b2[0] + ap[0]) / 3, my = (b1[1] + b2[1] + ap[1]) / 3, k = .55;
+    x.beginPath(); x.moveTo(mx + (b1[0] - mx) * k, my + (b1[1] - my) * k); x.lineTo(mx + (ap[0] - mx) * k, my + (ap[1] - my) * k); x.lineTo(mx + (b2[0] - mx) * k, my + (b2[1] - my) * k); x.closePath(); x.fillStyle = '#f6a9bd'; x.fill();
+  }
+  if (photo) {
+    x.beginPath(); x.arc(0, 0, hr, 0, TAU); x.fillStyle = c.fur; x.fill();
+    x.save(); x.clip(); if (facing < 0) x.scale(-1, 1); x.drawImage(c._img, -hr, -hr, hr * 2, hr * 2);
+    if (closed) { x.fillStyle = 'rgba(14,16,64,.32)'; x.fillRect(-hr, -hr, hr * 2, hr * 2); }
+    x.restore();
+    x.beginPath(); x.arc(0, 0, hr, 0, TAU); x.lineWidth = 2.6; x.strokeStyle = c.fur; x.stroke();
+    x.beginPath(); x.arc(0, 0, hr + 1.4, 0, TAU); x.lineWidth = 1.2; x.strokeStyle = OUT; x.stroke();
+  } else {
+    x.beginPath(); x.arc(0, 0, hr, 0, TAU); fs(x, c.fur);
+    x.save(); x.beginPath(); x.arc(0, 0, hr - .8, 0, TAU); x.clip();
+    const p = c.pattern;
+    if (p === 'tabby') { x.strokeStyle = c.accent; x.lineWidth = 2.2; for (const dx of [-4, 0, 4]) { x.beginPath(); x.moveTo(dx, -hr); x.lineTo(dx * .8, -hr + 6); x.stroke(); } }
+    if (p === 'tuxedo') { x.fillStyle = '#f7f2ea'; ell(x, 0, hr * .6, hr * .62, hr * .55); x.fill(); x.beginPath(); x.moveTo(-3, hr * .15); x.lineTo(0, -hr * .4); x.lineTo(3, hr * .15); x.fill(); }
+    if (p === 'calico') { x.fillStyle = c.accent; ell(x, -hr * .6, -hr * .4, hr * .65, hr * .6, .4); x.fill(); x.fillStyle = '#2b2735'; ell(x, hr * .7, -hr * .6, hr * .45, hr * .4); x.fill(); }
+    if (p === 'spots') { x.fillStyle = c.accent; ell(x, hr * .45, -hr * .45, hr * .3, hr * .26); x.fill(); }
+    x.restore();
+    const ink = '#17154a', ey = -1.5, blink = Math.sin(t * .9 + c._seed) > .985 ? .15 : 1;
+    for (const ex of [-5.5, 5.5]) {
+      if (closed) { x.beginPath(); x.arc(ex, ey, 2.8, .15 * Math.PI, .85 * Math.PI); x.lineWidth = 1.6; x.strokeStyle = ink; x.stroke(); }
+      else {
+        ell(x, ex, ey, 3.3, 3.9 * blink); x.fillStyle = c.eye; x.fill(); x.lineWidth = 1; x.strokeStyle = ink; x.stroke();
+        ell(x, ex + .3, ey, 1.1, 3.1 * blink); x.fillStyle = '#100e30'; x.fill();
+        if (blink > .5) { x.beginPath(); x.arc(ex + 1.2, ey - 1.4, .9, 0, TAU); x.fillStyle = '#fff'; x.fill(); }
+      }
+    }
+    x.beginPath(); x.moveTo(-1.8, 3.2); x.lineTo(1.8, 3.2); x.lineTo(0, 5.2); x.closePath(); x.fillStyle = '#f37f9b'; x.fill();
+    x.beginPath(); x.moveTo(0, 5.2); x.quadraticCurveTo(-1.5, 8, -3.6, 6.6); x.moveTo(0, 5.2); x.quadraticCurveTo(1.5, 8, 3.6, 6.6); x.lineWidth = 1.1; x.strokeStyle = ink; x.stroke();
+    x.fillStyle = 'rgba(246,120,150,.3)'; ell(x, -9, 4.5, 3, 1.8); x.fill(); ell(x, 9, 4.5, 3, 1.8); x.fill();
+    x.strokeStyle = 'rgba(23,21,74,.45)'; x.lineWidth = .8;
+    for (const s of [-1, 1]) { x.beginPath(); x.moveTo(s * 6, 4); x.lineTo(s * 17, 2); x.moveTo(s * 6, 5.5); x.lineTo(s * 17, 7.5); x.stroke(); }
+  }
+  x.restore();
+}
+function tie(x, tx, ty, col) { x.beginPath(); x.moveTo(tx - 2.6, ty); x.lineTo(tx + 2.6, ty); x.lineTo(tx + 1.8, ty + 10); x.lineTo(tx, ty + 13); x.lineTo(tx - 1.8, ty + 10); x.closePath(); fs(x, col, 1); }
+/* local frame: feet at origin, up is -y, facing +x */
+function drawCat(x, c, t, pose, facing, opt = {}) {
+  const fur = c.fur, dark = shade(fur, -.3), photo = hasPhoto(c), hr = (photo ? 17 : 15) * (c.age === 'kitten' ? 1.18 : 1);
+  const ph = c.phase || 0, tw = Math.sin(t * 2.3 + (c._seed || 0));
+  x.save(); x.scale(facing < 0 ? -1 : 1, 1); x.lineJoin = 'round'; x.lineCap = 'round';
+  if (pose === 'sleep') {
+    const by = -11;
+    ell(x, 0, by, 27, 11.5); fs(x, fur); bodyPattern(x, c, 0, by, 27, 11.5);
+    x.beginPath(); x.moveTo(-24, -5); x.quadraticCurveTo(-8, 4, 16, -1); tailStroke(x, fur, 6);
+    drawHead(x, c, 17, -14, hr * .92, true, facing, t, photo);
+  } else if (pose === 'sit' || pose === 'doze') {
+    x.beginPath(); x.moveTo(-12, -6); x.bezierCurveTo(-30, -4, -34, -14 + tw * 2, -26 + tw * 3, -26); tailStroke(x, fur, 6.5);
+    ell(x, -7, -13, 15, 13); fs(x, fur); bodyPattern(x, c, -7, -13, 15, 13);
+    ell(x, 2, -27, 12.5, 19, -.18); fs(x, fur); bodyPattern(x, c, 2, -27, 12.5, 19, -.18);
+    leg(x, c, 5, -22, 22, fur); leg(x, c, 11, -22, 22, fur);
+    if (opt.tie) tie(x, 8, -46 + hr - 4, opt.tie);
+    drawHead(x, c, 9, -46, hr, pose === 'doze', facing, t, photo, pose === 'doze' ? .28 : 0);
+  } else {
+    const moving = pose === 'walk' || pose === 'run', run = pose === 'run';
+    const sw = moving ? Math.sin(ph) : 0, bob = moving ? Math.abs(Math.cos(ph)) * (run ? 3 : 1.4) : 0;
+    const rx = run ? 28 : 25, ry = run ? 12 : 13.5, by = -24 - bob + (run ? 2 : 0), legLen = -(by + 5);
+    leg(x, c, -17, by + 5, legLen, dark, sw * .6); leg(x, c, 13, by + 5, legLen, dark, -sw * .6);
+    x.beginPath(); x.moveTo(-rx + 4, by - 3);
+    if (run) x.bezierCurveTo(-rx - 10, by - 6, -rx - 22, by - 10 + tw * 3, -rx - 30, by - 14 + tw * 4);
+    else x.bezierCurveTo(-rx - 10, by - 4, -rx - 14 + tw * 3, by - 22, -rx - 6 + tw * 7, by - 34);
+    tailStroke(x, fur, 6.5);
+    ell(x, 0, by, rx, ry); fs(x, fur); bodyPattern(x, c, 0, by, rx, ry);
+    leg(x, c, -22, by + 5, legLen, fur, -sw * .6); leg(x, c, 8, by + 5, legLen, fur, sw * .6);
+    if (opt.pack) { rr(x, -14, by - ry - 9, 19, 17, 5); fs(x, opt.pack, 1.4); x.beginPath(); x.moveTo(2, by - ry - 2); x.lineTo(8, by + 2); x.lineWidth = 2; x.strokeStyle = shade(opt.pack, -.3); x.stroke(); }
+    let hx = rx - 2, hy = by - 14;
+    if (run) { hx += 3; hy += 4; }
+    if (opt.tie) tie(x, hx - 3, hy + hr - 4, opt.tie);
+    drawHead(x, c, hx, hy, hr, false, facing, t, photo);
+  }
+  x.restore();
+}
+function thumb(c) {
+  if (c._thumb) return c._thumb;
+  const cv = document.createElement('canvas'); cv.width = cv.height = 120;
+  const x = cv.getContext('2d'); x.translate(60, 112); x.scale(1.3, 1.3); drawCat(x, c, 0, 'sit', 1);
+  c._thumb = cv.toDataURL(); return c._thumb;
+}
+
+/* ================= drawing scenes ================= */
+const canvas = $('#world'), ctx = canvas.getContext('2d');
+let W = 0, H = 0, dpr = 1;
+const stars = Array.from({ length: 160 }, () => ({ x: Math.random(), y: Math.random() * .7, r: Math.random() * 1.3 + .4, p: rand(TAU) }));
+function box(X, Y, w, h, col, lw = 1.6) { ctx.beginPath(); ctx.rect(X, Y, w, h); fs(ctx, col, lw); }
+function rbox(X, Y, w, h, r, col, lw = 1.6) { rr(ctx, X, Y, w, h, r); fs(ctx, col, lw); }
+function fish(x, cx, cy, s, col) { x.save(); x.translate(cx, cy); x.scale(s, s); x.beginPath(); x.ellipse(0, 0, 8, 4.2, 0, 0, TAU); x.moveTo(6, 0); x.lineTo(13, -4.5); x.lineTo(13, 4.5); x.closePath(); fs(x, col, 1.2); x.beginPath(); x.arc(-4, -1, 1, 0, TAU); x.fillStyle = '#17154a'; x.fill(); x.restore(); }
+function windowPane(X, Y, w, h, md, kind, t) {
+  const [a, b] = skyColors(md), g = ctx.createLinearGradient(0, Y, 0, Y + h); g.addColorStop(0, a); g.addColorStop(1, b);
+  rr(ctx, X, Y, w, h, 6); ctx.fillStyle = g; ctx.fill();
+  ctx.save(); rr(ctx, X, Y, w, h, 6); ctx.clip();
+  const d = daylight(md);
+  if (d < .5) { ctx.fillStyle = 'rgba(255,255,255,.8)'; for (let i = 0; i < 6; i++) ctx.fillRect(X + ((i * 37 + X) % w), Y + ((i * 23) % (h * .6)), 1.6, 1.6); ctx.beginPath(); ctx.arc(X + w * .72, Y + h * .3, 8, 0, TAU); ctx.fillStyle = '#fff6c8'; ctx.fill(); }
+  else { ctx.beginPath(); ctx.arc(X + w * .75, Y + h * .32, 10, 0, TAU); ctx.fillStyle = '#ffd23f'; ctx.fill(); ctx.fillStyle = 'rgba(255,255,255,.85)'; ell(ctx, X + w * .3 + Math.sin(t * .05 + X) * 8, Y + h * .4, 16, 6); ctx.fill(); }
+  if (kind === 'city') { const r = rng(X | 0); ctx.fillStyle = d > .5 ? '#8e86d8' : '#2a2470'; for (let bx = X; bx < X + w; bx += 14 + r() * 12) { const bh = h * (.25 + r() * .45); ctx.fillRect(bx, Y + h - bh, 12 + r() * 8, bh); } if (d < .5) { ctx.fillStyle = '#ffe98c'; for (let i = 0; i < 10; i++) ctx.fillRect(X + r() * w, Y + h * (.55 + r() * .4), 2, 2); } }
+  else { ctx.fillStyle = d > .5 ? '#7fd3a0' : '#1f3a5c'; ell(ctx, X + w * .3, Y + h + 8, w * .5, 20); ctx.fill(); ell(ctx, X + w * .85, Y + h + 12, w * .4, 22); ctx.fill(); }
+  ctx.restore();
+  rr(ctx, X, Y, w, h, 6); ctx.lineWidth = 4; ctx.strokeStyle = '#17154a'; ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(X + w / 2, Y); ctx.lineTo(X + w / 2, Y + h); ctx.moveTo(X, Y + h / 2); ctx.lineTo(X + w, Y + h / 2); ctx.lineWidth = 3; ctx.stroke();
+}
+function wallClock(cx, cy, r, md) {
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); fs(ctx, '#ffffff', 2.4);
+  const h = (md / 60) % 12, m = md % 60;
+  ctx.lineCap = 'round'; ctx.strokeStyle = '#17154a';
+  ctx.lineWidth = 2.4; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.sin(h / 12 * TAU) * r * .5, cy - Math.cos(h / 12 * TAU) * r * .5); ctx.stroke();
+  ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.sin(m / 60 * TAU) * r * .78, cy - Math.cos(m / 60 * TAU) * r * .78); ctx.stroke();
+}
+function sceneLabel(text, cx, cy, size, bg, fg) {
+  ctx.font = `400 ${size}px "Bagel Fat One", sans-serif`;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const w = ctx.measureText(text).width + size * 1.4;
+  rr(ctx, cx - w / 2, cy - size * .85, w, size * 1.7, size * .85); fs(ctx, bg, 2.5);
+  ctx.fillStyle = fg; ctx.fillText(text, cx, cy + 1);
+}
+const atSpotDoing = (c, S, act) => c.place === S.id && !c.path.length && !c.leaving && !c.detour && c.cb && c.cb.act === act;
+
+function drawHomeBack(S, t, md) {
+  const L = S.L, Wd = L.W, P = S.pal, present = world.cats.filter(c => c.place === S.id);
+  // chimney, roof
+  box(Wd * .76, 22, 36, 60, '#b8b0ec', 2.5);
+  ctx.beginPath(); ctx.moveTo(-28, 98); ctx.lineTo(Wd * .5, 8); ctx.lineTo(Wd + 28, 98); ctx.closePath(); fs(ctx, P.roof, 3);
+  sceneLabel(`${S.owner}'s house`, Wd * .5, 66, 22, '#fff3d6', '#17154a');
+  // shell
+  box(0, 92, Wd, 464, P.wall, 3);
+  box(12, 98, Wd - 24, FL0 - 98, P.up, 0);
+  ctx.save(); ctx.beginPath(); ctx.rect(12, 98, Wd - 24, FL0 - 98); ctx.clip(); ctx.fillStyle = 'rgba(255,255,255,.28)'; for (let x = 24; x < Wd; x += 30) ctx.fillRect(x, 98, 10, FL0 - 98); ctx.restore();
+  box(12, FL0 + 14, Wd - 24, FL1 - FL0 - 14, P.down, 0);
+  ctx.save(); ctx.beginPath(); ctx.rect(12, FL0 + 14, Wd - 24, FL1 - FL0 - 14); ctx.clip(); ctx.fillStyle = 'rgba(255,255,255,.35)'; for (let x = 30; x < Wd; x += 34) for (let y = FL0 + 34; y < FL1; y += 34) { ctx.beginPath(); ctx.arc(x + ((y / 34) % 2) * 17, y, 3, 0, TAU); ctx.fill(); } ctx.restore();
+  // bathroom tiles + kitchen backsplash
+  box(L.bathWall, 98, Wd - 12 - L.bathWall, FL0 - 98, '#dff4ff', 0);
+  ctx.strokeStyle = 'rgba(23,21,74,.12)'; ctx.lineWidth = 1; for (let y = 120; y < FL0; y += 22) { ctx.beginPath(); ctx.moveTo(L.bathWall, y); ctx.lineTo(Wd - 12, y); ctx.stroke(); }
+  box(L.counter, FL1 - 114, 150, 52, '#ffffff', 1);
+  // windows
+  const bedEnd = L.beds[L.nb - 1] + 104;
+  windowPane((212 + bedEnd) / 2 - 56, 130, 112, 84, md, 'home', t);
+  windowPane(L.sofa + 34, FL0 + 46, 112, 78, md, 'home', t);
+  windowPane(L.counter + 22, FL0 + 40, 106, 58, md, 'home', t);
+  ctx.beginPath(); ctx.arc(L.tub + 6, 150, 20, 0, TAU); ctx.fillStyle = skyColors(md)[0]; ctx.fill(); ctx.lineWidth = 3.5; ctx.strokeStyle = '#17154a'; ctx.stroke();
+  wallClock(L.counter + 170, FL0 + 62, 17, md);
+  // stairs
+  const st = L.stairs, n = 9, sx = (st.tx - st.bx) / n, sy = (FL1 - FL0) / n;
+  ctx.beginPath(); ctx.moveTo(st.bx - sx / 2, FL1);
+  for (let i = 0; i < n; i++) { const x0 = st.bx - sx / 2 + i * sx, y = FL1 - (i + 1) * sy; ctx.lineTo(x0, y); ctx.lineTo(x0 + sx, y); }
+  ctx.lineTo(st.tx + 6, FL0 + 14); ctx.lineTo(st.tx + 6, FL1); ctx.closePath(); fs(ctx, '#d9a272', 2);
+  ctx.beginPath(); ctx.moveTo(st.bx, FL1 - 56); ctx.lineTo(st.tx, FL0 - 56); ctx.lineWidth = 4; ctx.strokeStyle = '#17154a'; ctx.stroke();
+  for (let i = 1; i < n; i += 2) { const x = st.bx + i * (st.tx - st.bx) / n, y = FL1 - i * (FL1 - FL0) / n; ctx.beginPath(); ctx.moveTo(x, y - 56); ctx.lineTo(x, y - 4); ctx.lineWidth = 2; ctx.stroke(); }
+  // slabs + dividers
+  box(st.tx + 6, FL0, Wd - 18 - st.tx, 14, '#c98b5a', 2);
+  box(12, FL1, Wd - 24, 14, '#c98b5a', 2);
+  box(L.bathWall - 5, 98, 10, FL0 - 98 - 112, P.wall, 1.6);
+  box(L.livingWall - 5, FL0 + 14, 10, FL1 - FL0 - 14 - 112, P.wall, 1.6);
+  // beds
+  L.beds.forEach((bx, i) => {
+    const res = S.residents[i], sleeping = res && atSpotDoing(res, S, 'sleep');
+    rbox(bx + 92, FL0 - 68, 14, 68, 5, P.bed); rbox(bx - 2, FL0 - 42, 11, 42, 4, P.bed);
+    box(bx + 4, FL0 - 24, 94, 16, shade(P.bed, -.15)); box(bx + 6, FL0 - 36, 88, 12, '#fffaf0', 1.4);
+    ell(ctx, bx + 80, FL0 - 41, 13, 6); fs(ctx, '#ffffff', 1.4);
+    if (!sleeping) { rbox(bx + 10, FL0 - 42, 44, 7, 3, BLANKETS[(i + S.key.length) % BLANKETS.length], 1.2); }
+    if (res) { ctx.font = '400 14px "Bagel Fat One", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(23,21,74,.7)'; ctx.fillText(res.name, bx + 50, FL0 - 82); }
+  });
+  // bathroom
+  box(L.sink - 18, FL0 - 120, 36, 46, '#bfe8ff', 2);
+  box(L.sink - 9, FL0 - 48, 18, 48, '#ffffff', 1.6); ell(ctx, L.sink, FL0 - 52, 20, 7); fs(ctx, '#ffffff', 1.6);
+  box(L.tub - 60, FL0 - 46, 120, 30, '#cbe8f5', 1.6);
+  // living room
+  ell(ctx, 340, FL1 + 4, 130, 7); ctx.fillStyle = P.rug; ctx.fill();
+  rbox(L.sofa, FL1 - 70, 180, 42, 12, P.sofa); rbox(L.sofa, FL1 - 34, 180, 22, 8, shade(P.sofa, .2));
+  rbox(L.sofa - 14, FL1 - 48, 24, 38, 9, P.sofa); rbox(L.sofa + 170, FL1 - 48, 24, 38, 9, P.sofa);
+  box(L.sofa + 6, FL1 - 12, 6, 12, '#17154a', 0); box(L.sofa + 168, FL1 - 12, 6, 12, '#17154a', 0);
+  ctx.beginPath(); ctx.moveTo(L.lamp, FL1); ctx.lineTo(L.lamp, FL1 - 118); ctx.lineWidth = 3; ctx.strokeStyle = '#17154a'; ctx.stroke();
+  ell(ctx, L.lamp, FL1 - 2, 12, 3); ctx.fillStyle = '#17154a'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(L.lamp - 12, FL1 - 116); ctx.lineTo(L.lamp + 12, FL1 - 116); ctx.lineTo(L.lamp + 18, FL1 - 140); ctx.lineTo(L.lamp - 18, FL1 - 140); ctx.closePath(); fs(ctx, '#fff3d6', 2);
+  const watching = present.some(c => atSpotDoing(c, S, 'tv'));
+  box(L.tv - 6, FL1 - 34, 72, 34, '#8a5a44', 1.6);
+  rbox(L.tv, FL1 - 100, 62, 58, 5, '#17154a', 2);
+  box(L.tv + 5, FL1 - 95, 52, 46, watching ? `hsl(${(t * 40) % 360},70%,${62 + Math.sin(t * 7) * 8}%)` : '#2a2650', 0);
+  // kitchen
+  box(L.counter, FL1 - 60, 150, 60, P.cab, 2); box(L.counter - 5, FL1 - 64, 160, 7, '#f3f0ff', 1.6);
+  ctx.strokeStyle = 'rgba(23,21,74,.35)'; ctx.lineWidth = 1.4; for (const dx of [50, 100]) { ctx.beginPath(); ctx.moveTo(L.counter + dx, FL1 - 54); ctx.lineTo(L.counter + dx, FL1 - 6); ctx.stroke(); }
+  for (const dx of [24, 58]) { ell(ctx, L.counter + dx, FL1 - 66, 12, 2.6); ctx.fillStyle = '#17154a'; ctx.fill(); }
+  rbox(L.counter + 46, FL1 - 86, 26, 18, 4, '#ff4f9a', 1.6);
+  ctx.beginPath(); ctx.moveTo(L.counter + 124, FL1 - 64); ctx.lineTo(L.counter + 124, FL1 - 86); ctx.lineTo(L.counter + 112, FL1 - 86); ctx.lineWidth = 3; ctx.strokeStyle = '#8e86d8'; ctx.stroke();
+  // chairs (behind the table)
+  for (const cx of L.chairs) { const f = cx < L.table + L.tableW / 2 ? 1 : -1; box(cx - f * 16 - 3, FL1 - 66, 6, 42, P.chair, 1.4); box(cx - 15, FL1 - 26, 30, 5, P.chair, 1.4); box(cx - 13, FL1 - 21, 3, 21, '#17154a', 0); box(cx + 10, FL1 - 21, 3, 21, '#17154a', 0); }
+  // fridge with notes
+  rbox(L.fridge, FL1 - 154, 68, 154, 7, '#e6f2ff', 2.2);
+  ctx.beginPath(); ctx.moveTo(L.fridge, FL1 - 108); ctx.lineTo(L.fridge + 68, FL1 - 108); ctx.lineWidth = 2; ctx.strokeStyle = OUT; ctx.stroke();
+  box(L.fridge + 58, FL1 - 146, 4, 28, '#8e86d8', 0); box(L.fridge + 58, FL1 - 100, 4, 40, '#8e86d8', 0);
+  const open = world.notes.filter(n => n.home === S.key && n.back == null);
+  open.slice(0, 6).forEach((n, k) => {
+    const nx = L.fridge + 7 + (k % 2) * 25, ny = FL1 - 100 + Math.floor(k / 2) * 30, c = catById(n.cat);
+    ctx.save(); ctx.translate(nx + 11, ny + 12); ctx.rotate(((hashStr(n.key) % 7) - 3) * .04);
+    box(-11, -12, 22, 24, NOTE_PAPER[hashStr(n.key) % NOTE_PAPER.length], 1);
+    ctx.strokeStyle = 'rgba(23,21,74,.45)'; ctx.lineWidth = 1; for (let l = 0; l < 3; l++) { ctx.beginPath(); ctx.moveTo(-7, -4 + l * 5); ctx.lineTo(5 - l * 2, -4 + l * 5); ctx.stroke(); }
+    ctx.beginPath(); ctx.arc(0, -11, 3.2, 0, TAU); fs(ctx, c ? c.fur : '#ff4f9a', 1); ctx.restore();
+  });
+  if (open.length > 6) { ctx.font = '700 12px sans-serif'; ctx.fillStyle = '#17154a'; ctx.textAlign = 'center'; ctx.fillText(`+${open.length - 6}`, L.fridge + 34, FL1 - 8); }
+  // front door
+  const ajar = present.some(c => Math.abs(c.x - L.exit) < 40 && (c.leaving || c.path.length)) || world.cats.some(c => c.doorAt && performance.now() / 1000 - c.doorAt < .8 && (c.place === S.id || (!c.place && c.cb && homeSceneId(c) === S.id)));
+  box(L.door - 4, FL1 - 126, 72, 126, '#17154a', 0);
+  if (ajar) { const sk = skyColors(md); box(L.door, FL1 - 122, 64, 122, sk[1], 0); box(L.door + 50, FL1 - 122, 14, 122, P.door, 1.6); }
+  else { box(L.door, FL1 - 122, 64, 122, P.door, 1.6); ctx.beginPath(); ctx.arc(L.door + 32, FL1 - 92, 12, 0, TAU); ctx.fillStyle = skyColors(md)[1]; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = OUT; ctx.stroke(); ctx.beginPath(); ctx.arc(L.door + 52, FL1 - 58, 3.5, 0, TAU); ctx.fillStyle = '#17154a'; ctx.fill(); }
+  box(L.door - 8, FL1 - 4, 80, 4, '#ff9f1c', 0);
+}
+function drawHomeFront(S, t) {
+  const L = S.L, present = world.cats.filter(c => c.place === S.id);
+  L.beds.forEach((bx, i) => { const res = S.residents[i]; if (res && atSpotDoing(res, S, 'sleep')) { rbox(bx + 4, FL0 - 50, 56, 26, 8, BLANKETS[(i + S.key.length) % BLANKETS.length], 1.6); ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.lineWidth = 3; for (let k = 0; k < 3; k++) { ctx.beginPath(); ctx.moveTo(bx + 14 + k * 14, FL0 - 48); ctx.lineTo(bx + 14 + k * 14, FL0 - 26); ctx.stroke(); } } });
+  box(L.tub - 60, FL0 - 38, 120, 38, '#ffffff', 2); box(L.tub - 54, FL0 - 4, 8, 6, '#17154a', 0); box(L.tub + 46, FL0 - 4, 8, 6, '#17154a', 0);
+  if (present.some(c => atSpotDoing(c, S, 'bath'))) { ctx.fillStyle = '#ffffff'; for (let k = 0; k < 9; k++) { ctx.beginPath(); ctx.arc(L.tub - 50 + k * 12, FL0 - 40 + Math.sin(t * 3 + k) * 2, 7, 0, TAU); ctx.fill(); } }
+  box(L.table, FL1 - 52, L.tableW, 9, '#c98b5a', 2); box(L.table + 10, FL1 - 43, 7, 43, '#a8714a', 1.4); box(L.table + L.tableW - 17, FL1 - 43, 7, 43, '#a8714a', 1.4);
+  for (const c of present) if (c.sp && c.sp.eat && !c.path.length && !c.leaving && !c.detour) { const px = c.x + c.dir * 16; ell(ctx, px, FL1 - 54, 13, 3.5); fs(ctx, '#ffffff', 1.2); fish(ctx, px, FL1 - 57, .6, '#ff9f1c'); }
+  for (const c of present) if (c.cb && c.cb.act === 'homework' && !c.path.length && !c.detour) { box(c.x + c.dir * 12 - 9, FL1 - 56, 18, 4, '#ffffff', 1); }
+}
+function drawOfficeBack(S, t, md) {
+  const L = S.L, Wd = L.W, present = world.cats.filter(c => c.place === 'office');
+  box(0, 0, Wd, OFL + 14, '#b3abf0', 3);
+  for (let x = 30; x < Wd; x += 80) { box(x, 6, 40, 30, '#9d94e6', 0); }
+  sceneLabel('Purrville Co.', Wd / 2, 24, 20, '#17154a', '#ffd23f');
+  box(12, 48, Wd - 24, OFL - 48, '#efeaff', 0);
+  for (let x = 120; x < L.meet - 150; x += 200) windowPane(x, 80, 150, 112, md, 'city', t);
+  // meeting room
+  box(L.meet, 48, Wd - 12 - L.meet, OFL - 48, '#e1f6ff', 0);
+  box(L.meet + 40, 86, 160, 92, '#ffffff', 2);
+  ctx.strokeStyle = '#ff4f9a'; ctx.lineWidth = 2.4; ctx.beginPath(); ctx.moveTo(L.meet + 56, 160); ctx.lineTo(L.meet + 86, 130); ctx.lineTo(L.meet + 110, 146); ctx.lineTo(L.meet + 150, 104); ctx.stroke();
+  ctx.font = '400 13px "Gochi Hand", cursive'; ctx.fillStyle = '#17154a'; ctx.textAlign = 'left'; ctx.fillText('fish goals: up!', L.meet + 120, 166);
+  box(L.meet - 5, 48, 10, OFL - 48, 'rgba(159,211,255,.8)', 1.6);
+  windowPane(L.meet + 220, 86, Wd - 12 - L.meet - 240, 92, md, 'city', t);
+  // ceiling lights
+  const lights = present.length > 0;
+  for (let x = 60; x < Wd - 60; x += 160) { box(x, 48, 70, 7, lights ? '#fff6c8' : '#cfc8f0', 1); }
+  // floor
+  box(12, OFL, Wd - 24, 14, '#6e64c8', 2);
+  // door
+  const ajar = present.some(c => Math.abs(c.x - L.entry) < 40 && (c.leaving || c.path.length));
+  box(L.door - 4, OFL - 126, 72, 126, '#17154a', 0);
+  box(L.door, OFL - 122, ajar ? 18 : 64, 122, 'rgba(159,211,255,.85)', 1.6);
+  wallClock(70, 96, 20, md);
+  // kitchenette
+  box(110, OFL - 58, 140, 58, '#9fd3ff', 2); box(106, OFL - 62, 148, 6, '#f3f0ff', 1.4);
+  rbox(L.coffee - 20, OFL - 108, 40, 46, 5, '#17154a', 1.6); box(L.coffee - 8, OFL - 76, 16, 12, '#ffffff', 1);
+  ctx.beginPath(); ctx.arc(L.coffee + 12, OFL - 98, 3, 0, TAU); ctx.fillStyle = present.length ? '#ff4f9a' : '#555'; ctx.fill();
+  if (present.some(c => atSpotDoing(c, S, 'ocoffee'))) { ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.lineWidth = 2; for (let k = 0; k < 2; k++) { ctx.beginPath(); ctx.moveTo(L.coffee - 3 + k * 6, OFL - 80); ctx.quadraticCurveTo(L.coffee + 4 + k * 6, OFL - 90 - Math.sin(t * 3) * 3, L.coffee - 3 + k * 6, OFL - 102); ctx.stroke(); } }
+  rbox(L.cooler - 12, OFL - 76, 24, 76, 4, '#f3f0ff', 1.6); ell(ctx, L.cooler, OFL - 90, 11, 15); fs(ctx, 'rgba(120,200,255,.9)', 1.6);
+  for (const cx of L.lunchSeats) { const f = cx < L.lunch + L.lunchW / 2 ? 1 : -1; box(cx - f * 15 - 3, OFL - 60, 6, 40, '#ff9f1c', 1.4); box(cx - 14, OFL - 22, 28, 5, '#ff9f1c', 1.4); }
+  ell(ctx, L.wall - 4, OFL - 70, 22, 34); fs(ctx, '#3fd6b0', 2); box(L.wall - 18, OFL - 36, 28, 36, '#ff8fc2', 2);
+  // desks: chairs behind cats
+  L.desks.forEach(x0 => { box(x0 + 14, OFL - 64, 6, 44, '#6c55e0', 1.4); box(x0 + 16, OFL - 22, 36, 5, '#6c55e0', 1.4); box(x0 + 32, OFL - 17, 4, 17, '#17154a', 0); });
+  for (const x of L.meetSeats) box(x - 14, OFL - 22, 28, 5, '#ffd23f', 1.4);
+}
+function drawOfficeFront(S, t) {
+  const L = S.L, present = world.cats.filter(c => c.place === 'office');
+  L.desks.forEach((x0, i) => {
+    const owner = S.adults[i], working = owner && (atSpotDoing(owner, S, 'desk'));
+    box(x0 + 52, OFL - 48, 60, 7, '#f3f0ff', 1.6); box(x0 + 92, OFL - 41, 18, 41, '#c4b8ff', 1.4); box(x0 + 56, OFL - 41, 5, 41, '#17154a', 0);
+    box(x0 + 72, OFL - 86, 34, 30, '#17154a', 1.4); box(x0 + 86, OFL - 56, 6, 8, '#17154a', 0);
+    box(x0 + 75, OFL - 83, 28, 24, working ? '#3fd6b0' : '#2a2650', 0);
+    if (working) { ctx.fillStyle = 'rgba(23,21,74,.6)'; for (let l = 0; l < 4; l++) ctx.fillRect(x0 + 78, OFL - 79 + l * 5, 8 + ((Math.floor(t * 3) + l * 3 + i) % 14), 2); }
+    if (owner) { box(x0 + 54, OFL - 58, 34, 10, '#ffffff', 1); ctx.font = '700 7.5px sans-serif'; ctx.fillStyle = '#17154a'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(owner.name.slice(0, 9), x0 + 71, OFL - 53); }
+  });
+  box(L.mt0, OFL - 50, L.mt1 - L.mt0, 9, '#ffffff', 2); box(L.mt0 + 12, OFL - 41, 7, 41, '#c4b8ff', 1.4); box(L.mt1 - 19, OFL - 41, 7, 41, '#c4b8ff', 1.4);
+  box(L.lunch, OFL - 50, L.lunchW, 9, '#ffd23f', 2); box(L.lunch + 10, OFL - 41, 7, 41, '#c98b5a', 1.4); box(L.lunch + L.lunchW - 17, OFL - 41, 7, 41, '#c98b5a', 1.4);
+  for (const c of present) if (c.sp && c.sp.eat && !c.path.length && !c.detour) { const px = c.x + c.dir * 16; ell(ctx, px, OFL - 52, 13, 3.5); fs(ctx, '#ffffff', 1.2); fish(ctx, px, OFL - 55, .6, '#ff9f1c'); }
+}
+function lightsOn(S) { return world.cats.some(c => c.place === S.id && !(c.cb && (c.cb.act === 'sleep') && !c.path.length)); }
+function drawNight(S, md) {
+  const dk = 1 - daylight(md); if (dk <= 0) return;
+  const on = lightsOn(S), L = S.L;
+  ctx.fillStyle = `rgba(10,8,48,${(on ? .16 : .6) * dk})`;
+  if (S.kind === 'home') ctx.fillRect(0, 92, L.W, 464); else ctx.fillRect(0, 0, L.W, OFL + 14);
+  if (on && S.kind === 'home') { const g = ctx.createRadialGradient(L.lamp, FL1 - 128, 0, L.lamp, FL1 - 128, 140); g.addColorStop(0, `rgba(255,214,120,${.45 * dk})`); g.addColorStop(1, 'rgba(255,214,120,0)'); ctx.fillStyle = g; ctx.fillRect(L.lamp - 140, FL1 - 268, 280, 280); }
+}
+
+/* ================= camera & render ================= */
+let view = { kind: 'home', key: null };
+const cam = { x: 0, tx: 0, follow: null };
+let showNames = true, selected = null, pendingSelect = null, panelOpen = true;
+const isMobile = () => W <= 760;
+const currentSceneId = () => view.kind === 'office' ? 'office' : 'home:' + view.key;
+const currentScene = () => scenes.get(currentSceneId());
+function resize() { dpr = Math.min(window.devicePixelRatio || 1, 2); W = window.innerWidth; H = window.innerHeight; canvas.width = W * dpr; canvas.height = H * dpr; }
+function fit(S) {
+  const mob = isMobile(), panelW = !mob && panelOpen ? 368 : 0, top = mob ? 112 : 78, bottom = mob ? 86 : 90;
+  const vw = W - panelW, vh = H - top - bottom;
+  const fitW = (vw - 24) / S.L.W;
+  const sc = Math.min(vh / S.L.H, 1.45, mob ? fitW * 2.6 : Math.max(fitW, .8));
+  const sw = S.L.W * sc, maxX = Math.max(0, S.L.W - vw / sc);
+  return { sc, ox: sw <= vw ? (vw - sw) / 2 : 0, oy: top + Math.max(0, (vh - S.L.H * sc) / 2), maxX, vw, vh, top };
+}
+let F = null;
+const S2 = (x, y) => [F.ox + (x - cam.x) * F.sc, F.oy + y * F.sc];
+function centerCam(x) { if (!F) return; cam.tx = clamp(x - F.vw / F.sc / 2, 0, F.maxX); }
+
+function render(t) {
+  const S = currentScene(); if (!S) return;
+  F = fit(S);
+  const f = cam.follow && catById(cam.follow);
+  if (f && f.place === S.id) centerCam(f.x);
+  cam.tx = clamp(cam.tx, 0, F.maxX); cam.x = lerp(cam.x, cam.tx, .15); cam.x = clamp(cam.x, 0, F.maxX);
+  const md = minOfDay(T), [skA, skB] = skyColors(md), dk = 1 - daylight(md);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, skA); g.addColorStop(1, skB); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  if (dk > .3) { for (const s of stars) { ctx.globalAlpha = dk * (.4 + .4 * Math.sin(t + s.p)); ctx.fillStyle = '#fff'; ctx.fillRect(s.x * W, s.y * H, s.r, s.r); } ctx.globalAlpha = 1; }
+  const gy = F.oy + S.L.ground * F.sc;
+  ctx.fillStyle = S.kind === 'home' ? mix('#2ea887', '#123a4a', dk) : mix('#b9b2e6', '#3a3577', dk); ctx.fillRect(0, gy, W, H - gy);
+  ctx.fillStyle = 'rgba(23,21,74,.25)'; ctx.fillRect(0, gy, W, 3);
+  ctx.save(); ctx.translate(F.ox - cam.x * F.sc, F.oy); ctx.scale(F.sc, F.sc);
+  if (S.kind === 'home') drawHomeBack(S, t, md); else drawOfficeBack(S, t, md);
+  const present = world.cats.filter(c => c.place === S.id).sort((a, b) => a.y - b.y);
+  for (const c of present) drawSceneCat(c, S, t);
+  if (S.kind === 'home') drawHomeFront(S, t); else drawOfficeFront(S, t);
+  drawNight(S, md);
+  ctx.restore();
+  // screen-space: names, zzz, bubbles, empty state
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for (const c of present) {
+    const k = c.age === 'kitten' ? .72 : 1, x = c.drawX ?? c.x;
+    if (c === selected) { const [sx, sy] = S2(x, c.y - c.liftCur); ctx.fillStyle = 'rgba(255,210,63,.9)'; ell(ctx, sx, sy + 2, 24 * k * F.sc, 4 * F.sc); ctx.fill(); }
+    if (showNames) { const [sx, sy] = S2(x, c.y + 10); ctx.font = '700 12px "Atkinson Hyperlegible", sans-serif'; ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(23,21,74,.8)'; ctx.strokeText(c.name, sx, sy); ctx.fillStyle = '#fff'; ctx.fillText(c.name, sx, sy); }
+    const sleeping = (c.cb && (c.cb.act === 'sleep' || c.cb.act === 'nap' || c.cb.act === 'desknap')) && !c.path.length && !c.leaving && !c.detour;
+    if (sleeping) for (let i = 0; i < 3; i++) { const p = (t * .45 + i / 3 + c._seed * .01) % 1, [sx, sy] = S2(x + 14 * c.dir, c.y - c.liftCur - 34 * k); ctx.globalAlpha = 1 - p; ctx.fillStyle = '#17154a'; ctx.font = `700 ${11 + p * 6}px sans-serif`; ctx.fillText('z', sx + p * 14, sy - p * 30); ctx.globalAlpha = 1; }
+  }
+  for (const c of present) if (c.bubble) { const k = c.age === 'kitten' ? .72 : 1, pose = c.sp && c.sp.pose === 'sleep' && !c.path.length ? 40 : 82; const [sx, sy] = S2(c.drawX ?? c.x, c.y - c.liftCur - pose * k); bubble(sx, sy, c.bubble.text, clamp(c.bubble.t / .3, 0, 1)); }
+  if (!present.length) {
+    const wd = weekdayOf(T), weekend = wd === 0 || wd === 6;
+    const msg = S.kind === 'home' ? "Nobody's home right now. Check the fridge." : weekend ? "It's the weekend. The office is empty." : md < 500 ? "Nobody's in yet. Work starts around 8:30 AM." : md > 1050 ? 'Everyone has gone home for the day.' : "Nobody's at their desk right now.";
+    ctx.font = '700 15px "Atkinson Hyperlegible", sans-serif'; const w = ctx.measureText(msg).width + 32, cx = F.vw / 2, cy = F.top + 18;
+    rr(ctx, cx - w / 2, cy - 18, w, 36, 18); ctx.fillStyle = '#f3f0ff'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = '#17154a'; ctx.stroke();
+    ctx.fillStyle = '#17154a'; ctx.fillText(msg, cx, cy + 1);
+  }
+}
+function drawSceneCat(c, S, t) {
+  const k = c.age === 'kitten' ? .72 : 1, sp = c.sp || {};
+  let pose = c.path.length ? (walkSpeed() > 200 ? 'run' : 'walk') : c.leaving === 'write' ? 'stand' : (sp.pose || 'stand');
+  let x = c.x, dir = c.dir;
+  if (pose === 'play') { const ph = t * 1.5 + c._seed; x += Math.sin(ph) * 55; dir = Math.cos(ph) > 0 ? 1 : -1; pose = 'run'; c.phase = t * 10; }
+  c.drawX = x;
+  const b = c.cb || {}, goingToWork = b.d && b.d.to === 'work';
+  const opt = {};
+  if (c.age === 'adult' && (c.place === 'office' || (c.leaving && goingToWork))) opt.tie = ['#ff4f9a', '#3fd6b0', '#6c55e0', '#ff9f1c'][c._seed % 4];
+  if (c.age === 'kitten' && c.leaving && b.act === 'school') opt.pack = ['#ff4f9a', '#3fd6b0', '#6c55e0', '#ffd23f'][c._seed % 4];
+  ctx.save(); ctx.translate(x, c.y - c.liftCur); ctx.scale(k, k); drawCat(ctx, c, t, pose, dir, opt); ctx.restore();
+}
+function bubble(sx, sy, text, alpha) {
+  ctx.save(); ctx.globalAlpha = alpha; ctx.font = '700 12.5px "Atkinson Hyperlegible", system-ui, sans-serif';
+  const w = ctx.measureText(text).width + 16, h = 24, x = sx - w / 2, y = sy - h - 6;
+  rr(ctx, x, y, w, h, 12); ctx.moveTo(sx - 5, y + h); ctx.lineTo(sx, y + h + 6); ctx.lineTo(sx + 5, y + h);
+  ctx.fillStyle = '#ffffff'; ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = '#17154a'; ctx.stroke();
+  ctx.fillStyle = '#17154a'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, sx, y + h / 2 + .5);
+  ctx.restore();
+}
+
+/* ================= input ================= */
+let drag = null;
+canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture(e.pointerId); drag = { x: e.clientX, y: e.clientY, moved: 0, cx: cam.tx }; closeMenu(); });
+canvas.addEventListener('pointermove', e => {
+  if (!drag || !F) return;
+  drag.moved = Math.max(drag.moved, Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y));
+  if (drag.moved > 6) { canvas.classList.add('grabbing'); cam.follow = null; cam.tx = clamp(drag.cx - (e.clientX - drag.x) / F.sc, 0, F.maxX); cam.x = cam.tx; }
+});
+canvas.addEventListener('pointerup', e => { if (drag && drag.moved <= 6) pickAt(e.clientX, e.clientY); drag = null; canvas.classList.remove('grabbing'); });
+canvas.addEventListener('pointercancel', () => { drag = null; canvas.classList.remove('grabbing'); });
+canvas.addEventListener('wheel', e => { if (!F) return; e.preventDefault(); cam.follow = null; cam.tx = clamp(cam.tx + (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) / F.sc, 0, F.maxX); }, { passive: false });
+function pickAt(px, py) {
+  const S = currentScene(); if (!S || !F) return;
+  let best = null, bd = 1e9;
+  for (const c of world.cats) {
+    if (c.place !== S.id) continue;
+    const k = c.age === 'kitten' ? .72 : 1, [sx, sy] = S2(c.drawX ?? c.x, c.y - c.liftCur - 26 * k), d = Math.hypot(sx - px, sy - py);
+    if (d < Math.max(24, 36 * F.sc * k) && d < bd) { bd = d; best = c; }
+  }
+  if (best) { select(best); return; }
+  if (S.kind === 'home') { const [fx, fy] = S2(S.L.fridge, FL1 - 154); if (px >= fx && px <= fx + 68 * F.sc && py >= fy && py <= fy + 154 * F.sc) { panelTab = 'fridge'; setPanel(true); panelSig = ''; return; } }
+  if (selected) deselect();
+}
+
+/* ================= UI ================= */
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 3000); }
+function setPanel(open) { panelOpen = open; $('#panel').classList.toggle('closed', !open); document.body.classList.toggle('panel-closed', !open); document.querySelectorAll('[data-panel]').forEach(b => b.classList.toggle('on', open)); }
+document.querySelectorAll('[data-panel]').forEach(b => b.onclick = () => setPanel(!panelOpen));
+function setRate(r) {
+  const wasLive = live;
+  live = r === 'live'; if (!live) rate = +r;
+  if (live && !wasLive) { T = nowLocalMin(); resync(); }
+  document.querySelectorAll('#speed button').forEach(b => b.classList.toggle('on', b.dataset.r === r));
+  const badge = $('#rateBadge'); badge.textContent = live ? 'Live' : `${rate * 60}×`; badge.classList.toggle('live', live);
+}
+document.querySelectorAll('#speed button').forEach(b => b.onclick = () => setRate(b.dataset.r));
+$('#clock').onclick = () => setRate(live ? '1' : rate === 1 ? '12' : 'live');
+function closeMenu() { $('#menu').classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded', 'false'); }
+$('#menuBtn').onclick = e => { e.stopPropagation(); const m = $('#menu'); m.classList.toggle('open'); $('#menuBtn').setAttribute('aria-expanded', m.classList.contains('open')); };
+document.addEventListener('click', e => { if (!e.target.closest('.menuwrap')) closeMenu(); });
+$('#menu').onclick = e => {
+  const act = e.target.closest('button')?.dataset.act; if (!act) return; closeMenu();
+  if (act === 'export') exportTown();
+  if (act === 'import') $('#importFile').click();
+  if (act === 'names') showNames = !showNames;
+  if (act === 'about') openModal('about');
+  if (act === 'reset' && confirm('Reset the town? Every cat on this device will be removed. Export first if you want to keep them.')) { Store.clear(); location.reload(); }
+};
+function refreshHomeSel() {
+  const sel = $('#homeSel'), homes = [...scenes.values()].filter(s => s.kind === 'home');
+  sel.innerHTML = homes.map(h => `<option value="${esc(h.key)}">${esc(h.owner)}'s house</option>`).join('');
+  if (view.kind === 'home' && !scenes.has('home:' + view.key)) view.key = homes[0] ? homes[0].key : null;
+  if (!homes.length) view = { kind: 'office' };
+  if (view.key) sel.value = view.key;
+  updateStats();
+}
+function setView(v) {
+  if (v.kind === 'home' && !v.key) { const h = [...scenes.values()].find(s => s.kind === 'home'); if (!h) return; v.key = h.key; }
+  view = v; cam.follow = null;
+  if (selected && selected.place !== currentSceneId()) deselect();
+  document.querySelectorAll('.viewsw [data-v]').forEach(b => b.classList.toggle('on', b.dataset.v === v.kind));
+  $('#homeSel').hidden = v.kind !== 'home'; if (v.key) $('#homeSel').value = v.key;
+  document.querySelectorAll('[data-panel]').forEach(b => b.textContent = v.kind === 'home' ? 'Fridge' : 'Team');
+  panelTab = v.kind === 'home' ? 'fridge' : 'team'; panelSig = '';
+  const S = currentScene(); if (S) { F = fit(S); const here = world.cats.filter(c => c.place === S.id); const fx = here.length ? here.reduce((a, c) => a + c.x, 0) / here.length : S.kind === 'home' ? S.L.fridge : S.L.desks[0]; centerCam(fx); cam.x = cam.tx; }
+}
+document.querySelectorAll('.viewsw [data-v]').forEach(b => b.onclick = () => setView(b.dataset.v === 'home' ? { kind: 'home', key: view.key || $('#homeSel').value } : { kind: 'office' }));
+$('#homeSel').onchange = e => setView({ kind: 'home', key: e.target.value });
+function updateStats() { const n = world.cats.length, h = [...scenes.values()].filter(s => s.kind === 'home').length; $('#stats').textContent = `${n} ${n === 1 ? 'cat' : 'cats'} in ${h} ${h === 1 ? 'home' : 'homes'}`; }
+
+function actText(c) {
+  if (!c.place) return null;
+  if (c.leaving === 'write') return 'writing a note on the fridge';
+  if (c.leaving) return 'heading out';
+  if (c.detour) return c.detour.text;
+  const b = c.cb; if (!b) return '';
+  if (c.path.length) return 'walking around';
+  if (b.act === 'host') return `hanging out with ${nameOf(b.d.with)}`;
+  if (b.act === 'guest') return `visiting ${nameOf(b.d.with)}`;
+  return ACT_TEXT[b.act] || 'hanging around';
+}
+function whereText(c, S) {
+  if (c.place === S.id) return { t: actText(c), away: false };
+  if (c.place === 'office') return { t: 'At the office', away: false };
+  if (c.place && c.place.startsWith('home:')) { const o = scenes.get(c.place); return { t: `At ${o ? o.owner : 'a friend'}'s house`, away: false }; }
+  return { t: S.kind === 'home' ? 'Out. Check the fridge.' : 'Not in the office', away: true };
+}
+let panelTab = 'fridge', panelSig = '';
+function noteHTML(n, old) {
+  const c = catById(n.cat), h = hashStr(n.key), rot = ((h % 7) - 3) * .7;
+  return `<div class="note${old ? ' old' : ''}" style="--rot:${rot}deg;--paper:${NOTE_PAPER[h % NOTE_PAPER.length]};--mag:${c ? c.fur : '#ff4f9a'}"><p>${esc(n.text)}</p><div class="sig">${c ? `<img src="${thumb(c)}" alt="">` : ''}<span>${esc(n.name)}, ${old ? `back home ${fmtWhen(n.back)}` : `left ${fmtWhen(n.at)}`}</span></div></div>`;
+}
+function rowHTML(c, st, sub) { return `<button class="row-btn" data-id="${esc(c.id)}"><img src="${thumb(c)}" alt=""><div><div class="n">${esc(c.name)}</div><div class="s">${esc(sub)}</div><div class="st${st.away ? ' away' : ''}">${esc(st.t[0].toUpperCase() + st.t.slice(1))}</div></div></button>`; }
+function renderPanel() {
+  const S = currentScene(); if (!S) return;
+  const tabs = S.kind === 'home' ? [['fridge', 'Fridge'], ['family', 'Family']] : [['team', 'Team']];
+  if (!tabs.some(t => t[0] === panelTab)) panelTab = tabs[0][0];
+  let html = '';
+  if (panelTab === 'fridge') {
+    const open = world.notes.filter(n => n.home === S.key && n.back == null).sort((a, b) => b.at - a.at);
+    const old = world.notes.filter(n => n.home === S.key && n.back != null).sort((a, b) => b.back - a.back).slice(0, 10);
+    const allHome = S.residents.every(c => c.place === S.id);
+    html = `<p class="intro">Cats write a note here before they leave the house, and take it down when they get home.</p>` +
+      (open.length ? open.map(n => noteHTML(n, false)).join('') : `<p class="empty">${allHome ? 'No notes on the fridge. Everyone is home.' : 'No notes on the fridge right now.'}</p>`) +
+      (old.length ? `<h4 class="sub">Taken down</h4>` + old.map(n => noteHTML(n, true)).join('') : '');
+  } else if (panelTab === 'family') {
+    const guests = world.cats.filter(c => c.place === S.id && !S.residents.includes(c));
+    html = `<p class="intro">Who lives at ${esc(S.owner)}'s house.</p>` + S.residents.map(c => rowHTML(c, whereText(c, S), `${c.age === 'kitten' ? 'Kitten' : c.job}, ${PERS[c.pers].label}`)).join('') +
+      (guests.length ? `<h4 class="sub">Visiting</h4>` + guests.map(c => rowHTML(c, whereText(c, S), `From ${c.parent}'s house`)).join('') : '');
+  } else {
+    const ad = [...S.adults].sort((a, b) => (b.place === 'office') - (a.place === 'office'));
+    html = ad.length ? `<p class="intro">Grown-up cats work here on weekdays, about 8:30 AM to 5:30 PM.</p>` + ad.map(c => rowHTML(c, whereText(c, S), `${c.job}, ${PERS[c.pers].label}`)).join('') : '<p class="empty">No grown-up cats yet. Kittens go to school instead.</p>';
+  }
+  const tabsHTML = tabs.map(([k, l]) => `<button data-tab="${k}" class="${k === panelTab ? 'on' : ''}" role="tab">${l}</button>`).join('');
+  const sig = tabsHTML + html;
+  if (sig === panelSig) return;
+  panelSig = sig;
+  const body = $('#tabbody'), st = body.scrollTop;
+  $('#tabs').innerHTML = tabsHTML; body.innerHTML = html; body.scrollTop = st;
+}
+$('#tabs').onclick = e => { const b = e.target.closest('[data-tab]'); if (b) { panelTab = b.dataset.tab; panelSig = ''; renderPanel(); } };
+$('#tabbody').onclick = e => {
+  const r = e.target.closest('[data-id]'); if (!r) return; const c = catById(r.dataset.id); if (!c) return;
+  if (!c.place) { toast(`${c.name} is out. Check the fridge at ${c.parent}'s house.`); return; }
+  if (c.place !== currentSceneId()) setView(c.place === 'office' ? { kind: 'office' } : { kind: 'home', key: c.place.slice(5) });
+  select(c); if (isMobile()) setPanel(false);
+};
+
+function select(c) { selected = c; cam.follow = c.id; document.body.classList.add('has-card'); renderCard(); }
+function deselect() { selected = null; cam.follow = null; document.body.classList.remove('has-card'); $('#card').classList.add('hidden'); }
+function renderCard() {
+  const c = selected; if (!c) return;
+  const P = PERS[c.pers], card = $('#card');
+  card.innerHTML = `<button class="x" data-c="close" aria-label="Close">✕</button>
+    <div class="head"><img src="${thumb(c)}" alt=""><div><h3>${esc(c.name)}</h3><div class="by">Lives at ${esc(c.parent)}'s house, made by ${esc(c.title)} ${esc(c.parent)}</div><span class="pill">${c.age === 'kitten' ? 'Kitten' : esc(c.job)}, ${P.label}</span></div></div>
+    <div class="now" id="cardNow"></div><div class="rels" id="cardRels"></div>
+    <div class="actions"><button class="btn dark" data-c="follow"></button><button class="btn ghost" data-c="release">Move out</button></div>`;
+  card.classList.remove('hidden'); updateCard();
+}
+function updateCard() {
+  const c = selected; if (!c || !$('#cardNow')) return;
+  if (!world.cats.includes(c)) { deselect(); return; }
+  const a = actText(c) || 'out'; $('#cardNow').textContent = a[0].toUpperCase() + a.slice(1);
+  const known = world.cats.filter(o => o !== c && rel(c, o) > 0).sort((x, y) => rel(c, y) - rel(c, x));
+  const sibs = world.cats.filter(o => o !== c && homeKey(o) === homeKey(c));
+  const lines = [];
+  if (known[0] && rel(c, known[0]) > 12) lines.push(`Best friend: <b>${esc(known[0].name)}</b>`);
+  if (sibs.length) lines.push(`Lives with ${sibs.map(s => esc(s.name)).join(', ')}`);
+  lines.push(c.age === 'kitten' ? 'Goes to school on weekdays.' : 'Works at the office on weekdays.');
+  $('#cardRels').innerHTML = lines.map(l => `<div>${l}</div>`).join('');
+  const fb = document.querySelector('#card [data-c="follow"]'); if (fb) fb.textContent = cam.follow === c.id ? 'Stop following' : 'Follow';
+}
+$('#card').onclick = e => {
+  const a = e.target.closest('[data-c]')?.dataset.c, c = selected; if (!a || !c) return;
+  if (a === 'close') deselect();
+  if (a === 'follow') { cam.follow = cam.follow === c.id ? null : c.id; updateCard(); }
+  if (a === 'release' && confirm(`Move ${c.name} out of Purrville? This removes them from this device.`)) releaseCat(c);
+};
+function releaseCat(c) {
+  world.cats = world.cats.filter(o => o !== c);
+  world.notes = world.notes.filter(n => n.cat !== c.id);
+  for (const o of world.cats) delete o.rel[c.id];
+  for (const p in world.plans) world.plans[p].blocks.clear();
+  deselect(); rebuildScenes(); if (!currentScene()) setView({ kind: 'home' });
+  save(); panelSig = ''; toast(`${c.name} moved out of Purrville.`);
+}
+
+/* ================= import / export ================= */
+function exportTown() {
+  const blob = new Blob([JSON.stringify(serialize())], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `purrville-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('Town file downloaded. Send it to a friend so they can import your cats.');
+}
+$('#importFile').onchange = async e => {
+  const file = e.target.files[0]; e.target.value = ''; if (!file) return;
+  try {
+    const data = JSON.parse(await file.text()), list = Array.isArray(data) ? data : Array.isArray(data.cats) ? data.cats : null;
+    if (!list) throw new Error('no cats');
+    let n = 0;
+    for (const o of list.slice(0, 200)) { const s = sanitizeCat(o); if (!s || catById(s.id)) continue; s.born = T; world.cats.push(makeCat(s)); n++; }
+    rebuildScenes(); save(); panelSig = '';
+    toast(n ? `${n} ${n === 1 ? 'cat is' : 'cats are'} moving in today.` : 'Every cat in that file already lives here.');
+  } catch (err) { toast('That file is not a Purrville file. Use one made with Export town file.'); }
+};
+
+/* ================= creator ================= */
+const cr = { img: null, zoom: 1.3, ox: 0, oy: 0, photo: false, face: 'photo', pattern: 'tabby', pers: 'curious', title: 'Mom', age: 'adult', job: 'Designer', fur: '#f0a35e', accent: '#c46a2c', eye: '#9ccc65', touched: false, out: null };
+const CROP = 258, CR = 108;
+function openModal(id) { $('#' + id).hidden = false; }
+function closeModal(id) { $('#' + id).hidden = true; }
+document.querySelectorAll('[data-close]').forEach(b => b.onclick = () => closeModal(b.dataset.close));
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); }));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('#creator').hidden) closeModal('creator'); else if (!$('#about').hidden) closeModal('about'); else if (selected) deselect(); } });
+function chipGroup(el, items, current, onPick) {
+  el.innerHTML = '';
+  for (const [k, label] of items) { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (k === current ? ' on' : ''); b.textContent = label; b.onclick = () => { el.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b)); onPick(k); }; el.appendChild(b); }
+}
+function buildChips() {
+  chipGroup($('#ageChips'), [['kitten', 'Kitten'], ['adult', 'Grown-up']], cr.age, k => { cr.age = k; syncAge(); });
+  chipGroup($('#jobChips'), JOBS.map(j => [j, j]), cr.job, k => cr.job = k);
+  chipGroup($('#titleChips'), TITLES.map(t => [t, t]), cr.title, k => cr.title = k);
+  chipGroup($('#persChips'), Object.entries(PERS).map(([k, p]) => [k, p.label]), cr.pers, k => { cr.pers = k; $('#persDesc').textContent = PERS[k].desc; });
+  chipGroup($('#faceChips'), [['photo', 'Photo face'], ['drawn', 'Illustrated face']], cr.face, k => cr.face = k);
+  chipGroup($('#patChips'), Object.entries(PATTERNS), cr.pattern, k => { cr.pattern = k; cr.touched = true; });
+  $('#persDesc').textContent = PERS[cr.pers].desc; syncAge();
+}
+function syncAge() { $('#jobField').hidden = cr.age !== 'adult'; $('#ageHelp').textContent = cr.age === 'kitten' ? 'Kittens go to school on weekdays and go to bed early.' : 'Grown-ups go to work at the office on weekdays.'; }
+function syncColors() { $('#cFur').value = cr.fur; $('#cAccent').value = cr.accent; $('#cEye').value = cr.eye; }
+for (const [id, key] of [['#cFur', 'fur'], ['#cAccent', 'accent'], ['#cEye', 'eye']]) $(id).oninput = e => { cr[key] = e.target.value; cr.touched = true; };
+function openCreator() {
+  Object.assign(cr, { img: null, photo: false, face: 'photo', touched: false, out: null, pers: pick(Object.keys(PERS)), eye: pick(EYES), job: pick(JOBS), age: 'adult' });
+  try { const me = JSON.parse(localStorage.getItem('purrville.me') || 'null'); if (me) { $('#cParent').value = me.parent || ''; if (TITLES.includes(me.title)) cr.title = me.title; } } catch (e) {}
+  $('#cName').value = ''; $('#stepUpload').hidden = false; $('#stepMake').hidden = true; openModal('creator');
+}
+$('#addBtn').onclick = openCreator;
+function showMake(photo) {
+  $('#stepUpload').hidden = true; $('#stepMake').hidden = false; $('#make').classList.toggle('nophoto', !photo);
+  if (!$('#cName').value) $('#cName').value = pick(NAMES);
+  buildChips(); syncColors(); requestAnimationFrame(drawPreview);
+}
+$('#noPhoto').onclick = () => { const [f, a, p] = pick(COATS); Object.assign(cr, { photo: false, face: 'drawn', fur: f, accent: a, pattern: p, out: null }); showMake(false); };
+$('#dice').onclick = () => { $('#cName').value = pick(NAMES); };
+$('#file').onchange = e => { loadFile(e.target.files[0]); e.target.value = ''; };
+const drop = $('#drop');
+drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); });
+drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('over'); loadFile(e.dataTransfer.files[0]); });
+function loadFile(file) {
+  if (!file || !file.type.startsWith('image/')) { toast('Choose an image file, like a JPG or PNG.'); return; }
+  const url = URL.createObjectURL(file), im = new Image();
+  im.onload = () => {
+    const s = Math.min(1, 1400 / Math.max(im.width, im.height)), cv = document.createElement('canvas');
+    cv.width = Math.max(1, im.width * s | 0); cv.height = Math.max(1, im.height * s | 0); cv.getContext('2d').drawImage(im, 0, 0, cv.width, cv.height);
+    URL.revokeObjectURL(url);
+    Object.assign(cr, { img: cv, zoom: 1.3, ox: 0, oy: 0, photo: true, face: 'photo', touched: false });
+    $('#zoom').value = 1.3; showMake(true); updateCrop(true);
+  };
+  im.onerror = () => { URL.revokeObjectURL(url); toast('This image could not be opened. Try a JPG or PNG.'); };
+  im.src = url;
+}
+function placeImage(x) {
+  const im = cr.img, s = Math.max(CROP / im.width, CROP / im.height) * cr.zoom, hw = im.width * s / 2, hh = im.height * s / 2;
+  cr.ox = clamp(cr.ox, CR - hw, hw - CR); cr.oy = clamp(cr.oy, CR - hh, hh - CR);
+  x.drawImage(im, CROP / 2 + cr.ox - hw, CROP / 2 + cr.oy - hh, hw * 2, hh * 2);
+}
+function updateCrop(extract) {
+  if (!cr.img) return;
+  const cv = $('#crop'), d = Math.min(window.devicePixelRatio || 1, 2), x = cv.getContext('2d');
+  if (cv.width !== CROP * d) cv.width = cv.height = CROP * d;
+  x.setTransform(d, 0, 0, d, 0, 0); x.fillStyle = '#1b1f6b'; x.fillRect(0, 0, CROP, CROP); placeImage(x);
+  x.beginPath(); x.rect(0, 0, CROP, CROP); x.arc(CROP / 2, CROP / 2, CR, 0, TAU, true); x.fillStyle = 'rgba(14,16,64,.62)'; x.fill('evenodd');
+  x.setLineDash([6, 5]); x.lineWidth = 2; x.strokeStyle = '#ffd23f'; x.beginPath(); x.arc(CROP / 2, CROP / 2, CR, 0, TAU); x.stroke(); x.setLineDash([]);
+  const o = document.createElement('canvas'); o.width = o.height = 160; const ox = o.getContext('2d'), k = 160 / (CR * 2), off = (CROP / 2 - CR) * k;
+  ox.setTransform(k, 0, 0, k, -off, -off); placeImage(ox); cr.out = o;
+  if (extract && !cr.touched) { extractColors(o); syncColors(); buildChips(); }
+}
+function extractColors(cv) {
+  const d = cv.getContext('2d').getImageData(0, 0, 160, 160).data, px = [];
+  for (let y = 8; y < 152; y += 3) for (let x = 8; x < 152; x += 3) { const dx = x - 80, dy = y - 80; if (dx * dx + dy * dy > 66 * 66) continue; const i = (y * 160 + x) * 4; px.push([d[i], d[i + 1], d[i + 2]]); }
+  if (px.length < 10) return;
+  px.sort((a, b) => lum(a) - lum(b));
+  let C = [.1, .37, .63, .9].map(q => px[Math.floor(q * (px.length - 1))].slice()), counts = [];
+  for (let it = 0; it < 10; it++) {
+    const sums = C.map(() => [0, 0, 0, 0]);
+    for (const p of px) { let bi = 0, bd = 1e9; C.forEach((c, j) => { const dd = cdist(p, c); if (dd < bd) { bd = dd; bi = j; } }); const s = sums[bi]; s[0] += p[0]; s[1] += p[1]; s[2] += p[2]; s[3]++; }
+    C = C.map((c, j) => sums[j][3] ? [sums[j][0] / sums[j][3], sums[j][1] / sums[j][3], sums[j][2] / sums[j][3]] : c); counts = sums.map(s => s[3] / px.length);
+  }
+  const cl = C.map((c, j) => ({ c, n: counts[j] })).sort((a, b) => b.n - a.n);
+  const isWhite = c => lum(c) > 185 && sat(c) < .25, isDark = c => lum(c) < 70, isOrange = c => { const h = hue(c); return h >= 12 && h <= 48 && sat(c) > .35 && lum(c) > 80; };
+  const share = f => cl.filter(q => f(q.c)).reduce((s, q) => s + q.n, 0);
+  const Wh = share(isWhite), Dk = share(isDark), Or = share(isOrange);
+  let fur = cl[0].c, accent, pattern;
+  if (Wh > .12 && Dk > .1 && Or > .1) { pattern = 'calico'; fur = cl.find(q => isWhite(q.c)).c; accent = cl.find(q => isOrange(q.c)).c; }
+  else if (Wh > .18 && Dk > .25) { pattern = 'tuxedo'; fur = cl.find(q => isDark(q.c)).c; accent = fur.map(v => v * .7); }
+  else { const second = cl.slice(1).find(q => q.n > .12 && cdist(q.c, fur) > 45); if (second) { pattern = 'tabby'; const [l, dkc] = lum(second.c) > lum(fur) ? [second.c, fur] : [fur, second.c]; fur = l; accent = dkc; } else { pattern = 'solid'; accent = fur.map(v => v * .7); } }
+  cr.fur = toHex(fur); cr.accent = toHex(accent); cr.pattern = pattern;
+}
+(() => {
+  const wrapEl = $('#cropWrap'); let last = null;
+  wrapEl.addEventListener('pointerdown', e => { wrapEl.setPointerCapture(e.pointerId); last = [e.clientX, e.clientY]; });
+  wrapEl.addEventListener('pointermove', e => { if (!last) return; cr.ox += e.clientX - last[0]; cr.oy += e.clientY - last[1]; last = [e.clientX, e.clientY]; updateCrop(false); });
+  const up = () => { if (last) { last = null; updateCrop(true); } };
+  wrapEl.addEventListener('pointerup', up); wrapEl.addEventListener('pointercancel', up);
+  $('#zoom').oninput = e => { cr.zoom = +e.target.value; updateCrop(false); };
+  $('#zoom').onchange = () => updateCrop(true);
+})();
+function drawPreview() {
+  if ($('#creator').hidden || $('#stepMake').hidden) return;
+  const cv = $('#preview'), d = Math.min(window.devicePixelRatio || 1, 2), w = 258, h = 166, x = cv.getContext('2d');
+  if (cv.width !== w * d) { cv.width = w * d; cv.height = h * d; }
+  const t = performance.now() / 1000;
+  x.setTransform(d, 0, 0, d, 0, 0); x.fillStyle = '#ffe9a8'; x.fillRect(0, 0, w, h);
+  x.fillStyle = 'rgba(255,255,255,.35)'; for (let i = 10; i < w; i += 30) x.fillRect(i, 0, 10, h);
+  x.fillStyle = '#c98b5a'; x.fillRect(0, h - 26, w, 26); x.fillStyle = '#17154a'; x.fillRect(0, h - 26, w, 2);
+  const c = { id: 'preview', _seed: 42, age: cr.age, fur: cr.fur, accent: cr.accent, eye: cr.eye, pattern: cr.pattern, face: cr.photo && cr.face === 'photo' ? 'photo' : 'drawn', _img: cr.out, phase: t * 7 };
+  const k = cr.age === 'kitten' ? 1.3 : 1.75;
+  x.save(); x.translate(w / 2 - 6, h - 26); x.scale(k, k); drawCat(x, c, t, 'walk', 1, cr.age === 'adult' ? { tie: '#ff4f9a' } : { pack: '#3fd6b0' }); x.restore();
+  requestAnimationFrame(drawPreview);
+}
+$('#launch').onclick = () => {
+  const name = ($('#cName').value.trim() || pick(NAMES)).slice(0, 24), parent = $('#cParent').value.trim().slice(0, 24);
+  if (!parent) { $('#cParent').focus(); toast('Add your name. Your cat moves into your house.'); return; }
+  try { localStorage.setItem('purrville.me', JSON.stringify({ parent, title: cr.title })); } catch (e) {}
+  const usePhoto = cr.photo && cr.face === 'photo' && cr.out, photo = usePhoto ? cr.out.toDataURL('image/jpeg', .85) : null;
+  const c = makeCat({ name, parent, title: cr.title, age: cr.age, job: cr.age === 'adult' ? cr.job : null, pers: cr.pers, fur: cr.fur, accent: cr.accent, eye: cr.eye, pattern: cr.pattern, face: usePhoto ? 'photo' : 'drawn', photo, born: T });
+  world.cats.push(c); rebuildScenes(); closeModal('creator');
+  pendingSelect = c.id; setView({ kind: 'home', key: homeKey(c) }); save(); panelSig = '';
+  toast(`${name} is moving into ${parent}'s house.`);
+};
+
+/* ================= boot ================= */
+function init() {
+  resize();
+  const data = Store.load();
+  if (data && Array.isArray(data.cats)) {
+    world.relDay = typeof data.relDay === 'number' ? data.relDay : -1;
+    if (data.hangs && typeof data.hangs === 'object') for (const k of Object.keys(data.hangs)) if (Array.isArray(data.hangs[k])) world.hangs[k] = data.hangs[k].filter(h => h && typeof h.a === 'string' && typeof h.b === 'string');
+    for (const o of data.cats) { const s = sanitizeCat(o); if (s) world.cats.push(makeCat(s)); }
+    if (Array.isArray(data.notes)) world.notes = data.notes.filter(n => n && typeof n.key === 'string' && typeof n.text === 'string' && typeof n.at === 'number').map(n => ({ key: n.key, cat: String(n.cat), name: String(n.name || '').slice(0, 24), home: String(n.home || ''), text: n.text.slice(0, 300), at: n.at, back: typeof n.back === 'number' ? n.back : null }));
+  } else {
+    const born = (planDay(T) - 3) * 1440;
+    for (const s of SEEDS) world.cats.push(makeCat({ ...s, born }));
+  }
+  rebuildScenes();
+  let me = null; try { me = JSON.parse(localStorage.getItem('purrville.me') || 'null'); } catch (e) {}
+  const myHome = me && scenes.has('home:' + me.parent.trim().toLowerCase()) ? me.parent.trim().toLowerCase() : null;
+  resync();
+  setView({ kind: 'home', key: myHome || ([...scenes.values()].find(s => s.kind === 'home') || {}).key });
+  if (isMobile()) setPanel(false); else setPanel(true);
+  let last = performance.now();
+  function frame(now) {
+    const rdt = Math.min(.1, (now - last) / 1000); last = now;
+    const prevT = T;
+    if (live) T = nowLocalMin(); else T += rdt * rate;
+    if (Math.abs(T - prevT) > 20) resync();
+    const tn = now / 1000;
+    for (const c of world.cats) agent(c, tn, rdt);
+    render(tn);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  const tick = () => { const d = calDay(T); $('#clockT').textContent = `${DAYS[weekdayOf(T)]} ${fmtClock(T)}`; renderPanel(); updateCard(); };
+  tick(); setInterval(tick, 400);
+  setInterval(save, 5000);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) save(); else if (live) { T = nowLocalMin(); resync(); } });
+  window.addEventListener('pagehide', save);
+}
+window.addEventListener('resize', resize);
+init();
+</script>
+</body>
+</html>
