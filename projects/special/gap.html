@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gap Call</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: two phones on one call, each painted in its owner's world, with a white seam between them that shows what Claude changed. */
+:root {
+  color-scheme: light;
+  --page: #E9ECEF;
+  --ink: #16181D;
+  --muted: #5D636E;
+  --line: #D2D6DC;
+  --nai-bg: #D3E5D8;      /* celadon, a grandma's teacup */
+  --nai-ink: #1C2B23;
+  --nai-jade: #2C7556;
+  --nai-red: #B3242B;     /* red lacquer */
+  --kai-bg: #CDBBFF;      /* lilac */
+  --kai-ink: #17122B;
+  --kai-pink: #FF3D7F;
+  --kai-lime: #DBFF5C;
+  --bezel: #1B1C20;
+  --font-ui: "Bricolage Grotesque", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-nai: "Noto Serif SC", "Noto Serif TC", "Songti SC", "STSong", "SimSun", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--kai-pink); outline-offset: 2px; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 28px 20px 48px; display: grid; gap: 22px; }
+
+header.top { display: grid; gap: 14px; grid-template-columns: 1fr auto; align-items: end; }
+.brand h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+.brand h1 .zh { font-family: var(--font-nai); font-weight: 700; letter-spacing: 0; color: var(--nai-red); margin-right: 0.18em; }
+.brand p { margin: 8px 0 0; color: var(--muted); max-width: 54ch; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: flex-end; }
+.seg { display: inline-flex; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.seg button {
+  border: 0; background: transparent; padding: 7px 13px; border-radius: 999px; cursor: pointer; font-size: 14px; font-weight: 500;
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.seg .lbl { padding: 7px 4px 7px 10px; font-size: 13px; color: var(--muted); }
+.btn {
+  border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; font-weight: 700; font-size: 15px;
+  background: var(--kai-pink); color: #fff;
+}
+.btn.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); font-weight: 500; }
+.btn:disabled { opacity: .5; cursor: progress; }
+
+.stage { display: grid; grid-template-columns: minmax(300px, 380px) minmax(240px, 1fr) minmax(300px, 380px); gap: 22px; align-items: start; }
+
+/* phones */
+.phone {
+  border: 10px solid var(--bezel);
+  border-radius: 42px;
+  height: 700px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 60px -30px rgba(20, 22, 30, .45);
+}
+.phone .bar { padding: 22px 20px 14px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
+.avatar { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 20px; }
+.who { font-weight: 700; font-size: 18px; line-height: 1.1; }
+.status { font-size: 13px; font-variant-numeric: tabular-nums; }
+.live-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: 1px; }
+.feed { overflow-y: auto; padding: 6px 16px 16px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+.dock { padding: 12px 14px 18px; display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; }
+.dock form { display: contents; }
+.dock input {
+  min-width: 0; border-radius: 999px; padding: 12px 14px; border: 0; outline-offset: 0;
+}
+.round { width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; }
+.round svg { width: 20px; height: 20px; }
+.round[hidden] { display: none; }
+.round.listening { animation: pulse 1.1s ease-in-out infinite; }
+@keyframes pulse { 50% { transform: scale(1.08); } }
+.sendbtn { padding: 0 14px; height: 42px; border-radius: 999px; border: 0; cursor: pointer; font-weight: 700; }
+.empty { margin: auto; text-align: center; font-size: 14px; opacity: .7; padding: 20px; }
+
+/* grandma's phone */
+.phone.nai { background: var(--nai-bg); color: var(--nai-ink); }
+.nai .avatar { background: var(--nai-red); color: #fff; font-family: var(--font-nai); }
+.nai .who { font-family: var(--font-nai); font-size: 20px; }
+.nai .status { color: var(--nai-jade); font-family: var(--font-nai); }
+.nai .live-dot { background: var(--nai-jade); }
+.nai .msg { font-family: var(--font-nai); }
+.nai .msg.heard {
+  background: #fff; border-radius: 6px 22px 22px 22px; padding: 14px 16px;
+  font-size: 23px; line-height: 1.55; border-left: 4px solid var(--nai-red); max-width: 94%;
+}
+.nai .msg.said { align-self: flex-end; background: var(--nai-jade); color: #fff; border-radius: 22px 6px 22px 22px; padding: 9px 14px; font-size: 16px; max-width: 80%; }
+.nai .dock input { background: #fff; font-family: var(--font-nai); font-size: 17px; }
+.nai .round.mic { background: var(--nai-red); color: #fff; width: 58px; height: 58px; }
+.nai .sendbtn { background: var(--nai-jade); color: #fff; font-family: var(--font-nai); }
+
+/* kai's phone */
+.phone.kai { background: var(--kai-bg); color: var(--kai-ink); }
+.kai .avatar { background: var(--kai-lime); color: var(--kai-ink); }
+.kai .who { letter-spacing: -0.01em; }
+.kai .status { color: var(--kai-ink); opacity: .75; }
+.kai .live-dot { background: var(--kai-pink); }
+.kai .msg { font-size: 16px; text-transform: lowercase; }
+.kai .msg.heard { background: var(--kai-ink); color: #fff; padding: 11px 15px; border-radius: 20px 20px 20px 6px; max-width: 88%; font-weight: 500; }
+.kai .msg.said { align-self: flex-end; background: var(--kai-pink); color: #fff; padding: 9px 14px; border-radius: 20px 20px 6px 20px; max-width: 80%; font-size: 14px; }
+.kai .dock input { background: rgba(255,255,255,.75); }
+.kai .round.mic { background: var(--kai-ink); color: var(--kai-lime); }
+.kai .sendbtn { background: var(--kai-ink); color: #fff; }
+
+.msg { position: relative; animation: none; }
+.msg.enter { animation: rise .35s ease-out; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+.msg .spk {
+  position: absolute; right: 8px; bottom: -14px; width: 28px; height: 28px; border-radius: 50%;
+  border: 0; background: #fff; color: var(--ink); display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+.msg .spk svg { width: 14px; height: 14px; }
+.msg .spk[hidden] { display: none; }
+.msg.heard { margin-bottom: 6px; }
+.typing { opacity: .6; font-style: italic; }
+
+/* seam */
+.seam { background: #fff; border-radius: 22px; padding: 18px; display: grid; gap: 12px; align-content: start; max-height: 700px; overflow-y: auto; border: 1px solid var(--line); }
+.seam h2 { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
+.seam .sub { margin: -6px 0 2px; font-size: 13px; color: var(--muted); }
+.entry { display: grid; gap: 6px; padding: 12px 0 2px; border-top: 1px solid var(--line); }
+.entry .dir { font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.chip { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.chip.kai { background: var(--kai-bg); color: var(--kai-ink); }
+.chip.nai { background: var(--nai-bg); color: var(--nai-ink); font-family: var(--font-nai); }
+.entry .src { font-size: 14px; color: var(--muted); }
+.entry .dst { font-size: 16px; }
+.entry .dst.serif { font-family: var(--font-nai); }
+.notes { display: grid; gap: 4px; margin-top: 2px; }
+.note { font-size: 13px; display: grid; grid-template-columns: auto auto 1fr; gap: 6px; align-items: baseline; }
+.note b { font-weight: 700; }
+.note .to { font-family: var(--font-nai); }
+.note .to.en { font-family: var(--font-ui); }
+.note .why { grid-column: 1 / -1; color: var(--muted); padding-left: 2px; }
+.flag { font-size: 13px; background: #FFF4D6; border: 1px solid #F1D98C; color: #5B4500; border-radius: 12px; padding: 10px 12px; }
+.flag[hidden] { display: none; }
+
+footer.note-foot { color: var(--muted); font-size: 13px; max-width: 80ch; }
+
+@media (max-width: 1060px) {
+  .stage { grid-template-columns: 1fr 1fr; }
+  .seam { grid-column: 1 / -1; grid-row: 2; max-height: none; }
+}
+@media (max-width: 720px) {
+  header.top { grid-template-columns: 1fr; }
+  .controls { justify-content: flex-start; }
+  .stage { grid-template-columns: 1fr; }
+  .phone { height: 600px; max-width: 420px; width: 100%; justify-self: center; }
+  .seam { grid-row: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .msg.enter, .round.listening { animation: none; }
+  .feed { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1><span class="zh">代沟</span>Gap Call</h1>
+      <p>A phone call between a grandkid who talks in internet slang and a grandma who doesn't. Each of them hears the other in their own words.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Grandma speaks">
+        <span class="lbl">Grandma speaks</span>
+        <button type="button" data-lang="zh" aria-pressed="true">普通话</button>
+        <button type="button" data-lang="yue" aria-pressed="false">粤语</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+      <div class="seg" role="group" aria-label="Slang level on Kai's side">
+        <span class="lbl">Slang</span>
+        <button type="button" data-level="mild" aria-pressed="false">mild</button>
+        <button type="button" data-level="brainrot" aria-pressed="true">brainrot</button>
+      </div>
+      <button type="button" class="btn ghost" id="readAloud" aria-pressed="false" hidden>Read lines aloud: off</button>
+      <button type="button" class="btn" id="play">Play the call</button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="phone nai" aria-label="Grandma's phone">
+      <div class="bar">
+        <div class="avatar" id="naiAvatar">奶</div>
+        <div>
+          <div class="who" id="naiTitle">奶奶的手机</div>
+          <div class="status"><span class="live-dot"></span><span id="naiStatus">通话中</span> <span class="clock">03:12</span></div>
+        </div>
+        <span></span>
+      </div>
+      <div class="feed" id="naiFeed" aria-live="polite"></div>
+      <div class="dock">
+        <button type="button" class="round mic" id="naiMic" aria-label="Talk as grandma" hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
+        </button>
+        <form id="naiForm">
+          <input id="naiInput" autocomplete="off" aria-label="Grandma types a line" placeholder="说一句话…">
+          <button class="sendbtn" type="submit">发送</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="seam" aria-label="What Claude changed">
+      <h2>What Claude changed</h2>
+      <p class="sub">Every line crosses this seam. The phrases that needed more than a dictionary are listed under each one.</p>
+      <div class="flag" id="flag" hidden></div>
+      <div id="seamFeed"></div>
+    </aside>
+
+    <section class="phone kai" aria-label="Kai's phone">
+      <div class="bar">
+        <div class="avatar">K</div>
+        <div>
+          <div class="who" id="kaiTitle">nainai 🫶</div>
+          <div class="status"><span class="live-dot"></span>on call <span class="clock">03:12</span></div>
+        </div>
+        <span></span>
+      </div>
+      <div class="feed" id="kaiFeed" aria-live="polite"></div>
+      <div class="dock">
+        <button type="button" class="round mic" id="kaiMic" aria-label="Talk as Kai" hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
+        </button>
+        <form id="kaiForm">
+          <input id="kaiInput" autocomplete="off" aria-label="Kai types a line" placeholder="say smth">
+          <button class="sendbtn" type="submit">send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="note-foot">Prototype for the "Create Connections" sprint. The call above is a scripted example. Type or talk on either phone to translate your own lines; that part runs when this page is open in Claude.</footer>
+</div>
+
+<script>
+(() => {
+  const LANG_NAME = { zh: "Mandarin Chinese (Simplified)", yue: "Cantonese (Traditional characters, spoken Hong Kong style)", en: "plain, warm English as an older grandmother would speak" };
+  const TTS_LANG = { zh: "zh-CN", yue: "zh-HK", en: "en" };
+  const NAI_LABEL = {
+    zh: { title: "奶奶的手机", status: "通话中", chip: "奶奶", avatar: "奶", place: "说一句话…", send: "发送", kaiTitle: "nainai 🫶" },
+    yue: { title: "嫲嫲嘅電話", status: "通話中", chip: "嫲嫲", avatar: "嫲", place: "講句嘢…", send: "傳送", kaiTitle: "ah ma 🫶" },
+    en: { title: "Grandma's phone", status: "On a call", chip: "Grandma", avatar: "G", place: "Say something…", send: "Send", kaiTitle: "grandma 🫶" }
+  };
+
+  // Scripted call. Kai's lines are fixed; Grandma's depend on her language; Kai hears Grandma at the chosen slang level.
+  const SCRIPT = [
+    { from: "kai", said: "nainai hiii ok I have lore to drop",
+      heard: { zh: "奶奶好呀！我有件大事要跟您说。", yue: "嫲嫲好呀！我有件大事要同你講。", en: "Hello, Grandma! I have some news to share with you." },
+      notes: [["lore to drop", { zh: "大事要跟您说", yue: "大事要同你講", en: "news to share" }, "“Lore” is slang for backstory or big personal news."]] },
+    { from: "kai", said: "I got into the MoMA sprint. no cap, it's lowkey a big deal",
+      heard: { zh: "我被纽约现代艺术博物馆的创作活动选上了。真的不骗您，这事挺了不起的。", yue: "我俾紐約現代藝術博物館嘅創作活動揀中咗。真係冇呃你，呢件事幾犀利㗎。", en: "I was chosen for a program at the Museum of Modern Art. Honestly, it's quite an achievement." },
+      notes: [["no cap", { zh: "真的不骗您", yue: "真係冇呃你", en: "honestly" }, "“Cap” means a lie, so “no cap” is a promise of sincerity."],
+              ["lowkey", { zh: "挺", yue: "幾", en: "quite" }, "Softens a brag. The translation stays modest too."]] },
+    { from: "nai",
+      said: { zh: "哎哟，真棒！那你吃饭了没有？", yue: "哎呀，好嘢！咁你食咗飯未呀？", en: "Oh my, wonderful! Now, have you eaten yet?" },
+      heard: { mild: "omg that's amazing!! ok but have you eaten", brainrot: "omg W 🎉 ok but real question: have you eaten or are we cooked" },
+      notes: [[{ zh: "吃饭了没有", yue: "食咗飯未", en: "have you eaten yet" }, "have you eaten", "In many Chinese families this is a care check, closer to “are you okay” than a question about lunch."]] },
+    { from: "nai",
+      said: { zh: "别老熬夜，身体要紧。", yue: "唔好成日捱夜，身體要緊。", en: "Don't stay up so late, dear. Your health comes first." },
+      heard: { mild: "pls stop pulling all-nighters, your health comes first fr", brainrot: "stop pulling all-nighters fr. your health is the main quest" },
+      notes: [[{ zh: "身体要紧", yue: "身體要緊", en: "your health comes first" }, { mild: "your health comes first fr", brainrot: "your health is the main quest" }, "Kept as an order with love behind it. Grandma is not asking."]] },
+    { from: "kai", said: "it's giving burnout ngl but I'm locked in",
+      heard: { zh: "说实话我有点累，但是我现在特别专注。", yue: "講真我有啲攰，不過我而家好專心。", en: "To be honest, I'm a little tired, but I'm very focused right now." },
+      notes: [["it's giving burnout", { zh: "有点累", yue: "有啲攰", en: "a little tired" }, "“It's giving” means “it feels like.” Turned down so she doesn't worry."],
+              ["locked in", { zh: "特别专注", yue: "好專心", en: "very focused" }, "Fully focused, in a good way."]] },
+    { from: "nai",
+      said: { zh: "你小时候画画就好，奶奶一直都知道。", yue: "你細個畫畫已經好叻，嫲嫲一直都知。", en: "You drew so beautifully when you were little. Grandma always knew." },
+      heard: { mild: "you've been good at drawing since you were little. I always knew 🫶", brainrot: "you've been cooking with the drawings since you were a baby. called it 🫶" },
+      notes: [[{ zh: "一直都知道", yue: "一直都知", en: "always knew" }, { mild: "I always knew", brainrot: "called it" }, "Pride said quietly. The slang version keeps it short so it lands."]] },
+    { from: "kai", said: "ok I'm actually crying. ily nainai",
+      heard: { zh: "哎呀，我真的要哭了。奶奶，我爱您。", yue: "哎呀，我真係想喊。嫲嫲，我愛你。", en: "Oh, I'm truly in tears. I love you, Grandma." },
+      notes: [["ily", { zh: "我爱您", yue: "我愛你", en: "I love you" }, "Spelled out in full. In Mandarin, 您 adds respect."]] },
+    { from: "nai",
+      said: { zh: "傻孩子。", yue: "傻仔。", en: "Oh, you silly child." },
+      heard: { mild: "you sweet silly kid 🥹", brainrot: "silly goose 🥹" },
+      notes: [[{ zh: "傻孩子", yue: "傻仔", en: "silly child" }, { mild: "sweet silly kid", brainrot: "silly goose" }, "Affection, not an insult."]] }
+  ];
+
+  const state = { lang: "zh", level: "brainrot", lines: [], playing: false, readAloud: false };
+  const $ = (id) => document.getElementById(id);
+  const naiFeed = $("naiFeed"), kaiFeed = $("kaiFeed"), seamFeed = $("seamFeed");
+  let sample = null, dictation = null, tts = null;
+
+  const pick = (v) => (v && typeof v === "object") ? (v[state.lang] ?? v[state.level] ?? Object.values(v)[0]) : v;
+
+  // Turn a script line into a resolved line for the current settings.
+  function resolve(s) {
+    return {
+      from: s.from,
+      said: pick(s.said),
+      heard: pick(s.heard),
+      notes: (s.notes || []).map(([a, b, why]) => ({ from: pick(a), to: pick(b), why })),
+      lang: state.lang
+    };
+  }
+
+  const SPEAKER_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Zm-2.5-9v2.06a7 7 0 0 1 0 13.88V21a9 9 0 0 0 0-18Z"/></svg>';
+
+  function bubble(feed, cls, text, opts = {}) {
+    const el = document.createElement("div");
+    el.className = "msg " + cls + (opts.animate ? " enter" : "");
+    el.textContent = text;
+    if (cls === "heard" && opts.speakLang) {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "spk"; b.innerHTML = SPEAKER_SVG;
+      b.setAttribute("aria-label", "Read this line aloud");
+      b.hidden = !tts;
+      b.addEventListener("click", () => speak(text, opts.speakLang));
+      el.appendChild(b);
+    }
+    feed.appendChild(el);
+    feed.scrollTop = feed.scrollHeight;
+    return el;
+  }
+
+  function seamEntry(line, opts = {}) {
+    const naiChip = NAI_LABEL[line.lang].chip;
+    const e = document.createElement("div");
+    e.className = "entry";
+    const fromKai = line.from === "kai";
+    e.innerHTML = `<div class="dir"><span class="chip ${fromKai ? "kai" : "nai"}"></span><span>to</span><span class="chip ${fromKai ? "nai" : "kai"}"></span></div>
+      <div class="src"></div><div class="dst"></div><div class="notes"></div>`;
+    const chips = e.querySelectorAll(".chip");
+    chips[0].textContent = fromKai ? "Kai" : naiChip;
+    chips[1].textContent = fromKai ? naiChip : "Kai";
+    e.querySelector(".src").textContent = line.said;
+    const dst = e.querySelector(".dst");
+    dst.textContent = line.heard ?? "";
+    if (fromKai && line.lang !== "en") dst.classList.add("serif");
+    const notes = e.querySelector(".notes");
+    (line.notes || []).forEach(n => {
+      const d = document.createElement("div");
+      d.className = "note";
+      const toIsZh = fromKai && line.lang !== "en";
+      d.innerHTML = `<b></b><span aria-hidden="true">⟶</span><span class="to ${toIsZh ? "" : "en"}"></span><span class="why"></span>`;
+      d.querySelector("b").textContent = n.from;
+      d.querySelector(".to").textContent = n.to;
+      d.querySelector(".why").textContent = n.why;
+      notes.appendChild(d);
+    });
+    if (opts.pending) dst.innerHTML = '<span class="typing">translating…</span>';
+    seamFeed.appendChild(e);
+    const seam = seamFeed.parentElement; seam.scrollTop = seam.scrollHeight;
+    return e;
+  }
+
+  function placeLine(line, animate) {
+    const speakerFeed = line.from === "kai" ? kaiFeed : naiFeed;
+    const listenerFeed = line.from === "kai" ? naiFeed : kaiFeed;
+    bubble(speakerFeed, "said", line.said, { animate });
+    seamEntry(line);
+    const listenerLang = line.from === "kai" ? TTS_LANG[line.lang] : "en";
+    return bubble(listenerFeed, "heard", line.heard, { animate, speakLang: listenerLang });
+  }
+
+  function clearFeeds() { naiFeed.innerHTML = ""; kaiFeed.innerHTML = ""; seamFeed.innerHTML = ""; }
+
+  function renderAll() {
+    clearFeeds();
+    state.lines.forEach(l => placeLine(l, false));
+    if (!state.lines.length) {
+      naiFeed.innerHTML = `<div class="empty">${state.lang === "en" ? "The call is quiet." : "电话里很安静。"}</div>`;
+      kaiFeed.innerHTML = '<div class="empty">call is quiet. say smth</div>';
+    }
+  }
+
+  function scriptLines() { return SCRIPT.map(resolve); }
+
+  function applyLabels() {
+    const L = NAI_LABEL[state.lang];
+    $("naiTitle").textContent = L.title;
+    $("naiStatus").textContent = L.status;
+    $("naiAvatar").textContent = L.avatar;
+    $("naiInput").placeholder = L.place;
+    document.querySelector("#naiForm .sendbtn").textContent = L.send;
+    $("kaiTitle").textContent = L.kaiTitle;
+  }
+
+  // Settings
+  document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => {
+    if (state.playing) return;
+    state.lang = b.dataset.lang;
+    document.querySelectorAll("[data-lang]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    applyLabels();
+    state.lines = scriptLines();
+    renderAll();
+  }));
+  document.querySelectorAll("[data-level]").forEach(b => b.addEventListener("click", () => {
+    if (state.playing) return;
+    state.level = b.dataset.level;
+    document.querySelectorAll("[data-level]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    state.lines = scriptLines();
+    renderAll();
+  }));
+
+  // Clock
+  let secs = 192;
+  setInterval(() => {
+    secs++;
+    const t = String(Math.floor(secs / 60)).padStart(2, "0") + ":" + String(secs % 60).padStart(2, "0");
+    document.querySelectorAll(".clock").forEach(c => c.textContent = t);
+  }, 1000);
+
+  const wait = (ms) => new Promise(r => setTimeout(r, ms));
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  async function speak(text, lang) {
+    if (!tts) return;
+    try { await tts.speak(text, { language: lang, voice: lang === "en" ? "airy" : "rounded" }); } catch (e) { /* stopped or unavailable */ }
+  }
+
+  // Play the scripted call line by line
+  $("play").addEventListener("click", async () => {
+    if (state.playing) return;
+    state.playing = true;
+    const btn = $("play"); btn.disabled = true; btn.textContent = "Playing…";
+    secs = 0;
+    clearFeeds();
+    const lines = scriptLines();
+    state.lines = [];
+    for (const line of lines) {
+      const speakerFeed = line.from === "kai" ? kaiFeed : naiFeed;
+      const listenerFeed = line.from === "kai" ? naiFeed : kaiFeed;
+      bubble(speakerFeed, "said", line.said, { animate: true });
+      const entry = seamEntry({ ...line, heard: null, notes: [] }, { pending: true });
+      await wait(reduced ? 150 : 900);
+      entry.remove();
+      seamEntry(line);
+      const listenerLang = line.from === "kai" ? TTS_LANG[line.lang] : "en";
+      bubble(listenerFeed, "heard", line.heard, { animate: true, speakLang: listenerLang });
+      state.lines.push(line);
+      if (state.readAloud && tts) await speak(line.heard, listenerLang);
+      else await wait(reduced ? 200 : 1300);
+    }
+    state.playing = false; btn.disabled = false; btn.textContent = "Play the call";
+  });
+
+  $("readAloud").addEventListener("click", (e) => {
+    state.readAloud = !state.readAloud;
+    e.currentTarget.setAttribute("aria-pressed", String(state.readAloud));
+    e.currentTarget.textContent = "Read lines aloud: " + (state.readAloud ? "on" : "off");
+    if (!state.readAloud && tts) try { tts.stop(); } catch (_) {}
+  });
+
+  // Live translation
+  function buildPrompt(from, text) {
+    const toGrandma = from === "kai";
+    return `You are the translation layer inside a live phone call between Kai, a Gen Z grandchild who talks in English internet slang, and Kai's grandmother, who speaks ${LANG_NAME[state.lang]}.
+
+Speaker: ${toGrandma ? "Kai (the grandchild)" : "the grandmother"}
+Their line: """${text}"""
+
+Rewrite the line for the listener so it sounds natural in the listener's own way of talking.
+${toGrandma
+  ? `The listener is the grandmother. Write warm, respectful ${LANG_NAME[state.lang]} the way a loving grandchild speaks to a grandparent${state.lang === "zh" ? " (use 您)" : ""}. Expand every slang term into its plain meaning. No emoji.`
+  : `The listener is Kai. Write casual lowercase English the way Gen Z texts. Slang level: ${state.level === "brainrot" ? "heavy, current internet slang" : "light, a little slang only"}. Keep the grandmother's care and meaning exactly; never mock her. At most one emoji.`}
+Keep the meaning, feeling and length close to the original. Add no new facts. If the line is already in the listener's language and register, keep it nearly as is.
+
+Return only JSON, no prose: {"translation": string, "notes": [{"from": phrase from the original, "to": phrase from your translation, "why": a reason under 14 words}]}. Give 0 to 2 notes, for the phrases that changed the most.`;
+  }
+
+  function parseJSON(t) {
+    if (t && typeof t === "object") return t;
+    const m = String(t || "").match(/\{[\s\S]*\}/);
+    return m ? JSON.parse(m[0]) : null;
+  }
+
+  async function translate(from, text) {
+    text = text.trim();
+    if (!text) return;
+    const speakerFeed = from === "kai" ? kaiFeed : naiFeed;
+    const listenerFeed = from === "kai" ? naiFeed : kaiFeed;
+    speakerFeed.querySelector(".empty")?.remove();
+    listenerFeed.querySelector(".empty")?.remove();
+    bubble(speakerFeed, "said", text, { animate: true });
+    const line = { from, said: text, heard: null, notes: [], lang: state.lang };
+    const pending = seamEntry(line, { pending: true });
+    if (!sample) {
+      pending.querySelector(".dst").innerHTML = '<span class="typing">Live translation runs when this page is open in Claude. The scripted call above shows what it does.</span>';
+      return;
+    }
+    try {
+      const prompt = buildPrompt(from, text);
+      let out;
+      if (typeof sample.json === "function") {
+        out = await sample.json(prompt, { modelTier: "quick" });
+      } else {
+        const r = await sample(prompt, { modelTier: "quick" });
+        out = r.text;
+      }
+      const data = parseJSON(out);
+      if (!data || !data.translation) throw { message: "Empty translation" };
+      line.heard = data.translation;
+      line.notes = (data.notes || []).slice(0, 2).map(n => ({ from: n.from, to: n.to, why: n.why }));
+      pending.remove();
+      seamEntry(line);
+      const listenerLang = from === "kai" ? TTS_LANG[state.lang] : "en";
+      bubble(listenerFeed, "heard", line.heard, { animate: true, speakLang: listenerLang });
+      state.lines.push(line);
+      if (state.readAloud) speak(line.heard, listenerLang);
+    } catch (err) {
+      const msg = err && err.code === "rate_limited" ? "Too many lines at once. Wait a few seconds, then send it again."
+        : err && err.code === "not_granted" ? "Claude access was turned off for this page, so lines can't be translated."
+        : "That line didn't translate. Send it again.";
+      pending.querySelector(".dst").innerHTML = "";
+      const s = document.createElement("span"); s.className = "typing"; s.textContent = msg;
+      pending.querySelector(".dst").appendChild(s);
+    }
+  }
+
+  $("naiForm").addEventListener("submit", (e) => { e.preventDefault(); const v = $("naiInput").value; $("naiInput").value = ""; translate("nai", v); });
+  $("kaiForm").addEventListener("submit", (e) => { e.preventDefault(); const v = $("kaiInput").value; $("kaiInput").value = ""; translate("kai", v); });
+
+  // Dictation: one mic per phone
+  let activeMic = null, heardSoFar = "";
+  function wireMic(btnId, from, inputId) {
+    const btn = $(btnId);
+    btn.addEventListener("click", () => {
+      if (!dictation) return;
+      if (activeMic === from) { dictation.stop().catch(() => {}); return; }
+      if (activeMic) return;
+      activeMic = from; heardSoFar = "";
+      btn.classList.add("listening");
+      dictation.start().catch((e) => {
+        btn.classList.remove("listening"); activeMic = null;
+        if (e && e.code === "not_granted") { $("naiMic").hidden = true; $("kaiMic").hidden = true; }
+      });
+    });
+  }
+  wireMic("naiMic", "nai", "naiInput");
+  wireMic("kaiMic", "kai", "kaiInput");
+
+  // Boot
+  applyLabels();
+  state.lines = scriptLines();
+  renderAll();
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("sample").then(s => { sample = s; }).catch(() => {});
+    window.claude.use("tts").then(t => {
+      tts = t;
+      if (!t) return;
+      $("readAloud").hidden = false;
+      document.querySelectorAll(".msg .spk").forEach(b => b.hidden = false);
+    }).catch(() => {});
+    window.claude.use("dictation").then(d => {
+      dictation = d;
+      if (!d) return;
+      $("naiMic").hidden = false; $("kaiMic").hidden = false;
+      d.onPartial(({ text }) => {
+        if (!activeMic) return;
+        $(activeMic === "kai" ? "kaiInput" : "naiInput").value = (heardSoFar + " " + text).trim();
+      });
+      d.onFinal(({ text }) => { heardSoFar = (heardSoFar + " " + text).trim(); if (activeMic) $(activeMic === "kai" ? "kaiInput" : "naiInput").value = heardSoFar; });
+      d.onState(({ state: st }) => {
+        if (st === "idle" && activeMic) {
+          const from = activeMic;
+          $("naiMic").classList.remove("listening"); $("kaiMic").classList.remove("listening");
+          const input = $(from === "kai" ? "kaiInput" : "naiInput");
+          const text = input.value; input.value = "";
+          activeMic = null;
+          if (text.trim()) translate(from, text);
+        }
+      });
+    }).catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
